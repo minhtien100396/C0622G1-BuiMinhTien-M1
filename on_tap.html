@@ -2,126 +2,79 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Lịch tháng 10/2009</title>
+    <title>Tạo form đơn giản</title>
     <style>
-        .border{
-            border-style: hidden;
-            border-top: gray;
-            border-bottom: gray;
-            font-size: 12px;
-        }
-        #t7{
-            background-color: blue;
-            color: white;
-        }
-        #cn{
-            background-color: red;
-            color: white;
+        body{
+            background-color: aqua;
+            font-family: sans-serif, Tahoma;
         }
         table{
-
-            border-collapse: collapse;
-            text-align: center;
             width: 60%;
-            font-family: "Lucida Sans","Lucida Sans Unicode",Tahoma,sans-serif;
-        }
-        td,th{
-            border: 2px solid gray;
-        }
-        sub{
-            font-size: 8px;
-            color: black;
-        }
-        .color{
-            color: red;
-        }
-        .color1{
-            color: blue;
-        }
-        th{
-            background-color: orange;
-            color: white;
-            padding: 6px 3px 6px 3px;
-            line-height: 10px;
-            border-spacing: 100px
-
-        }
-        th, td {
-            width: 50px;
+            background-color: white;
         }
         td{
-            padding: 7px 10px 7px 10px;
+            color: orangered;
         }
     </style>
 </head>
 <body>
-<table border="1" align="center">
-    <caption><h2 style="color: blue">Tháng 10 - October</h2></caption>
-    <tr style="font-size: 14px">
-        <th id="cn">C.Nhật</th>
-        <th>T.Hai</th>
-        <th>T.Ba</th>
-        <th>T.Tư</th>
-        <th>T.Năm</th>
-        <th>T.Sáu</th>
-        <th id="t7">T.Bảy</th>
-    </tr>
-    <tr>
-        <td class="border" style="color: red">Sun</td>
-        <td class="border">Mon</td>
-        <td class="border">Tue</td>
-        <td class="border">Wed</td>
-        <td class="border">Thu</td>
-        <td class="border">Fri</td>
-        <td class="border" style="color: blue">Sat</td>
-    </tr>
-    <tr style="font-weight: bold">
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>1<sub>13</sub></td>
-        <td>2<sub>14</sub></td>
-        <td class="color1">3<sub>15</sub></td>
-    </tr>
-    <tr style="font-weight: bold">
-        <td class="color">4<sub>16</sub></td>
-        <td>5<sub>17</sub></td>
-        <td>6<sub>18</sub></td>
-        <td>7<sub>19</sub></td>
-        <td>8<sub>20</sub></td>
-        <td>9<sub>21</sub></td>
-        <td class="color1">10<sub>22</sub></td>
-    </tr>
-    <tr style="font-weight: bold">
-        <td class="color">11<sub>23</sub></td>
-        <td>12<sub>24</sub></td>
-        <td>13<sub>25</sub></td>
-        <td>14<sub>26</sub></td>
-        <td>15<sub>27</sub></td>
-        <td>16<sub>28</sub></td>
-        <td class="color1">17<sub>29</sub></td>
-    </tr>
-    <tr style="font-weight: bold">
-        <td class="color">18<sub>1.9</sub></td>
-        <td>19<sub>2</sub></td>
-        <td>20<sub>3</sub></td>
-        <td>21<sub>4</sub></td>
-        <td>22<sub>5</sub></td>
-        <td>23<sub>6</sub></td>
-        <td class="color1">24<sub>7</sub></td>
-    </tr>
-    <tr style="font-weight: bold">
-        <td class="color">25<sub>8</sub></td>
-        <td>26<sub>9</sub></td>
-        <td>27<sub>10</sub></td>
-        <td>28<sub>11</sub></td>
-        <td>29<sub>12</sub></td>
-        <td>30<sub>13</sub></td>
-        <td class="color1">31<sub>14</sub></td>
-    </tr>
-
-
-</table>
+<form>
+    <table cellspacing="3" cellpadding="3">
+        <tr style="background-color: orangered">
+            <th colspan="4" style="color:white" >
+                SỞ THÍCH CỦA BẠN
+            </th>
+        </tr>
+        <tr>
+            <th style="color: blue" align="right">Họ và tên</th>
+            <td colspan="3">
+                <input type="text"name="name"size="35">
+            </td>
+        </tr>
+        <tr>
+            <th style="color: blue" align="right">Email</th>
+            <td colspan="3">
+                <input type="text"name="email" size="25">
+            </td>
+        </tr>
+        <tr>
+            <th align="right" width="260px" style="color: blue">Sở thích</th>
+            <td width="100px" style="padding-left:10px">
+                <input type="checkbox" name="vihecle">Thể thao
+            </td>
+            <td width="100px" style="padding-left: 30px">
+                <input type="checkbox" name="vihecle" size="20px">Âm nhạc
+            </td>
+            <td style="padding-left: 30px">
+                <input type="checkbox" name="vihecle">Đọc sách
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="padding-left: 10px">
+                <input type="checkbox" name="vihecle">Lướt web
+            </td>
+            <td style="padding-left: 30px">
+                <input type="checkbox"name="vihecle">Chơi game
+            </td>
+            <td style="padding-left: 30px">
+                <input type="checkbox" name="vihecle">Điện Ảnh
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="padding-left: 10px">
+                <input type="checkbox" name="vihecle">Du lịch
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="2" style="padding: 10px 10px">
+                <button>Gửi thông tin</button>
+                <button>Nhập lại</button>
+            </td>
+        </tr>
+    </table>
+</form>
 </body>
 </html>

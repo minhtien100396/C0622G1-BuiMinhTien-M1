@@ -4,17 +4,15 @@
     <meta charset="UTF-8">
     <title>tao_form_don_gian_phan_2</title>
     <style>
-        #address {
+        #add {
             vertical-align: text-top;
         }
-
         #caption {
             color: blue;
             background-color: greenyellow;
             width: 100%;
             text-align: left;
         }
-
         body {
             font-family: "Lucida Sans Unicode";
             background-color: lightgoldenrodyellow;
@@ -29,16 +27,16 @@
         </tr>
         <tr>
             <td width="120px">
-                Họ và tên
+                <label for="name">Họ và tên</label>
             </td>
             <td>
-                <input type="text" size="30px" name="name">
+                <input type="text" id="name" size="30px" name="name">
             </td>
         </tr>
         <tr>
-            <td>Ngày sinh</td>
+            <td><label for="birthday">Ngày sinh</label></td>
             <td>
-                <input type="text" name="birthday" size="20px">
+                <input type="text" id="birthday" name="birthday" size="20px">
             </td>
         </tr>
         <tr>
@@ -49,9 +47,9 @@
             </td>
         </tr>
         <tr>
-            <td id="address">Địa chỉ</td>
+            <td id="add"><label for="address">Địa chỉ</label></td>
             <td>
-                <textarea name="address" rows="3" cols="21"></textarea>
+                <textarea id="address" name="address" rows="3" cols="21"></textarea>
             </td>
         </tr>
         <tr>
@@ -68,15 +66,15 @@
             </td>
         </tr>
         <tr>
-            <td>Email</td>
+            <td><label for="Email">Email</label></td>
             <td>
-                <input type="text" name="email">
+                <input type="text" id="Email" name="email">
             </td>
         </tr>
         <tr>
-            <td>Điện thoại</td>
+            <td><label for="phone">Điện thoại</label></td>
             <td>
-                <input type="text" name="phone">
+                <input id="phone" type="text" name="phone">
             </td>
         </tr>
         <tr>

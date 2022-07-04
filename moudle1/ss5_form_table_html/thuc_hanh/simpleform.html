@@ -2,37 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>tao_form_co_ban</title>
-    <style type="text/css">
-        form{
-            font-family: "lucida grande","Lucida Sans Unicode", Tahoma, sans-serif;
+    <title>simpleform</title>
+    <style>
+        button{
+            background-color: white;
+            border: 1px solid gainsboro;
+            font-weight: bold;
+        }
+        body{
+            font-family: Tahoma,sans-serif,"Lucida Sans Unicode";
+            line-height: 20px;
+        }
+        p{
+            font-weight: bold;
+        }
+        span{
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-<form action="simpleform.html" method="get">
-    <h2>Order Form</h2>
-    <p>What would you like to order?</p>
-    <select>
-        <option value=" ">A</option>
-        <option>B(+ 0.5$)</option>
-        <option>C(+ 0.5$)</option>
+<form>
+    <h2 style="margin-top: 1px">Order Form</h2>
+    <p>What would you like to buy?</p>
+    <select style="width: 150px">
+        <option>A</option><br>
+        <option selected>B</option><br>
+        <option>C</option><br>
     </select>
     <p>How many would you like to order?</p>
-    <input type="radio" name="rd" value="rd">1-$10<br>
-    <input type="radio" name="rd" value="rd">2-$20<br>
-    <input type="radio" name="rd" value="rd">3-$25<br>
-    <p>Name<span style="color: red"> *</span></p>
-    <input type="text" name="First name" placeholder="First name" size="15">
-    <input type="text" name="Last name" placeholder="Last name" size="15">
-    <p>Email</p>
-    <input type="text" name="mail" size="35">
-    <p>Phone Number</p>
-    <input type="text" name="sdt1" size="5">-
-    <input type="text" name="sdt2" size="5">-
-    <input type="text" name="sdt3"size="5"><br><br>
-    <input type="submit"name="submit"value="Submit">
+    <input type="radio" name="vehecle"><span style="margin-left: 5px">1 - $10</span><br>
+    <input type="radio" name="vehecle"><span style="margin-left: 5px">2 - $20</span><br>
+    <input type="radio" name="vehecle"><span style="margin-left: 5px">3 - $25</span><br>
+    <label for="name"><p>Name<span style="color: red"> *</span></p></label>
+    <input type="text" id="name" name="first name" placeholder="FirstName" style="width: 150px">
+    <input type="text" name="last name" placeholder="LastName" style="width: 150px">
+    <label for="email"><p>Email</p></label>
+    <input type="text" id="email" name="email" style="width: 350px"><br>
+    <label for="phone"><p>Phone Number</p></label>
+    <input type="text" id="phone" name="phone1" style="width: 40px"> <span> - </span> <input type="text" name="phone2" style="width: 40px"><span> - </span><input type="text" name="phone3" style="width: 40px"><br><br>
+    <button>Submit</button>
 </form>
-
 </body>
 </html>
