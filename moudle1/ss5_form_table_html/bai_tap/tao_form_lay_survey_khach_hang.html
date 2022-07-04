@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo form đơn giản</title>
+    <style>
+        .color{
+            background-color: lightgrey;
+        }
+        .indam{
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        form{
+            line-height:20px;
+            font-size: 13px;
+            font-family: "Lucida Sans Unicode","Lucida Sans",Tahoma,sans-serif;
+        }
+        .indam1{
+            text-align: left;
+        }
+        table{
+            border-collapse: collapse;
+            line-height: 35px;
+            width: 70%;
+            text-align: center;
+        }
+        td,th{
+            border: 1px solid grey;
+        }
+        }
+        }
+    </style>
+</head>
+<body>
+<form>
+    <h2>Market Research Survey</h2>
+    <p>Please take a few moments to complete this satis faction survey</p>
+    <hr>
+    <p class="indam" style="margin-bottom: 1px">What is your range?</p>
+    <select name="vehicle" style="width: 500px">
+        <option>18 - 24</option>
+        <option>25 - 34</option>
+        <option>35 - 50</option>
+        <option>50+</option>
+    </select>
+    <p class="indam" style="margin-bottom: 1px">What is your yearly income range?</p>
+    <select name="vehicle" style="width: 500px">
+        <option>$0 - $25,000</option>
+        <option>$25,001 - $50,000</option>
+        <option>$50,001 - 1$00,000</option>
+        <option>$100,000+</option>
+    </select>
+    <p class="indam" style="margin-bottom: 10px">Gender Identity</p>
+    <input type="radio" name="vehicle" style="margin-bottom: 10px"> Male<br>
+    <input type="radio" name="vehicle"style="margin-bottom: 10px"> FeMale<br>
+    <input type="radio" name="vehicle"style="margin-bottom: 10px"> Nonbinary<br>
+    <input type="radio" name="vehicle"style="margin-bottom: 8px"> Orther<br>
+    <input type="text" name="orther"size="15px" style="margin-left: 30px"><br>
+    <p class="indam">Wich of the following products have your purchased in the last 2 months. Please check all that apply.</p>
+    <input type="checkbox" name="vehicle"style="margin-bottom: 10px">Product 1<br>
+    <input type="checkbox" name="vehicle"style="margin-bottom: 10px">Product 2<br>
+    <input type="checkbox" name="vehicle"style="margin-bottom: 10px">Product 3<br>
+    <p class="indam">How often would you use our new product?</p>
+    <input type="radio" name="vehicle"style="margin-bottom: 10px">Daily<br>
+    <input type="radio" name="vehicle"style="margin-bottom: 10px">Weekly<br>
+    <input type="radio" name="vehicle"style="margin-bottom: 10px">Monthly<br>
+    <p class="indam">What would you pay for the new product?</p>
+    $&nbsp<input type="text"name="pay" size="5 px">.<input type="text"name="thapphan" size="1">
+    <pre style="margin-top: 2px">  Dollars   Cents</pre>
+    <p class="indam">What features would you like to see in the new product.</p>
+    <textarea name="see" cols="116px" rows="8"></textarea><br>
+    <p>Please rate your level of agreement wwith the following statements.</p>
+    <table>
+        <tr class="color">
+            <th></th>
+            <th width="120px">Strong Disagree</th>
+            <th width="120px">Disagree</th>
+            <th width="120px">Agree</th>
+            <th width="120px">Strongly Agree</th>
+        </tr>
+        <tr>
+            <th class="indam1">Our products are proced fairly.</th>
+            <td><input type="radio" name="1">1</td>
+            <td> <input type="radio" name="2">2</td>
+            <td> <input type="radio" name="3">3</td>
+            <td> <input type="radio" name="4">4</td>
+        </tr>
+        <tr class="color">
+            <th class="indam1">Our products are high quality.</th>
+            <td><input type="radio" name="1">1</td>
+            <td> <input type="radio" name="2">2</td>
+            <td> <input type="radio" name="3">3</td>
+            <td> <input type="radio" name="4">4</td>
+        </tr>
+        <tr style="line-height: 20px">
+            <th class="indam1" width="320px"style="border-bottom-color: white"">You would recommend our product to a friend or coworker.</th>
+            <td style="border-bottom-color: white"><input type="radio" name="1">1</td>
+            <td style="border-bottom-color: white"> <input type="radio" name="2">2</td>
+            <td style="border-bottom-color: white"> <input type="radio" name="3">3</td>
+            <td style="border-bottom-color: white"> <input type="radio" name="4">4</td>
+        </tr>
+
+    </table><br>
+    <input type="submit" name="submit" value="Submit" style="font-size: 25px" >
+
+</form>
+</body>
+</html>

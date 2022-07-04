@@ -2,9 +2,91 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>tao_form_don_gian_phan_2</title>
+    <style>
+        #address {
+            vertical-align: text-top;
+        }
+
+        #caption {
+            color: blue;
+            background-color: greenyellow;
+            width: 100%;
+            text-align: left;
+        }
+
+        body {
+            font-family: "Lucida Sans Unicode";
+            background-color: lightgoldenrodyellow;
+        }
+    </style>
 </head>
 <body>
-$END$
+<form>
+    <table>
+        <tr id="caption">
+            <th colspan="2">ĐĂNG KÍ HỌC VIÊN</th>
+        </tr>
+        <tr>
+            <td width="120px">
+                Họ và tên
+            </td>
+            <td>
+                <input type="text" size="30px" name="name">
+            </td>
+        </tr>
+        <tr>
+            <td>Ngày sinh</td>
+            <td>
+                <input type="text" name="birthday" size="20px">
+            </td>
+        </tr>
+        <tr>
+            <td>Giới tính</td>
+            <td>
+                <input type="radio" name="gender">Nam
+                <input type="radio" name="gender">Nữ
+            </td>
+        </tr>
+        <tr>
+            <td id="address">Địa chỉ</td>
+            <td>
+                <textarea name="address" rows="3" cols="21"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>Lớp</td>
+            <td>
+                <select style="width: 90px">
+                    <option>-Chọn lớp-</option>
+                    <option>Tiểu học</option>
+                    <option>THCS</option>
+                    <option>THPT</option>
+                    <option>Đại Học</option>
+                    <option>Nhân viên công ty</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>
+                <input type="text" name="email">
+            </td>
+        </tr>
+        <tr>
+            <td>Điện thoại</td>
+            <td>
+                <input type="text" name="phone">
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button>Đăng kí</button>
+                <button>Nhập lại</button>
+            </td>
+        </tr>
+    </table>
+</form>
 </body>
 </html>
