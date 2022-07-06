@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo form đơn giản</title>
+
+</head>
+<body>
+<form>
+    <table >
+        <tr>
+            <td>
+                <input type="text" style="width: 120px" id="number1">
+
+                <input type="text" style="width: 120px" id="number2">
+            </td>
+            </tr>
+        <tr>
+            <td>
+                <button style="width: 60px" onclick="cong()">Cộng</button>
+                <button style="width: 60px" onclick="tru()">Trừ</button>
+                <button style="width: 60px" onclick="nhan()">Nhân</button>
+                <button style="width: 60px" onclick="chia()">Chia</button>
+            </td>
+            <td></td>
+        </tr>
+    </table>
+    <p id="display"></p>
+</form>
+</body>
+</html>
+<script>
+    function cong() {
+        let nb1 = parseFloat(document.getElementById("number1").value);
+        let nb2 = parseFloat(document.getElementById("number2").value);
+        alert("Tổng của 2 số là: " + (nb1+nb2));
+    }
+    function tru() {
+        let nb1 = parseFloat(document.getElementById("number1").value);
+        let nb2 = parseFloat(document.getElementById("number2").value);
+        alert("Hiệu của 2 số là: " + (nb1-nb2));
+    }
+    function nhan() {
+        let nb1 = parseFloat(document.getElementById("number1").value);
+        let nb2 = parseFloat(document.getElementById("number2").value);
+        alert("Tích của 2 số là: " + (nb1*nb2));
+    }
+    function chia() {
+        let nb1 = parseFloat(document.getElementById("number1").value);
+        let nb2 = parseFloat(document.getElementById("number2").value);
+        if(nb2 == 0)
+        {
+            alert("Mẫu số không thể bằng 0. Vui lòng nhập lại");
+        }
+        else
+            alert("Thương của phép chia là: " + (nb1/nb2));
+    }
+
+
+</script>

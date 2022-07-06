@@ -1,2 +1,4 @@
-var intro = "Hello World";
-document.getElementById("intro").innerHTML = intro;
+function nhanvao() {
+    document.getElementById("clickchuot");
+    confirm("Bạn là Nam");
+}

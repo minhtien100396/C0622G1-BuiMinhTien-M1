@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo form đơn giản</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>From currency</th>
+        <th>To currency</th>
+    </tr>
+    <tr>
+
+        <td>
+            <select id="fromcurency">
+                <option value="VND">Viet Nam</option>
+                <option value="USD">USD</option>
+            </select>
+        </td>
+        <td>
+            <select id="tocurency">
+                <option value="VND">Viet Nam</option>
+                <option value="USD">USD</option>
+            </select>
+            <button onclick="convert()">Convert</button>
+        </td>
+    </tr>
+</table>
+<p id="display"></p>
+</body>
+</html>
+<script>
+    function convert() {
+        /*
+        //Lấy giá  trị Amount
+        let inputcurency = parseFloat(document.getElementById("inputcurency").value);
+        //Lấy giá trị From curency
+        let fromcurency = document.getElementById("fromcurency").value ;
+        //Lấy giá trị To curency
+        let tocurency = document.getElementById("tocurency").value;
+        //Tạo biến để sử dụng để tính toán
+        let d=0;
+        /* dùng if else và in ra nội dung bằng văn bản
+        if (fromcurency == tocurency){
+            d=inputcurency;
+        }else {
+            if (fromcurency == "VND" && tocurency == "USD"){
+                d=inputcurency/24000;
+            }else{
+                d=inputcurency*24000;
+            }
+        }
+        document.getElementById("display").innerHTML = "Giá trị sau khi chuyển đổi: " + d + " " + tocurency;
+         */
+        /*Dùng if và in ra dạng hiển thị bảng thông báo
+        if (fromcurency == tocurency){
+            d=inputcurency;
+        }
+        if (fromcurency == "VND" && tocurency == "USD"){
+            d=inputcurency/24000;
+        }
+        else {
+            d=inputcurency*24000;
+        }
+        alert(d)
+
+         */
+        //NHập giá trị vào ô prompt
+        //Lấy giá  trị Amount
+        let inputcurency = prompt("Hãy nhập số tiền cần chuyển đổi: ");
+        //Lấy giá trị From curency
+        let fromcurency = document.getElementById("fromcurency").value ;
+        //Lấy giá trị To curency
+        let tocurency = document.getElementById("tocurency").value;
+        //Tạo biến để sử dụng để tính toán
+        let d=0;
+        if (fromcurency == tocurency){
+            d=inputcurency;
+        }else {
+            if (fromcurency == "VND" && tocurency == "USD"){
+                d=inputcurency/24000;
+            }else{
+                d=inputcurency*24000;
+            }
+        }
+        document.getElementById("display").innerHTML = "Giá trị sau khi chuyển đổi: " + d + " " + tocurency;
+    }
+</script>
