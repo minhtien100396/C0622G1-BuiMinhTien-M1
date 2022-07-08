@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*Bài 5: Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ
+    Viết chương trình xếp hạng học lực của học sinh. Chương trình nhập 3 điểm là điểm bài kiểm tra,
+    điểm thi giữa kỳ, điểm thi cuối kỳ và xác định học lực dựa trên nguyên tắc:
+
+        Điểm trung bình >= 9.0 là hạng A.
+
+        Điểm trung bình >=7.0 và < 9.0 là hạng B
+
+        Điểm trung bình >=5.0 và < 7.0 là hạng C
+
+        Điểm trung bình <5.0 là hạng F*/
+let diemBaiKiemTra=parseFloat(prompt("nhập điểm bài kiểm tra"));
+let diemThiGiuaKi=parseFloat(prompt("nhap điểm bài thi giữa kì"));
+let diemThiCuoiKi=parseFloat(prompt("nhập điểm bài thi cuối kì"));
+let diemTrungBinh=(diemBaiKiemTra+(diemThiGiuaKi*2)+(diemThiCuoiKi*3))/6;
+let dieuKienDiemBaiKiemTra=diemBaiKiemTra<0||diemBaiKiemTra>10;
+let dieuKienDiemThiGiuaKi=diemThiGiuaKi<0||diemThiGiuaKi>10;
+let dieuKienDiemThiCuoiKi=diemThiCuoiKi<0||diemThiCuoiKi>10;
+if (dieuKienDiemBaiKiemTra||dieuKienDiemThiGiuaKi||dieuKienDiemThiCuoiKi) {
+    alert("Vui lòng nhâp lại");
+}else if (diemTrungBinh>=9){
+    alert("hạng A");
+}else if (diemTrungBinh>=7) {
+    alert("hạng B");
+}else if (diemTrungBinh>=5) {
+    alert("hạng C");
+}else
+    alert("hạng D");
+
+
+</script>

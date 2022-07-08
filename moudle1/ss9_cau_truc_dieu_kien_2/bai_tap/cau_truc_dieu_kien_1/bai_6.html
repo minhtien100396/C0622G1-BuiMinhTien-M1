@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*Bài 6: Tính hoa hồng nhận được tuỳ theo mức doanh số bán hàng
+    Cửa hàng của bạn nhận gửi bán sản phẩm cho một công ty khác và sau mỗi tháng bạn
+    cần tính toán số tiền hoa hồng bạn nhận được. Với mức hoa hồng theo doanh số bán hàng như sau:
+
+    5% nếu tổng doanh số nhỏ hơn hoặc bằng 100 triệu.
+    10% nếu tổng doanh số nhỏ hơn hoặc bằng 300 triệu.
+    20 % nếu tổng doanh số là lớn hơn 300 triệu.
+        Dựa vào dữ liệu trên, viết chương trình để tính hoa hồng đại lý bạn sẽ nhận được.*/
+    let tongDoanhSoBanHang=parseFloat(prompt("nhập vào tổng doanh số bán hàng"));
+    let bac1=0.05;
+    let bac2=0.1;
+    let bac3=0.2;
+    if (tongDoanhSoBanHang<0) {
+        alert("Vui lòng nhập lại");
+    }else if (tongDoanhSoBanHang<=100000000) {
+        alert("Hoa hồng nhận được là: " +" "+(tongDoanhSoBanHang*bac1))
+    }else if (tongDoanhSoBanHang<=300000000) {
+        alert("Hoa hồng nhận được là: " +" "+(tongDoanhSoBanHang*bac2))
+    }else {
+        alert("Hoa hồng nhận được là: " +" "+(tongDoanhSoBanHang*bac3))
+    }
+</script>

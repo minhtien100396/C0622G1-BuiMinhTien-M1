@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*Bài 12: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lãi con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.
+
+*/
+    let soTienBanDau=parseFloat(prompt("Nhập số tiền ban đầu cho vay"));
+    let soThangChoVay=parseInt(prompt("Nhập số tháng cho vay"));
+    let laiSuatHangThang=parseFloat(prompt("Nhập lãi suất hàng tháng"))
+    let laiNganHang=soTienBanDau*(Math.pow((1+laiSuatHangThang),soThangChoVay));
+    if (soTienBanDau<0||soThangChoVay<0||laiSuatHangThang<0) {
+        alert("Vui lòng nhập lại");
+    }else {
+        alert("Tiền lãi ngân hàng thu được:" +" "+laiNganHang);
+    }
+</script>

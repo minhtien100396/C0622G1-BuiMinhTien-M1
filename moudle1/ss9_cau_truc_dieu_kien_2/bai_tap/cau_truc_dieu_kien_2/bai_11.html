@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*Bài 11: Viết chương trình tính thuế thu nhập cá nhân.
+Bậc 1:       4 triệu đồng/tháng                      0%;
+Bậc 2:       Trên 4 - 6 triệu đồng/tháng:           5%;
+Bậc 3:      Trên 6 - 9 triệu đồng:                  10%;
+Bậc 4:      Trên 9 - 14 triệu đồng/tháng:           15%;
+Bậc 5:      trên 14 - 24 triệu đồng/tháng:          20%;
+Bậc 6:      Trên 24 - 44 triệu đồng/tháng:          25%;
+Bậc 7:      Trên 44 - 84 triệu đồng/tháng:          30%;
+Bậc 8:      Trên 84 triệu đồng: 35%.
+*/
+
+    let mucThuNhapMoiThang=parseFloat(prompt("Nhập vào thu nhập mỗi tháng của bạn"));
+    let bac1=0;
+    let bac2=0.05;
+    let bac3=0.1;
+    let bac4=0.15;
+    let bac5=0.2;
+    let bac6=0.25;
+    let bac7=0.3;
+    let bac8=0.35;
+
+
+    if (mucThuNhapMoiThang<0) {
+        alert("Vui lòng nhập lại mức thu nhập của bạn");
+    }else if (mucThuNhapMoiThang<=4000000) {
+        alert("Thuế thu nhập của bạn là:"+" "+"bac1"+" "+(mucThuNhapMoiThang*bac1));
+    }else if (mucThuNhapMoiThang<=6000000) {
+        alert("Thuế thu nhập của bạn là:"+" "+"bac2"+" "+(mucThuNhapMoiThang*bac2));
+    }else if (mucThuNhapMoiThang<=9000000) {
+        alert("Thuế thu nhập của bạn là:"+" "+"bac3"+" "+(mucThuNhapMoiThang*bac3));
+    }else if (mucThuNhapMoiThang<=14000000) {
+        alert("Thuế thu nhập của bạn là:"+" "+"bac4"+" "+(mucThuNhapMoiThang*bac4));
+    }else if (mucThuNhapMoiThang<=24000000) {
+        alert("Thuế thu nhập của bạn là:"+" "+"bac5"+" "+(mucThuNhapMoiThang*bac5));
+    }else if (mucThuNhapMoiThang<=44000000) {
+        alert("Thuế thu nhập của bạn là:"+" "+"bac6"+" "+(mucThuNhapMoiThang*bac6));
+    }else if (mucThuNhapMoiThang<=84000000) {
+        alert("Thuế thu nhập của bạn là:"+" "+"bac7"+" "+(mucThuNhapMoiThang*bac7));
+    }else {
+        alert("Thuế thu nhập của bạn là:"+" "+"bac8"+" "+(mucThuNhapMoiThang*bac8));
+    }
+</script>
