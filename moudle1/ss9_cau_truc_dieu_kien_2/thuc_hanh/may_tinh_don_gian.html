@@ -10,43 +10,45 @@
         <td colspan="4"><input type="text" id="nhap"></td>
     </tr>
     <tr>
-        <td><input type="button" value="1" onclick="nhapvao(1)"></td>
-        <td><input type="button" value="2" onclick="nhapvao(2)"></td>
-        <td><input type="button" value="3" onclick="nhapvao(3)"></td>
-        <td><input type="button" value="+" onclick="nhapvao('+')"></td>
+        <td><input type="button" value="1" onclick="nhapVao(1)"></td>
+        <td><input type="button" value="2" onclick="nhapVao(2)"></td>
+        <td><input type="button" value="3" onclick="nhapVao(3)"></td>
+        <td><input type="button" value="+" onclick="nhapVao('+')"></td>
     </tr>
     <tr>
-        <td><input type="button" value="4" onClick="nhapvao(4)"></td>
-        <td><input type="button" value="5" onclick="nhapvao(5)"></td>
-        <td><input type="button" value="6" onclick="nhapvao(6)"></td>
-        <td><input type="button" value="-" onclick="nhapvao('-')"></td>
+        <td><input type="button" value="4" onClick="nhapVao(4)"></td>
+        <td><input type="button" value="5" onclick="nhapVao(5)"></td>
+        <td><input type="button" value="6" onclick="nhapVao(6)"></td>
+        <td><input type="button" value="-" onclick="nhapVao('-')"></td>
     </tr>
     <tr>
-        <td><input type="button" value="7" onclick="nhapvao(7)"></td>
-        <td><input type="button" value="8" onclick="nhapvao(8)"></td>
-        <td><input type="button" value="9" onclick="nhapvao(9)"></td>
-        <td><input type="button" value="x" onclick="nhapvao('*')"></td>
+        <td><input type="button" value="7" onclick="nhapVao(7)"></td>
+        <td><input type="button" value="8" onclick="nhapVao(8)"></td>
+        <td><input type="button" value="9" onclick="nhapVao(9)"></td>
+        <td><input type="button" value="x" onclick="nhapVao('*')"></td>
     </tr>
     <tr>
         <td><input type="button" value="C" onclick="xoa()"></td>
-        <td><input type="button" value="0" onclick="nhapvao(0)"></td>
+        <td><input type="button" value="0" onclick="nhapVao(0)"></td>
         <td><input type="button" value="=" onclick="ketQua()"></td>
-        <td><input type="button" value="/" onclick="nhapvao('/')"></td>
+        <td><input type="button" value="/" onclick="nhapVao('/')"></td>
     </tr>
 </table>
 </body>
 </html>
 <script>
-function nhapvao(duLieu) {
-    let str=document.getElementById("nhap").value;
-    document.getElementById("nhap").value+=duLieu;
-}
-function ketQua() {
-    let str=document.getElementById("nhap").value;
-    let ketQua=eval(str);
-    document.getElementById("nhap").value=ketQua;
-}
-function xoa() {
-    document.getElementById("nhap").value=""
-}
+    function nhapVao(duLieu) {
+        let str = document.getElementById("nhap").value;
+        document.getElementById("nhap").value += duLieu;
+    }
+
+    function ketQua() {
+        let str = document.getElementById("nhap").value;
+        let ketQua = eval(str);
+        document.getElementById("nhap").value = ketQua;
+    }
+
+    function xoa() {
+        document.getElementById("nhap").value = ""
+    }
 </script>

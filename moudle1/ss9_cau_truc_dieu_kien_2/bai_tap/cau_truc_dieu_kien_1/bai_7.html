@@ -16,18 +16,18 @@
     400 đồng cho mỗi phút gọi của 150 phút tiếp theo.
     200 đồng cho bất kỳ mỗi phút nào sau 200 phút đầu tiên.
 */
-let soPhutDaGoi=parseFloat(prompt("Nhập số phút bạn đã gọi"));
-let phiBatBuoc=25000;
-let bac1=600;
-let bac2=400;
-let bac3=200;
-if (soPhutDaGoi<0) {
-    alert("Vui lòng nhập lại");
-}else if (soPhutDaGoi<=50) {
-    alert("Tiền cước điện thoại là" +" "+ "bac 1" +" "+(phiBatBuoc+(soPhutDaGoi*bac1)));
-}else if (soPhutDaGoi<=200) {
-    alert("Tiền cước điện thoại là" +" "+ "bac 2" +" "+(phiBatBuoc+(50*bac1)+((soPhutDaGoi-50)*bac2)));
-}else {
-    alert("Tiền cước điện thoại là" +" "+ "bac 3" +" "+(phiBatBuoc+(50*bac1)+(150*bac2)+((soPhutDaGoi-200)*bac3)));
-}
+    let soPhutDaGoi = parseFloat(prompt("Nhập số phút bạn đã gọi"));
+    let phiBatBuoc = 25000;
+    let bac1 = 600;
+    let bac2 = 400;
+    let bac3 = 200;
+    if (soPhutDaGoi < 0) {
+        alert("Vui lòng nhập lại");
+    } else if (soPhutDaGoi <= 50) {
+        alert("Tiền cước điện thoại là" + " " + "bac 1" + " " + (phiBatBuoc + (soPhutDaGoi * bac1)));
+    } else if (soPhutDaGoi <= 200) {
+        alert("Tiền cước điện thoại là" + " " + "bac 2" + " " + (phiBatBuoc + (50 * bac1) + ((soPhutDaGoi - 50) * bac2)));
+    } else {
+        alert("Tiền cước điện thoại là" + " " + "bac 3" + " " + (phiBatBuoc + (50 * bac1) + (150 * bac2) + ((soPhutDaGoi - 200) * bac3)));
+    }
 </script>

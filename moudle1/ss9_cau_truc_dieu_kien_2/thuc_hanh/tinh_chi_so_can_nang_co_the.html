@@ -21,41 +21,41 @@
     </tr>
     <tr>
         <td>
-            <button onclick="nhapvao()">Click Me</button>
+            <button onclick="nhapVao()">Click Me</button>
         </td>
     </tr>
 
 </table>
-<p id="ketqua"></p>
+<p id="ketQua"></p>
 
 </body>
 </html>
 <script>
-    function nhapvao() {
+    function nhapVao() {
         let weight = document.getElementById("weight").value;
         let height = document.getElementById("height").value;
-        let bmi = weight/(height*height);
+        let bmi = weight / (height * height);
         /*if-else
         if (bmi<18.5) {
-            document.getElementById("ketqua").innerHTML = "Chỉ số bmi là "+ " " + bmi +  " "+ "Do đó là underweight";
+            document.getElementById("ketQua").innerHTML = "Chỉ số bmi là "+ " " + bmi +  " "+ "Do đó là underweight";
         }else if (bmi<25) {
-            document.getElementById("ketqua").innerHTML = "Chỉ số bmi là "+ " " + bmi +  " "+ "Do đó là Normal";
+            document.getElementById("ketQua").innerHTML = "Chỉ số bmi là "+ " " + bmi +  " "+ "Do đó là Normal";
         }else if (bmi<30) {
-            document.getElementById("ketqua").innerHTML = "Chỉ số bmi là "+ " " + bmi +  " "+ "Do đó là overweight";
+            document.getElementById("ketQua").innerHTML = "Chỉ số bmi là "+ " " + bmi +  " "+ "Do đó là overweight";
         }else {
-            document.getElementById("ketqua").innerHTML = "Chỉ số bmi là "+ " " + bmi +  " "+ "Do đó là Obese";
+            document.getElementById("ketQua").innerHTML = "Chỉ số bmi là "+ " " + bmi +  " "+ "Do đó là Obese";
         }
 
          */
         //Switch-casea
         switch (true) {
-            case bmi<18.5:
+            case bmi < 18.5:
                 document.write("underweight");
                 break;
-            case bmi<25:
+            case bmi < 25:
                 document.write("Normal");
                 break;
-            case bmi<30:
+            case bmi < 30:
                 document.write("Overweight");
                 break;
             default:

@@ -10,8 +10,10 @@
 </body>
 </html>
 <script>
+    let radius;
+    let area;
     const pi = 3.14;
-    let r = parseFloat(prompt("Nhập vào bán kính r: "));
-    let S = Math.pow(r, 2) * pi;
-    document.write("Diện tích hình tròn S = " + S);
+    radius = parseFloat(prompt("Nhập vào bán kính r: "));
+    area = Math.pow(radius, 2) * pi;
+    document.write("Diện tích hình tròn S = " + area);
 </script>

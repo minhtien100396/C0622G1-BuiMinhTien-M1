@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Tạo form đơn giản</title>
     <style>
-        button{
+        button {
             width: 80px;
             background-color: plum;
             color: white;
@@ -12,26 +12,32 @@
             font-size: 16px;
             font-weight: bold;
         }
-        input{
+
+        input {
             padding-top: 5px;
             padding-bottom: 5px;
             text-align: center;
         }
-        select{
+
+        select {
             padding-bottom: 5px;
             padding-top: 5px;
         }
-        #a{
+
+        #a {
             text-align: left;
             padding-left: 50px;
         }
-        table{
+
+        table {
             width: 100%;
         }
-        th{
+
+        th {
             text-align: center;
         }
-        td{
+
+        td {
             text-align: center;
         }
     </style>
@@ -59,31 +65,28 @@
                     <option value="a">VNĐ</option>
                     <option value="b">USD</option>
                 </select>
-                <button style="margin-left: 30px" onclick="nhanvao()">Convert</button>
+                <button style="margin-left: 30px" onclick="nhanVao()">Convert</button>
         </tr>
     </table>
 </form>
 </body>
 </html>
 <script>
-    function nhanvao() {
-        let duagiatri = document.getElementById('nhapvao').value;
+    function nhanVao() {
+        let duaGiaTri = document.getElementById('nhapvao').value;
         let select1 = document.getElementById('sl1').value;
         let select2 = document.getElementById('sl2').value;
-        if (select1 == "a" && select2 == "a")
-        {
-            alert(duagiatri + " VNĐ");
+        if (select1 == "a" && select2 == "a") {
+            alert(duaGiaTri + " VNĐ");
         }
-        if(select1 == "b" && select2 == "b"){
-            alert(duagiatri + " USD");
+        if (select1 == "b" && select2 == "b") {
+            alert(duaGiaTri + " USD");
         }
-        if (select1 == "a" && select2 == "b")
-        {
-            alert(duagiatri / 24000 + " USD");
+        if (select1 == "a" && select2 == "b") {
+            alert(duaGiaTri / 24000 + " USD");
         }
-        if (select1 == "b" && select2 == "a")
-        {
-            alert(duagiatri * 24000 + " VNĐ");
+        if (select1 == "b" && select2 == "a") {
+            alert(duaGiaTri * 24000 + " VNĐ");
         }
     }
 </script>
