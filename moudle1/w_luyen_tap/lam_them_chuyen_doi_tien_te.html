@@ -5,85 +5,39 @@
     <title>Tạo form đơn giản</title>
 </head>
 <body>
-<table>
-    <tr>
-        <th>From currency</th>
-        <th>To currency</th>
-    </tr>
-    <tr>
-
-        <td>
-            <select id="fromcurency">
-                <option value="VND">Viet Nam</option>
-                <option value="USD">USD</option>
-            </select>
-        </td>
-        <td>
-            <select id="tocurency">
-                <option value="VND">Viet Nam</option>
-                <option value="USD">USD</option>
-            </select>
-            <button onclick="convert()">Convert</button>
-        </td>
-    </tr>
-</table>
-<p id="display"></p>
 </body>
 </html>
 <script>
-    function convert() {
-        /*
-        //Lấy giá  trị Amount
-        let inputcurency = parseFloat(document.getElementById("inputcurency").value);
-        //Lấy giá trị From curency
-        let fromcurency = document.getElementById("fromcurency").value ;
-        //Lấy giá trị To curency
-        let tocurency = document.getElementById("tocurency").value;
-        //Tạo biến để sử dụng để tính toán
-        let d=0;
-        /* dùng if else và in ra nội dung bằng văn bản
-        if (fromcurency == tocurency){
-            d=inputcurency;
-        }else {
-            if (fromcurency == "VND" && tocurency == "USD"){
-                d=inputcurency/24000;
-            }else{
-                d=inputcurency*24000;
-            }
+    /*let bang ="<table border='1px' cellSpacing='0px' cellPadding='10px'>";
+    for (let i=0;i<=9;i++){
+        bang+="<tr>";
+        for (let j=0;j<=i;j++) {
+            bang+="<td>"+j+"</td>";
         }
-        document.getElementById("display").innerHTML = "Giá trị sau khi chuyển đổi: " + d + " " + tocurency;
-         */
-        /*Dùng if và in ra dạng hiển thị bảng thông báo
-        if (fromcurency == tocurency){
-            d=inputcurency;
-        }
-        if (fromcurency == "VND" && tocurency == "USD"){
-            d=inputcurency/24000;
-        }
-        else {
-            d=inputcurency*24000;
-        }
-        alert(d)
-
-         */
-        //NHập giá trị vào ô prompt
-        //Lấy giá  trị Amount
-        let inputcurency = prompt("Hãy nhập số tiền cần chuyển đổi: ");
-        //Lấy giá trị From curency
-        let fromcurency = document.getElementById("fromcurency").value ;
-        //Lấy giá trị To curency
-        let tocurency = document.getElementById("tocurency").value;
-        //Tạo biến để sử dụng để tính toán
-        let d=0;
-        if (fromcurency == tocurency){
-            d=inputcurency;
-        }else {
-            if (fromcurency == "VND" && tocurency == "USD"){
-                d=inputcurency/24000;
-            }else{
-                d=inputcurency*24000;
-            }
-        }
-        document.getElementById("display").innerHTML = "Giá trị sau khi chuyển đổi: " + d + " " + tocurency;
+        bang+="</tr>";
     }
+    bang+="</table>";
+    document.write(bang);*/
+    /*let number=9;
+    let tamGiacVuong=""; // gán biến tamGiacVuong bằng rỗng => rỗng +0 = 0 => không cần fai chuyển biến i về to.String
+    // vì tamGiacVuong+number=tamGiacVuong
+    for (let i=0;i<=number;i++) {
+        tamGiacVuong+=i;
+        document.write(tamGiacVuong+"<br>");
+
+    }
+*/  let canhHinhVuong=+prompt("Nhập cạnh góc vuông");
+    let tamGiacVuong="";
+    for (let i = 1; i <=canhHinhVuong ; i++) {
+        for (let j = canhHinhVuong; j >=1 ; j--) {
+            if (j-i>0) {
+                tamGiacVuong+="&ensp;";
+            }else {
+                tamGiacVuong+="*";
+            }
+            
+        }
+        tamGiacVuong+="<br>";
+    }
+    document.write(tamGiacVuong+"<br>");
 </script>

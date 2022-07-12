@@ -2,9 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
+    <style>
+    </style>
 </head>
 <body>
-$END$
+
 </body>
 </html>
+<script>
+    let bang = "<table border='1p'cellPadding='10px' cellSpacing='0px' width='100%'>";
+    for (i = 1; i <= 10; i++) {
+        bang += "<tr>";
+        for (j = 1; j <= 10; j++) {
+            bang += "<td>" + j + "x" + i + "=" + j * i + "</td>";
+        }
+        bang += "</tr>";
+    }
+    bang += "</table>";
+    document.write(bang);
+</script>

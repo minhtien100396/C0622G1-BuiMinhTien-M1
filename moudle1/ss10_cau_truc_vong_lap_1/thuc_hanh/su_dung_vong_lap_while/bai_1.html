@@ -2,9 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+
 </body>
 </html>
+<script>
+    let number = parseFloat(prompt("Nhập vào 1 số bất kì"));
+    let luuTong = 0;
+    while (number != -1) {
+        document.write(number + "<br>");
+        luuTong += parseFloat(number);
+        number = prompt("Nhập vào 1 số bất kì");
+    }
+    document.write("Tổng các số nhập vào là" + " " + luuTong);
+</script>

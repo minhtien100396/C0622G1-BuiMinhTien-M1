@@ -12,13 +12,13 @@
     //Bài 2: Tính giai thừa của một số nguyên dương bất kì
     /*!1=1,!2=2*1,!3=3*2*1*/
     let number;
-    let giaiThua=1;
+    let giaiThua = 1;
     do {
-        number=+prompt("Nhập một số nguyên dương bất kì")
-    }while (number<0);
-    for (let i = 1; i <=number ; i++) {
-        giaiThua*=i;
-        document.write(i+"!"+"="+giaiThua+"<br>");
+        number = +prompt("Nhập một số nguyên dương bất kì")
+    } while (number < 0);
+    for (let i = 1; i <= number; i++) {
+        giaiThua *= i;
     }
+    document.write(number + "!" + "=" + giaiThua);
 
 </script>

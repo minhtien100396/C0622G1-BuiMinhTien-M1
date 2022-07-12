@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //Bài 5: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lại con) khi biết số tiền ban đầu,
+    // số năm cho vay và lãi xuất hàng năm.
+
+    let soTienBanDau = +prompt("Nhập số tiền bạn muốn cho vay");
+    let laiSuatHangNam = +prompt("nhập lại suất mong muốn");
+    let soNamChoVay = parseInt(prompt("Hãy nhập vào số năm bạn muốn  cho vay"));
+    let giaTriTuongLai;
+    let tienLaiThuVe;
+    for (let i = 1; i <= soNamChoVay; i++) {
+        giaTriTuongLai = soTienBanDau * (Math.pow((1 + laiSuatHangNam), i));
+        tienLaiThuVe = parseInt(giaTriTuongLai - soTienBanDau);
+        document.write("Tiền lãi thu về năm thứ " + " " + i + " " + "là" + " " + tienLaiThuVe + "<br>");
+    }
+</script>

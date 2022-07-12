@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*Hiển thị ra 20 số trong dãy fibonacci đầu tiên.
+
+    Tìm số đầu tiên trong dãy fibonacci chia hết cho 5.*/
+    let soThu1 = 0;
+    //document.write(soThu1+"<br>");
+    let soThu2 = 1;
+    //document.write(soThu2+"<br>");
+    let soThuN;
+    for (let i = 0; i < 20; i++) {
+        soThuN = soThu1 + soThu2;
+        if (soThuN % 5 == 0) {
+            document.write(soThuN + "<br>");
+            break;
+        }
+        soThu1 = soThu2;
+        soThu2 = soThuN;
+
+    }
+
+</script>

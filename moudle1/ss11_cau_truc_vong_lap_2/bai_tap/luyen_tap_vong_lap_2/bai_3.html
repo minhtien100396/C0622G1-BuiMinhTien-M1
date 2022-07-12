@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //Bài 3: In tam giác vuông. Các góc vuông nằm ở các vị trí khác nhau
+
+    let tamGiacVuong = ""
+    for (let i = 1; i <= 5; i++) {
+        for (let j = 1; j <= i; j++) {
+            tamGiacVuong += "*";
+        }
+        tamGiacVuong += "<br>";
+    }
+    document.write(tamGiacVuong + "<br>");
+
+    document.write("<hr>")
+
+    let tamGiacVuong1 = "";
+    for (let i = 0; i < 6; i++) {
+        for (let j = 1; j <= (5 - i); j++) {
+            tamGiacVuong1 += "*";
+        }
+        tamGiacVuong1 += "<br>";
+    }
+    document.write(tamGiacVuong1);
+
+    document.write("<hr>")
+
+    let tamGiacVuong2 = "";
+    for (let i = 1; i <= 5; i++) {
+        for (let j = 5; j >= 1; j--) {
+            if (j - i > 0) {
+                tamGiacVuong2 += "&ensp;";
+            } else {
+                tamGiacVuong2 += "*";
+            }
+
+        }
+        tamGiacVuong2 += "<br>";
+    }
+    document.write(tamGiacVuong2 + "<br>");
+
+    document.write("<hr>");
+
+    let tamGiacVuong3 = "";
+    for (let i = 1; i <= 5; i++) {
+        for (let j = 1; j <= 5; j++) {
+            if (j - i >= 0) {
+                tamGiacVuong3 += "*";
+            } else {
+                tamGiacVuong3 += "&ensp;";
+            }
+        }
+        tamGiacVuong3 += "<br>";
+    }
+    document.write(tamGiacVuong3 + "<br>");
+</script>

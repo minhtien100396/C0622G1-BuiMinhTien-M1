@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //In Hình Trái tim
+    let inHinhTraiTim = "";
+    for (let i = 1; i <= 8; i++) {
+        if (i === 1) {
+            for (let j = 1; j <= 9; j++) {
+                if (j === 1 || j === 5 || j === 9) {
+                    inHinhTraiTim += "&ensp;";
+                } else {
+                    inHinhTraiTim += "*";
+                }
+            }
+        }
+        if (i === 2) {
+            for (let j = 1; j <= 9; j++) {
+                if (j === 1 || j === 5 || j === 9) {
+                    inHinhTraiTim += "*";
+                } else {
+                    inHinhTraiTim += "&ensp;";
+                }
+            }
+        }
+        if (i === 3 || i === 4) {
+            for (let j = 1; j <= 9; j++) {
+                if (j === 1 || j === 9) {
+                    inHinhTraiTim += "*";
+                } else {
+                    inHinhTraiTim += "&ensp;";
+                }
+            }
+        }
+        if (i === 5) {
+            for (let j = 1; j <= 9; j++) {
+                if (j === 2 || j === 8) {
+                    inHinhTraiTim += "*";
+                } else {
+                    inHinhTraiTim += "&ensp;";
+                }
+            }
+        }
+        if (i === 6) {
+            for (let j = 1; j <= 9; j++) {
+                if (j === 3 || j === 7) {
+                    inHinhTraiTim += "*";
+                } else {
+                    inHinhTraiTim += "&ensp;";
+                }
+            }
+        }
+        if (i === 7) {
+            for (let j = 1; j <= 9; j++) {
+                if (j === 4 || j == 6) {
+                    inHinhTraiTim += "*";
+                } else {
+                    inHinhTraiTim += "&ensp;";
+                }
+            }
+        }
+        if (i === 8) {
+            for (let j = 1; j <= 9; j++) {
+                if (j === 5) {
+                    inHinhTraiTim += "*";
+                } else {
+                    inHinhTraiTim += "&ensp;";
+                }
+            }
+        }
+        inHinhTraiTim += "<br>";
+    }
+    document.write(inHinhTraiTim + "<br>");
+</script>

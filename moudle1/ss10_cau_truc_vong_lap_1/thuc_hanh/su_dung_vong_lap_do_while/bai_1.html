@@ -2,9 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+
 </body>
 </html>
+<script>
+    let i;
+    do {
+        i = prompt("Hãy nhập vào các số từ 1 - 10");
+        if (i < 1 || i > 10) {
+            alert("Vui lòng nhập lại");
+        }
+
+    } while (i < 1 || i > 10);
+    alert("Bạn vừa nhập giá trị" + " " + i);
+</script>

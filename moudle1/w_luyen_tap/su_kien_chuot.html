@@ -5,16 +5,28 @@
     <title>Title</title>
 </head>
 <body>
+
 </body>
 </html>
 <script>
-    let text = "";
-    let cars = ["c","o", "d", "e", "g", "y", "m"];
-    text += cars[0] + "<br>";
-    text += cars[1] + "<br>";
-    text += cars[2] + "<br>";
-    text += cars[3] + "<br>";
-    text += cars[4] + "<br>";
-    text += cars[6] + "<br>";
-    document.write(text);
+    //Hiển thị ra 20 số nguyên tố đầu tiên;
+    let soNguyen = 2;
+    let xetDieuKien = 0;
+    let soNguyenTo = "";
+    while (xetDieuKien < 20) {
+        let bienDem = 0;
+        for (let i = 1; i <= soNguyen; i++) {
+            if (soNguyen % i === 0) {
+                bienDem++;
+            }
+        }
+        if (bienDem < 3) {
+            soNguyenTo += soNguyen + "<br>";
+            xetDieuKien++;
+        }
+        soNguyen++;
+    }
+    document.write(soNguyenTo + "<br>");
+
+
 </script>

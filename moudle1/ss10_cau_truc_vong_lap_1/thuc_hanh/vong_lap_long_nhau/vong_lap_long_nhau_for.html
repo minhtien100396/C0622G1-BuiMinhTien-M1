@@ -9,14 +9,14 @@
 </body>
 </html>
 <script>
-    let bang;
-    bang = "<table border='1' cellpadding='10px' cellspacing='0px'>";
-    for (i = 1; i <= 10; i++) {
-        bang +="<tr>";
-        for (j = 1; j <= 10; j++) {
-            bang +="<td>" + i * j + "</td>";
+    let bang = "<table border='1px' cellPadding='10px' cellSpacing='0px'>";
+    for (let i = 1; i <= 10; i++) {
+        bang += "<tr>";
+        for (let j = 1; j <= 10; j++) {
+            bang += "<td>" + i * j + "</td>";
         }
+        bang += "</tr>";
     }
-    bang+="</table>"
+    bang += "</table>";
     document.write(bang);
 </script>

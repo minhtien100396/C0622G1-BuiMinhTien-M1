@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //In hình chữ nhật
+    let chieuDaiHinhChuNhat=+prompt("Hãy nhập chiều dài hình chữ nhật");
+    let chieuRongHinhChuNhat=+prompt("Hãy nhập chiều rộng hình chữ nhật");
+    let inHinhChuNhat = "";
+    for (let i = 1; i <= chieuRongHinhChuNhat; i++) {
+        if ((i === 1) || (i === chieuRongHinhChuNhat)) {
+            for (let j = 1; j <= chieuDaiHinhChuNhat; j++) {
+                inHinhChuNhat += "*";
+            }
+        } else {
+            for (let j = 1; j <= chieuDaiHinhChuNhat; j++) {
+                if ((j === 1) || (j === chieuDaiHinhChuNhat)) {
+                    inHinhChuNhat += "*";
+                } else {
+                    inHinhChuNhat += "&ensp;";
+                }
+            }
+        }
+        inHinhChuNhat += "<br>";
+    }
+    document.write(inHinhChuNhat + "<br>");
+</script>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //Bài 1: In dãy n số Fibonaci
+    let soThuNhat = 0;
+    let soThuHai = 1;
+    let soThuN;
+    let number = +prompt("Nhập number");
+    for (let i = 0; i < number; i++) {
+        soThuN = soThuNhat + soThuHai;
+        document.write(soThuNhat + "<br>");
+        soThuNhat = soThuHai;
+        soThuHai = soThuN;
+
+    }
+</script>

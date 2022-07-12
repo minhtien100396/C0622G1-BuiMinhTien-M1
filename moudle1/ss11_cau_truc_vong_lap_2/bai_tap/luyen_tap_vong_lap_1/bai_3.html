@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /* Bài 3: Hiển thị ra 20 số trong dãy fibonacci đầu tiên.
+    Fibonacci là một dãy số được bắt đầu bởi số 0, 1.
+    Mọi số tiếp theo đều là tổng của hai số trước đó.
+     i        fibonacci         tổng
+    2           1               2
+    3           2               4
+     */
+    let soThu1 = 0;
+    let soThu2 = 1;
+    let soThuN;
+    for (let i = 0; i < 20; i++) {
+        soThuN = soThu1 + soThu2;
+        document.write(soThu1 + "<br>");
+        soThu1 = soThu2;
+        soThu2 = soThuN;
+
+    }
+</script>
