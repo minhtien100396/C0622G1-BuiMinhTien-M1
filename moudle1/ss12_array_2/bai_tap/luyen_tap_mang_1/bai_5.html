@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //Bài 5- Viết chương trình đếm số nguyên âm trong một chuỗi 10 số
+    let arraySoNguyen = [];
+    let arraySoNguyenAm = [];
+
+    for (let i = 0; i < 10; i++) {
+        arraySoNguyen[i] = +prompt("Nhập vào số nguyên");
+    }
+    document.write("Dãy số nguyên bạn đã nhập là:" + " " + arraySoNguyen + "<br>");
+    let bienDem = 0;
+    for (let i = 0; i < arraySoNguyen.length; i++) {
+        if (arraySoNguyen[i] < 0) {
+            arraySoNguyenAm.push(arraySoNguyen[i]);
+            bienDem++;
+        }
+    }
+    document.write("Vậy trong dãy số trên có" + " " + bienDem + " " + "số là số nguyên âm." + "<br>" + "Dãy nguyên âm:" + "<br>" + arraySoNguyenAm);
+</script>

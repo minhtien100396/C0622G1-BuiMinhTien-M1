@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let str=prompt("Nhập vào một chuối bất kì");
+    const UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const LOWER = 'abcdefghijklmnopqrstuvwxyz';
+    const array = [];
+
+    for (let i = 0; i <str.length ; i++) {
+        if (UPPER.includes(str[i])) {
+            array.push(str[i].toLowerCase());
+        }else if (LOWER.includes(str[i])) {
+            array.push(str[i].toUpperCase());
+        }else {
+            array.push(str[i]);
+        }
+    }
+    document.write(array.join(''));
+
+
+</script>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //Bài 4- Viết chương trình khởi tạo/nhập vào một mảng số nguyên và
+    // đảo ngược các phần tử trong mảng đó.
+    let arraySoNguyen = [];
+    let str = "";
+    for (let i = 0; i < 10; i++) {
+        arraySoNguyen[i] = +prompt("Nhập vào số nguyên");
+        str += arraySoNguyen[i];
+    }
+    document.write(arraySoNguyen);
+    let daoNguoc = arraySoNguyen.reverse();
+    document.write("<br>" + "Đảo ngược phần tử trong mảng:" + " " + daoNguoc);
+</script>

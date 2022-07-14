@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let soNguyen = [23, 21, 621, 62, 21, -6, 21];
+    let min = soNguyen[0];
+    let max = soNguyen[0];
+    let chiSoMin = 0;
+    let chiSoMax = 0;
+    for (let i = 1; i < soNguyen.length; i++) {
+        if (min > soNguyen[i]) {
+            min = soNguyen[i];
+            chiSoMin = i;
+        } else if (max < soNguyen[i]) {
+            max = soNguyen[i];
+            chiSoMax = i;
+        }
+    }
+    document.write(min + "ở phần từ thứ" + chiSoMin + "<br>");
+    document.write(max + "ở phần từ thứ" + chiSoMax + "<br>");
+
+
+</script>

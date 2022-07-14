@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*Bài 6- Viết chương trình khởi tạo vào một mảng số nguyên gồm 10 phần tử,
+    tạo phần tử số nguyên V. Chương trình tìm xem V có nằm trong mảng số nguyên không?
+    Nếu V thuộc mảng số nguyên thì in ra "V is in the array" còn lại in ra "V is not in the array".*/
+    let mangSoNguyen = [];
+    for (let i = 0; i < 10; i++) {
+        mangSoNguyen[i] = +prompt("Nhập vào số nguyên");
+    }
+    document.write("Dãy số nguyên bạn vừa nhập là:" + " " + mangSoNguyen + "<br>");
+    let randomSoNguyen = +prompt("nhập số nguyên bất kì");//2
+    if (mangSoNguyen.includes(randomSoNguyen)) {
+        document.write(randomSoNguyen + " " + "có trong mảng");
+    } else {
+        document.write(randomSoNguyen + " " + "không có trong mảng");
+    }
+</script>

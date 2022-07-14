@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //Bài 3: Viết một chương trình khai báo một mảng ký tự và kích thước của mảng.
+    // Chương trình này đếm số ký tự số trong mảng.
+
+    let arrayKyTu = [];
+    const TKyuSo = '0123456789';
+    let arrayKyTuSo = [];
+    for (let i = 0; i < 5; i++) {
+        arrayKyTu[i] = prompt("Nhập vào 'một' ký tự bất kì");
+    }
+    document.write("Mảng kí tự đã nhập:" + " " + arrayKyTu.join(",") + "<br>");
+    document.write("Kích thước của mảng là:" + " " + arrayKyTu.length + "<br>");
+    let check = 0;
+    for (let i = 0; i < arrayKyTu.length; i++) {
+        if (KyTuSo.includes(arrayKyTu[i])) {
+            arrayKyTuSo.push(arrayKyTu[i]);
+            check++;
+        }
+    }
+    if (!check) {
+        document.write("Không ký tự số trong mảng");
+
+    } else {
+        document.write("Các ký tự số trong mảng là:" + " " + arrayKyTuSo);
+    }
+</script>

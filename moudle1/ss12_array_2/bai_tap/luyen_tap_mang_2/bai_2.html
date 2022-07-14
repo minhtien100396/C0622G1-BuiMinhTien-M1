@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*Bài 2: Viết một chương trình để in các ký tự trong một mảng theo thứ tự đảo ngược.
+     Ví dụ, nếu một mảng chứa các ký tự
+    [ 'c', 's', 'c', '2', '6', '1' ] sau khi thực hiện đảo ngược sẽ là "162csc"*/
+
+    //C1: Dùng phương thức reverse
+    // let array=[];
+    // for (let i = 0; i <5 ; i++) {
+    //     array[i]=prompt("nhập vào kí tự bất kí");
+    // }
+    // document.write("Mảng thu được là:"+" "+array+"<br>");
+    // document.write("Mảng đảo ngược là:"+" "+array.reverse());
+    // document.write("<hr>");
+
+    //C2: Làm bằng phương thức push,pop or push, splice
+
+    let array = [];
+    for (let i = 0; i < 5; i++) {
+        array[i] = prompt("nhập vào kí tự bất kí");
+    }
+    document.write(array + "<br>");
+    let array2 = [];
+    for (let i = array.length - 1; i >= 0; i--) {
+        array2.push(array.pop(i, 1))
+    }
+    document.write(array2.u);
+</script>

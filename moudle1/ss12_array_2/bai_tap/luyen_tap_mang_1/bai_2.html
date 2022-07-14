@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*Bài 2- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử khác nhau.
+    Chương trình hiển thị ra được phần tử có giá trị lớn nhất trong mảng và vị trí của phần tử đó.*/
+
+    //Khởi tạo mảng số nguyên gồm 10 phần tử khác nhau
+    let mangSoNguyen = [];
+    let mangDieuKienLap = [];
+    let bienDem = 0;
+    let str = "Các giá trị trong mảng là:" + "<br>";
+    for (let i = 0; i < 10; i++) {
+        mangSoNguyen[i] = +prompt("Nhập vào một số nguyên bất kì");
+        while ((mangDieuKienLap.includes(mangSoNguyen[i]))) {
+            mangSoNguyen[i] = +prompt("Số bạn nhập đã trùng. Vui lòng nhập lại");
+        }
+        mangDieuKienLap.push(mangSoNguyen[i]);
+        str += +mangDieuKienLap[i] + "<br>";
+    }
+    document.write(str);
+    let max = mangDieuKienLap[0];
+    for (let i = 1; i < mangDieuKienLap.length; i++) {
+        if (max < mangDieuKienLap[i]) {
+            max = mangDieuKienLap[i];
+            bienDem = i;
+        }
+    }
+    document.write("Phần tử ở vị trí số" + " " + bienDem + " " + "là phần tử lớn nhất trong mảng có giá trị là =" + " " + max);
+</script>

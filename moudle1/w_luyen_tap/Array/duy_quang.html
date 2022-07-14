@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="noun">
+<input type="button" value="translate" onclick="toTranslate()"> <br><br>
+<p id="show"></p>
+<script>
+    // let str = toString(document.getElementById("noun").value)
+    let engArray = ["apple","pen","book","notebook","computer"];
+    let vietArray = ["Táo","Bút","Sách","Vở","Máy tính"]
+    function toTranslate() {
+        let check = 0;
+        for (let i = 0; i <engArray.length ; i++) {
+            if (document.getElementById("noun").value === engArray[i]){
+                document.getElementById("show").innerHTML = "Vietnamese : "+vietArray[i];
+                check++;
+            }
+        }
+        if (check==0){
+            document.getElementById("show").innerHTML = "Cant Translate";
+        }
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

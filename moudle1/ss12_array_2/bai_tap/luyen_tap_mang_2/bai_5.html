@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //Bài 5: Viết một chương trình nhập vào 2 chuỗi,
+    // sau đó kiểm tra xem hai chuỗi có giống nhau hay không.
+
+    let chuoiFirst = prompt("Nhập vào chuỗi 1");//anh (10)
+    let chuoiSecond = prompt("nhập vào chuỗi 2");// cnu (16)
+    let str = "";
+    if (chuoiFirst.length === chuoiSecond.length) {
+        for (let i = 0; i < chuoiFirst.length; i++) {
+            if (chuoiSecond.includes(chuoiFirst[i])) {
+                str += chuoiFirst[i];
+            }
+        }
+        if (str.length == chuoiSecond.length) {
+            document.write("Hai chuỗi trùng nhau");
+        } else {
+            document.write("Hai chuỗi không trùng nhau");
+
+        }
+    } else {
+        document.write("Hai chuỗi không giống nhau")
+    }
+
+</script>

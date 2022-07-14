@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*Bài 7- Viết chương trình khởi tạo một mảng số nguyên gồm 10 phần tử,
+    tạo phần tử số nguyên V. kiểm tra xem V có thuộc mảng đã cho không,
+     nếu V thuộc mảng đã cho xoá V khỏi mảng (Bản chất việc xoá ở đây tức là dịch phần tử ở bên phải V
+     sang vị trí của V, và gán 0 cho phần tử cuối cùng của mảng)*/
+    let mangSoNguyen = [];
+    for (let i = 0; i < 10; i++) {
+        mangSoNguyen[i] = +prompt("Nhập vào số nguyên");
+    }
+    document.write("Dãy số nguyên bạn vừa nhập là:" + " " + mangSoNguyen + "<br>");
+    let randomSoNguyen = +prompt("nhập số nguyên bất kì");
+    let check = 0;
+    for (let i = 0; i < mangSoNguyen.length; i++) {
+        if (mangSoNguyen[i] === randomSoNguyen) {
+            mangSoNguyen.splice(i, 1);
+            document.write("Dãy số nguyên sau khi xóa:" + " " + mangSoNguyen)
+            check++;
+        }
+    }
+    if (!check) {
+        document.write(randomSoNguyen + " " + "không có trong mảng");
+    }
+
+</script>

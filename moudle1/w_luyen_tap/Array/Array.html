@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    //Duyệt mảng đa chiều
+   /*let cities = [
+       ["haNoi","saiGon","Hue"],
+       ["newYork","miami","califonia"],
+       ["Tokyo","Osaka","Aichi"]
+   ];
+   for (let i = 0; i <cities.length ; i++) {
+       for (let j = 0; j <cities[i].length ; j++) {
+           document.write(cities[i][j]+"<br>");
+       }
+   }*/
+    // Duyệt mảng in ra các phần tử trên hàng
+    /*let x = [1,2,4];
+    document.write(x);*/
+
+    //Duyệt mảng bằng for in tương đương với duyệt mảng qua vòng lặp for
+
+    //let number=[2,3,2,6,2131,521,42,521,7];
+    /*let x;
+    for (x in number)
+    document.write(number[x]+"<br>");*/
+
+    //Duyệt mảng qua vòng lặp for
+    /*for (let i = 0; i < number.length ; i++) {
+        document.write(number[i]+"<br>");
+    }*/
+
+    //Duyệt mảng qua forEach
+
+    /*number.forEach(function (item) {
+        document.write(item+"<br>");
+    })*/
+
+    //Phương thức john(): chuyển tất cả các phần tử trong mảng thành chuối và nối chúng lại với nhau
+    /*alert(number.join());
+    alert(number.join(" "));
+    alert(number.join(", "));*/
+
+    //Phương thức reverse(): đảo ngược các phần tử trong mảng, trả về một mảng các phần tử bị đảo ngược
+   // document.write(number.reverse().join(", "));
+
+    //Dùng phương thức sort để sắp xếp tên chữ cái
+    /*let cars=['Lambo','Volvo','Meccedes','Toyota']
+        document.write(cars.sort().reverse().join(" ;")+"<br>")*/
+
+    //Dùng phương thức sort để sắp xếp theo stt
+    //let number=[2,3,1]
+    /*number.sort(function (mangHaiChieu,b) {
+        return b-mangHaiChieu;
+    })
+    document.write(number)
+*/
+
+    //Phương thức concat() : Nối các phần tử của 2 mảng với nhau
+    // .Trả về mảng mới chứa phần tử mảng gốc và mảng được nối
+   /* number.concat(4,5,7,1,)
+    document.write(number.concat(4,5,7,1)+"<br>")*/
+
+    //Phương thức push(): Nối một hoặc nhiều phần tử vào cuối mảng
+   /* number.push(2,3)
+document.write(number);//2,3,1,2,3
+    //Phương thức pop(): Xóa một phần tử cuối mảng
+        number.pop()
+    document.write(number);
+
+     //to.string(): Chuyển toàn bộ các phần tử trong mảng sang dạng chuỗi
+    number.toString()
+    typeof (number);
+    alert(typeof(number));*/
+
+    // indexof()
+    // Tìm phần tử trong mảng x.
+    //Nếu tìm thấy trả về vị trí trong mảng, không tìm thấy trả về -1
+    /* mangHaiChieu= x.indexOf('iphon1e');
+      alert(mangHaiChieu);*/
+
+    //replace() : thay thế
+
+
+    //split(): Biến một đoạn chuỗi thành một mảng
+    /*let x="dienthoai, iphone, nokia, samsung";
+    let mang=x.split(",");
+    alert(mang);
+
+    //return trong function:
+    function tinhtbc(x,y) {
+        let z=(x+y)/2;
+        return z;//Dừng luôn ở đây, lệnh ở dưới không thực hiện
+        z=z+5
+    }
+    document.write(tinhtbc(4,5)); // Biến hàm function thành 1 giá trị*/
+//concat()
+//     let mangHaiChieu=["code"]
+//     let b=["gym"]
+//     let c=mangHaiChieu.concat(b);
+//     alert(c)
+
+    let iMax = 20;
+    let jMax = 10;
+    let f = new Array();
+
+    for (i = 0; i < iMax; i++) {
+        f[i] = new Array();
+        for (j = 0; j < jMax; j++) {
+            f[i][j] = 0;
+        }
+    }
+    alert(f[i].length);
+</script>

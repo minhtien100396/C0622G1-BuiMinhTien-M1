@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //Bài 4: Viết một chương trình để đếm số, từ trong một chuỗi
+
+    /*const chuSo = '0123456789';
+    let chuoiMoi = [];
+    let chuoiBatKi = prompt("Nhập chuỗi bất kì");
+    document.write("Chuỗi bạn đã nhập là:" + " " + chuoiBatKi + "<br>");
+    let check = 0;
+    for (let i = 0; i < chuoiBatKi.length; i++) {
+        if (chuSo.includes(chuoiBatKi[i])) {
+            chuoiMoi.push(chuoiBatKi[i]);
+            check++;
+        }
+    }
+    if (!check) {
+        document.write("Trong chuỗi không có số!");
+    } else {
+        document.write("Trong chuỗi có" + " " + chuoiMoi.length + " " + "số");
+
+    }
+*/
+
+    //Viết một chường trình đếm số từ trong một chuỗi.
+    let chuoiBatKi = prompt("Nhập chuỗi bất kì");
+    let check = 1;
+    document.write("Chuỗi bạn đã nhập là:" + " " + chuoiBatKi + "<br>");
+    for (let i = 0; i < chuoiBatKi.length; i++) {
+        if (chuoiBatKi[i] == (" ")) {
+            check++;
+        }
+    }
+    if (!check) {
+        document.write("Không có từ trong chuỗi");
+    } else {
+        document.write("Số từ trong chuỗi là:" + " " + check);
+    }
+
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //Bài 1- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử.
+    // Chương trình thực hiện tính và hiển thị xem có bao nhiêu số nguyên lớn hơn hoặc bằng 10.
+
+    let arraySoNguyen = [];
+    //Khởi tạo mạng gồm 10 phần tử
+    for (let i = 0; i < 10; i++) {
+        arraySoNguyen[i] = +prompt("Nhập vào một số nguyên");
+    }
+    //Duyệt các phần tử của mảng
+    //Tạo mảng điều kiện những số nguyên nào lớn hơn hoặc bằng 10 cho vào mảng này.
+    let arrayDieuKien = [];
+    //Khởi tạo biến đếm để mỗi lần thỏa soNguyen>=10 thì biến đếm tăng lên 1 đơn vị để ta biết được có
+    //bao nhiêu số lớn hơn bằng 10
+    let bienDem = 0
+    for (let i = 0; i < arraySoNguyen.length; i++) {
+        if (arraySoNguyen[i] >= 10) {
+            arrayDieuKien.push(arraySoNguyen[i]);
+            bienDem++;
+        }
+    }
+    document.write("Có" + " " + bienDem + " " + "số nguyên lớn hơn hoặc bằng 10 là:" + "<br>");
+    document.write(arrayDieuKien.join(", "));
+
+</script>

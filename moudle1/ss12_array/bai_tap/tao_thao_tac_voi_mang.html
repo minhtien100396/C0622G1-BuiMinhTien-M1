@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td><input type="text" id="text"></td>
+        <td>
+            <button onclick="addPhanTu()">Add</button>
+        </td>
+        <td>
+            <button onclick="displayPhanTu()">Display</button>
+        </td>
+    </tr>
+</table>
+<div id="result"></div>
+</body>
+</html>
+<script>
+    //Tạo biến x là chỉ số truy cập đến phần tử trong mảng
+    let x = 0;
+    //Tạo mảng array để lưu các giá trị nhập vào
+    let array = Array();
+
+    //Xây dựng hàm addPhanTu để thêm mới một phần tử từ form
+    function addPhanTu() {
+        //Lấy giá trị của ô input text -> sau đó gán với phần tử x trong mảng array
+        array[x] = document.getElementById("text").value;
+        // Thông báo khi click vào ô Add và Hiển thị phần tử vừa được thêm vào bảng
+        alert("Phần tử:" + " " + array[x] + " " + "Chỉ số" + " " + x);
+        //Tăng giá trị chỉ số của mảng lên sau mỗi lần add
+        x++;
+        //Gán giá trị rỗng cho input text
+        document.getElementById("text").value = ""
+    }
+
+    // Xây dựng hàm displayPhanTu
+    function displayPhanTu() {
+        //Tạo biến e để lưu thẻ <hr> mỗi lần hiển thị ra 1 phần tử thẻ <hr>
+        // sẽ sử dụng để ngăn cách các phần tửtrong mảng
+        let e = "<hr>"
+        //Dùng vòng lặp for duyệt toàn bộ mảng
+        for (i = 0; i < array.length; i++) {
+            //Mỗi lần duyệt lấy giá trị của các phần tử cộng dồn vào biến e. Thêm thẻ<br> cuối mỗi lần duyệt
+            e += "Phần tử" + " " + parseInt(i+1) + " " + "=" + " " + array[i] + "<br>";
+        }
+        //kết thúc lặp.Hiển thị biến e
+        document.getElementById("result").innerHTML = e;
+    }
+</script>

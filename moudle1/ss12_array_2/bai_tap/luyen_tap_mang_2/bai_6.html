@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //Bài 6: Viết chương trình nhập vào một mảng
+    // tìm tất cả các ký tự trong mảng là (-) và thay thế các ký tự này bởi ký tự ( _ )
+    let str = "";
+    let mangKiTu = [];
+    for (let i = 0; i < 5; i++) {
+        mangKiTu[i] = prompt("Nhập vào một phần tử trong mảng");
+    }
+    document.write("Các phần tử trong mảng là:" + " " + mangKiTu + "<br>");
+    for (let i = 0; i < mangKiTu.length; i++) {
+        if (mangKiTu.indexOf("-") != -1) {
+            mangKiTu.splice(mangKiTu.indexOf("-"), 1, "_");
+        }
+        str += mangKiTu[i];
+    }
+    document.write("Mảng sau khi thay đổi là:" + " " + str);
+
+</script>

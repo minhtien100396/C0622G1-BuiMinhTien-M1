@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+<!--    Nhập từ:-->
+<!--    <input type="text" id="text">-->
+<!--    <input value="Dịch" onclick="onClickVao()" type="button">-->
+<!--    <p id="ketQua"></p>-->
+</div>
+</body>
+</html>
+<script>
+    // function onClickVao() {
+    //     let arrayEng = ["apple", "banana", "note", "pen", "red", "blue"];
+    //     let arrayViet = ["tao", "chuoi", "vo", "but", "mau do", "mau xanh"];
+    //     let valueInput = document.getElementById("text").value;
+    //     for (let i = 0; i < arrayEng.length; i++) {
+    //         if (valueInput === arrayEng[i]) {
+    //             document.getElementById("ketQua").innerHTML = arrayViet[i];
+    //             break;
+    //         } else {
+    //             document.write("Không có trong từ điển");
+    //         }
+    //     }
+    // }
+
+    let mangHaiChieu = [
+        [1, 2, 1, 24],
+        [8, 11, 9, 4],
+        [7, 0, 7, 27],
+        [7, 4, 28, 14],
+        [3, 10, 26, 7]
+    ];
+    for (let i in mangHaiChieu) {
+        document.write("<br>"+"hàng"+" "+i);
+        for (j in mangHaiChieu[i]) {
+            document.write("<br>"+mangHaiChieu[i][j]);
+        }
+    }
+
+</script>
