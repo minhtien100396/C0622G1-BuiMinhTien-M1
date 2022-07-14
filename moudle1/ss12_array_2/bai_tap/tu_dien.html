@@ -18,14 +18,15 @@
         let arrayEng = ["apple", "banana", "note", "pen", "red", "blue"];
         let arrayViet = ["tao", "chuoi", "vo", "but", "mau do", "mau xanh"];
         let valueInput = document.getElementById("text").value;
-        let check = 0;
+        let check = false;
         for (let i = 0; i < arrayEng.length; i++) {
             if (valueInput === arrayEng[i]) {
                 document.getElementById("ketQua").innerHTML = arrayViet[i];
-                check++;
+                check=true;
+                break;
             }
         }
-        if (!check) {
+        if (check) {
             document.getElementById("ketQua").innerHTML = "Không có trong dữ liệu của từ điển"
         }
     }

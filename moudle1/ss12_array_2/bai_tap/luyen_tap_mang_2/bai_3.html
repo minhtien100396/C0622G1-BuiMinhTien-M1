@@ -13,7 +13,7 @@
     // Chương trình này đếm số ký tự số trong mảng.
 
     let arrayKyTu = [];
-    const TKyuSo = '0123456789';
+    const kyTuSo = '0123456789';
     let arrayKyTuSo = [];
     for (let i = 0; i < 5; i++) {
         arrayKyTu[i] = prompt("Nhập vào 'một' ký tự bất kì");
@@ -22,7 +22,7 @@
     document.write("Kích thước của mảng là:" + " " + arrayKyTu.length + "<br>");
     let check = 0;
     for (let i = 0; i < arrayKyTu.length; i++) {
-        if (KyTuSo.includes(arrayKyTu[i])) {
+        if (kyTuSo.includes(arrayKyTu[i])) {
             arrayKyTuSo.push(arrayKyTu[i]);
             check++;
         }
