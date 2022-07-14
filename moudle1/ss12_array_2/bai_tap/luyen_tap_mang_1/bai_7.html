@@ -14,7 +14,8 @@
      nếu V thuộc mảng đã cho xoá V khỏi mảng (Bản chất việc xoá ở đây tức là dịch phần tử ở bên phải V
      sang vị trí của V, và gán 0 cho phần tử cuối cùng của mảng)*/
     let mangSoNguyen = [];
-    for (let i = 0; i < 10; i++) {
+    let number = +prompt("nhập số lượng phần tử cho mảng");
+    for (let i = 0; i < number; i++) {
         mangSoNguyen[i] = +prompt("Nhập vào số nguyên");
     }
     document.write("Dãy số nguyên bạn vừa nhập là:" + " " + mangSoNguyen + "<br>");
@@ -22,7 +23,8 @@
     let check = 0;
     for (let i = 0; i < mangSoNguyen.length; i++) {
         if (mangSoNguyen[i] === randomSoNguyen) {
-            mangSoNguyen.splice(i, 1);
+            mangSoNguyen.splice(i, 1)
+            mangSoNguyen.push(0);
             document.write("Dãy số nguyên sau khi xóa:" + " " + mangSoNguyen)
             check++;
         }

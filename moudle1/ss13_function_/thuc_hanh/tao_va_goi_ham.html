@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    /*function quyTrinhXacNhan(cautraloi) {
+        let ketQua = "";
+        if (cautraloi) {
+            ketQua = "Tuyệt vời, hãy cùng nhau chơi";
+        } else {
+            ketQua = "Có lẻ để lần sau";
+        }
+        return ketQua;
+    }
+
+    let xacNhanCauTraLoi = confirm("Chúng ta cùng nhau chơi game không?");
+    let cauTraLoi = quyTrinhXacNhan(xacNhanCauTraLoi);
+    alert(cauTraLoi);
+*/
+    function xacNhanCauTraLoi(cauTraLoi) {
+        let ketQua="";
+        if (cauTraLoi) {
+            ketQua="Hãy chơi cùng nhau";
+        }else {
+            ketQua="Để lần sau";
+        }
+        return ketQua;
+    }
+    let yeuCauTraLoi=confirm("Bạn có muốn đi chơi không?");
+    let cauTraLoi=xacNhanCauTraLoi(yeuCauTraLoi);
+    alert(cauTraLoi);
+</script>
+</body>
+</html>

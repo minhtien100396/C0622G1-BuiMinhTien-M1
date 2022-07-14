@@ -14,24 +14,40 @@
     [ 'c', 's', 'c', '2', '6', '1' ] sau khi thực hiện đảo ngược sẽ là "162csc"*/
 
     //C1: Dùng phương thức reverse
-    // let array=[];
+    // let array1=[];
     // for (let i = 0; i <5 ; i++) {
-    //     array[i]=prompt("nhập vào kí tự bất kí");
+    //     array1[i]=prompt("nhập vào kí tự bất kí");
     // }
-    // document.write("Mảng thu được là:"+" "+array+"<br>");
-    // document.write("Mảng đảo ngược là:"+" "+array.reverse());
+    // document.write("Mảng thu được là:"+" "+array1+"<br>");
+    // document.write("Mảng đảo ngược là:"+" "+array1.reverse());
     // document.write("<hr>");
 
     //C2: Làm bằng phương thức push,pop or push, splice
 
-    let array = [];
+    /*let array1 = [];
     for (let i = 0; i < 5; i++) {
-        array[i] = prompt("nhập vào kí tự bất kí");
+        array1[i] = prompt("nhập vào kí tự bất kí");
     }
-    document.write(array + "<br>");
+    document.write(array1 + "<br>");
     let array2 = [];
-    for (let i = array.length - 1; i >= 0; i--) {
-        array2.push(array.pop(i, 1))
+    for (let i = array1.length - 1; i >= 0; i--) {
+        array2.push(array1.pop(i, 1))
     }
-    document.write(array2.u);
+    document.write(array2.u);*/
+
+    //C3: Thủ công  csc261
+    let number = prompt("Nhập số lượng phần tử trong mảng");
+    let arrayStr = [];//6
+    for (let i = 0; i < number; i++) {
+        arrayStr[i] = prompt("Nhập phần tử cho mảng")
+    }
+    let array1;
+    for (let i = 0; i < arrayStr.length / 2; i++) {//csc261
+        array1 = arrayStr[i];
+        arrayStr[i] = arrayStr[arrayStr.length - i - 1];
+        arrayStr[arrayStr.length - i - 1] = array1;
+    }
+    alert("Nghịch đảo các phần tử của mảng là: " + " " + arrayStr);
+
+
 </script>

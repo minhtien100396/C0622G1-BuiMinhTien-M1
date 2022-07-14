@@ -12,12 +12,20 @@
     //Bài 4- Viết chương trình khởi tạo/nhập vào một mảng số nguyên và
     // đảo ngược các phần tử trong mảng đó.
     let arraySoNguyen = [];
-    let str = "";
-    for (let i = 0; i < 10; i++) {
+    let number = +prompt("Nhập vào số lượng cho mảng");
+    for (let i = 0; i < number; i++) {
         arraySoNguyen[i] = +prompt("Nhập vào số nguyên");
-        str += arraySoNguyen[i];
     }
-    document.write(arraySoNguyen);
-    let daoNguoc = arraySoNguyen.reverse();
-    document.write("<br>" + "Đảo ngược phần tử trong mảng:" + " " + daoNguoc);
+    document.write("Mảng gốc:" + " " + arraySoNguyen.join(","));
+    //Đảo ngược bằng phương thức reverse
+    // let daoNguoc = arraySoNguyen.reverse();
+    // document.write("<br>" + "Đảo ngược phần tử trong mảng:" + " " + daoNguoc);
+
+    //Đảo ngược thủ công
+    for (let i = 0; i < arraySoNguyen.length / 2; i++) {
+        let bienTrungGian = arraySoNguyen[i];
+        arraySoNguyen[i] = arraySoNguyen[arraySoNguyen.length - i - 1];
+        arraySoNguyen[arraySoNguyen.length - i - 1] = bienTrungGian;
+    }
+    document.write("<br>" + "Đảo ngược phần tử trong mảng:" + " " + arraySoNguyen);
 </script>

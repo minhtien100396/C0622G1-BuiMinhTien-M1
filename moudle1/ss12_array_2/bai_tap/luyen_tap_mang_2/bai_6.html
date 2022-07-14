@@ -13,12 +13,13 @@
     // tìm tất cả các ký tự trong mảng là (-) và thay thế các ký tự này bởi ký tự ( _ )
     let str = "";
     let mangKiTu = [];
-    for (let i = 0; i < 5; i++) {
+    let number = +prompt("Nhập số lượng phần tử cho mảng");
+    for (let i = 0; i < number; i++) {
         mangKiTu[i] = prompt("Nhập vào một phần tử trong mảng");
     }
     document.write("Các phần tử trong mảng là:" + " " + mangKiTu + "<br>");
     for (let i = 0; i < mangKiTu.length; i++) {
-        if (mangKiTu.indexOf("-") != -1) {
+        if (mangKiTu.indexOf("-") !== -1) {
             mangKiTu.splice(mangKiTu.indexOf("-"), 1, "_");
         }
         str += mangKiTu[i];

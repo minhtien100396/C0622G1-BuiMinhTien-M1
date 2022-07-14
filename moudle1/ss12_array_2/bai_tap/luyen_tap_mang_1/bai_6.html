@@ -9,11 +9,12 @@
 </body>
 </html>
 <script>
-    /*Bài 6- Viết chương trình khởi tạo vào một mảng số nguyên gồm 10 phần tử,
+    /*Bài 6- Viết chương trình khởi tạo vào một mảng số nguyên
     tạo phần tử số nguyên V. Chương trình tìm xem V có nằm trong mảng số nguyên không?
-    Nếu V thuộc mảng số nguyên thì in ra "V is in the array" còn lại in ra "V is not in the array".*/
+    Nếu V thuộc mảng số nguyên thì in ra "V is in the array1" còn lại in ra "V is not in the array1".*/
     let mangSoNguyen = [];
-    for (let i = 0; i < 10; i++) {
+    let number = +prompt("Nhập số lượng cho mảng");
+    for (let i = 0; i < number; i++) {
         mangSoNguyen[i] = +prompt("Nhập vào số nguyên");
     }
     document.write("Dãy số nguyên bạn vừa nhập là:" + " " + mangSoNguyen + "<br>");

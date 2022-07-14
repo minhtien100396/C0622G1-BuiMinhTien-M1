@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Bình phương của <input type="number" id="number" oninput="nhapVao()">là<span id="ketQua"></span>
+</body>
+</html>
+<script>
+    function tinhBinhPhuong(number) {
+        let result= number*number;
+        return result;
+    }
+    function nhapVao() {
+        let giaTri=document.getElementById("number").value;
+        let result=tinhBinhPhuong(giaTri);
+        document.getElementById("ketQua").innerHTML=result;
+    }
+</script>
+

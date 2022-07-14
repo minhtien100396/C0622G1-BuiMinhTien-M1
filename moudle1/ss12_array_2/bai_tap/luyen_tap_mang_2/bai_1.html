@@ -12,33 +12,52 @@
     //Viết chương trình khởi tạo mảng 2 chiều, gồm một bộ các phần tử có sẵn,
     // in ra các phần tử trong mảng. Chú ý: Sử dụng vòng lặp for lồng nhau
     //C1:Dùng for thường
-    let array = [];
-    let str = "";
-    for (let i = 0; i < 5; i++) {
-        array[i];
-        str += "<br>";
-        for (let j = 0; j < 4; j++) {
-            array[j] = +prompt("Nhập các phần tử vào mảng");
-            str += array[j] + "&ensp;&ensp;&ensp;";
+    // let array1 = [];
+    // let str = "";
+    // for (let i = 0; i < 5; i++) {
+    //     array[i];
+    //     str += "<br>";
+    //     for (let j = 0; j < 4; j++) {
+    //         array[j] = +prompt("Nhập các phần tử vào mảng");
+    //         str += array[j] + "&ensp;&ensp;&ensp;";
+    //     }
+    // }
+    // document.write(str);
+    // document.write("<hr>");
+    //
+    //
+    // //C2:Dùng for in
+    // let mangHaiChieu = [
+    //     [1, 2, 1, 24],
+    //     [8, 11, 9, 4],
+    //     [7, 0, 7, 27],
+    //     [7, 4, 28, 14],
+    //     [3, 10, 26, 7]
+    // ];
+    // for (let i in mangHaiChieu) {
+    //     document.write("<br>" + "hàng " + i);
+    //     for (let j in mangHaiChieu[i]) {
+    //         document.write("<br> " + mangHaiChieu[i][j]);
+    //     }
+    // }
+    //
+    // document.write("<hr>");
+
+    //C3: Tạo mảng 2 chiều bằng for thường
+    let rowArray = +prompt("Nhập số lượng hàng cho mảng");
+    let elementArray = +prompt("Nhập số lượng phần tử cho 1 hàng");
+    let array10 = [];
+    for (let i = 0; i < rowArray; i++) {
+        array10[i] = [];
+        for (let j = 0; j < elementArray; j++) {
+            array10[i][j] = +prompt("Nhập phần tử cho mỗi hàng");
         }
     }
-    document.write(str);
-        document.write("<hr>");
-
-
-        //C2:Dùng for in
-        let mangHaiChieu = [
-            [1, 2, 1, 24],
-            [8, 11, 9, 4],
-            [7, 0, 7, 27],
-            [7, 4, 28, 14],
-            [3, 10, 26, 7]
-        ];
-        for (let i in mangHaiChieu) {
-            document.write("<br>" + "hàng " + i);
-            for (let j in mangHaiChieu[i]) {
-                document.write("<br> " + mangHaiChieu[i][j]);
-            }
+    //Duyệt mảng
+    for (let i = 0; i < array10.length; i++) {
+        for (let j = 0; j < array10[i].length; j++) {
+            document.write(array10[i][j] + " ");
         }
-
+        document.write("<br>");
+    }
 </script>

@@ -17,19 +17,20 @@
     let mangDieuKienLap = [];
     let bienDem = 0;
     let str = "Các giá trị trong mảng là:" + "<br>";
-    for (let i = 0; i < 10; i++) {
+    let number = prompt("Nhập vào số lượng các phần tử trong mảng");
+    for (let i = 0; i < number; i++) {
         mangSoNguyen[i] = +prompt("Nhập vào một số nguyên bất kì");
         while ((mangDieuKienLap.includes(mangSoNguyen[i]))) {
             mangSoNguyen[i] = +prompt("Số bạn nhập đã trùng. Vui lòng nhập lại");
         }
         mangDieuKienLap.push(mangSoNguyen[i]);
-        str += +mangDieuKienLap[i] + "<br>";
+        str += mangSoNguyen[i] + "<br>";
     }
     document.write(str);
-    let max = mangDieuKienLap[0];
-    for (let i = 1; i < mangDieuKienLap.length; i++) {
-        if (max < mangDieuKienLap[i]) {
-            max = mangDieuKienLap[i];
+    let max = mangSoNguyen[0];
+    for (let i = 1; i < mangSoNguyen.length; i++) {
+        if (max < mangSoNguyen[i]) {
+            max = mangSoNguyen[i];
             bienDem = i;
         }
     }

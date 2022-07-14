@@ -11,8 +11,8 @@
 <script>
     //Bài 1- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử.
     // Chương trình thực hiện tính và hiển thị xem có bao nhiêu số nguyên lớn hơn hoặc bằng 10.
-
-    let arraySoNguyen = [];
+    //Dùng phương thức push
+    /*let arraySoNguyen = [];
     //Khởi tạo mạng gồm 10 phần tử
     for (let i = 0; i < 10; i++) {
         arraySoNguyen[i] = +prompt("Nhập vào một số nguyên");
@@ -30,6 +30,25 @@
         }
     }
     document.write("Có" + " " + bienDem + " " + "số nguyên lớn hơn hoặc bằng 10 là:" + "<br>");
-    document.write(arrayDieuKien.join(", "));
+    document.write(arrayDieuKien.join(", "));*/
 
+
+
+    //C2: không dùng phương thức push()
+
+    let arraySoNguyen = [];
+    let number = prompt("Nhập số lượng phần tử cần khởi tạo")
+    for (let i = 0; i < number; i++) {
+        arraySoNguyen[i] = +prompt("Nhập vào một số nguyên");
+    }
+    let bienDem = 0
+    let str = ""
+    for (let i = 0; i < arraySoNguyen.length; i++) {
+        if (arraySoNguyen[i] >= 10) {
+            bienDem++;
+            str += arraySoNguyen[i] + "<br>";
+        }
+    }
+    document.write("Có" + " " + bienDem + " " + "số nguyên lớn hơn hoặc bằng 10 là:" + "<br>");
+    document.write(str);
 </script>

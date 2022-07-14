@@ -16,10 +16,17 @@
     // Kiểm tra nếu một phần tử trong mảng x bằng giá trị được nhập vào thì hiển thị thông báo:
     let giaTriCanTim = +prompt("nhập giá trị cần tìm trong mảng:");
     let number = [-3, 5, 1, 3, 2, 10];
+    let check = 0;
     for (let i = 0; i < number.length; i++) {
         if (giaTriCanTim === number[i]) {
             alert("Giá trị" + number[i] + "được tìm thấy ở phần tử thứ" + i);
+            check++;
+            break;
         }
+    }
+    if (!check) {
+        alert("Không có giá trị cần tìm trong mảng");
+
     }
 
 </script>

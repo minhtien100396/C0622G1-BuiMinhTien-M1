@@ -22,12 +22,12 @@
 <script>
     //Tạo biến x là chỉ số truy cập đến phần tử trong mảng
     let x = 0;
-    //Tạo mảng array để lưu các giá trị nhập vào
-    let array = Array();
+    //Tạo mảng array1 để lưu các giá trị nhập vào
+    let array1 = Array();
 
     //Xây dựng hàm addPhanTu để thêm mới một phần tử từ form
     function addPhanTu() {
-        //Lấy giá trị của ô input text -> sau đó gán với phần tử x trong mảng array
+        //Lấy giá trị của ô input text -> sau đó gán với phần tử x trong mảng array1
         array[x] = document.getElementById("text").value;
         // Thông báo khi click vào ô Add và Hiển thị phần tử vừa được thêm vào bảng
         alert("Phần tử:" + " " + array[x] + " " + "Chỉ số" + " " + x);
