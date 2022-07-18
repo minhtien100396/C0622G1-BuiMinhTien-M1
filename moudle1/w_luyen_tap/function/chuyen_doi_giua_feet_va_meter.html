@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <input type="number" oninput="nhapVao(this.value)" id="oFeet"> feet =
+    <input type="number" oninput="nhapVao2(this.value)" id="oMeter"> meter.
+</div>
+
+</body>
+</html>
+<script>
+    //Hàm chuyển đổi giữa feet sang meter
+    //  meter = 0.305 * foot
+    //feet = 3.279 * meter
+    //C2: Dùng 2 hàm
+
+    function nhapFeet(feet) {
+        let meter=0.305*feet;
+        document.getElementById("oMeter").value=meter;
+    }
+    function nhapMeter(meter) {
+        let feet=0.305*meter;
+        document.getElementById("oFeet").value=feet;
+    }
+
+</script>

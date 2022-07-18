@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <input type="number" oninput="nhapFeet(this.value)" id="oFeet"> feet =
+    <input type="number" oninput="nhapMeter(this.value)" id="oMeter"> meter.
+</div>
+
+</body>
+</html>
+<script>
+    //Hàm chuyển đổi giữa feet sang meter
+    //  meter = 0.305 * foot
+    //feet = 3.279 * meter
+
+
+    //C1: Dùng 4 hàm
+
+
+    /*function feetSangMeter(feet) {
+        let meter = 0.305 * feet;
+        return meter;
+    }
+
+    function nhapFeet() {
+        let oMot = document.getElementById("Feet").value;
+        let ketQuaOThuHai = feetSangMeter(oMot);
+        document.getElementById("oMeter").value = ketQuaOThuHai;
+    }
+
+    function meterSangFeet(meter) {
+        let feet = 3.2779 * meter;
+        return feet;
+    }
+
+    function nhapMeter() {
+        let oHai = document.getElementById("oMeter").value;
+        let ketQuaOThuNhat = meterSangFeet(oHai);
+        document.getElementById("oThuNhat").value = ketQuaOThuNhat;
+    }*/
+
+
+    //C2: Dùng 2 hàm
+    function nhapFeet(feet) {
+        let meter = 0.305 * feet;
+        document.getElementById("oMeter").value = meter;
+    }
+    function nhapMeter(meter) {
+        let feet = 3.2779 * meter;
+        document.getElementById("oFeet").value = feet;
+    }
+</script>

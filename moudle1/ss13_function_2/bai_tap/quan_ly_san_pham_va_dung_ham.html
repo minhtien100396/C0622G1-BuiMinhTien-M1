@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h3>Add New Product</h3>
+    <input type="text" placeholder="New Product" id="nhap">
+    <button onclick="add()">Add</button>
+    <h3>Display All Product</h3>
+    <p id="table"></p>
+</div>
+</body>
+</html>
+<script>
+    /*let array = ["a", "b", "c"];
+
+    function hienThi() {
+        let string = "";
+        string += "<table border='1px' cellSpacing='0px' cellPadding='10px'>";
+        string += "<tr>" + "<td>Product Name</td>" + "<td colspan='2' align='right'>" + array.length + " products" + "</td>" + "</tr>";
+        for (let i = 0; i < array.length; i++) {
+            string += "<tr>" +
+                "<td>" + array[i] + "</td>" +
+                '<td><button onclick="edit(' + i + ')">Edit</button></td>' +
+                '<td><button onclick="xoa(' + i + ')">Delete</button></td>' +
+                "</tr>";
+        }
+        string += "</table>";
+        document.getElementById("table").innerHTML = string;
+    }
+
+    function add() {
+        let newElements = document.getElementById("nhap").value;
+        array.push(newElements);
+        hienThi()
+    }
+
+    function edit(i) {
+        let newElements = prompt("Tên bạn muốn đổi");
+        array[i] = newElements;
+        hienThi()
+    }
+
+    function xoa(i) {
+        array.splice(i, 1);
+        hienThi()
+    }
+    hienThi()*/
+
+
+    //C2:
+    let array = ["bánh", "kẹo", "sữa"];
+
+    function hienThi() {
+        let str = "";
+        str += "<table border='1px' cellSpacing='0px' cellPadding='10px'>";
+        for (let i = 0; i < array.length; i++) {
+            str += "<tr>";
+            str += "<td>"
+            str += (i + 1) + "." + " " + array[i];
+            str += "</td>";
+            str += "<td>"
+            str += "<button onclick='edit(" + i + ")'>Edit</button>";
+            str += "</td>";
+            str += "<td>"
+            str += "<button onclick='xoa(" + i + ")'>Delete</button>";
+            str += "</td>";
+            str += "<tr>";
+        }
+        str += "</table>";
+        document.getElementById("table").innerHTML = str;
+    }
+
+    function add() {
+        let newElements = document.getElementById("nhap").value;
+        array.push(newElements)
+        hienThi()
+    }
+
+    function edit(index) {
+        let newElements = prompt("nhập tên muốn thay đổi", array[index]);
+        array[index] = newElements;
+        hienThi()
+    }
+
+    function xoa(index) {
+        let kiemTra = confirm("Bạn có muốn xóa" + " " + array[index] + " " + "không?");
+        if (kiemTra) {
+            array.splice(index, 1);
+        }
+        hienThi()
+    }
+
+    hienThi()
+</script>

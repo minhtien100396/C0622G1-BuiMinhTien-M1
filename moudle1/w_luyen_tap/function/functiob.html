@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="input"> <button onclick="add()">Add</button><br>
+<div id="nhap"></div>
+</body>
+</html>
+<script>
+    let array=["a","b","c"];
+    function hienThi() {
+        let str="";
+        for (let i = 0; i < array.length ; i++) {
+            str+='<table>\n' +
+                '    <tr>\n' +
+                '        <td>'+array[i]+'</td>\n' +
+                '        <td><button onclick="edit('+i+')">Edit</button></td>\n' +
+                '        <td><button>Delete</button></td>\n' +
+                '    </tr>\n' +
+                '</table>'
+        }
+        document.getElementById("nhap").innerHTML=str;
+    }
+    function add(){
+        let mangMoi=document.getElementById("input").value;
+        array.push(mangMoi);
+        hienThi()
+    }
+    function edit(i){
+        let mangMoi=prompt("nhapaj ten moi");
+        array[i]=mangMoi;
+        hienThi()
+    }
+    function xoa(i){
+        array[i]=mangMoi;
+        hienThi()
+    }
+    hienThi()
+</script>

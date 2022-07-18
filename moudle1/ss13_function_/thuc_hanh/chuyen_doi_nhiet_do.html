@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h3>Thay đổi nhiệt từ độ F sang độ C</h3>
+    Độ F: <input type="number" id="doF" oninput="nhapVao()">
+    <p>Độ C: <span id="doC"></span></p>
+</div>
+</body>
+</html>
+<script>
+    // C = (F - 32)/1.8
+    function chuyenDoiNhietDo(doF) {
+        let doC = (doF - 32) / 1.8;
+        return doC;
+    }
+
+    function nhapFeet() {
+        let giaTriNhapVao = document.getElementById("doF").value;
+        let ketQua = chuyenDoiNhietDo(giaTriNhapVao);
+        document.getElementById("doC").innerHTML = ketQua;
+    }
+</script>

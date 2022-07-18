@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    function kiemTraSoNguyenTo(number) {
+        let count=0;
+        for (let i = 2; i <= number ; i++) {
+                if (number%i==0) {
+                count++;
+                 }
+            }
+
+        if (count===1) {
+            document.write(number+" "+ "là số nguyên tố");
+            return;
+        }else {
+            document.write(number+" "+ "không phải là số nguyên tố")
+            return;
+        }
+    }
+    let soNguyen=+prompt("Nhâp vào mốt số bất kì");
+    while (soNguyen<0 || soNguyen >10000) {
+        soNguyen=+prompt("Vui lòng nhập lại");
+    }
+    kiemTraSoNguyenTo(soNguyen);
+</script>

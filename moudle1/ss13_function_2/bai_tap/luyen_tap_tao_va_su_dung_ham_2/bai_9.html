@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //Bài 9: Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ,
+    // kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không.
+    // Nếu có trả về số lần xuất hiện của ký tự đó, nếu không trả về -1.
+
+    function nhapVaoMotMangKiTu() {
+        let number = prompt("Nhập vào số lượng phần tử cho mảng");
+        let arrayKiTu = [];
+        for (let i = 0; i < number; i++) {
+            arrayKiTu[i] = prompt("Nhập phần tử cho mảng");
+        }
+
+        let kiTu = prompt("Nhập vào một kí tự để kiểm tra xem kí tự đó có trong mảng hay không");
+        let count = 0;
+        for (let i = 0; i < arrayKiTu.length; i++) {
+            if (arrayKiTu[i] === kiTu) {
+                count++;
+            }
+        }
+        if (!count) {
+            alert(-1);
+        } else {
+            alert("Số lần xuất hiện của kí tự" + " " + kiTu + " " + "trong mảng là" + " " + count + " " + "lần");
+        }
+    }
+
+    nhapVaoMotMangKiTu()
+</script>

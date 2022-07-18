@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*Hướng dẫn
+Một chuỗi palindrome là một từ được đọc theo thứ tự xuôi, ngược đều giống nhau. 
+Ví dụ, rotor và redder là các chuỗi palindrome, nhưng motor thì không phải.
+
+Kiểm tra một chuỗi là một palindrome được chia thành hai bài toán con
+
+(1) Kiểm tra xem ký tự đầu tiên và ký tự cuối cùng của chuỗi có bằng nhau.
+
+(2) Bỏ qua hai ký tự đầu và cuối, kiểm tra xem phần còn lại của chuỗi con là một palindrome.
+
+Bài toán con thứ hai (2) giống như vấn đề ban đầu nhưng nhỏ hơn về kích thước.*/
+
+    let chuoiKiTu = prompt("nhập một chuỗi bất kì kiểm tra xem chuỗi đó có đối xứng hay không");
+
+    function kiemTraTuDoiXung() {
+        let count = 0;
+        for (let i = 0; i < (chuoiKiTu.length - 1) / 2; i++) {
+            if (chuoiKiTu[i] === chuoiKiTu[chuoiKiTu.length - i - 1]) {
+                count++;
+            }
+        }
+        if (count >= (chuoiKiTu.length - 1) / 2) {
+            document.write(chuoiKiTu + " " + "là từ đối xứng");
+        } else {
+            document.write(chuoiKiTu + " " + "Không phải từ đối xứng");
+        }
+    }
+
+    kiemTraTuDoiXung(chuoiKiTu)
+</script>

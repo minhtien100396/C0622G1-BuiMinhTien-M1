@@ -6,33 +6,19 @@
 </head>
 <body>
 <script>
-
-    /*function quyTrinhXacNhan(cautraloi) {
-        let ketQua = "";
-        if (cautraloi) {
-            ketQua = "Tuyệt vời, hãy cùng nhau chơi";
+    function xacNhan(di) {
+        let result = "";
+        if (di) {
+            result = "Ok. Đi thôi";
         } else {
-            ketQua = "Có lẻ để lần sau";
+            result = "Hôm nay tau mệt, mày đi đi";
         }
-        return ketQua;
+        return result;
     }
 
-    let xacNhanCauTraLoi = confirm("Chúng ta cùng nhau chơi game không?");
-    let cauTraLoi = quyTrinhXacNhan(xacNhanCauTraLoi);
-    alert(cauTraLoi);
-*/
-    function xacNhanCauTraLoi(cauTraLoi) {
-        let ketQua="";
-        if (cauTraLoi) {
-            ketQua="Hãy chơi cùng nhau";
-        }else {
-            ketQua="Để lần sau";
-        }
-        return ketQua;
-    }
-    let yeuCauTraLoi=confirm("Bạn có muốn đi chơi không?");
-    let cauTraLoi=xacNhanCauTraLoi(yeuCauTraLoi);
-    alert(cauTraLoi);
+    let cauHoi = confirm("Hôm này đi chơi không mày");
+    let xacNhanCauHoi = xacNhan(cauHoi);
+    alert(xacNhanCauHoi);
 </script>
 </body>
 </html>

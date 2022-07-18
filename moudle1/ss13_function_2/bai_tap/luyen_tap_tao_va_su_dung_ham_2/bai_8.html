@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*Bài 8: Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó.
+
+*/
+
+    function truyenVaoMangSoNguyen() {
+        //Truyền vào mảng số nguyên
+        let number = +prompt("Nhập số lượng phần tử trong mảng");
+        let array = [];
+        for (let i = 0; i < number; i++) {
+            array[i] = +prompt("Nhập phần tử cho mảng");
+        }
+        document.write("Mảng ban đầu :" + " " + array + "<br>");
+
+        //Đảo ngược mảng //12345
+        for (let i = 0; i < (array.length - 1) / 2; i++) {
+            let array1 = array[i];
+            array[i] = array[array.length - i - 1];
+            array[array.length - i - 1] = array1
+        }
+        document.write("Mảng sau khi đảo ngược :" + " " + array);
+
+    }
+
+    truyenVaoMangSoNguyen()
+</script>

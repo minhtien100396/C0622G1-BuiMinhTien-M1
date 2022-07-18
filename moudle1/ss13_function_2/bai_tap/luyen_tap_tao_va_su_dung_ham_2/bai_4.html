@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*Bài 4: Viết hàm kiểm tra xem ký tự nhập vào có phải là ký tự số không. Nếu là ký tự số hàm trả về true,
+     ngược lại trả về false.
+
+*/
+    let kiTu = prompt("nhập vào 1 kí tự")
+    // kiTu là số -> isNaN trả về false , kiTu không phải số -> isNaN trả về true.
+    function kiemTraKiTuNhapVao(kiTu) {
+        alert(!isNaN(kiTu));
+    }
+
+    kiemTraKiTuNhapVao(kiTu);
+
+</script>

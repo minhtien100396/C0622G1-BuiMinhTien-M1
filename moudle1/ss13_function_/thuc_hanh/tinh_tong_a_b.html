@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>Tổng của 3 số <input id="soThuNhat" oninput="nhapVao()" type="number">+<input id="soThuHai" oninput="nhapVao()" type="number">+<input id="soThuBa" oninput="nhapVao()" type="number">là<input id="ketQua">
+</div>
+</body>
+</html>
+<script>
+    function tinhTong(a, b, c) {
+        let result = a + b + c;
+        return result;
+    }
+
+    function nhapFeet() {
+        let soThuNhat = document.getElementById("soThuNhat").value;
+        let soThuHai = document.getElementById("soThuHai").value;
+        let soThuBa = document.getElementById("soThuBa").value;
+        let ketQua = tinhTong(parseInt(soThuNhat), parseInt(soThuHai), parseInt(soThuBa));
+        document.getElementById("ketQua").value = ketQua;
+    }
+</script>

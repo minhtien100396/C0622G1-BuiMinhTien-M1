@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*Bài 3: Tạo hàm nhận vào hai tham số. Nếu giá trị của tham số thứ nhất lớn hơn tham số thứ hai, 
+    hiển thị hộp thoại thông báo cho người dùng. 
+    Nếu giá trị của tham số thứ nhất nhỏ hơn hoặc bằng tham số thứ hai, trả về tổng của hai tham số.*/
+
+    function xetDieuKien(a, b) {
+        if (a > b) {
+            alert("Tham số a lớn hơn tham số b. Vui lòng nhập lại");
+
+        } else {
+            let tong = a + b;
+            alert(tong);
+            return tong;
+        }
+    }
+
+    let soThuNhat = +prompt("nhập vào tham số thứ nhất");
+    let soThuHai = +prompt("nhập vào tham số thứ hai");
+    while (soThuNhat > soThuHai) {
+        soThuNhat = +prompt("vui lòng nhập lại tham số thứ nhất");
+        soThuHai = +prompt("vui lòng nhập lại tham số thứ hai");
+    }
+    xetDieuKien(soThuNhat, soThuHai);
+</script>

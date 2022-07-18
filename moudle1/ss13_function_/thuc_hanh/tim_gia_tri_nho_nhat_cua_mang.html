@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //Xây dựng hàm nhận vào một tham số là một mảng cho trước.
+    // Hàm thực hiện tìm giá trị nhỏ nhất trong mảng và trả về giá trị đó
+    /*let number=+prompt("Nhập số lượng phần tử  mảng");
+    let array=[];
+    for (let i = 0; i < number ; i++) {
+        array[i]=+prompt("Nhập giá trị phần tử");
+    }*/
+    //Hàm tìm min trong mảng
+    function timMin(array) {
+        if (array.length > 0) {
+            let min = array[0];
+            for (let i = 1; i < array.length; i++) {
+                if (array[i] < min) {
+                    min = array[i]
+                }
+            }
+            document.write("<br>" + "Giá trị nhỏ nhất của mảng là:" + " " + min);
+            return min;
+        } else {
+            alert("Mảng không có phần tử. Nên không có giá trị nhỏ nhất!");
+            return;
+        }
+    }
+
+    //Khởi tạo  mảng và nhập các phần tử cho mảng.
+    let number = +prompt("Nhập số lượng phần tử  mảng");
+    let array = [];
+    for (let i = 0; i < number; i++) {
+        array[i] = +prompt("Nhập giá trị phần tử");
+    }
+    timMin(array);
+    // Gọi các mảng có sẵn
+    /*let arr1 = []
+    timMin(arr1);*/
+</script>

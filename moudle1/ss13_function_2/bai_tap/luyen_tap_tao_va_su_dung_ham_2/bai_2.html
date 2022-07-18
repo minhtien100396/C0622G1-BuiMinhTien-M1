@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*Bài 2: Viết hàm tính diện tích, hàm tính chu vi hình tròn. Gọi hàm vừa xây dựng được
+    */
+    let radius = +prompt("Nhập bán kính hình tròn");
+    const pi = 3.14;
+
+    function tinhDienTich(radius) {
+        let dienTichHinhTron = pi * Math.pow(radius, 2);
+        document.write("Diện tích hình tròn là:" + " " + dienTichHinhTron + "<br>");
+        return dienTichHinhTron;
+    }
+
+    function tinhChuVi(radius) {
+        let chuViHinhTron = 2 * pi * radius;
+        document.write("Chu vi hình tròn là:" + " " + chuViHinhTron);
+        return chuViHinhTron;
+    }
+
+    while (radius < 0) {
+        radius = +prompt("Bán kính không thể nhỏ hơn 0. Vui lòng nhập lại");
+    }
+    tinhDienTich(radius);
+    tinhChuVi(radius);
+</script>
