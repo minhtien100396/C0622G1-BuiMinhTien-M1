@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+    //Tạo thuộc tính có sẵn cho đối tượng bằng get
+
+
+    // class HinhTron {
+    //     constructor(radius) {
+    //         this.radius = radius;
+    //     }
+    //
+    //     getBanKinh() {
+    //         return this.radius;
+    //     }
+    //     getDienTich() {
+    //         return Math.PI*this.radius*this.radius;
+    //     }
+    // }
+    //
+    // let hinhTron = new HinhTron(1);
+    // let banKinh = hinhTron.getBanKinh();
+    // let dienTich= hinhTron.getDienTich();
+    // document.write(banKinh+"<br>"+dienTich);
+
+
+    //Tạo thuộc tính có thể thay đổi bằng set
+
+
+
+    // class HinhTron {
+    //     constructor(radius) {
+    //         this.radius = radius;
+    //     }
+    //
+    //     setRadius(value) {
+    //         this.radius = value;
+    //     }
+    //
+    //     getDienTich() {
+    //         return Math.PI * this.radius * this.radius;
+    //     }
+    // }
+    //
+    // let hinhTron = new HinhTron(1);
+    // alert(hinhTron.getDienTich())
+
+
+    //Tạo thuộc tính trực tiếp
+
+    class HinhTron {
+        constructor(radius) {
+            this.radius = radius;
+        }
+
+        getDienTich() {
+            return Math.PI * this.radius * this.radius;
+        }
+    }
+
+    let hinhTron = new HinhTron(3);
+    document.write("Bán kính hình tròn là:" + " " + hinhTron.radius);
+    document.write("<br>" + "Diện tích hình tròn là:" + " " + hinhTron.getDienTich());
+</script>

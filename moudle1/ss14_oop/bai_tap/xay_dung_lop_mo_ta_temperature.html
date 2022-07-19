@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*Viết một lớp các đối tượng mô tả loại dữ liệu nhiệt độ lấy tên là Temperature.
+    Các thông số mô tả cho nhiệt độ gồm:
+
+Trị số tính theo đơn vị độ C (giá trị nhỏ nhất -273 độ)
+
+Có tính năng chuyển đổi từ độ C sang độ F.
+
+Có tính năng chuyển đổi từ độ C sang độ Kenvin.*/
+
+    class ChuyenDoiNhietDo {
+        constructor(doC) {
+            this.doC = doC;
+        }
+
+        getdoC() {
+            return this.doC;
+        }
+
+        setdoC(value) {
+            this.doC = value;
+        }
+
+        getChuyenTuDoCSangDoF() {
+            return (9 * this.doC) / 5 + 32;
+        }
+
+        getChuyenDoiTuDoCSangDoK() {
+            return this.doC + 273.15;
+        }
+    }
+
+    let chuyenDoiNhietDo = new ChuyenDoiNhietDo(10);
+    chuyenDoiNhietDo.setdoC(25);
+    document.write("Độ C =" + " " + chuyenDoiNhietDo.getdoC() + "<sup>o</sup>" + "<br>");
+    document.write("Độ F =" + " " + chuyenDoiNhietDo.getChuyenTuDoCSangDoF() + "<sup>o</sup>" + "<br>");
+    document.write("Độ K =" + " " + chuyenDoiNhietDo.getChuyenDoiTuDoCSangDoK() + "<sup>o</sup>");
+
+</script>

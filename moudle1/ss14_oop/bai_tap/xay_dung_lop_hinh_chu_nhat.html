@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*Viết một lớp các đối tượng hình chữ nhật lấy tên là HinhChuNhat, mỗi hình chữ nhật đều có những đặc tính sau:
+
++ Có thông số chiều dài (chieudai).
+
++ Có thông số chiều rộng (chieurong).
+
++ Có tính năng tính diện tích.
+
++ Có tính năng tính chu vi.*/
+
+    class HinhChuNhat {
+        constructor(chieudai, chieurong) {
+            this.chieudai = chieudai;
+            this.chieurong = chieurong;
+        }
+
+        getChieuDai() {
+            return this.chieudai;
+        }
+
+        getChieuRong() {
+            return this.chieurong;
+        }
+
+        setChieuDai(value) {
+            this.chieudai = value;
+        }
+
+        setChieuRong(value) {
+            this.chieurong = value;
+        }
+
+        getTinhDienTich() {
+            return this.chieurong * this.chieudai;
+        }
+
+        getTinhChuVi() {
+            return (this.chieudai + this.chieurong) * 2;
+        }
+    }
+
+    let hinhChuNhat = new HinhChuNhat(5, 3);// chiều dài 5, chiều rộng 3
+    document.write("Chiều rộng hình chữ nhật là:" + " " + hinhChuNhat.getChieuRong() + "<br>");//3
+    hinhChuNhat.setChieuDai(1);// chiều dài đổi thành 1
+    document.write("Chiều dài hình chữ nhật là:" + " " + hinhChuNhat.getChieuDai() + "<br>"); // hiển thị ra 1
+    document.write("Chu vi hình chữ nhật là:" + " " + hinhChuNhat.getTinhChuVi() + "<br>" + "Diện tích hình chữ nhật là:" + " " + hinhChuNhat.getTinhDienTich());
+</script>

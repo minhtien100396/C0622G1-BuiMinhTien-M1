@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+  function Person(id,name,age) {
+      this.id= id;
+      this.name=name;
+      this.age=age;
+      this.speak=function () {
+        alert("Toi là "+ this.name+","+this.age)
+      }
+  }
+  let person1 = new Person(1,"tien",26)
+  let person2 = new Person(1,"tien",26)
+    person1.speak()
+</script>

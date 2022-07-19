@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // // //Khởi tạo đối tượng trực tiếp
+    // //Tạo một class tên Date
+    // class Date {
+    //     //Sử dụng  hàm khởi tạo constructor, nhập vào tham số chứa các thuộc tính của lớp Date
+    //     constructor(date, month, year) {
+    //
+    //         //Khởi tạo 3 tham số truyền vào
+    //
+    //         this.date = date;
+    //         this.month = month;
+    //         this.year = year;
+    //     }
+    // }
+    //
+    // // //Khởi tạo đối tượng trực tiếp
+    // let date = new Date(2, 2, 2022);
+    // alert(date.date + "/" + date.month + "/" + date.year);
+
+    // //khời tạo đối tượng có sẵn bằng từ khóa get
+    // //Tạo một class tên Date
+    // class Date {
+    //     //Sử dụng  hàm khởi tạo constructor, nhập vào 3 tham số chứa các thuộc tính của lớp Date
+    //     constructor(date, month, year) {
+    //
+    //         //Khởi tạo 3 thuộc tính
+    //
+    //         this.day = date;
+    //         this.month = month;
+    //         this.year = year;
+    //     }
+    //
+    //     //Khởi tạo bằng các giá trị có sẵn get
+    //     getDate() {
+    //         return this.day;
+    //     }
+    //
+    //     getMonth() {
+    //         return this.month;
+    //     }
+    //
+    //     getYear() {
+    //         return this.year;
+    //     }
+    //
+    //     getInfo() {
+    //         return this.day + "/" + this.month + "/" + this.year; // khởi tạo một phương thức cho đối tượng
+    //     }
+    // }
+    //
+    // let date = new Date(2, 2, 2022); //date là khởi tạo một đối tượng
+    // alert(date.getInfo());
+    // alert(date.day);
+    // alert(date.getYear());
+
+
+    //khời tạo đối tượng bằng cách thay đổi các phương thức của đối tượng. Dùng từ khóa set
+    //Tạo một class tên Date
+    //Tạo một class tên MyDate
+    class MyDate {
+        constructor(day, month, year) { //Dùng hàm constructor để tạo đối tượng với giá trị là tham số truyền vào
+            this.day = day;
+            this.month = month;
+            this.year = year;
+        }
+
+        //Sử dụng từ khóa Set để thay đổi thuộc tính cho đối tượng
+        setDay(value) {
+            this.day = value;
+        }
+
+        setMonth(value) {
+            this.month = value;
+        }
+
+        setYear(value) {
+            this.year = value
+        }
+    }
+
+    let date = new MyDate(3, 2, 2022);//tạo đối tượng tên date
+    // thay đổi giá trị thuộc tính year và day cho đối tượng date
+    date.setYear(2010);
+    date.setDay(10)
+    alert(date.day + "/" + date.month + "/" + date.year) // Hiển thị thuộc tính đối tượng ra màn hình
+
+</script>

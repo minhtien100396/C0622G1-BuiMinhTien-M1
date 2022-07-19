@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // viết 1 hàm truyền vào một tham số là mảng số nguyên.
+    // Hàm trả về tổng các số nguyên tố có trong mảng
+    // [2,4,3,7] => 2+3+7 =12.
+    let number=+prompt("Nhập số lượng phần tử cho mảng");
+    let mangSoNguyen=[];
+    for (let i = 0; i < number ; i++) {
+        mangSoNguyen[i]=+prompt("Nhập phần tử cho mảng");
+    }
+    function nhapVaoMangSoNguyen(array) {
+        let tong = 0;
+        for (let i = 0; i < array.length; i++) {
+            if (soNguyenTo(array[i])) {
+                tong+=array[i];
+            }
+        }
+        return tong;
+    }
+
+    function soNguyenTo(number) {
+        if (number < 2) {
+            return false;
+        } else {
+            for (let i = 2; i < number; i++) {
+                if (number % i == 0) {
+                    return false
+                }
+            }
+            return true;
+        }
+    }
+    alert("Tổng các số nguyên tố trong mảng là:"+" "+nhapVaoMangSoNguyen(mangSoNguyen));
+
+
+
+</script>
