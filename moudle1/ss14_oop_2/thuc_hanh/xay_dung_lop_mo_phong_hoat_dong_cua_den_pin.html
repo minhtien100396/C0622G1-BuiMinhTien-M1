@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*Ví dụ mô phỏng sự hoạt động của một chiếc đèn dungluongpin. Trong ví dụ này ta có 2 lớp đối tượng cơ bản là Đèn
+    (FlashLamp) và Pin (Battery). Đối tượng dungluongpin mang trong mình thông tin về trạng thái năng lượng của nó,
+    đối tượng đèn sẽ sử dụng một đối tượng dungluongpin để cung cấp năng lượng cho hoạt động chiếu sáng,
+    khi đó ta nói có sự tương tác và trao đổi thông tin giữa hai đối tượng đèn và dungluongpin.*/
+
+    /*Bước 1: Khai báo lớp Battery
+
+    Bởi vì lớp Đèn Pin có sử dụng lớp Pin, hay nói cách khác, lớp Đèn Pin phụ thuộc
+    vào lớp Pin, do đó chúng ta sẽ bắt đầu khai báo lớp Pin trước.
+*/
+
+    class Pin {
+        constructor(dungLuongPin) {
+            this.dungLuongPin=dungLuongPin;
+        }
+        setDungLuongPin(value) {
+            this.dungLuongPin=value;
+        }
+        getDungLuongPin() {
+            return this.dungLuongPin;
+        }
+    }
+
+    //Bước 2: Khai báo lớp FlashLamp
+
+    class DenPin {
+        constructor(cucPin) {
+            this.cucPin=cucPin;
+        }
+        setCucPin(tencucpin) {
+            this.cucPin=tencucpin;
+        }
+        getThongTinCucPin() {
+            return this.cucPin.getDungLuongPin();
+        }
+        KiemTraTrangThaiDenPin(tenden) {
+            if (this.trangthai) {
+                document.write("Đèn"+" "+tenden+" "+"sáng"+"<br>");
+            }else {
+                document.write("Đèn"+" "+tenden+" "+"không sáng"+"<br>");
+            }
+        }
+        DenBat() {
+            return this.trangthai=true;
+        }
+        DenTat() {
+            return this.trangthai=false;
+        }
+    }
+    let pinABC = new Pin(20);
+    let pinEF = new Pin(80);
+    let denPinABC = new DenPin(pinABC);
+    let denPinEF =new DenPin(pinEF);
+    let thongTinPinDenEF=denPinEF.getThongTinCucPin()
+    let thongTinPinDenABC=denPinABC.getThongTinCucPin();
+    document.write("Thông tin pin đèn ABC : "+thongTinPinDenABC+" %"+"<br>");
+    document.write("Thông tin pin đèn EF : "+thongTinPinDenEF+" %"+"<br>");
+    pinABC.setDungLuongPin(100);
+    let thongTinPinDenABCMoi=denPinABC.getThongTinCucPin();
+    document.write("Thông tin pin đèn ABC : "+thongTinPinDenABCMoi+" %"+"<br>");
+    denPinABC.DenBat();
+    denPinABC.KiemTraTrangThaiDenPin("pinABC");
+    denPinEF.DenTat();
+    denPinEF.KiemTraTrangThaiDenPin("pinEF");
+</script>

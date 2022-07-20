@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    class QuaTao {
+        constructor() {
+            this.weight = 10;
+        }
+
+        GiamKhoiLuong() {
+            this.weight--;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        AnHetQuaTao() {
+            if (this.weight == 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    class ConNguoi {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+
+        GioiTinhNam() {
+            if (this.gender == 'Nam') {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        setGioiTinh(gioitinh) {
+            this.gender = gioitinh;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getWeight() {
+            return this.name + ":" + this.weight;
+        }
+
+        setWeight(value) {
+            this.weight = value;
+        }
+
+        say(text) {
+            console.log(this.name + " : " + text);
+        }
+
+        checkQuaTao(quatao) {
+            if (quatao.AnHetQuaTao()) {
+                console.log(this.name + " : " + "Táo hết rồi");
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        AnTao(quatao) {
+            if (this.checkQuaTao(quatao)) {
+                this.weight++;
+                quatao.GiamKhoiLuong();
+            }
+        }
+
+    }
+
+    //Kich bản
+    let quaTao = new QuaTao();
+    console.log("Khối lượng của quả tạo bạn đầu: " + quaTao.getWeight() + " (g)");
+    let adam = new ConNguoi("Adam", "Nam", 50);
+    let eva = new ConNguoi("Eva", "Nữ", 40);
+    console.log("Adam là Nam giới : " + adam.GioiTinhNam());
+    console.log("Eva là Nam giới : " + eva.GioiTinhNam());
+    adam.say("Ăn táo đi em");
+    eva.say("Oke anh!");
+    console.log("Táo ăn được : " + eva.checkQuaTao(quaTao));
+    eva.AnTao(quaTao);
+    eva.say("Anh ăn đi");
+    adam.AnTao(quaTao);
+    adam.AnTao(quaTao);
+    adam.AnTao(quaTao);
+    adam.AnTao(quaTao);
+    adam.AnTao(quaTao);
+    adam.AnTao(quaTao);
+    adam.AnTao(quaTao);
+    adam.AnTao(quaTao);
+    adam.AnTao(quaTao);
+    console.log(adam.getWeight());
+    console.log(eva.getWeight());
+    console.log("Quả táo: " + quaTao.getWeight());
+    adam.say("Em ăn đi!");
+    eva.AnTao(quaTao);
+
+</script>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //Chiếc điện thoại nokia soạn tin nhắn với nội dung bất kỳ và gửi cho chiếc iphone
+    // Chiếc iphone kiểm tra inbox và hiển thị tin đó.
+
+    //Tạo lớp Mobile chứa hai thuộc tính id và name
+
+    class Mobile {
+        constructor(id, name) {
+            //Biến Mobile chứa 2 thuộc tính là id và name
+            this.id = id;
+            this.name = name;
+            //Khai báo biến tin nhắn với giá trị mặc định là chuỗi rỗng
+
+        }
+
+        //Định nghĩa phương thức setTinNhan cho lớp Mobile. Phương thức này truyền vào tham số là một tin nhắn.
+        //Tin nhắn truyền vào sẽ được gán cho thuộc tính tinNhan của đối tượng
+
+        setTinNhan(tinNhan) {
+            this.tinnhan = tinnhan;
+        }
+
+        //Để hiển thị tin nhắn ta cần định nghĩa phương thức getTinNhan. Phương thức này sẽ trả về giá trị
+        // thuộc tính tin nhắn của đối tượng được gọi để hiển thị tin nhắn
+        getTinNhan() {
+            return this.tinnhan;
+        }
+
+        //Tiếp theo chúng ta định nghĩa phương thức sendTinNhan. phương thức này bào gồm 2 thàm số,
+        //tinNhan là nội dung tin nhắn muốn gửi và 2 là đối tượng tin nhắn thuộc lớp mobile mà chúng ta đã tạo ở trên
+        sendTinNhan(tinNhan, mobile) {
+            //Trong phương thức này chúng ta lấy đối tượng truyền vào gọi phương thức setTinNhan
+            mobile.setTinNhan(tinnhan)
+        }
+
+
+    }
+
+    //Sau khi định nghĩa xong lớp và các phương thức của lớp chúng ta tạo ra 2 đối tượng mobile
+    let nokia = new Mobile(1, "nokia");
+    let iphone = new Mobile(2, "iphone");
+    nokia.sendTinNhan("anh yêu em", iphone);
+    let tinNhan = iphone.getTinNhan();
+    alert(tinNhan);
+
+
+    /*
+        class DienThoai {
+        constructor(id, name) {
+            this.id = id;
+            this.name = name;
+        }
+
+        getTinNhan() {
+            return this.tinnhan;
+        }
+
+        setTinNhan(tinnhan) {
+            this.tinnhan = tinnhan;
+        }
+
+        sendTinNhan(noidung, dienthoai) {
+            dienthoai.setTinNhan(noidung);
+        }
+    }
+
+    let nokia = new DienThoai(1, "nokia");
+    let iphone = new DienThoai(2, "iphone");
+    nokia.sendTinNhan("anh yeu em", iphone);
+    let tinNhan = iphone.getTinNhan();
+    document.write(tinNhan)
+    */
+
+</script>

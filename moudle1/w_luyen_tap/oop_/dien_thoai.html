@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+   class DienThoai {
+       constructor(id,name) {
+           this.id=id;
+           this.name=name;
+           this.tinnhan="Anh ghét em"
+       }
+       setTinNhan(tinnhan) {
+           this.tinnhan=tinnhan;
+       }
+       getTinNhan(){
+           return this.tinnhan;
+       }
+       sendTinNhan(tinnhan,mobile) {
+           mobile.setTinNhan(tinnhan);
+       }
+   }
+   let nokia = new DienThoai(1,"nokia");
+   let iphone = new DienThoai(2,"iphone");
+   iphone.setTinNhan("Anh thương em");
+   alert(iphone.getTinNhan())
+   nokia.sendTinNhan("Anh yêu em",iphone);
+   let tinnhan=iphone.getTinNhan()
+   alert(tinnhan);
+
+
+
+</script>
