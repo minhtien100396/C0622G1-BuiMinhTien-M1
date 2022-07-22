@@ -1,54 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-    <meta charset="UTF-8">
     <title>Title</title>
 </head>
+
 <body>
 <table>
     <tr>
         <td colspan="4"><input type="text" id="nhap"></td>
     </tr>
     <tr>
-        <td><input type="button" value="1" onclick="nhapVao(1)"></td>
-        <td><input type="button" value="2" onclick="nhapVao(2)"></td>
-        <td><input type="button" value="3" onclick="nhapVao(3)"></td>
-        <td><input type="button" value="+" onclick="nhapVao('+')"></td>
+        <td><input type="button" value="1" onclick="nhap(this.value)"></td>
+        <td><input type="button" value="2" onclick="nhap(this.value)"></td>
+        <td><input type="button" value="3" onclick="nhap(this.value)"></td>
+        <td><input type="button" value="+" onclick="nhap(this.value)"></td>
     </tr>
     <tr>
-        <td><input type="button" value="4" onClick="nhapVao(4)"></td>
-        <td><input type="button" value="5" onclick="nhapVao(5)"></td>
-        <td><input type="button" value="6" onclick="nhapVao(6)"></td>
-        <td><input type="button" value="-" onclick="nhapVao('-')"></td>
+        <td><input type="button" value="4" onclick="nhap(this.value)"></td>
+        <td><input type="button" value="5" onclick="nhap(this.value)"></td>
+        <td><input type="button" value="6" onclick="nhap(this.value)"></td>
+        <td><input type="button" value="-" onclick="nhap(this.value)"></td>
     </tr>
     <tr>
-        <td><input type="button" value="7" onclick="nhapVao(7)"></td>
-        <td><input type="button" value="8" onclick="nhapVao(8)"></td>
-        <td><input type="button" value="9" onclick="nhapVao(9)"></td>
-        <td><input type="button" value="x" onclick="nhapVao('*')"></td>
+        <td><input type="button" value="7" onclick="nhap(this.value)"></td>
+        <td><input type="button" value="8" onclick="nhap(this.value)"></td>
+        <td><input type="button" value="9" onclick="nhap(this.value)"></td>
+        <td><input type="button" value="*" onclick="nhap(this.value)"></td>
     </tr>
     <tr>
         <td><input type="button" value="C" onclick="xoa()"></td>
-        <td><input type="button" value="0" onclick="nhapVao(0)"></td>
-        <td><input type="button" value="=" onclick="ketQua()"></td>
-        <td><input type="button" value="/" onclick="nhapVao('/')"></td>
+        <td><input type="button" value="=" onclick="bang()"></td>
+        <td><input type="button" value="0" onclick="nhap(this.value)"></td>
+        <td><input type="button" value="/" onclick="nhap(this.value)"></td>
     </tr>
 </table>
-</body>
-</html>
 <script>
-    function nhapFeet(duLieu) {
-        let tamGiacVuong = document.getElementById("nhap").value;
-        document.getElementById("nhap").value += duLieu;
-    }
 
-    function ketQua() {
-        let tamGiacVuong = document.getElementById("nhap").value;
-        let ketQua = eval(str);
+    function nhap(duLieu) {
+        let str = document.getElementById("nhap").value;
+        document.getElementById("nhap").value = str+ duLieu;
+    }
+    function bang() {
+        let str = document.getElementById("nhap").value;
+        let ketQua = eval(str); //TÍnh toán chuỗi string
         document.getElementById("nhap").value = ketQua;
     }
-
     function xoa() {
-        document.getElementById("nhap").value = ""
+        document.getElementById("nhap").value="";
     }
 </script>
+</body>
+</html>

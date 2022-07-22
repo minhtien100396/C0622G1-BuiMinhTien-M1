@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*Viết chương trình kiểm tra một ký tự trong bảng chữ cái tiếng anh là nguyên âm hay phụ âm.
+    Ký tự là bất kỳ được nhập từ bàn phím.
+    Các ký tự nguyên âm bao gồm: 'o', 'u', 'i', 'a', 'e' hoặc 'O', 'U', 'I', 'A', 'E'*/
+
+    function kiemTraNguyenAmPhuAm(kitu) {
+        let nguyenAm = ['o', 'u', 'i', 'a', 'e', 'O', 'U', 'I', 'A', 'E'];
+        if (isNaN(kitu)) {
+            for (let i = 0; i < nguyenAm.length; i++) {
+                if (kitu == nguyenAm[i]) {
+                    document.write(kitu + " là Nguyên âm");
+                    return kitu;
+                }
+            }
+            document.write(kitu + " là Phụ âm");
+            return kitu;
+        } else {
+            document.write("Giá trị bạn nhập không phải kí tự. Vui lòng nhập lại");
+        }
+    }
+
+    kiemTraNguyenAmPhuAm("A")
+</script>

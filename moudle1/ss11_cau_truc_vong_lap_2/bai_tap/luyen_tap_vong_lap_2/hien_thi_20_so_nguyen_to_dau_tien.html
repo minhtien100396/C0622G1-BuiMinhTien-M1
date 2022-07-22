@@ -11,7 +11,7 @@
 <script>
     /*Hướng dẫn
 Bước 1: Khai báo biến số nguyên numbers và nhập cho nó một giá trị từ bàn phím để
-ưu số lượng số nguyên tố cần in ra.
+lưu số lượng số nguyên tố cần in ra.
 
 Bước 2: Khai báo biến count và gán cho nó giá trị 0, biến này để đếm xem số lượng
  lượng số nguyên tố cần in ra đã bằng numbers hay chưa.
@@ -29,12 +29,12 @@ Giá trị của N tăng lên 1 để kiểm tra số tiếp theo*/
     let soNguyenTo = "";
     while (xetDieuKien < 20) {
         let bienDem = 0;
-        for (let i = 1; i <= soNguyen; i++) {
+        for (let i = 2; i <= soNguyen; i++) {
             if (soNguyen % i === 0) {
                 bienDem++;
             }
         }
-        if (bienDem < 3) {
+        if (bienDem == 1) {
             soNguyenTo += soNguyen + "<br>";
             xetDieuKien++;
         }

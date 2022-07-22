@@ -14,16 +14,31 @@
 </body>
 </html>
 <script>
-    /*Bài 2: Tạo hàm nhận vào một đối số dạng số, tăng giá trị đối số đó lên 1 và trả lại giá trị cho lời gọi hàm.
-     Gọi hàm từ trong phần <body> của trang web và hiển thị kết quả lên màn hình.*/
-
-    function ketQuaTinh(number) {
-        let result = parseInt(number)*2;
-        return result;
+    function kiemTraSoNguyenTo(soNguyen) {
+        if (soNguyen < 2) {
+            return false;
+        } else {
+            for (let i = 2; i < soNguyen; i++) {
+                if (soNguyen % i == 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
     }
 
-    let input = parseInt(document.getElementById("number").value);
-    let ketQua = ketQuaTinh(input);
-    alert(ketQua);
-
+    function demSoNguyenTo() {
+        let soNguyenToCanLay = 0;
+        let soNguyenTo = "";
+        let number = 2;
+        while (soNguyenToCanLay < 20) {
+            if (kiemTraSoNguyenTo(number)) {
+                soNguyenTo += number + "<br>";
+                soNguyenToCanLay++;
+            }
+            number++;
+        }
+        return soNguyenTo;
+    }
+        document.write(demSoNguyenTo())
 </script>

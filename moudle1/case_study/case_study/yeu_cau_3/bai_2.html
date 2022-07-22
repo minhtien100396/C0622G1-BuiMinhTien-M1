@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*Bài 2: Cho 2 mảng A và B chứa số nguyên.
+    Tìm ra một mảng đã được sắp xếp chứa các phần tử xuất hiện trong mảng B nhưng lại không xuất hiện A
+    Chú ý các phần tử giống nhau chỉ tính là 1 lần xuất hiện
+    Ví dụ:  A=[7,2,5,3,5,3] và B=[7,2,5,4,6,3,5,3] thì kết quả missingValue(A, B) = [4, 6]
+*/
+
+    function kiemTra(arrayA, arrayB) {
+        let arrayC = [];
+        for (let i = 0; i < arrayB.length; i++) {
+            if (!arrayA.includes(arrayB[i])) {
+                arrayC.push(arrayB[i]);
+            }
+        }
+        return arrayC;
+    }
+
+    let Array1 = [7, 2, 5, 3, 5, 3];
+    let Array2 = [7, 2, 5, 4, 6, 3, 5, 3];
+
+    document.write("Mảng 1: " + Array1 + "<br>");
+    document.write("Mảng 2: " + Array2 + "<br>");
+    document.write("Các số xuất hiện trong mảng 2 nhưng không xuất hiện trong mảng 1: " + kiemTra(Array1, Array2));
+</script>

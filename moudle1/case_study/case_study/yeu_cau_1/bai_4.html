@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //Bài 4: Vẽ tam giác cân rỗng có chiều cao h. Ví dụ: h = 5
+    let str = "";
+    for (let a = 1; a <= 5 - 1; a++) {
+        str += "&ensp;";
+    }
+    str+="*";
+    str += "<br>";
+    for (let b = 1; b <= 5 - 2; b++) {
+        for (let c = b; c < 5 - 1; c++) {
+            str += "&ensp;";
+        }
+        str += "*";
+        for (let d = 1; d <= b * 2 - 1; d++) {
+            str += "&ensp;";
+        }
+        str += "*";
+        str += "<br>";
+    }
+    for (let c = 1; c <= 5 * 2 - 1; c++) {
+        str += "*";
+    }
+    document.write(str)
+
+
+    /* let str = "";
+    for (let i = 1; i <= 5 - 1; i++) {
+        str += "&ensp;";
+    }
+    str += "*";
+    str += "<br>";
+
+    for (let i = 1; i <= 5 - 2; i++) {
+        for (let j = i; j < 5 - 1; j++) {
+            str += "&ensp;";
+        }
+        str += "*";
+        for (let j = 1; j <= 2 * i - 1; j++) {
+            str += "&ensp;";
+        }
+        str += "*";
+        str += "<br>";
+    }
+
+    for (let i = 1; i <= 5 * 2 - 1; i++) {
+        str += "*";
+    }
+    document.write(str);*/
+</script>

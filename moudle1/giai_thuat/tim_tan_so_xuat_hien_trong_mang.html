@@ -17,33 +17,43 @@
     Với inputArray = [1, 2, 2, 3, 1, 3, 1, 3], thì kết quả checkEqualFrequency(inputArray) = false.
     Số 1 có tần số xuất hiện là 3, khác vs số 2 và số 3 có tần số xuất hiện là 2 .*/
 
+    // function solution(array) {
+    //     array = [1, 2, 2, 1];
+    //     let count = [];
+    //     let b = 0;
+    //     for (let i = 0; i < array.length; i++) {
+    //         b = 0;
+    //         for (let j = 0; j < array.length; j++) {
+    //             if (array[i] === array[j])
+    //                 b++;
+    //         }
+    //         count.push(b);
+    //         if ((count[0] !== count[i]))
+    //             return false
+    //     }
+    //     return true;
+    // }
+    // alert(solution())
 
-    function check(arr) {
-        let chuSoXuatHien=[];//1,2
-        let soLanXuatHien=[];z
-        for (let i = 0; i <arr.length ; i++) {
-            if (!chuSoXuatHien.includes(arr[i])) {
-                chuSoXuatHien.push(arr[i]);
-            }
-        }
-        for (let i = 0; i < chuSoXuatHien.length ; i++) {
-            let count=0;
-            for (let j = 0; j < arr.length ; j++) {
-                if (chuSoXuatHien[i]===arr[j]) {
+
+    function kiemTra(array) {
+        array = [1, 2, 3, 5, 3, 5, 2, 1];
+        let soLanXuatHien = [];
+        for (let i = 0; i < array.length; i++) {
+            let count = 0;
+            for (let j = 0; j < array.length; j++) {
+                if (array[i] == array[j]) {
                     count++;
                 }
             }
             soLanXuatHien.push(count);
-        }
-        for (let i = 0; i <soLanXuatHien.length ; i++) {
-            if (soLanXuatHien[0]!==soLanXuatHien[i]) {
+            if (soLanXuatHien[0] !== soLanXuatHien[i]) {
                 return false;
             }
         }
         return true;
-
     }
-    let arr= [1, 2, 2, 3, 1, 3, 1, 3,2];
-    alert(check(arr));
+
+    alert(kiemTra())
 
 </script>

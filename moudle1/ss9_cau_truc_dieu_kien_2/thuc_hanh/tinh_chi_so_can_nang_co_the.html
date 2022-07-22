@@ -31,7 +31,7 @@
 </body>
 </html>
 <script>
-    function nhapFeet() {
+    function nhapVao() {
         let weight = document.getElementById("weight").value;
         let height = document.getElementById("height").value;
         let bmi = weight / (height * height);
@@ -50,16 +50,16 @@
         //Switch-casea
         switch (true) {
             case bmi < 18.5:
-                document.write("underweight");
+                alert("underweight");
                 break;
             case bmi < 25:
-                document.write("Normal");
+                alert("Normal");
                 break;
             case bmi < 30:
-                document.write("Overweight");
+                alert("Overweight");
                 break;
             default:
-                document.write("Obese");
+                alert("Obese");
         }
     }
 </script>

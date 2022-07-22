@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // cho phép người dùng nhập vào một năm,
+    // sau đó sẽ đưa ra thông báo là năm đó là năm nhuận hay không phải là năm nhuận.
+    /*Cách xác định năm nhuận: Những năm chia hết cho 4 là năm nhuận,
+    ngoại trừ những năm chia hết cho 100 mà không chia hết cho 400.
+
+    Từ đó, có thể rút gọn thành các quy tắc xác định năm nhuận:
+
+    Những năm chia hết cho 4 mà không chia hết cho 100 là năm nhuận
+
+    Những năm chia hết cho 100 mà không chia hết cho 400 thì KHÔNG PHẢI là năm nhuận
+
+    Những năm chia hết đồng thời cho 100 và 400 là năm nhuận*/
+
+    function kiemTraNamNhuan(nam) {
+        if ((nam%4==0&&nam%100!==0)||(nam%100==0&&nam%400==0)) {
+            console.log(nam+ " là năm nhuận");
+        }else {
+            console.log(nam+" không phải là năm nhuận");
+        }
+    }
+    kiemTraNamNhuan(2000);
+</script>

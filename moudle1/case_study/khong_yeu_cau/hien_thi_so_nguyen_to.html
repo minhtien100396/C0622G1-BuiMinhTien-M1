@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    function kiemTraSoNguyenTo(number) {
+        for (let i = 2; i < number; i++) {
+            if (number % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+    function demSoLuong(soluong) {
+    let number=2;
+    let soNguyenTo="";
+    let dieuKien=0;
+        while (dieuKien<soluong) {
+            if (kiemTraSoNguyenTo(number)){
+                soNguyenTo+=number+"<br>";
+                dieuKien++;
+            }
+            number++
+        }
+        return soNguyenTo;
+    }
+    document.write(demSoLuong(20))
+</script>

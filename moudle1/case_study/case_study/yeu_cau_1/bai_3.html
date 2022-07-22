@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //Bài 3: Vẽ tam giác cân đặc có chiều cao h. Ví dụ: h = 5
+
+    // let str="";
+    // for (let i = 0; i <5 ; i++) {
+    //     for (let j = 1; j <= 9 ; j++) {
+    //         if (i==0) {
+    //             if (j==5) {
+    //                 str+="*";
+    //             }else {
+    //                 str+="&ensp;";
+    //             }
+    //         }
+    //         if (i==1) {
+    //             if (j==4||j==5||j==6) {
+    //                 str+="*";
+    //             }else {
+    //                 str+="&ensp;";
+    //             }
+    //         }
+    //         if (i==2) {
+    //             if (j==3||j==4||j==5||j==6||j==7) {
+    //                 str+="*";
+    //             }else {
+    //                 str+="&ensp;";
+    //             }
+    //         }
+    //         if (i==3) {
+    //             if (j==2||j==3||j==4||j==5||j==6||j==7||j==8) {
+    //                 str+="*";
+    //             }else {
+    //                 str+="&ensp;";
+    //             }
+    //         }
+    //         if (i==4) {
+    //             if (j==1||j==2||j==3||j==4||j==5||j==6||j==7||j==8||j==9) {
+    //                 str+="*";
+    //             }else {
+    //                 str+="&ensp;";
+    //             }
+    //         }
+    //     }
+    //     str+="<br>";
+    // }
+    // document.write(str);
+
+
+    let str = "";
+    for (let i = 1; i <= 5; i++) {
+        for (let j = i; j <= 5 - 1; j++) {
+            str += "&ensp;";
+        }
+        for (let k = 1; k <= i * 2 - 1; k++) {
+            str += "*";
+        }
+        str += "<br>";
+    }
+    document.write(str);
+
+    /*let str = "";
+    for (let i = 1; i <= 5 ; i++) {
+        for (let j = i; j <= 5-1 ; j++) {
+            str+="&ensp;";
+        }
+        for (let j = 1; j <=2*i-1 ; j++) {
+            str+="*";
+        }
+        str+="<br>";
+    }
+    document.write(str)*/
+</script>

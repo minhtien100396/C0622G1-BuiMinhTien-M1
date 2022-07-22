@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*Alice và Bob mỗi người tạo ra một vấn đề cho HackerRank.
+    Một người đánh giá xếp hạng hai thử thách, cho điểm theo thang điểm từ 1 đến 100 cho ba hạng mục: độ rõ ràng
+    , tính độc đáo và độ khó của vấn đề .
+
+Xếp hạng cho thử thách của Alice là bộ ba a = (a [0], a [1], a [2]) và
+xếp hạng cho thử thách của Bob là bộ ba b = (b [0], b [1], b [2]) .
+
+Nhiệm vụ là tìm điểm so sánh của chúng bằng cách so sánh a [0] với b [0] , a [1] với b [1] , và a [2] với b [2] .
+
+Nếu a [i]> b [i] , thì Alice được thưởng 1 điểm.
+Nếu a [i] <b [i] , thì Bob được thưởng 1 điểm.
+Nếu a [i] = b [i] , thì không người nào nhận được điểm.
+Điểm so sánh là tổng số điểm mà một người kiếm được.
+
+Cho trước a và b , xác định điểm so sánh tương ứng của chúng.
+
+Thí dụ
+
+a = [10, 7, 3]
+b = [3, 2, 6]
+Đối với các phần tử * 0 *, Bob được thưởng một điểm vì [0].
+Đối với các phần tử bằng nhau a [1] và b [1] , không được điểm nào.
+Cuối cùng, đối với phần tử 2 , a [2]> b [2] nên Alice nhận được một điểm.
+Mảng trả về là [1, 1] với điểm của Alice đầu tiên và điểm thứ hai của Bob.*/
+
+    function compareTriplets(a, b) {
+        let arr=[];
+        let giang=0;
+        let tien=0;
+        for (let i = 0; i < a.length ; i++) {
+
+            if (a[i]>b[i]) {
+                giang++;
+            }if (a[i]<b[i]||b[i]===0) {
+                tien++;
+            }
+        }
+        arr.push(giang);
+        arr.push(tien);
+        return arr;
+    }
+    console.log(compareTriplets([1, 3, 3,2], [3, 2, 1,0]))
+</script>
