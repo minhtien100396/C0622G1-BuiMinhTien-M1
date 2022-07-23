@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*Bài 3: Viết hàm tìm giá trị lớn nhất, nhỏ nhất trong mảng 2 chiều*/
+    let array = [];
+
+    function taoMang2Chieu(m, n) {
+        for (let i = 0; i < m; i++) {
+            array[i] = [];
+            for (let j = 0; j < n; j++) {
+                array[i][j] = +prompt("Nhập giá trị phần tử cho mảng");
+            }
+        }
+        document.write(array + "<br>");
+    }
+
+    function timGiaTriLonNhatNhoNhat() {
+        let max = array[0][0];
+        let min = array[0][0];
+        for (let i = 0; i < array.length; i++) {
+            for (let j = 0; j < array[i].length; j++) {
+                if (max < array[i][j]) {
+                    max = array[i][j];
+                }
+                if (min > array[i][j]) {
+                    min = array[i][j];
+                }
+            }
+        }
+        document.write("Giá trị lớn nhất của mảng là: " + max + "<br>");
+        document.write("Giá trị nhỏ nhất của mảng là: " + min + "<br>");
+    }
+
+    taoMang2Chieu(5, 3);
+    timGiaTriLonNhatNhoNhat();
+
+</script>

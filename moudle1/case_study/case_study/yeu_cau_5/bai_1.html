@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*Bài 1: Viết hàm tính tổng các số chẵn trong ma trận có kích thước m*n.
+    Với m, n là các số nhập từ bàn phím.*/
+
+    // let soHang = +prompt("Nhập số hàng cho ma trận");
+    // let soPhanTu = +prompt("Nhập số phần tử cho ma trận");
+    let array = [];
+    let str = "";
+
+    function taoMaTran(m, n) {
+        for (let i = 0; i < m; i++) {
+            array[i] = [];
+            for (let j = 0; j < n; j++) {
+                array[i][j] = +prompt("Nhập giá trị cho mỗi phần tử");
+            }
+        }
+        document.write(array + "<br>");
+
+        return array;
+    }
+
+    taoMaTran(3, 3);
+
+    // function duyetMaTran() {
+    //     for (let i = 0; i < array.length; i++) {
+    //         for (let j = 0; j < array[i].length; j++) {
+    //             str += array[i][j];
+    //         }
+    //         str += "<br>";
+    //     }
+    //     document.write(str);
+    //     return str;
+    // }
+    //
+    // duyetMaTran();
+
+    function tinhTongCacSoChan() {
+        let sum = 0;
+        for (let i = 0; i < array.length; i++) {
+            for (let j = 0; j < array[i].length; j++) {
+                if (array[i][j] > 0) {
+                    if (array[i][j] % 2 === 0) {
+                        sum += array[i][j];
+                    }
+                }
+            }
+        }
+        document.write("Tổng các số chẵn trong ma trận là: " + sum)
+        return sum;
+    }
+
+    tinhTongCacSoChan();
+</script>

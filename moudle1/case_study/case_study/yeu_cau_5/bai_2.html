@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*Bài 2: Viết hàm liệt kê các số nguyên tố trong mảng 2 chiều, đếm các số nguyên tố có trong mảng đó.*/
+    let array = [];
+    let mangHaiChieu = "";
+    function taoMang2Chieu(m, n) {
+        for (let i = 0; i < m; i++) {
+            array[i] = [];
+            for (let j = 0; j < n; j++) {
+                array[i][j] = +prompt("Nhập giá trị cho phần tử");
+            }
+        }
+        document.write(array + "<br>");
+    }
+
+    taoMang2Chieu(2, 2);
+
+    function demCacSoNguyenTo() {
+        let str = "<br>";
+        let count = 0;
+        for (let i = 0; i < array.length; i++) {
+            for (let j = 0; j < array[i].length; j++) {
+                if (kiemTraSoNguyenTo(array[i][j])) {
+                    count++;
+                    str += array[i][j] + "<br>";
+                }
+            }
+        }
+        document.write("Trong mảng có " + count + " số nguyên tố là: " + str + "<br>");
+        return count;
+    }
+
+    demCacSoNguyenTo();
+
+    function kiemTraSoNguyenTo(number) {
+        if (number < 2) {
+            return false;
+        } else {
+            for (let i = 2; i < number; i++) {
+                if (number % i == 0) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+</script>
