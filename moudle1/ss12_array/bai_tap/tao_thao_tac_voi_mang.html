@@ -28,9 +28,9 @@
     //Xây dựng hàm addPhanTu để thêm mới một phần tử từ form
     function addPhanTu() {
         //Lấy giá trị của ô input text -> sau đó gán với phần tử x trong mảng array1
-        array[x] = document.getElementById("text").value;
+        xauKiTu[x] = document.getElementById("text").value;
         // Thông báo khi click vào ô Add và Hiển thị phần tử vừa được thêm vào bảng
-        alert("Phần tử:" + " " + array[x] + " " + "Chỉ số" + " " + x);
+        alert("Phần tử:" + " " + xauKiTu[x] + " " + "Chỉ số" + " " + x);
         //Tăng giá trị chỉ số của mảng lên sau mỗi lần add
         x++;
         //Gán giá trị rỗng cho input text
@@ -43,9 +43,9 @@
         // sẽ sử dụng để ngăn cách các phần tửtrong mảng
         let e = "<hr>"
         //Dùng vòng lặp for duyệt toàn bộ mảng
-        for (i = 0; i < array.length; i++) {
+        for (i = 0; i < xauKiTu.length; i++) {
             //Mỗi lần duyệt lấy giá trị của các phần tử cộng dồn vào biến e. Thêm thẻ<br> cuối mỗi lần duyệt
-            e += "Phần tử" + " " + parseInt(i+1) + " " + "=" + " " + array[i] + "<br>";
+            e += "Phần tử" + " " + parseInt(i+1) + " " + "=" + " " + xauKiTu[i] + "<br>";
         }
         //kết thúc lặp.Hiển thị biến e
         document.getElementById("result").innerHTML = e;

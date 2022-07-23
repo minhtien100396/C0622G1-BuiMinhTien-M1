@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*Bài 1: Viết một hàm chuẩn hóa xâu ký tự: biến đổi xâu ký tự thành xâu sao cho trong xâu
+    không có 2 dấu cách liền nhau và bắt đầu mỗi từ phải in hoa. Ví dụ tRuongTaN   HAI => Truong Tan Hai.
+    Và một hàm tìm từ dài nhất trong 1 xâu ký tự. Hàm main sử dụng các hàm này để nhập xâu ký tự từ bàn phím,
+    in ra xâu trước và sau khi chuẩn hóa, 1 từ dài nhất trong xâu đó.
+*/
+    let xauKiTu = "tUAN        an binh";
+    const chuHoa = ' ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const chuThuong = ' abcdefghijklmnopqrstuvwxyz';
+    function chuanHoaXauKiTu() {
+        for (let i = 0; i < xauKiTu.length; i++) {
+            chuHoa.includes(xauKiTu[i]);
+            xauKiTu.substr(xauKiTu[i]);
+
+            // if (xauKiTu[0] === " ") {
+            //     xauKiTu.pop(xauKiTu[0]);
+            // } else {
+            //     if (chuThuong.includes(xauKiTu[0])) {
+            //         xauKiTu.push(xauKiTu[0].toUpperCase());
+            //         xauKiTu.splice(0, 1);
+            //     }
+            // }
+        }
+        // for (let i = 1; i < xauKiTu.length; i++) {
+        //
+        //     if (xauKiTu[i] === " ") {
+        //         if (xauKiTu[i + 1] === " ") {
+        //             xauKiTu.splice(i, 1);
+        //             i = i - 1;
+        //         } else if (xauKiTu[i + 1] !== " ") {
+        //             xauKiTu.splice(i + 1, 1, xauKiTu[i + 1].toUpperCase());
+        //         }
+        //     }
+        // }
+        return xauKiTu;
+    }
+    console.log(chuanHoaXauKiTu(xauKiTu));
+
+
+
+</script>

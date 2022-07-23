@@ -32,16 +32,16 @@
     //let nhapPhanTu=+prompt("Nhập số lượng phần tử trong mỗi hàng cần tạo");
     let array1=[];
     for (let i = 0; i < nhapHang ; i++) {
-        array[i]=[];
+        xauKiTu[i]=[];
         //Bỏ vào dưới nếu muốn thay đổi số phần tử trong mỗi hàng
         let nhapPhanTu=+prompt("Nhập số lượng phần tử trong mỗi hàng cần tạo");
         for (let j = 0; j < nhapPhanTu ; j++) {
-            array[i][j]=+prompt("nhập phân tử của hàng");
+            xauKiTu[i][j]=+prompt("nhập phân tử của hàng");
         }
     }
-    for (let i in array) {
-        for (let j in array[i]) {
-            document.write(array[i][j]);
+    for (let i in xauKiTu) {
+        for (let j in xauKiTu[i]) {
+            document.write(xauKiTu[i][j]);
         }
         document.write("<br>");
     }

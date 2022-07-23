@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*Bài 2: Cho xâu kí tự. Hãy đếm số lượng kí tự khác nhau trong xâu đó
+Ví dụ: s = "cabca", thì kết quả differentSymbolsNaive(s) = 3.
+⇨	Có 3 kí tự khác nhau là a, b và c.
+*/
+    function demSoKiTu(chuoiKiTu) {
+        let array = [];
+        for (let i = 0; i < chuoiKiTu.length; i++) {
+            if (!array.includes(chuoiKiTu[i])) {
+                array.push(chuoiKiTu[i]);
+            }
+        }
+        array.sort();
+        document.write("Có " + array.length + " kí tự khác nhau là: " + array);
+        return array
+    }
+
+    demSoKiTu("anhyeuem12345");
+</script>

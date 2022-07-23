@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*Bài 3: Cho hai xâu kí tự, tìm số lượng kí tự chung giữa chúng.
+    Ví dụ: s1 = "aabcc" và s2 = "adcaa", thì kết quả commonCharacterCount(s1, s2) = 3.
+    ⇨	2 xâu s1 và s2 có 3 kí tự chung: 2 kí tự 'a' và 1 kí tự 'c'.
+*/
+    let xauKiTu1 = "aaaaaaaaccccbdgsss";
+    let xauKiTu2 = "ssssssaaaaaaaacccccccccfffffeeeeee";
+
+    function timKiTuChung(xau1, xau2) {
+        let arrXau1 = xauKiTu1.split('');
+        let arrXau2 = xauKiTu2.split('');
+        let array = [];
+        for (let i = 0; i < arrXau1.length; i++) {
+            for (let j = 0; j < arrXau2.length; j++) {
+                if (arrXau1[i] === arrXau2[j]) {
+                    array.push(arrXau1[i]);
+                    arrXau2.splice(j, 1);
+                    break;
+                }
+            }
+        }
+
+        document.write("2 xâu trên có " + array.length + " kí tự chung: " + array + "<br>");
+        document.write((array.toString().split("a").length - 1) + " kí tự 'a', " + "<br>" +
+            (array.toString().split("c").length - 1) + " kí tự 'c', " + "<br>" +
+            (array.toString().split("s").length - 1) + " kí tự 's'");
+    }
+
+    timKiTuChung(xauKiTu1, xauKiTu2);
+</script>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*Bài 1: Viết một hàm chuẩn hóa xâu ký tự: biến đổi xâu ký tự thành xâu sao cho trong xâu
+    không có 2 dấu cách liền nhau và bắt đầu mỗi từ phải in hoa. Ví dụ tRuong TaN   HAI => Truong Tan Hai.
+    Và một hàm tìm từ dài nhất trong 1 xâu ký tự. Hàm main sử dụng các hàm này để nhập xâu ký tự từ bàn phím,
+    in ra xâu trước và sau khi chuẩn hóa, 1 từ dài nhất trong xâu đó.
+*/
+    let xauKiTu = "    tRuong TaN   HAI    Anh Duong   bong da aaaaaaaaaaaaaa  ";
+    const chuHoa = ' ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const chuThuong = ' abcdefghijklmnopqrstuvwxyz';
+    let array = [];
+
+    function chuanHoaXauKiTu() {
+        for (let i = 0; i < xauKiTu.length; i++) {
+            array.push(xauKiTu[i]);
+            chuHoa.includes(array[i]);
+            array.splice(i, 1, array[i].toLowerCase());
+
+            if (array[0] === " ") {
+                if (array[0 + i] = " ") {
+                    array.pop(array[0]);
+                    array.splice(i, 1, array[i]);
+                }
+            } else {
+                if (chuThuong.includes(array[0])) {
+                    array.push(array[0].toUpperCase());
+                    array.splice(0, 1);
+                }
+            }
+        }
+        for (let i = 1; i < array.length; i++) {
+
+            if (array[i] === " ") {
+                if (array[i + 1] === " ") {
+                    array.splice(i, 1);
+                    i = i - 1;
+                } else if (array[i + 1] !== " ") {
+                    array.splice(i + 1, 1, array[i + 1].toUpperCase());
+                }
+            }
+            if (array[array.length - 1] === " ") {
+                if (array[array.length - 1 - i] === " ") {
+                    array.splice(array.length - 1, 1);
+                }
+            }
+
+        }
+        let arr = array.join('');
+        document.write((arr));
+
+        return arr;
+    }
+
+    chuanHoaXauKiTu();
+
+    function timTuDaiNhat() {
+        let arr = array.join('');
+        let chuyenChuoiThanhMang = arr.split(" ", arr.length);
+        let max = chuyenChuoiThanhMang[0].length;
+        let phanTuCoKiTuLonNhat = "";
+        for (let i = 1; i < chuyenChuoiThanhMang.length; i++) {
+            if (chuyenChuoiThanhMang[i].length > max) {
+                max = chuyenChuoiThanhMang[i].length;
+                phanTuCoKiTuLonNhat = chuyenChuoiThanhMang[i];
+            }
+        }
+        document.write("<br>" + "Từ dài nhất là " + phanTuCoKiTuLonNhat + " có " + max + " kí tự");
+        return phanTuCoKiTuLonNhat;
+    }
+
+    timTuDaiNhat();
+</script>

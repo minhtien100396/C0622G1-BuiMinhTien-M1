@@ -16,14 +16,14 @@
 
     for (let i = 0; i <str.length ; i++) {
         if (UPPER.includes(str[i])) {
-            array.push(str[i].toLowerCase());
+            xauKiTu.push(str[i].toLowerCase());
         }else if (LOWER.includes(str[i])) {
-            array.push(str[i].toUpperCase());
+            xauKiTu.push(str[i].toUpperCase());
         }else {
-            array.push(str[i]);
+            xauKiTu.push(str[i]);
         }
     }
-    document.write(array.join(''));
+    document.write(xauKiTu.join(''));
 
 
 </script>

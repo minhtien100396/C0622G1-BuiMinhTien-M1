@@ -24,16 +24,16 @@
     let array1=Array();
 
     function addPhanTu() {
-    array[x]=document.getElementById("nhapVao").value;
-    alert("Chỉ số"+x+"Phần tử"+array[x]);
+    xauKiTu[x]=document.getElementById("nhapVao").value;
+    alert("Chỉ số"+x+"Phần tử"+xauKiTu[x]);
     x++;
     document.getElementById("nhapVao").value="";
     }
 
     function displayPhanTu() {
     let str="";
-        for (let i = 0; i <array.length ; i++) {
-            str+="Phần tử"+i+"="+array[i]+"<br>";
+        for (let i = 0; i <xauKiTu.length ; i++) {
+            str+="Phần tử"+i+"="+xauKiTu[i]+"<br>";
         }
         document.getElementById("result").innerHTML=str;
     }
