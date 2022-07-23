@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Thêm sản phẩm</h3>
+<input type="text" placeholder="Tên sản phẩm muốn thêm" id="text">
+<input type="button" value="Add" onclick="add()">
+<h3>Hiển thị sản phẩm</h3>
+<p id="table"></p>
+</body>
+</html>
+<script>
+    let array=["a","b","c"];
+    function hienThi(){
+    let str="";
+     str+="<table table border='1px' cellSpacing='0px' cellPadding='10px'>";
+     str+="<tr>"+"<td>"+"Tên sản phẩm"+"</td>";
+     str+="<td align='right' colspan='2'>"+array.length+" sản phẩm"+"</td>";
+    for (let i = 0; i < array.length ; i++) {
+       str+="<tr>";
+       str+="<td>"+array[i]+"</td>";
+       str+="<td>"+"<input type='button' value='Edit' onclick='edit("+i+")'>"+"</td>";
+       str+="<td>"+"<input type='button' value='Delete' onclick='xoa("+i+")'>"+"</td>";
+    }
+    str+="</tr>";
+     str+="</table>";
+     document.getElementById("table").innerHTML=str;
+    }
+    function add() {
+        let phanTuMoi=document.getElementById("text").value;
+        array.push(phanTuMoi);
+        document.getElementById("text").value="";
+        hienThi();
+    }
+    function xoa(i) {
+        array.splice(i,1);
+        hienThi()
+    }
+    function edit(i) {
+        let doiTen= prompt("Nhập tên bạn muốn thay đổi");
+        array[i]=doiTen;
+        hienThi();
+    }
+    hienThi();
+
+</script>

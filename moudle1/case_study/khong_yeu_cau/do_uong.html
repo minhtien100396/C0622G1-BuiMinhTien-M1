@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h2 style="text-align: center">MENU ĐỒ UỐNG</h2>
+    <p id="table"></p>
+</div>
+
+</body>
+</html>
+<script>
+    let tenDoUong = ['Cam Vắt', 'Cafe', 'Sinh Tố', 'Nước Lọc', 'Nước Dừa', 'Nước Me',];
+    let giaDoUong = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''];
+    let soLuong = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''];
+    let thanhTien = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''];
+    let str = "";
+    let sum = 0;
+    hienThi();
+
+    function hienThi() {
+        str = "<table border='1px' cellspacing='0px' cellpadding='10px' width='100%' style='text-align: center'>";
+        str += "<tr>";
+        str += "<th>STT</th>";
+        str += "<th width='30%' >Tên Đồ Uống</th>";
+        str += "<th>Số Lượng</th>";
+        str += "<th>Giá</th>";
+        str += "<th>Thành Tiền</th>";
+        str += "<th colspan='4' align='center'>Tính Năng</th>";
+        str += "</tr>";
+        for (let i = 0; i < tenDoUong.length; i++) {
+            str += "<tr>";
+            str += "<td>" + (i + 1) + "</td>";
+            str += "<td><button onclick='hienThiThongTin(" + i + ")'>" + tenDoUong[i] + "</button></td>";
+            str += "<td>" + soLuong[i] + "</td>";
+            str += "<td>" + giaDoUong[i] + "</td>";
+            str += "<td>" + thanhTien[i] + "</td>";
+            str += "<td style='text-align: center'><button onclick='doiTen(" + i + ")'>Đổi Tên</button></td>";
+            str += "<td style='text-align: center'><button onclick='doiSoLuong(" + i + ")'>Đổi Số Lượng</button></td>";
+            str += "<td style='text-align: center'><button onclick='doiGia(" + i + ")'>Đổi Giá</button></td>";
+            str += "<td style='text-align: center'><button type='reset' onclick='huy(" + i + ")'>Hủy</button></td>";
+            str += "</tr>";
+        }
+        str += "<tr>";
+        str += "<th></th>";
+        str += "<th><input type=\"text\" placeholder=\"Nhập tên đồ uống mới\" id=\"name\">\n" +
+            "    <button onclick=\"add()\">Add</button></th>";
+        str += "<th></th>";
+        str += "<th>Tổng Tiền</th>";
+        str += "<th>" + sum + "</th>";
+        str += "<th style='text-align: center' colspan='4'  ><input type='reset' onclick='reset()' value='Reset' ></th>";
+        str += "</tr>";
+        str += "</table>";
+        document.getElementById("table").innerHTML = str;
+    }
+
+    function hienThiThongTin(i) {
+        giaDoUong[i] = (+prompt("Hãy nhập giá cho " + [tenDoUong[i]]));
+        soLuong[i] = +prompt("Hãy nhập số lượng cho " + tenDoUong[i]);
+        thanhTienTong();
+        tongTien()
+        hienThi();
+    }
+
+    function thanhTienTong() {
+        for (let i = 0; i < tenDoUong.length; i++) {
+            thanhTien[i] = giaDoUong[i] * soLuong[i];
+        }
+        hienThi()
+    }
+
+    function tongTien() {
+        sum = 0;
+        for (let i = 0; i < tenDoUong.length; i++) {
+            sum += +thanhTien[i];
+        }
+        sum += " VNĐ";
+        hienThi()
+    }
+
+    function huy(i) {
+        let xacNhan = confirm("Bạn chắn chắn muốn hủy " + tenDoUong[i] + " chứ?");
+        if (xacNhan) {
+            soLuong[i] = "";
+            giaDoUong[i] = "";
+            thanhTien[i] = "";
+            tongTien();
+            hienThi();
+        }
+    }
+
+    function reset() {
+        let xacNhan = confirm("Bạn chắn chắn muốn xóa toàn bộ thông tin chứ?");
+        for (let i = 0; i < tenDoUong.length; i++) {
+            if (xacNhan) {
+                soLuong[i] = "";
+                giaDoUong[i] = "";
+                thanhTien[i] = "";
+                tongTien();
+                hienThi();
+            }
+        }
+    }
+
+    function add() {
+        tenDoUongMoi = document.getElementById("name").value;
+        tenDoUong.push(tenDoUongMoi);
+        hienThi()
+    }
+
+    function doiTen(i) {
+        let tenThayDoi = confirm("Bạn có muốn thay đổi tên cho " + tenDoUong[i]);
+        if (tenThayDoi) {
+            tenThayDoi = prompt("Nhập tên mới cho " + tenDoUong[i]);
+            tenDoUong[i] = tenThayDoi;
+        }
+        hienThi();
+    }
+
+    function doiSoLuong(i) {
+        let doiSoLuong = confirm("Bạn có muốn thay đổi số lượng cho " + tenDoUong[i]);
+        if (doiSoLuong) {
+            doiSoLuong = +prompt("Nhập số lượng mới cho " + tenDoUong[i]);
+            soLuong[i] = doiSoLuong;
+            thanhTienTong();
+            tongTien();
+        }
+        hienThi();
+    }
+
+    function doiGia(i) {
+        let doiGia = confirm("Bạn có muốn thay đổi giá tiền cho " + tenDoUong[i]);
+        if (doiGia) {
+            doiGia = +prompt("Nhập giá tiền mới cho " + tenDoUong[i]);
+            giaDoUong[i] = doiGia;
+            thanhTienTong()
+            tongTien();
+        }
+        hienThi();
+    }
+</script>

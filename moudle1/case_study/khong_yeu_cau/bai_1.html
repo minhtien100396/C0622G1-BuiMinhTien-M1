@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        button {
+            width: 100%;
+            height: 100%;
+            text-align: left;
+        }
+
+        input {
+            width: 59px;
+            text-align: right;
+        }
+    </style>
+
+</head>
+<body>
+<h2>Menu</h2>
+<p id="viTriDisplay"></p>
+</body>
+<script>
+    let menu = ["Cafe", "Cam vắt", "Nước ép cà rốt", "Nước ép cà chua", "Nước lọc", "Nước dừa"];
+    let donGia = [10000, 12000, 15000, 15000, 5000, 10000];
+    let donGiaXuat = ['', '', '', '', '', ''];
+    let xuatSoLuong = ['', '', '', '', '', ''];
+    let thanhTien = ['', '', '', '', '', ''];
+    let outPut = '';
+    let tongSo = 0;
+    display();
+
+    //Hàm xuất ra màn hình
+    function display() {
+        outPut = '<table border="1 solid black">\n' +
+            '    <tr>\n' +
+            '        <th>STT</th>\n' +
+            '        <th>Tên</th>\n' +
+            '        <th>Đơn Giá</th>\n' +
+            '        <th>Số Lượng</th>\n' +
+            '        <th>Thành tiền</th>\n' +
+            '        <th></th>\n' +
+            '    </tr>';
+        for (let i = 0; i < 6; i++) {
+            outPut += '<tr><td style="text-align: center">' + (i + 1) + '</td>' +
+                '<td><button onclick="showGia(' + i + ')">' + menu[i] + '</button></td>' +
+                '<td style="text-align: right">' + donGiaXuat[i] + '</td>' +
+                '<td>' + xuatSoLuong[i] + '</td>' +
+                '<td style="text-align: right">' + thanhTien[i] + '</td>' +
+
+                '<td><button onclick="huyChon(' + i + ')">Hủy</button></td></tr>'
+        }
+        outPut += '<tr><td></td><td></td><td></td><td>Tổng</td>' +
+            '<td style="text-align: right">' + tongSo + '</td>' +
+            '<td><button onclick="reset()">Reset</button> </td></tr>'
+        outPut += '</table>';
+        document.getElementById("viTriDisplay").innerHTML = outPut;
+    }
+
+    //Click tên đồ uống - hiển thị giá và ô chọn số lượng
+    function showGia(i) {
+        donGiaXuat[i] = donGia[i];
+        xuatSoLuong[i] = '<input type="number" onchange="tinhTien(this.value,' + i + ')" value="0">';
+        thanhTien[i] = 0;
+        display();
+    }
+
+    //Tinh tien
+    function tinhTien(soLuong, i) {
+        thanhTien[i] = soLuong * donGiaXuat[i];
+        if (soLuong < 0) {
+            thanhTien[i] = 0;
+        }
+        xuatSoLuong[i] = '<input type="number" onchange="tinhTien(this.value,' + i + ')" value="' + soLuong + '">';
+        //tinhTong();
+        display();
+    }
+
+    //Tinh Tổng số tiền
+    function tinhTong() {
+        tongSo = 0;
+        for (let j = 0; j < thanhTien.length; j++) {
+            tongSo += +thanhTien[j];
+        }
+        display();
+    }
+
+    //Huy
+    function huyChon(i) {
+        donGiaXuat[i] = '';
+        xuatSoLuong[i] = '';
+        thanhTien[i] = '';
+        tinhTong();
+        display();
+    }
+
+    //reset
+    function reset() {
+        for (let i = 0; i < menu.length; i++) {
+            huyChon(i);
+        }
+        tinhTong();
+        display();
+    }
+
+</script>
+</html>
