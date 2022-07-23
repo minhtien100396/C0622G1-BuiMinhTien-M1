@@ -29,7 +29,7 @@
         str += "<th>Số Lượng</th>";
         str += "<th>Giá</th>";
         str += "<th>Thành Tiền</th>";
-        str += "<th colspan='4' align='center'>Tính Năng</th>";
+        str += "<th colspan='5' align='center'>Tính Năng</th>";
         str += "</tr>";
         for (let i = 0; i < tenDoUong.length; i++) {
             str += "<tr>";
@@ -42,34 +42,27 @@
             str += "<td style='text-align: center'><button onclick='doiSoLuong(" + i + ")'>Đổi Số Lượng</button></td>";
             str += "<td style='text-align: center'><button onclick='doiGia(" + i + ")'>Đổi Giá</button></td>";
             str += "<td style='text-align: center'><button type='reset' onclick='huy(" + i + ")'>Hủy</button></td>";
+            str += "<td style='text-align: center'><button onclick='xoa(" + i + ")'>Xóa</button></td>";
             str += "</tr>";
         }
         str += "<tr>";
         str += "<th></th>";
         str += "<th><input type=\"text\" placeholder=\"Nhập tên đồ uống mới\" id=\"name\">\n" +
             "    <button onclick=\"add()\">Add</button></th>";
-        str += "<th></th>";
-        str += "<th>Tổng Tiền</th>";
+        str += "<th colspan='2'>Tổng Tiền</th>";
         str += "<th>" + sum + "</th>";
-        str += "<th style='text-align: center' colspan='4'  ><input type='reset' onclick='reset()' value='Reset' ></th>";
+        str += "<th style='text-align: center' colspan='5'  ><input type='reset' onclick='reset()' value='Reset' ></th>";
         str += "</tr>";
         str += "</table>";
         document.getElementById("table").innerHTML = str;
     }
 
     function hienThiThongTin(i) {
-        giaDoUong[i] = (+prompt("Hãy nhập giá cho " + [tenDoUong[i]]));
+        giaDoUong[i] = +prompt("Hãy nhập giá cho " + [tenDoUong[i]]);
         soLuong[i] = +prompt("Hãy nhập số lượng cho " + tenDoUong[i]);
-        thanhTienTong();
+        thanhTien[i] = giaDoUong[i] * soLuong[i];
         tongTien()
         hienThi();
-    }
-
-    function thanhTienTong() {
-        for (let i = 0; i < tenDoUong.length; i++) {
-            thanhTien[i] = giaDoUong[i] * soLuong[i];
-        }
-        hienThi()
     }
 
     function tongTien() {
@@ -125,7 +118,7 @@
         if (doiSoLuong) {
             doiSoLuong = +prompt("Nhập số lượng mới cho " + tenDoUong[i]);
             soLuong[i] = doiSoLuong;
-            thanhTienTong();
+            thanhTien[i] = giaDoUong[i] * soLuong[i];
             tongTien();
         }
         hienThi();
@@ -136,9 +129,14 @@
         if (doiGia) {
             doiGia = +prompt("Nhập giá tiền mới cho " + tenDoUong[i]);
             giaDoUong[i] = doiGia;
-            thanhTienTong()
+            thanhTien[i] = giaDoUong[i] * soLuong[i];
             tongTien();
         }
+        hienThi();
+    }
+
+    function xoa(i) {
+        tenDoUong.splice(i, 1);
         hienThi();
     }
 </script>
