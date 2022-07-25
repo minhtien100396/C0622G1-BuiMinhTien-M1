@@ -45,6 +45,9 @@
                 return false;
             }
         }
+        getGioiTinh(){
+           return  this.gender;
+        }
 
         setGioiTinh(gioitinh) {
             this.gender = gioitinh;
@@ -85,6 +88,9 @@
                 quatao.GiamKhoiLuong();
             }
         }
+        ThongTinCaNhan(){
+            document.write(this.name+","+this.gender+","+this.weight+"<br>");
+        }
 
     }
 
@@ -114,5 +120,9 @@
     console.log("Quả táo: " + quaTao.getWeight());
     adam.say("Em ăn đi!");
     eva.AnTao(quaTao);
+    eva.ThongTinCaNhan();
+    adam.ThongTinCaNhan();
+    eva.setGioiTinh("Gay");
+    eva.ThongTinCaNhan();
 
 </script>

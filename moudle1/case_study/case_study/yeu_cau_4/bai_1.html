@@ -14,7 +14,7 @@
     Và một hàm tìm từ dài nhất trong 1 xâu ký tự. Hàm main sử dụng các hàm này để nhập xâu ký tự từ bàn phím,
     in ra xâu trước và sau khi chuẩn hóa, 1 từ dài nhất trong xâu đó.
 */
-    let xauKiTu = "    tRuong TaN   HAI    Anh Duong   bong da aaaaaaaaaaaaaa  ";
+    let xauKiTu = "    tRuong TaN   HAI    Anh Duong   bong da   ";
     const chuHoa = ' ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     const chuThuong = ' abcdefghijklmnopqrstuvwxyz';
     let array = [];
@@ -57,7 +57,6 @@
         let arr = array.join('');
         document.write((arr));
 
-        return arr;
     }
 
     chuanHoaXauKiTu();
@@ -74,7 +73,6 @@
             }
         }
         document.write("<br>" + "Từ dài nhất là " + phanTuCoKiTuLonNhat + " có " + max + " kí tự");
-        return phanTuCoKiTuLonNhat;
     }
 
     timTuDaiNhat();

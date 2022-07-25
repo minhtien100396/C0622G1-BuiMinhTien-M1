@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function countChart(string1, string2) {
+        let arrString1 = string1.split("");
+        let arrString2 = string2.split("");
+        let newArray = [];
+        for (let i = 0; i < arrString1.length ; i++) {
+            for (let j = 0; j < arrString2.length ; j++) {
+                if (arrString1[i]===arrString2[j]) {
+                    newArray.push(arrString1[i]);
+                    arrString2.splice(j,1);
+                    j--;
+                    break;
+                }
+            }
+        }
+        return newArray.length;
+    }
+    let s1= "aaaaaaaaccccbdgsss";
+    let s2 = "ssssssaaaaaaaacccccccccfffffeeeeee";
+    alert(countChart(s1,s2));
+
+</script>
+</html>

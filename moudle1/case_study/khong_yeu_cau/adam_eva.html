@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    class Tao{
+        constructor(weight,) {
+            this.weight=10;
+        }
+        giamWeight(){
+            this.weight--;
+        }
+        anHetTao(){
+            if (this.weight==0){
+                return true;
+            }else {
+                return false;
+            }
+        }
+        getWeight(){
+            return this.weight;
+        }
+        setWeight(weight){
+            this.weight=weight;
+        }
+    }
+    class ConNguoi{
+        constructor(name,gender,weight) {
+            this.name=name;
+            this.gender=gender;
+            this.weight=weight;
+        }
+        gioiTinhNam(){
+            if (this.gender==="Nam"){
+                return alert(true);
+            }
+            return alert(false);
+        }
+        getWeight(){
+            return this.weight;
+        }
+        getGender(){
+            return this.gender;
+        }
+        setGioiTinh(gioitinh){
+            this.gender=gioitinh;
+        }
+        kiemTraTao(tao){
+            if (tao.anHetTao()){
+                document.write(this.name+" : "+" Táo hết rồi");
+                return false;
+            }else {
+                return true;
+
+            }
+        }
+        say(text){
+            document.write(this.name+" : "+text+"<br>");
+        }
+        anTao(tao){
+            if (this.kiemTraTao(tao)){
+                tao.giamWeight();
+                this.weight++;
+            }
+        }
+    }
+    let tao = new Tao(10);
+    let adam = new ConNguoi("Adam","Nam",50);
+    let eva= new ConNguoi("Eva","Nữ",40);
+    document.write(eva.getWeight()+"<br>");
+    adam.say("Ăn táo không em?");
+    eva.say("ăn");
+    adam.kiemTraTao(tao);
+    eva.anTao(tao);
+    eva.anTao(tao);
+    eva.anTao(tao);
+    document.write(eva.getWeight()+"<br>");
+    document.write(tao.getWeight()+"<br>");
+    adam.kiemTraTao(tao);
+    adam.anTao(tao);
+    adam.anTao(tao);
+    adam.anTao(tao);
+    adam.anTao(tao);
+    adam.anTao(tao);
+    adam.anTao(tao);
+    adam.anTao(tao);
+    eva.kiemTraTao(tao);
+    eva.gioiTinhNam();
+    eva.setGioiTinh("Nữ");
+    eva.getGender();
+</script>

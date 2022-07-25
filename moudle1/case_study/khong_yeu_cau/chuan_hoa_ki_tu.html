@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+
+    function chuanHoa(str) {
+        str = str.trim();
+        str = str.toLowerCase();
+        let checkArray = str.split('');
+        for (let i = 0; i < checkArray.length; i++) {
+            if (checkArray[i] === " " && checkArray[i + 1] === " ") {
+                checkArray.splice(i, 1);
+                i--;
+            }
+        }
+
+        checkArray[0] = checkArray[0].toString().toUpperCase();
+        for (let i = 1; i < checkArray.length; i++) {
+            if (checkArray[i - 1] === " ") {
+                checkArray[i] = checkArray[i].toString().toUpperCase();
+            }
+        }
+        str = checkArray.join("");
+        return str;
+    }
+
+    function findLongestWord(str) {
+        let words = str.split(' ');
+        let maxWord = "";
+        let maxLength = 0;
+        for (let i = 0; i < words.length; i++) {
+            if (words[i].length > maxLength) {
+                maxLength = words[i].length;
+                maxWord = words[i];
+            }
+        }
+        return "Từ dài nhất là: " + maxWord + "<br>" + " Độ dài là: " + maxLength;
+
+    }
+
+    let inputString = "  tRuonG    tAn Hai LONg Namdsadsadas     ";
+    let formString = chuanHoa(inputString);
+    document.write("Từ chuẩn hóa là: " + formString + "<br>" + findLongestWord(formString));
+</script>
+</html>

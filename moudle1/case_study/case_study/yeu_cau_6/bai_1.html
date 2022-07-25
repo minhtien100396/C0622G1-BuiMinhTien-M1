@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h2>Xổ Số CodeGym</h2>
+    <p id="table"></p>
+    <button onclick="muaVe()">Mua vé</button>
+    <button onclick="xemKetQua()">Xem Kết Quả</button>
+</div>
+</body>
+</html>
+<script>
+    let str="";
+    let array=[];
+    let soTrungThuong=[1,2,3,4,5,6];
+    hienThi();
+    function hienThi() {
+       str="<table>";
+       for (let i = 0; i < array.length ; i++) {
+           str+="<tr>";
+           for (let j = 0; j < 6 ; j++) {
+               str+="<td><button onclick='nhapSo()'>"+array[i][j]+"</button></td>";
+           }
+           str+="</tr>";
+       }
+       str+="</table>";
+       document.getElementById("table").innerHTML=str;
+   }
+   function muaVe() {
+       let luaChon = +prompt("Bạn có 2 sự lựa chọn: \n1.Bạn muốn tự chọn số. \n2. Hệ thống tự random.");
+       let array1 = [];
+       if (soLuotMua()){
+           if (luaChon == 2) {
+               for (let j = 0; j < 6; j++) {
+                   array1[j] = Math.floor(Math.random() * 100);
+               }
+               array.push(array1);
+               hienThi();
+           }
+           if (luaChon == 1) {
+               for (let j = 0; j < 6; j++) {
+                   array1[j] = prompt("Nhập chữ số ở ô "+Number(j+1));
+               }
+               soLuotMua();
+               array.push(array1);
+               hienThi();
+           }
+       }
+
+   }
+   function soLuotMua() {
+        if (array.length>3) {
+            alert("Bạn chỉ mua được 4 vé!");
+           return false;
+        }
+        return true;
+   }
+   function xemKetQua() {
+       for (let i = 0; i < array.length ; i++) {
+           let count=0;
+           for (let j = 5; j >=0 ; j--  ) {
+               if (soTrungThuong[j]==array[i][j]) {
+                   count++;
+               }
+
+           }
+           if (count==6) {
+               alert("vé"+(i+1)+" trúng giải nhất");
+           }else {
+               if (count==5) {
+                   alert("vé"+(i+1)+" trúng giải nhì");
+               }else {
+                   if (count==3) {
+                       alert("vé"+(i+1)+" trúng giải ba");
+                   }else {
+                       alert("vé"+(i+1)+" không trúng");
+                   }
+               }
+
+           }
+
+       }
+   }
+
+
+
+
+
+
+</script>
