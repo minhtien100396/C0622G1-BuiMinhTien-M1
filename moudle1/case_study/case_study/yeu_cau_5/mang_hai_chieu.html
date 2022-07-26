@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+    let a= khoiTaoMangHaiChieu(2, 2);
+    alert(tinhTrungBinhCong(a));
+
+    function khoiTaoMangHaiChieu(n, m) {
+        let array = [];
+        for (let i = 0; i < n; i++) {
+            array[i] = [];
+            for (let j = 0; j < m; j++) {
+                array[i][j] = prompt("Nhập phần tử cho mảng");
+            }
+        }
+        return array;
+    }
+
+    function tinhTrungBinhCong(array) {
+        let sum = 0;
+        let count = 0;
+        for (let i = 0; i < array.length; i++) {
+            for (let j = 0; j < array[i].length; j++) {
+                if (j % 2 === 0) {
+                    sum += Number(array[i][j]);
+                    count++;
+                }
+            }
+        }
+       return (sum / count);
+    }
+
+
+</script>

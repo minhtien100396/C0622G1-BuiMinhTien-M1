@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h2>Menu Đồ Uống</h2>
+    <p id="table"></p>
+</div>
+
+</body>
+</html>
+<script>
+    class MenuDoUong {
+        constructor(tenDoUong, soLuong, giaTien, thanhTien) {
+            this.tenDoUong = tenDoUong;
+            this.soLuong = soLuong;
+            this.giaTien = giaTien;
+            this.thanhTien = thanhTien;
+        }
+
+        getTenDoUong() {
+            return this.tenDoUong;
+        }
+
+        getSoLuong() {
+            return this.soLuong;
+        }
+
+        getGiaTien() {
+            return this.giaTien;
+        }
+
+        setGiaTien(giaTien) {
+            this.giaTien = giaTien;
+        }
+
+        setTenDoUong(tenDoUong) {
+            this.tenDoUong = tenDoUong;
+        }
+
+        setSoLuong(soLuong) {
+            this.soLuong = soLuong;
+        }
+
+        ThanhTien() {
+            this.thanhTien = this.soLuong * this.giaTien;
+            return this.thanhTien;
+        }
+    }
+
+    let camEp = new MenuDoUong("Cam ép", 1, 20000);
+    let nuocDua = new MenuDoUong("Nước dừa", 1, 50000);
+    let cafe = new MenuDoUong("Cafe", 1, 10000);
+    let menu = [camEp, nuocDua, cafe];
+    hienThi(menu);
+
+    let str = "";
+
+    function hienThi(menu) {
+        let str = "<table border='1px' cellpadding='10px' width='100%'>";
+        str += "<tr>";
+        str += "<th>" + "STT" + "</th>";
+        str += "<th>" + "Tên Đồ Uống" + "</th>";
+        str += "<th>" + "Số Lượng" + "</th>";
+        str += "<th>" + "Giá Tiền" + "</th>";
+        str += "<th>" + "Thành Tiền" + "</th>";
+        str += "</tr>";
+        for (let i = 0; i < menu.length; i++) {
+            str += "<tr>";
+            str += "<td>" + (i + 1) + "</td>";
+            str += "<td>" + menu[i].tenDoUong + "</td>";
+            str += "<td>" + menu[i].soLuong + "</td>"
+            str += "<td>" + menu[i].giaTien + "</td>"
+            str += "<td>" + menu[i].ThanhTien() + "</td>";
+            str += "<td><button onclick='huy("+i+")'>Hủy</button></td>";
+            str += "<td><button onclick='thayDoiTen("+i+")'>Thay Đổi Tên</button></td>";
+            str += "<td><button onclick='thayDoiSoLuong("+i+")'>Thay Đổi Số Lượng</button></td>";
+            str += "<td><button onclick='thayDoiGiaTien("+i+")'>Thay Đổi Giá Tiền</button></td>";
+            str += "</tr>";
+        }
+        str += "<tr>";
+        str += "<th></th>";
+        str += "<th><button onclick='themMon()'>Thêm Đồ Uống Mới</button></th>";
+        str += "<th colspan='2'>Tổng Tiền</th>";
+        str += "<th id='tongTien'></th>";
+        str += "</tr>";
+        str += "</table>";
+        document.getElementById("table").innerHTML = str;
+        tongTien();
+    }
+
+    function tongTien() {
+        let tongTien = 0;
+        for (let i = 0; i < menu.length; i++) {
+            tongTien += menu[i].ThanhTien();
+        }
+        document.getElementById("tongTien").innerHTML = tongTien;
+    }
+    function themMon() {
+        let doUongMoi = new MenuDoUong()
+        doUongMoi.setTenDoUong(prompt("Hãy nhập tên đồ uống mới cho menu"));
+        doUongMoi.setGiaTien(0);
+        doUongMoi.setSoLuong(0);
+        menu.push(doUongMoi);
+        hienThi(menu);
+    }
+    
+    function huy(i) {
+        menu[i].setSoLuong(0);
+        menu[i].setGiaTien(0);
+        hienThi(menu);
+    }
+    function thayDoiTen(i) {
+        menu[i].setTenDoUong(prompt("Nhập tên đồ uống mới thay thế cho "+menu[i].getTenDoUong()));
+        hienThi(menu);
+    }
+    function thayDoiSoLuong(i) {
+        menu[i].setSoLuong(prompt("Nhập số lượng cho "+menu[i].getTenDoUong()));
+        hienThi(menu);
+    }
+    function thayDoiGiaTien(i) {
+        menu[i].setGiaTien(prompt("Nhập giá tiền cho "+menu[i].getTenDoUong()));
+        hienThi(menu);
+    }
+</script>

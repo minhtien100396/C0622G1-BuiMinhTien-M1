@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let array=[];
+    const chuHoa = ' ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    function inHoa(string) {
+        for (let i = 0; i < string.length ; i++) {
+           if (chuHoa.includes(string[i])) {
+               array.push(string[i]);
+           }
+        }
+        return array;
+    }
+    document.write(inHoa("abCDeF"));
+</script>

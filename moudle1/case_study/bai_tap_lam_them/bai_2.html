@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*Viết hàm có tham số truyền vào là một chuỗi các ký tự.
+    Hàm thực hiện đếm số lượng ký tự in Hoa và cố ký tự in thường
+    Ví dụ:   HellOCodeym => kết quả trả về : [3,8]=> 3: ký tự in hoa, 8 ký tự thường
+           Nếu là chuỗi rỗng “” => thì trả về một mảng [0,0]
+
+    Lưu ý : không tính ký tự khoảng trắng cách;
+*/
+
+    let array = [];
+    const chuHoa = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const chuThuong = 'abcdefghijklmnopqrstuvwxyz';
+
+    function demSoLuongKiTu(string) {
+        let count = 0;
+        let dem = 0;
+        for (let i = 0; i < string.length; i++) {
+            if (chuHoa.includes(string[i])) {
+                count++;
+            }
+            if (chuThuong.includes(string[i])) {
+                dem++;
+            }
+        }
+        array.push(count, dem);
+        document.write("Trong chuỗi có " + count + " kí tự in hoa và " + dem + " kí tự in thường")
+        document.write("<br>" + array);
+    }
+
+    demSoLuongKiTu("   HellO   Code  ym    ");
+</script>
