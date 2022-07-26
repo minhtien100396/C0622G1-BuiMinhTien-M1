@@ -18,14 +18,26 @@
     function timChiSoCuaPhanSoLonNhat(tuso, mauso) {  //[1, 1, 1],[2,1 ,3]
         let max = tuso[0] / mauso[0]; //1/2
         let index = 0;
-        for (let i = 1; i < tuso.length; i++) {//i<3  i=1 , i=2
-            if (max < tuso[i] / mauso[i]) { //1/2 <1/1
+        let key
+        let min = tuso[0] / mauso[0];
+        let sum = 0;
+        for (let i = 0; i < tuso.length; i++) {//i<3  i=1 , i=2
+            sum += tuso[i] / mauso[i];
+            if (max <= tuso[i] / mauso[i]) { //1/2 <1/1
                 max = tuso[i] / mauso[i];
                 index = i;
             }
+            if (min >= tuso[i] / mauso[i]) { //1/2 <1/1
+                min = tuso[i] / mauso[i];
+                key = i;
+            }
         }
-        return index;
+        let giaTriTrungBinh = sum / tuso.length;
+        let hienThi = document.write("Chỉ số của phân số lớn nhất là " + index + " ứng với giá trị là   " + max +
+            "<br>" + "Chỉ số của phân số bé nhất là " + key + " ứng với giá trị là   " + min +
+            "<br>" + "Giá trị trung bình phân số của mảng là: " + giaTriTrungBinh);
+        return hienThi;
     }
 
-    document.write("Chỉ số của phân số lớn nhất là: " + timChiSoCuaPhanSoLonNhat([1, 1, 1, 1, 1, 1], [4, 6, 3, 1, 5, 2]));
+    timChiSoCuaPhanSoLonNhat([1, 2, 3, 4, 5, 6], [1, 1, 1, 1, 1, 1]);
 </script>

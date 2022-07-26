@@ -9,21 +9,25 @@
 </body>
 </html>
 <script>
-    let str=prompt("Nhập vào một chuối bất kì");
-    const UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    const LOWER = 'abcdefghijklmnopqrstuvwxyz';
-    const array1 = [];
+    /*Bài 4: Viết một chương trình nhập một số từ bàn phím và in ra màn hình bằng chữ.
+     Ví dụ 1234, kết quả in ra màn hình là một hai ba bốn.*/
 
-    for (let i = 0; i <str.length ; i++) {
-        if (UPPER.includes(str[i])) {
-            xauKiTu.push(str[i].toLowerCase());
-        }else if (LOWER.includes(str[i])) {
-            xauKiTu.push(str[i].toUpperCase());
-        }else {
-            xauKiTu.push(str[i]);
+
+    function nhapSoInChu(number) {
+        let soBatKi = number.toString();
+        let str = "";
+        let mangSo = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+        let kiTu = ['khong', 'mot', 'hai', 'ba', 'bon', 'nam', 'sau', 'bay', 'tam', 'chin']
+        for (let i = 0; i < soBatKi.length; i++) {
+            for (let j = 0; j < mangSo.length; j++) {
+                if (soBatKi[i] === mangSo[j]) {
+                    str += kiTu[j] + "&ensp;";
+                }
+            }
         }
+        return str;
     }
-    document.write(xauKiTu.join(''));
 
+    document.write(nhapSoInChu(3231))
 
 </script>

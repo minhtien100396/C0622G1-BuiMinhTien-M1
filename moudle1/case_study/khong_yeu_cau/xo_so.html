@@ -5,104 +5,128 @@
     <title>Title</title>
 </head>
 <body>
-<div>
-    <h2>Xổ Số CodeGym</h2>
-    <p id="table"></p>
-    <button onclick="muaVe()">Mua vé</button>
-    <button onclick="xemKetQua()">Xem kết quả</button>
-</div>
+<h1>
+    Xổ Số Code Gym
+</h1>
+<p id="showXoSo">
 
+</p>
 </body>
-</html>
 <script>
-    let soVe = [];
-    let str = "";
-    let veTrungThuong = [1, 2, 3, 4, 5, 6]
-    hienThi();
-
-    function hienThi() {
-        str = "<table border='1px' cellpadding='5px' style='border: solid blueviolet'>";
-        for (let i = 0; i < soVe.length; i++) {
-            str += "<tr>";
-            for (let j = 0; j < 6; j++) {
-                str += "<td>" + soVe[i][j] + "</td>";
-            }
-            str += "</tr>";
+    class HeThong {
+        constructor() {
+            this.maSoTrung = [];
+            this.giaiThuong = [];
+            this.cachMuaSo = 1;
+            this.soLuaChon = ["","" ,"" ,"" ,"" ,"" ];
         }
-        str += "</table>";
-        document.getElementById("table").innerHTML = str;
 
+        getMaSoTrung() {
+            return this.maSoTrung;
+        }
+
+        setMaSoTrung() {
+            this.maSoTrung = ["12","34","56","78","90","10"];
+        }
+
+        getGiaiThuong() {
+            return this.giaiThuong;
+        }
+
+        setGiaiThuong(giai1, giai2, giai3) {
+            this.giaiThuong = [giai1, giai2, giai3];
+        }
+
+        setTuyChon() {
+            this.cachMuaSo = +prompt("Bạn có 2 lựa chọn\n1.Bạn muốn tự chọn số\n" + "2.Hệ thống tự chọn số");
+            if (this.cachMuaSo===2) {
+                for (let i = 0; i < this.soLuaChon.length ; i++) {
+                    this.soLuaChon[i]= Math.floor(Math.random() * 100);
+                }
+                this.getHienthi();
+                this.setHienThi();
+            } else {
+                for (let i = 0; i < this.soLuaChon.length ; i++) {
+                    this.soLuaChon[i]="";
+                } this.getHienthi();
+                this.setHienThi();
+                return this.cachMuaSo;}
+        }
+
+        getSoLuaChon() {
+            return this.soLuaChon;
+        }
+        checkKetQua(){
+            let dem = 0
+            for (let i = 0; i < 6 ; i++) {
+                if (this.maSoTrung[i] === this.soLuaChon[i]){
+                    dem++
+                }
+            }
+            if (dem==6) {alert(" Trúng giải nhất, giải thưởng là: "+this.giaiThuong[0]);}
+            else alert("không trúng giải");
+        }
+
+        getHienthi() {
+            let showInfo = "";
+            showInfo = "<table> <tr>";
+            for (let i = 0; i < 6; i++) {
+                showInfo += ' <td><input style="width: 60px; height: 60px; font-size: 30px; border-radius: 60px" type="button" value="' + this.soLuaChon[i] + '" onclick="chonSo(' + i + ')"></td>';
+            }
+            showInfo += "</tr>";
+            showInfo += '<tr><td><button type="button" onclick="muaVe()">Mua vé</button>';
+            showInfo += '<td colspan="5"><button type="button" onclick="xemketqua()">Xem kết quả</button></td>' + '</tr></table>';
+            return showInfo;
+        }
+
+        setHienThi() {
+            document.getElementById("showXoSo").innerHTML = this.getHienthi();
+        }
+
+        chonSoNguoiChoi(index) {
+            if (this.cachMuaSo===1) {
+                this.soLuaChon[index] = prompt("nhập số");
+            }
+            this.getHienthi();
+            this.setHienThi();
+
+
+        }
+    }
+
+    class NguoiChoi {
+        constructor(heThong) {
+            this.heThong = heThong;
+        }
+
+        luaChonMuaSo() {
+            this.heThong.setTuyChon();
+        }
+
+        chonMaSo(index) {
+            this.heThong.chonSoNguoiChoi(index);
+        }
+        xemKetQua(){
+            this.heThong.checkKetQua();
+        }
+    }
+
+    let hethong = new HeThong();
+    let nguoiChoi = new NguoiChoi(hethong);
+    hethong.getHienthi();
+    hethong.setHienThi();
+    hethong.setMaSoTrung();
+    hethong.setGiaiThuong("100 triệu","50 triệu", "20 triệu");
+    function chonSo(index) {
+        nguoiChoi.chonMaSo(index);
     }
 
     function muaVe() {
-        let luaChon = +prompt("Bạn có 2 lựa chọn: \n1. Bạn muốn tự chọn số \n2. Hệ thống tự random");
-
-        function ranDom() {
-            if (luaChon === 2) {
-                let array = [];
-                for (let i = 0; i < 6; i++) {
-                    array[i] = Math.floor(Math.random() * 100);
-                }
-                if (soVeDuocMua()) {
-                    soVe.push(array);
-                }
-            }
-            return soVe;
-        }
-
-        function tuChon() {
-            if (luaChon === 1) {
-                let array = [];
-                for (let i = 0; i < 6; i++) {
-                    array[i] = +prompt("Hãy nhập số bạn muốn!")
-                    while (array[i] < 0 || isNaN(array[i])) {
-                        array[i] = +prompt("Số bạn nhập phải là số nguyên dương. Vui lòng nhập lại");
-                    }
-                }
-                if (soVeDuocMua()) {
-                    soVe.push(array);
-                }
-            }
-            return soVe;
-        }
-
-        if (ranDom()) {
-            hienThi();
-        }
-        if (tuChon()) {
-            hienThi();
-        }
+        nguoiChoi.luaChonMuaSo();
     }
-
-    function soVeDuocMua() {
-        if (soVe.length > 3) {
-            alert("Chỉ mua được 4 vé!");
-            return false;
-        }
-        return true;
+    function xemketqua() {
+        nguoiChoi.xemKetQua();
     }
-
-    function xemKetQua() {
-        for (let i = 0; i < soVe.length; i++) {
-            let count = 0;
-            for (let j = 5; j >= 0; j--) {
-                if (soVe[i][j] === veTrungThuong[j]) {
-                    count++;
-                }
-            }
-            if (count == 6) {
-                alert("Vé thứ " + (i + 1) + " : Trúng giải nhất");
-            } else if (count == 5) {
-                alert("Vé thứ " + (i + 1) + " : Trúng giải nhì");
-            } else if (count == 3 || count == 4) {
-                alert("Vé thứ " + (i + 1) + " : Trúng giải ba");
-            } else {
-                alert("Vé thứ " + (i + 1) + " : Chúc bạn may mắn lần sau!");
-            }
-        }
-
-    }
-
-    xemKetQua();
 
 </script>
+</html>

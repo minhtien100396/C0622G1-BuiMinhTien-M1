@@ -15,20 +15,26 @@
     Ví dụ:  A=[7,2,5,3,5,3] và B=[7,2,5,4,6,3,5,3] thì kết quả missingValue(A, B) = [4, 6]
 */
 
-    function kiemTra(arrayA, arrayB) {
+
+    function kiemTra(array1, array2) {
         let arrayC = [];
-        for (let i = 0; i < arrayB.length; i++) {
-            if (!arrayA.includes(arrayB[i])) {
-                arrayC.push(arrayB[i]);
+        for (let i = 0; i < array2.length; i++) {
+            if (isNaN(array1[i] || isNaN(array2[i]))) {
+                return document.write("Mảng có chứa kí tự, vui lòng nhập lại!");
+            }
+            if (!array1.includes(array2[i])) {
+                if (!arrayC.includes(array2[i])) {
+                    arrayC.push(array2[i]);
+                }
             }
         }
-        return arrayC;
+        let hienThi = document.write("Các số xuất hiện trong mảng 2 nhưng không xuất hiện trong mảng 1: " + arrayC);
+        return hienThi;
     }
 
-    let Array1 = [7, 2, 5, 3, 5, 3];
-    let Array2 = [7, 2, 5, 4, 6, 3, 5, 3];
-
-    document.write("Mảng 1: " + Array1 + "<br>");
-    document.write("Mảng 2: " + Array2 + "<br>");
-    document.write("Các số xuất hiện trong mảng 2 nhưng không xuất hiện trong mảng 1: " + kiemTra(Array1, Array2));
+    let array1 = [7, 2, 5, 3, 2, 5, 3, "a"];
+    let array2 = [7, 2, 5, 4, 6, 6, 3, 4, 4, 4, 4, 1, 1, 1, 5, 3];
+    document.write("Mảng 1: " + array1 + "<br>");
+    document.write("Mảng 2: " + array2 + "<br>");
+    kiemTra(array1, array2);
 </script>

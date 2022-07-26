@@ -13,16 +13,17 @@
 </body>
 </html>
 <script>
-    let xauKiTu=["a","b","c"];
+    let array=["a","b","c"];
+    hienThi();
     function hienThi(){
     let str="";
-     str+="<table table border='1px' cellSpacing='0px' cellPadding='10px'>";
+     str+="<table border='1px' cellSpacing='0px' cellPadding='10px'>";
      str+="<tr>"+"<td>"+"Tên sản phẩm"+"</td>";
      str+="<td align='right' colspan='2'>"+array.length+" sản phẩm"+"</td>";
     for (let i = 0; i < array.length ; i++) {
        str+="<tr>";
        str+="<td>"+array[i]+"</td>";
-       str+="<td>"+"<input type='button' value='Edit' onclick='edit("+i+")'>"+"</td>";
+           str+="<td>"+"<input type='button' value='Edit' onclick='edit("+i+")'>"+"</td>";
        str+="<td>"+"<input type='button' value='Delete' onclick='xoa("+i+")'>"+"</td>";
     }
     str+="</tr>";
@@ -44,6 +45,5 @@
         array[i]=doiTen;
         hienThi();
     }
-    hienThi();
 
 </script>

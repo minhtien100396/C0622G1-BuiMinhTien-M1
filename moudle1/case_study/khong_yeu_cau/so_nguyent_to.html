@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*Bài 2: Viết hàm liệt kê các số nguyên tố trong mảng 2 chiều, đếm các số nguyên tố có trong mảng đó.
+    * Tính tổng các số nguyên tố đó*/
+    let array = [];
+    function taoMang2Chieu(m, n) {
+        for (let i = 0; i < m; i++) {
+            array[i] = [];
+            for (let j = 0; j < n; j++) {
+                array[i][j] = +prompt("Hãy nhập phần tử cho mảng");
+            }
+        }
+        document.write(array);
+        return array;
+    }
+
+    taoMang2Chieu(2, 2)
+
+    function kiemTraSoNguyenTo(number) {
+        if (number < 2) {
+            return false;
+        } else {
+            for (let i = 2; i < number; i++) {
+                if (number % i == 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
+
+    let str = "";
+    let count = 0;
+
+    function demCacSoNguyenToTrongMang() {
+        for (let i = 0; i < array.length; i++) {
+            for (let j = 0; j < array[i].length; j++) {
+                if (kiemTraSoNguyenTo(array[i][j])) {
+                    str += array[i][j] + "<br>";
+                    count++;
+                }
+            }
+        }
+        let hienThi = document.write("<br>" + " Mảng có " + count + " số nguyên tố là :" + "<br>" + str);
+        return hienThi;
+    }
+
+    demCacSoNguyenToTrongMang()
+    let sum = 0;
+
+    function tongCacSoNguyenToTrongMang(number) {
+        for (let i = 0; i < array.length; i++) {
+            for (let j = 0; j < array[i].length; j++) {
+                if (kiemTraSoNguyenTo(array[i][j])) {
+                    sum += array[i][j];
+                }
+            }
+        }
+        let hienThi1 = document.write("<br>" + " Tổng các số nguyên tố có trong mảng là: " + sum);
+        return hienThi1;
+    }
+
+    tongCacSoNguyenToTrongMang();
+    let arraySapXep=[];
+    function sapXepCacSoNguyenTo() {
+        for (let i = 0; i < array.length; i++) {
+            for (let j = 0; j < array[i].length; j++) {
+                if (kiemTraSoNguyenTo(array[i][j])) {
+                    arraySapXep.push(array[i][j]);
+                }
+            }
+        }
+        arraySapXep.sort(function (a,b) {
+            return a-b;
+        })
+        let hienThi2 = document.write("<br>" + " Mảng theo thứ tự tăng dần: " +arraySapXep);
+        return hienThi2;
+    }
+    sapXepCacSoNguyenTo();
+
+
+</script>

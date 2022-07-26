@@ -15,37 +15,61 @@
     10% thuế thu nhập nếu lương từ 7 đến 15 triệu.
     5% thuế thu nhập nếu lương dưới 7 triệu
 */
-    let monney = +prompt("Nhập tiền lương của bạn");
+    // let monney = +prompt("Nhập tiền lương của bạn");
+    //
+    // function thueThuNhap() {
+    //     let thueThuNhap;
+    //     if (monney < 7000000) {
+    //         thueThuNhap = monney * 0.05;
+    //         return thueThuNhap;
+    //     } else if (monney < 15000000) {
+    //         thueThuNhap = monney * 0.1;
+    //         return thueThuNhap;
+    //     } else {
+    //         thueThuNhap = monney * 0.2;
+    //         return thueThuNhap;
+    //     }
+    // }
+    //
+    // function luongSauThue() {
+    //     let luongSauThue
+    //     if (monney < 7000000) {
+    //         luongSauThue = monney - (monney * 0.05);
+    //         return luongSauThue;
+    //     } else if (monney < 15000000) {
+    //         luongSauThue = monney - (monney * 0.1);
+    //         return luongSauThue;
+    //     } else {
+    //         luongSauThue = monney - (monney * 0.2);
+    //         return luongSauThue;
+    //     }
+    // }
+    //
+    // document.write("Thuế thu nhập là: " + thueThuNhap() + " VNĐ" + "<br>");
+    // document.write("Lương sau thuế là: " + luongSauThue() + " VNĐ");
 
-    function thueThuNhap() {
+
+    function thueThuNhapVaLuongSauThue(luongTruocThue) {
         let thueThuNhap;
-        if (monney < 7000000) {
-            thueThuNhap = monney * 0.05;
-            return thueThuNhap;
-        } else if (monney < 15000000) {
-            thueThuNhap = monney * 0.1;
-            return thueThuNhap;
+        let luongSauThue;
+        if (luongTruocThue < 7000000) {
+            thueThuNhap = luongTruocThue * 0.05;
+            luongSauThue = luongTruocThue - thueThuNhap;
+            let hienThi = document.write("Thuế thu nhập là: " + thueThuNhap + " VNĐ" + "<br>" + "Lương sau thuế là: " + luongSauThue + " VNĐ");
+            return hienThi;
+        } else if (luongTruocThue < 15000000) {
+            thueThuNhap = luongTruocThue * 0.1;
+            luongSauThue = luongTruocThue - thueThuNhap;
+            let hienThi = document.write("Thuế thu nhập là: " + thueThuNhap + " VNĐ" + "<br>" + "Lương sau thuế là: " + luongSauThue + " VNĐ");
+            return hienThi;
         } else {
-            thueThuNhap = monney * 0.2;
-            return thueThuNhap;
+            thueThuNhap = luongTruocThue * 0.2;
+            luongSauThue = luongTruocThue - thueThuNhap;
+            let hienThi = document.write("Thuế thu nhập là: " + thueThuNhap + " VNĐ" + "<br>" + "Lương sau thuế là: " + luongSauThue + " VNĐ");
+            return hienThi;
         }
     }
 
-    function luongSauThue() {
-        let luongSauThue
-        if (monney < 7000000) {
-            luongSauThue = monney - (monney * 0.05);
-            return luongSauThue;
-        } else if (monney < 15000000) {
-            luongSauThue = monney - (monney * 0.1);
-            return luongSauThue;
-        } else {
-            luongSauThue = monney - (monney * 0.2);
-            return luongSauThue;
-        }
-    }
-
-    document.write("Thuế thu nhập là: " + thueThuNhap() + " VNĐ" + "<br>");
-    document.write("Lương sau thuế là: " + luongSauThue() + " VNĐ");
+    thueThuNhapVaLuongSauThue(5000000);
 
 </script>
