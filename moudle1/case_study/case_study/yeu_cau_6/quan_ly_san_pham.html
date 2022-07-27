@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h2 align="center">Danh Sách Sản Phẩm</h2>
+    <p id="table"></p>
+
+</div>
+
+</body>
+</html>
+<script>
+    class QuanLySanPham {
+        constructor(maSanPham, tenSanPham, soLuong, giaBan) {
+            this.maSanPham = String(maSanPham);
+            this.tenSanPham = String(tenSanPham);
+            this.soLuong = soLuong;
+            this.giaBan = Number(giaBan);
+        }
+
+        setMaSanPham(maSanPham) {
+            this.maSanPham = maSanPham;
+        }
+
+        setTenSanPham(tenSanPham) {
+            this.tenSanPham = tenSanPham;
+        }
+
+        setSoLuong(soLuong) {
+            this.soLuong = soLuong;
+        }
+
+        setGiaBan(giaBan) {
+            this.giaBan = giaBan;
+        }
+
+        getMaSanPham() {
+            return this.maSanPham;
+        }
+
+        getTenSanPham() {
+            return this.tenSanPham;
+        }
+
+        getSoLuong() {
+            return this.soLuong;
+        }
+
+        getGiaBan() {
+            return this.giaBan;
+        }
+
+    }
+
+    let banh = new QuanLySanPham("123", "Bánh", "2", 10000);
+    let keo = new QuanLySanPham("124", "Kẹo", "3", 5000);
+    let danhSachSanPham = [banh, keo];
+    let str = "";
+    sapXepTheoGia();
+
+    function hienThi(danhSach) {
+        str = "<table border='1px' cellpadding='10px' style='text-align: center' width='100%' >";
+        str += "<tr>";
+        str += "<th>" + "STT" + "</th>";
+        str += "<th>" + "Mã Sản Phẩm" + "</th>";
+        str += "<th>" + "Tên Sản Phẩm" + "</th>";
+        str += "<th>" + "Số Lượng" + "</th>";
+        str += "<th>" + "Giá Bán" + "</th>";
+        str += "<th colspan='2'>" + "Tùy Chọn" + "</th>";
+        str += "</tr>";
+        for (let i = 0; i < danhSach.length; i++) {
+            str += "<tr>";
+            str += "<td>" + (i + 1) + "</td>";
+            str += "<td>" + danhSach[i].maSanPham + "</td>";
+            str += "<td>" + danhSach[i].tenSanPham + "</td>";
+            str += "<td>" + danhSach[i].soLuong + "</td>";
+            str += "<td>" + danhSach[i].giaBan + "</td>";
+            str += "<td><button onclick='thayDoi(" + i + ")'>Thay Đổi</button></td>";
+            str += "<td><button onclick='xoa(" + i + ")'>Xóa</button></td>";
+
+            str += "</tr>";
+        }
+        str += "<tr>";
+        str += "<td></td>"
+        str += "<td><input type='text' id='maSanPham'></td>"
+        str += "<td><input type='text' id='tenSanPham'></td>"
+        str += "<td><input type='text' id='soLuong'></td>"
+        str += "<td><input type='text' id='giaBan'></td>"
+        str += "<td><button onclick='themSanPham()'>Thêm Sản Phẩm</button></td>"
+        str += "<td rowspan='2'><button onclick='reset()'>Xóa Toàn Bộ Bảng</button></td>";
+        str += "</tr>";
+
+        str += "<tr>";
+        str += "<td></td>"
+        str += "<td><input type='text' id='timMaSanPham'></td>"
+        str += "<td><input type='text' id='timTenSanPham'></td>"
+        str += "<td><input type='text' id='timSoLuong'></td>"
+        str += "<td><input type='text' id='timGiaBan'></td>"
+        str += "<td><button onclick='timKiem()'>Tìm Kiếm</button></td>"
+        str += "</tr>";
+        str += "</table>";
+        document.getElementById("table").innerHTML = str;
+    }
+
+
+    function themSanPham() {
+        let sanPhamMoi = new QuanLySanPham();
+        sanPhamMoi.setMaSanPham(document.getElementById("maSanPham").value);
+        sanPhamMoi.setGiaBan(document.getElementById("giaBan").value);
+        sanPhamMoi.setTenSanPham(document.getElementById("tenSanPham").value);
+        sanPhamMoi.setSoLuong(document.getElementById("soLuong").value);
+        danhSachSanPham.push(sanPhamMoi);
+        document.getElementById("tenSanPham").value = "";
+        document.getElementById("giaBan").value = "";
+        document.getElementById("maSanPham").value = "";
+        document.getElementById("soLuong").value = "";
+        hienThi(danhSachSanPham);
+        sapXepTheoGia();
+
+    }
+
+    function timKiem() {
+        let timKiemMaSanPham = document.getElementById("timMaSanPham").value;
+        let timKiemTenSanPham = document.getElementById("timTenSanPham").value;
+        let timSoLuong = document.getElementById("timSoLuong").value;
+        let timKiemGiaBan = document.getElementById("timGiaBan").value;
+        for (let i = 0; i < danhSachSanPham.length; i++) {
+            if (timKiemMaSanPham === danhSachSanPham[i].getMaSanPham()) {
+                alert("Tên Sản Phẩm: " + danhSachSanPham[i].getTenSanPham() + "\nGiá bán: " + danhSachSanPham[i].getGiaBan() + "\nSố Lượng: " + danhSachSanPham[i].getSoLuong());
+                document.getElementById("timMaSanPham").value = "";
+            }
+            if (timKiemTenSanPham === danhSachSanPham[i].getTenSanPham()) {
+                alert("Mã Sản Phẩm: " + danhSachSanPham[i].getMaSanPham() + "\nGiá bán: " + danhSachSanPham[i].getGiaBan() + "\nSố Lượng: " + danhSachSanPham[i].getSoLuong());
+                document.getElementById("timTenSanPham").value = "";
+            }
+            if (timSoLuong === danhSachSanPham[i].getSoLuong()) {
+                alert("Tên Sản Phẩm: " + danhSachSanPham[i].getTenSanPham() + "\nGiá bán: " + danhSachSanPham[i].getGiaBan() + "\nMã Sản Phẩm: " + danhSachSanPham[i].getMaSanPham());
+                document.getElementById("timSoLuong").value = "";
+            }
+            if (timKiemGiaBan == danhSachSanPham[i].getGiaBan()) {
+                alert("Tên Sản Phẩm: " + danhSachSanPham[i].getTenSanPham() + "\nMã Sản Phẩm: " + danhSachSanPham[i].getMaSanPham() + "\nSố Lượng: " + danhSachSanPham[i].getSoLuong());
+                document.getElementById("timGiaBan").value = "";
+            }
+        }
+
+    }
+
+    function reset() {
+        let xacNhan = confirm("Bạn có muốn xóa toàn bộ dữ liệu")
+        if (xacNhan) {
+            danhSachSanPham = [];
+            hienThi(danhSachSanPham);
+
+        }
+    }
+
+    function xoa(i) {
+        let xacNhan = confirm("Bạn có chắc chắn muốn xóa " + danhSachSanPham[i].getTenSanPham() + "?");
+        if (xacNhan) {
+            danhSachSanPham.splice(i, 1);
+            hienThi(danhSachSanPham);
+
+        }
+
+    }
+
+    function thayDoi(i) {
+        let tenSanPham = prompt("Hãy nhập tên máy mới cho " + danhSachSanPham[i].getTenSanPham());
+        if (tenSanPham === null) {
+            tenSanPham = danhSachSanPham[i].getTenSanPham();
+        }
+        danhSachSanPham[i].tenSanPham(tenSanPham);
+        let maSanPham = prompt("Hãy nhập mã máy mới cho " + danhSachSanPham[i].getTenSanPham());
+        if (maSanPham === null) {
+            maSanPham = danhSachSanPham[i].getMaSanPham();
+        }
+        danhSachSanPham[i].setMaSanPham(maSanPham);
+
+        let soLuong = prompt("Hãy nhập số lượng mới cho " + danhSachSanPham[i].getSoLuong());
+        if (soLuong === null) {
+            soLuong = danhSachSanPham[i].getSoLuong();
+        }
+        danhSachSanPham[i].setSoLuong(soLuong);
+        let gia = prompt("Hãy nhập tên giá mới cho " + danhSachSanPham[i].getTenSanPham());
+        if (gia === null) {
+            gia = danhSachSanPham[i].getGiaBan();
+        }
+        danhSachSanPham[i].setGiaBan(gia);
+        sapXepTheoGia();
+    }
+
+    function sapXepTheoGia() {
+        danhSachSanPham.sort(function (a, b) {
+            return a.getGiaBan() - b.getGiaBan();
+        })
+        hienThi(danhSachSanPham);
+    }
+
+
+    // function sapXepTheoHang() {
+    //     danhSachSanPham.sort(function (a, b) {
+    //         if (a.soLuong.toLowerCase() < b.soLuong.toLowerCase()) {
+    //             return -1;
+    //         }
+    //         if (a.soLuong.toLowerCase() > b.soLuong.toLowerCase()) {
+    //             return 1;
+    //         } else {
+    //             return 0;
+    //         }
+    //     })
+    //     hienThi(danhSachSanPham);
+    // }
+
+</script>

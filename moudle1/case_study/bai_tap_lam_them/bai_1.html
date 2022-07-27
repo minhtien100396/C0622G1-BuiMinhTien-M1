@@ -14,34 +14,29 @@
     Hiện thị giá trị = tổng các số ở vị trí chắn – tổng các số ở vị trí lẻ
     Ví dụ: [15,2,3,5,10,15,7]. Kết quả sau khi thực hiện là: (15+3+10+7)-(2+5+15) = 35-22=13?
 */
-    tinhKetQua(hienThi(52));
+    hienThi(52);
 
     function hienThi(number) {
         let array = [];
+        let sum = 0;
+        let count = 0;
         while (number > 50) {
             number = +prompt("Số lượng phần tử của mảng bé hơn 50. Hãy nhập lại");
         }
         for (let i = 0; i < number; i++) {
-            array[i] = prompt("Nhập giá trị của phần tử trong mảng");
+            array[i] = +prompt("Nhập giá trị của phần tử trong mảng");
+            if (i % 2 === 0) {
+                sum += array[i];
+            }
+            if (i % 2 != 0) {
+                count += array[i];
+            }
         }
 
         document.write(array);
-        return array;
-    }
-
-    function tinhKetQua(array) {
-        let sum = 0;
-        let count = 0;
-        for (let i = 0; i < array.length; i++) {
-            if (i % 2 === 0) {
-                sum += Number(array[i]);
-            }
-            if (i % 2 != 0) {
-                count += Number(array[i]);
-            }
-        }
         let ketQua = sum - count;
-        document.write("<br>" + "tổng các số ở vị trí chẳn – tổng các số ở vị trí lẻ = " + ketQua);
+        document.write("<br>" + "Tổng các số ở vị trí chẳn – tổng các số ở vị trí lẻ = " + ketQua);
+
     }
 
 

@@ -15,22 +15,22 @@
 </html>
 <script>
     class MayTinh {
-        constructor(maMay, tenMay, tenHangSanXuat, giaBan) {
+        constructor(maSanPham, tenSanPham, soLuong, giaBan) {
             this.maMay = String(maMay);
             this.tenMay = String(tenMay);
             this.tenHangSanXuat = String(tenHangSanXuat);
             this.giaBan = Number(giaBan);
         }
 
-        setMaMay(maMay) {
+        setMaSanPham(maSanPham) {
             this.maMay = maMay;
         }
 
-        setTenMay(tenMay) {
+        setTenSanPham(tenSanPham) {
             this.tenMay = tenMay;
         }
 
-        setTenHangSanXuat(tenHangSanXuat) {
+        setSoLuong(soLuong) {
             this.tenHangSanXuat = tenHangSanXuat;
         }
 
@@ -38,15 +38,15 @@
             this.giaBan = giaBan;
         }
 
-        getMaMay() {
+        getMaSanPham() {
             return this.maMay;
         }
 
-        getTenMay() {
+        getTenSanPham() {
             return this.tenMay;
         }
 
-        getTenHangSanXuat() {
+        getSoLuong() {
             return this.tenHangSanXuat;
         }
 
@@ -56,9 +56,9 @@
 
     }
 
-    let dell = new MayTinh("XPS13", "DellXPS13", "Dell", 60000000);
+    let banh = new MayTinh("XPS13", "DellXPS13", "Dell", 60000000);
     let apple = new MayTinh("IMac04", "Macbook", "Apple", 40000000);
-    let danhSachMayTinh = [dell, apple];
+    let danhSachSanPham = [dell, apple];
     let str = "";
     sapXepTheoGia();
 
@@ -86,11 +86,11 @@
         }
         str += "<tr>";
         str += "<td></td>"
-        str += "<td><input type='text' id='maMay'></td>"
-        str += "<td><input type='text' id='tenMay'></td>"
-        str += "<td><input type='text' id='tenHangSanXuat'></td>"
+        str += "<td><input type='text' id='maSanPham'></td>"
+        str += "<td><input type='text' id='tenSanPham'></td>"
+        str += "<td><input type='text' id='soLuong'></td>"
         str += "<td><input type='text' id='giaBan'></td>"
-        str += "<td><button onclick='themMay()'>Thêm máy mới</button></td>"
+        str += "<td><button onclick='themSanPham()'>Thêm máy mới</button></td>"
         str += "<td rowspan='2'><button onclick='reset()'>Xóa Toàn Bộ Bảng</button></td>";
         str += "</tr>";
 
@@ -107,7 +107,7 @@
     }
 
 
-    function themMay() {
+    function themSanPham() {
         let mayMoi = new MayTinh();
         mayMoi.setTenMay(document.getElementById("tenMay").value);
         mayMoi.setGiaBan(document.getElementById("giaBan").value);
@@ -169,12 +169,12 @@
     }
 
     function thayDoi(i) {
-        let tenMay = prompt("Hãy nhập tên máy mới cho " + danhSachMayTinh[i].getTenMay());
+        let tenSanPham = prompt("Hãy nhập tên máy mới cho " + danhSachMayTinh[i].getTenMay());
         if (tenMay === null) {
             tenMay = danhSachMayTinh[i].getTenMay();
         }
         danhSachMayTinh[i].setTenMay(tenMay);
-        let maMay = prompt("Hãy nhập mã máy mới cho " + danhSachMayTinh[i].getTenMay());
+        let maSanPham = prompt("Hãy nhập mã máy mới cho " + danhSachMayTinh[i].getTenMay());
         if (maMay === null) {
             maMay = danhSachMayTinh[i].getMaMay();
         }
@@ -202,17 +202,17 @@
 
 
     // function sapXepTheoHang() {
-    //     danhSachMayTinh.sort(function (a, b) {
-    //         if (a.tenHangSanXuat.toLowerCase() < b.tenHangSanXuat.toLowerCase()) {
+    //     danhSachSanPham.sort(function (a, b) {
+    //         if (a.soLuong.toLowerCase() < b.soLuong.toLowerCase()) {
     //             return -1;
     //         }
-    //         if (a.tenHangSanXuat.toLowerCase() > b.tenHangSanXuat.toLowerCase()) {
+    //         if (a.soLuong.toLowerCase() > b.soLuong.toLowerCase()) {
     //             return 1;
     //         } else {
     //             return 0;
     //         }
     //     })
-    //     hienThi(danhSachMayTinh);
+    //     hienThi(danhSachSanPham);
     // }
 
 </script>
