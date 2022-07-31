@@ -5,8 +5,9 @@ import java.util.Scanner;
 public class ChuyenDoiTienTe {
     public static void main(String[] args) {
         System.out.println("Nhập số tiền USD cần đổi");
-        int usd = new Scanner(System.in).nextInt();
-        int vnd = usd * 22000;
+        float usd = new Scanner(System.in).nextFloat();
+        final float tyGia = 22000f;
+        float vnd = usd * tyGia;
         System.out.println("Số tiền vnd thu được sau khi đổi " + usd + "$ là: " + vnd + "VNĐ");
     }
 }
