@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // function kiemTraChuoi(dd, MM, yyyy) {
+    //     let string = prompt("Nhập vào chuỗi");
+    //     if (string === dd + "/" + MM + "/" + yyyy) {
+    //         return true;
+    //     } else {
+    //         alert("Hãy nhập đúng định dạng")
+    //         return false;
+    //     }
+    // }
+    //
+    // console.log(kiemTraChuoi())
+
+    function kiemTraNamNhuan(yyyy) {
+        if (yyyy % 4 == 0 && yyyy % 100 != 0) {
+            alert(yyyy + " là năm nhuận");
+        } else if (yyyy % 100 == 0 && yyyy % 400 == 0) {
+            alert(yyyy + " là năm nhuận");
+        } else {
+            alert(yyyy + " Không phải là năm nhuận")
+        }
+    }
+
+    kiemTraNamNhuan(2000);
+</script>

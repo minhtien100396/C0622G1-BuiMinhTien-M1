@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*Ví dụ 1: Nhập một số nguyên dương từ bàn phím và kiểm tra xem đó có phải là số hoàn hảo hay không.
+     Một số được gọi là số hoàn hảo nếu đó là một số nguyên dương và có tổng các ước của nó bằng chính nó.
+
+        Ví dụ 6=1+2+3=1*2*3*/
+
+    let number = +prompt("Nhập một số bất kì từ bàn phím");
+    let sum = 0;
+    for (let i = 1; i < number; i++) {
+        if (number > 0 && number % i == 0) {
+            sum += i;
+        }
+    }
+    if (sum === number) {
+        alert(number + " là số hoàn hảo");
+    } else {
+        alert(number + " không phải là số hoàn hảo");
+    }
+
+
+</script>

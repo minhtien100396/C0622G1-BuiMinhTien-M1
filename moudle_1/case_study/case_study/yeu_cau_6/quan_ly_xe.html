@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h2>Quản lý xe</h2>
+    <p id="table"></p>
+    <span>Biển số xe </span><input type="text" id="bienSoXe">
+    <span>Chủ xe </span><input type="text" id="chuXe">
+    <span>Hãng xe </span><input type="text" id="hangXe">
+
+    <button onclick="themXe()">Thêm xe mới</button>
+    <button onclick="reset()">Xóa Toàn Bộ Bảng</button>
+    <br><br>
+    <span>Biển số xe </span><input type="text" id="timBienSoXe">
+    <span>Chủ xe </span><input type="text" id="timChuXe">
+    <span>Hãng xe </span><input type="text" id="timHangXe">
+    <button onclick="timKiem()">Tìm kiếm</button>
+
+</div>
+
+</body>
+</html>
+<script>
+    class QuanLyXe {
+        constructor(bienSoXe, chuXe, hangXe) {
+            this.bienSoXe = bienSoXe;
+            this.chuXe = chuXe;
+            this.hangXe = hangXe;
+        }
+
+        setBienSoXe(bienSoXe) {
+            this.bienSoXe = bienSoXe;
+        }
+
+        setChuXe(chuXe) {
+            this.chuXe = chuXe;
+        }
+
+        setHangXe(hangXe) {
+            this.hangXe = hangXe;
+        }
+
+        getBienSoXe() {
+            return this.bienSoXe;
+        }
+
+        getHoTenSinhVien() {
+            return this.chuXe;
+        }
+
+        getHangXe() {
+            return this.hangXe;
+        }
+    }
+
+    let xe1 = new QuanLyXe("75F1-27639", "Tiến", "Honda");
+    let xe2 = new QuanLyXe("75G1-27639", "Trường", "Honda");
+    let xe3 = new QuanLyXe("75H1-27639", "Công", "Honda");
+
+    let danhSachXe = [xe1, xe2, xe3];
+    let str = "";
+    hienThi(danhSachXe);
+
+    function hienThi(danhSach) {
+        str = "<table border='1px' cellpadding='10px' style='text-align: left' width='100%'>";
+        str += "<tr>";
+        str += "<th>" + "STT" + "</th>";
+        str += "<th>" + "Biển Số Xe" + "</th>";
+        str += "<th>" + "Chủ Xe" + "</th>";
+        str += "<th>" + "Hãng Xe" + "</th>";
+        str += "<th colspan='2' align='center'>" + "Tùy chọn" + "</th>";
+        str += "</tr>";
+        for (let i = 0; i < danhSach.length; i++) {
+            str += "<tr>";
+            str += "<td>" + (i + 1) + "</td>";
+            str += "<td>" + danhSach[i].bienSoXe + "</td>";
+            str += "<td>" + danhSach[i].chuXe + "</td>";
+            str += "<td>" + danhSach[i].hangXe + "</td>";
+            str += "<td><button onclick='thayDoi(" + i + ")'>Thay Đổi</button></td>";
+            str += "<td><button onclick='xoa(" + i + ")'>Xóa</button></td>";
+
+            str += "</tr>";
+        }
+        str += "</table>";
+        document.getElementById("table").innerHTML = str;
+    }
+
+    // function themXe() {
+    //     let xeMoi = new QuanLyXe();
+    //     xeMoi.setBienSoXe(prompt("Hãy nhập biển số xe mới"));
+    //     xeMoi.setChuXe(prompt("Hãy nhập chủ xe mới"));
+    //     xeMoi.setHangXe(prompt("Hãy nhập hãng xe mới"));
+    //     danhSachXe.push(xeMoi);
+    //     hienThi(danhSachXe);
+    // }
+
+    function themXe() {
+        let xeMoi = new QuanLyXe();
+        xeMoi.setBienSoXe(document.getElementById("bienSoXe").value);
+        xeMoi.setHangXe(document.getElementById("hangXe").value);
+        xeMoi.setChuXe(document.getElementById("chuXe").value);
+        danhSachXe.push(xeMoi);
+        document.getElementById("bienSoXe").value = "";
+        document.getElementById("hangXe").value = "";
+        document.getElementById("chuXe").value = "";
+
+        hienThi(danhSachXe);
+    }
+
+    function thayDoi(i) {
+        let chuXe = prompt("Hãy nhập chủ xe mới cho " + danhSachXe[i].getChuXe());
+        if (chuXe.length==0) {
+            chuXe = danhSachXe[i].getChuXe();
+        }
+        danhSachXe[i].setChuXe(chuXe);
+        let bienSoXe = prompt("Hãy nhập biển số xe mới cho " + danhSachXe[i].getChuXe());
+        if (bienSoXe.length==0) {
+            bienSoXe = danhSachXe[i].getBienSoXe();
+        }
+        danhSachXe[i].setBienSoXe();
+        let hangXe = prompt("Hãy nhập hãng xe mới cho " + danhSachXe[i].getChuXe());
+        if (hangXe.length==0) {
+            hangXe = danhSachXe[i].getHangXe();
+        }
+        danhSachXe[i].setHangXe();
+        hienThi(danhSachXe);
+    }
+
+    function xoa(i) {
+        danhSachXe.splice(i, 1);
+        hienThi(danhSachXe);
+    }
+
+    function reset() {
+        danhSachXe = [];
+        hienThi(danhSachXe);
+    }
+
+    function timKiem() {
+        let timKiemChuXe = document.getElementById("timChuXe").value;
+        let timKiemBienSo = document.getElementById("timBienSoXe").value;
+        let timKiemHangXe = document.getElementById("timHangXe").value;
+        for (let i = 0; i < danhSachXe.length; i++) {
+            if (timKiemChuXe === danhSachXe[i].getChuXe()) {
+                alert("Biển số xe: " + danhSachXe[i].getBienSoXe() + "\nHãng xe: " + danhSachXe[i].getHangXe());
+                document.getElementById("timChuXe").value = "";
+            }
+            if (timKiemBienSo === danhSachXe[i].getBienSoXe()) {
+                alert("Chủ xe : " + danhSachXe[i].getChuXe() + "\nHãng xe: " + danhSachXe[i].getHangXe());
+                document.getElementById("timBienSoXe").value = "";
+            }
+            if (timKiemHangXe === danhSachXe[i].getHangXe()) {
+                alert("Chủ xe : " + danhSachXe[i].getChuXe() + "\nBiển số xe: " + danhSachXe[i].getBienSoXe());
+                document.getElementById("timHangXe").value = "";
+            }
+        }
+
+    }
+    function xoa(i) {
+        danhSachXe.splice(i, 1);
+        hienThi(danhSachXe);
+    }
+
+
+</script>

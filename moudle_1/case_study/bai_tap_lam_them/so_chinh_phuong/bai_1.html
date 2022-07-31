@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*Định nghĩa: Số chính phương là số có căn bậc hai là một số tự nhiên không có dấu chấm động.
+     Ví dụ 4 là số chính phương vì căn bậc hai của 4 bằng 2.
+    Còn 5 không phải là số chính phương vì căn bậc hai của nó là số có dư  phần dấu chấm động.
+
+    Như vậy để giải bài này ta chỉ cần kiểm tra căn bậc hai của nó có tròn hay không,
+    nếu số tròn không dư phần số phẩy ở sau thì là số chính phương.
+    Và để kiểm tra một số có dư hay không thì ta chia nó cho 1 là được, ví dụ 1.2 % 1 = 0.2*/
+
+    /* Hãy viết chương trình nhập vào số nguyên dương n.
+     Kiểm tra xem n có phải là số chính phương hay không?
+     (số chính phương là số khi lấy căn bặc 2 có kết quả là nguyên).*/
+    let number;
+    do {
+        number = +prompt("Nhập vào số nguyên dương");
+    } while (number <= 0)
+    if (Math.sqrt(number) % 1 == 0) {
+        alert(number + " là số chính phương");
+    } else {
+        alert(number + " không phải là số chính phương");
+    }
+
+</script>

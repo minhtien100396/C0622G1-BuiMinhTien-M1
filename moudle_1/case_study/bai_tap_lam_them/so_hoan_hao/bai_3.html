@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*Ví dụ 3: Tìm tất cả các số hoàn hảo của mảng 1 chiều và xuất ra màn hình.
+
+*/
+    function taoMang(number) {
+        let arrayMang = [];
+        number = +prompt("Nhập số lượng phần tử cho mảng");
+        for (let i = 0; i < number; i++) {
+            arrayMang[i] = +prompt("Nhập giá trị phần tử cho mảng");
+        }
+        return arrayMang;
+    }
+
+
+    function kiemTraSoHoanHao(soNguyen) {
+        let sum = 0;
+        for (let i = 1; i < soNguyen; i++) {
+            if (soNguyen > 0 && soNguyen % i === 0) {
+                sum += i;
+            }
+        }
+        if (sum === soNguyen) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function xuatSoHoanHaoTrongMang(array) {
+        let arraySoHoanHao = [];
+        for (let i = 0; i < array.length; i++) {
+            if (kiemTraSoHoanHao(array[i])) {
+                if (!arraySoHoanHao.includes(array[i])) {
+                    arraySoHoanHao.push(array[i]);
+                }
+            }
+        }
+        arraySoHoanHao.sort(function (a, b) {
+            return a - b;
+        })
+        document.write("Số hoàn hảo trong mảng là: " + arraySoHoanHao);
+    }
+
+    xuatSoHoanHaoTrongMang(taoMang());
+</script>

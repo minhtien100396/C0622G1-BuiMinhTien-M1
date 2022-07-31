@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h2>Quản lý xe</h2>
+    <p id="table"></p>
+
+    <button onclick="themXe()">Thêm xe mới</button>
+
+</div>
+
+</body>
+</html>
+<script>
+    class QuanLyXe {
+        constructor(bienSoXe, hoTenSinhVien, hangXe, chungMinhNhanDan, phiGuiXeDaDong) {
+
+            this.bienSoXe = bienSoXe;
+            this.hoTenSinhVien = hoTenSinhVien;
+            this.hangXe = hangXe;
+            this.chungMinhNhanDan = Number(chungMinhNhanDan);
+            this.phiGuiXeDaDong = Number(phiGuiXeDaDong);
+        }
+
+        setBienSoXe(bienSoXe) {
+            this.bienSoXe = bienSoXe;
+        }
+
+        setHoTenSinhVien(hoTenSinhVien) {
+            this.hoTenSinhVien = hoTenSinhVien;
+        }
+
+        setHangXe(hangXe) {
+            this.hangXe = hangXe;
+        }
+
+        setChungMinhNhanDan(chungMinhNhanDan) {
+            this.chungMinhNhanDan = chungMinhNhanDan;
+        }
+
+        setPhiGuiXeDaDong(phiGuiXeDaDong) {
+            this.phiGuiXeDaDong = phiGuiXeDaDong;
+        }
+
+        getBienSoXe() {
+            return this.bienSoXe;
+        }
+
+        getHoTenSinhVien() {
+            return this.hoTenSinhVien;
+        }
+
+        getHangXe() {
+            return this.hangXe;
+        }
+
+        getChungMinhNhanDan() {
+            return this.chungMinhNhanDan;
+        }
+
+        getPhiGuiXeDaDong() {
+            return this.phiGuiXeDaDong;
+        }
+    }
+
+    let xe1 = new QuanLyXe("75F1-27639", "Bùi Minh Tiến", "Honda", 191882148, 50000);
+    let xe2 = new QuanLyXe("75G1-27631", "Nguyễn Thành Trường", "Yamaha", 191882142, 50000);
+    let xe3 = new QuanLyXe("75H1-27632", "Nguyễn Thành Công", "Sym", 191882148, 50000);
+
+    let danhSachXe = [xe1, xe2, xe3];
+    let str = "";
+    hienThi(danhSachXe);
+
+    function hienThi(danhSach) {
+        str = "<table border='1px' cellpadding='10px' style='text-align: center' width='100%'>";
+        str += "<tr>";
+        str += "<th>" + "STT" + "</th>";
+        str += "<th>" + "Biển Số Xe" + "</th>";
+        str += "<th>" + "Họ Và Tên Sinh Viên" + "</th>";
+        str += "<th>" + "Hãng Xe" + "</th>";
+        str += "<th>" + "Chứng Minh Nhân Dân" + "</th>";
+        str += "<th>" + "Phí Gửi Xe Đã Đóng" + "</th>";
+        str += "<th colspan='2' align='center'>" + "Tùy chọn" + "</th>";
+        str += "</tr>";
+        for (let i = 0; i < danhSach.length; i++) {
+            str += "<tr>";
+            str += "<td>" + (i + 1) + "</td>";
+            str += "<td>" + danhSach[i].bienSoXe + "</td>";
+            str += "<td>" + danhSach[i].hoTenSinhVien + "</td>";
+            str += "<td>" + danhSach[i].hangXe + "</td>";
+            str += "<td>" + danhSach[i].chungMinhNhanDan + "</td>";
+            str += "<td>" + danhSach[i].phiGuiXeDaDong + "</td>";
+            str += "<td><button onclick='xoa(" + i + ")'>Xóa</button></td>";
+
+            str += "</tr>";
+        }
+        str += "</table>";
+        document.getElementById("table").innerHTML = str;
+    }
+
+    function themXe() {
+        let xeMoi = new QuanLyXe();
+        let bienSoXeMoi;
+        do {
+            bienSoXeMoi = prompt("Nhập biển số xe\nSố lượng kí tự không được vượt quá 20 kí tự");
+        } while (bienSoXeMoi.length > 20);
+
+        while (kiemTraBienSoXeTrungNhau(bienSoXeMoi)){
+            bienSoXeMoi = prompt("Biển số xe bạn nhập đã có. Vui Lòng nhập biển số xe khác");
+        }
+        xeMoi.setBienSoXe(bienSoXeMoi);
+        let sinhVienMoi;
+        do {
+            sinhVienMoi = prompt("Nhập họ và tên cho sinh viên\nSố lượng kí tự không được vượt quá 40 kí tự");
+        } while (sinhVienMoi.length > 40);
+        xeMoi.setHoTenSinhVien(sinhVienMoi);
+
+        let hangXeMoi = +prompt("Chọn hãng xe\n1.Honda\n2.Yamaha\n3.Sym\n4.Piaggio\n5.Suzuki\n6.Ducati\n7.Hãng khác");
+        switch (hangXeMoi) {
+            case 1:
+                xeMoi.setHangXe("Honda");
+                    break;
+            case 2:
+                xeMoi.setHangXe("Yamaha");
+                break;
+            case 3:
+                xeMoi.setHangXe("Sym");
+                break;
+            case 4:
+                xeMoi.setHangXe("Piaggio");
+                break;
+            case 5:
+                xeMoi.setHangXe("Suzuki");
+                break;
+            case 6:
+                xeMoi.setHangXe("Ducati");
+                break;
+            case 7:
+                 let hangKhac=prompt("Hãy nhập hãng xe của bạn");
+                 xeMoi.setHangXe(hangKhac);
+        }
+        let chungMinh;
+        do {
+            chungMinh = prompt("Nhập chứng minh nhân dân\nCMND phải là số");
+        } while (isNaN(chungMinh));
+        xeMoi.setChungMinhNhanDan(chungMinh);
+
+        let phiGuiXe;
+        do {
+            phiGuiXe = prompt("Nhập phí gửi xe đã đóng\nPhí gửi xe phải là số");
+        } while (isNaN(phiGuiXe));
+        xeMoi.setPhiGuiXeDaDong(phiGuiXe);
+        danhSachXe.push(xeMoi);
+        hienThi(danhSachXe);
+    }
+
+    function xoa(i) {
+        let xoa = confirm("Bạn có chắc chắn xóa biển số xe " + danhSachXe[i].getBienSoXe());
+        if (xoa) {
+            danhSachXe.splice(i, 1);
+            hienThi(danhSachXe);
+        }
+    }
+
+    function kiemTraBienSoXeTrungNhau(bienXeMoi) {
+        for (let i = 0; i < danhSachXe.length; i++) {
+            if (danhSachXe[i].getBienSoXe() === bienXeMoi) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+
+</script>

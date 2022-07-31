@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    function timCapSoThanThiet(number1, number2) {
+        let tongUoc1 = 0;
+        let tongUoc2 = 0;
+        for (let i = 1; i < number1; i++) {
+            if (number1 % i == 0) {
+                tongUoc1 += i;
+            }
+        }
+        for (let i = 1; i < number2; i++) {
+            if (number2 % i == 0) {
+                tongUoc2 += i;
+            }
+        }
+        if (tongUoc1 = number2 && tongUoc2 == number1 && number1 !== number2) {
+            return true;
+        }
+    }
+
+
+    function hienThiCapSoThanThiet() {
+        for (let i = 1; i < 300; i++) {
+            for (let j = 1; j < 300; j++) {
+                if (timCapSoThanThiet(i,j)){
+                    document.write(i+","+j);
+
+                }
+            }
+        }
+    }
+
+   hienThiCapSoThanThiet();
+
+
+</script>

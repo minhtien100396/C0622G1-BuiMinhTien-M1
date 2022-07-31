@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let arraySoNguyen = [];
+
+    function taoMangSoNguyen(soLuongPhanTu) {
+        do {
+            soLuongPhanTu = +prompt("Nhập vào số lượng phần tử cho mảng\n(Số Lượng Phần Tử Là Số Nguyên Dương Và <=50)");
+        } while (soLuongPhanTu <= 0 || soLuongPhanTu > 50);
+        for (let i = 0; i < soLuongPhanTu; i++) {
+            arraySoNguyen[i] = +prompt("Nhập giá trị phần tử cho mảng");
+        }
+        document.write(arraySoNguyen);
+        return arraySoNguyen;
+    }
+
+    function kiemTraMangDangSong(array) {
+        let count = 2;
+        for (let i = 1; i < array.length - 1; i++) {
+            if ((array[i] < array[i + 1] && array[i] < array[i - 1]) ||
+                (array[i] > array[i + 1] && array[i] > array[i - 1])) {
+                count++;
+            }
+            if (count === arraySoNguyen.length) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+    }
+
+    taoMangSoNguyen();
+    alert(kiemTraMangDangSong(arraySoNguyen));
+</script>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*Một cặp số được gọi là thân thiết nếu số này bằng tổng tất cả các ước thực sự của số kia và ngược lại.
+VD:
+220 và 284 là cặp số thân thiết vì tổng các ước số của 220 là:
+1+2+4+5+10+11+20+22+44+55+110=284 và tổng các ước số của 284 là 1+2+4+71+142=220.
+Yêu cầu: Hãy viết chương trình kiểm tra xem 2 số nhập vào có phải là số thân thiết hay không.
+Nếu phải thì in ra 'YES', ngược lại in ra 'NO'.*/
+
+    let number1;
+    let number2;
+    let sumNumber1 = 0;
+    let sumNumber2 = 0;
+    do {
+        number1 = +prompt("Nhập vào số thứ 1 (number1>=0)");
+        number2 = +prompt("Nhập vào số thứ 2 (number2>=0)");
+    } while (number1 <= 0 || number2 <= 0 || isNaN(number1) || isNaN(number2));
+    for (let i = 1; i < number1; i++) {
+        if (number1 % i == 0) {
+            sumNumber1 += i;
+        }
+    }
+    for (let i = 1; i < number2; i++) {
+        if (number2 % i == 0) {
+            sumNumber2 += i;
+        }
+    }
+    if (sumNumber1 = number2 && sumNumber2 == number1) {
+        alert(number1 + " và " + number2 + " là cặp số thân thiết");
+    } else {
+        alert(number1 + " và " + number2 + " không phải là cặp số thân thiết");
+
+    }
+</script>

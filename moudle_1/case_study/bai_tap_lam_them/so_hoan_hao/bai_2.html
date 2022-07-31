@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*Ví dụ 2: Tìm và xuất ra màn hình tất cả các số hoàn hảo có trong một khoảng [A,B].
+    Một số được gọi là số hoàn hảo nếu đó là một số nguyên dương và có tổng các ước của nó bằng chính nó.
+
+        Ví dụ 6=1+2+3=1*2*3
+*/
+
+    function kiemTraSoHoanHao(soNguyen) {
+        let sum = 0;
+        for (let i = 1; i < soNguyen; i++) {
+            if (soNguyen > 0 && soNguyen % i === 0) {
+                sum += i;
+            }
+        }
+        if (sum === soNguyen) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function xuatSoHoanHaoTrongMang(number1, number2) {
+
+        do {
+            number1 = +prompt("Nhập số thứ nhất phải bé hơn số thứ hai");
+            number2 = +prompt("Nhập số thứ hai phải lớn hơn số thứ nhất");
+        } while (number1 >= number2 || number1 <= 0 || number2 <= 0 || isNaN(number1) || isNaN(number2));
+        let str = "<br>";
+        for (let i = number1; i < number2; i++) {
+            if (kiemTraSoHoanHao(i)) {
+                str += i + "<br>";
+            }
+        }
+        if (str.length > 4) {
+            document.write("Dãy số hoàn hảo có trong khoảng [" + number1 + "," + number2 + "] là: " + str);
+        } else {
+            document.write("Trong khoảng [" + number1 + "," + number2 + "] không có số hoàn hảo.");
+
+        }
+    }
+
+    xuatSoHoanHaoTrongMang();
+</script>
