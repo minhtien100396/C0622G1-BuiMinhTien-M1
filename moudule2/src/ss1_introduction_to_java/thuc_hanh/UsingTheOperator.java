@@ -2,7 +2,7 @@ package ss1_introduction_to_java.thuc_hanh;
 
 import java.util.Scanner;
 
-public class SuDungToanTu {
+public class UsingTheOperator {
     /*
     Viết một ứng dụng để tính diện tích của hình chữ nhật dựa vào chiều rộng và chiều cao được nhập vào.
     */
@@ -18,12 +18,12 @@ public class SuDungToanTu {
         //Tạo đối tượng Scanner và Nhập dữ liệu Scanner riêng biệt
 
         // Tạo đối tượng Scanner để nhập dữ liệu từ bàn phím
-        Scanner khaibao = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.println("hãy nhập chiều rộng");
         // Nhập dữ liệu từ Scanner
-        float chieuRong = khaibao.nextFloat();
+        float width = scanner.nextFloat();
         System.out.println("hãy nhập chiều dài");
-        float chieuDai = khaibao.nextFloat();
-        System.out.println("Diện tích là: " + chieuDai * chieuRong);
+        float longs = scanner.nextFloat();
+        System.out.println("Diện tích là: " + longs * width);
     }
 }

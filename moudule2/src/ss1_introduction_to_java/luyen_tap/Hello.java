@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Hello {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         Scanner number =  new Scanner(System.in);
         System.out.println("Hãy nhập một số nguyên");
         int number1 = number.nextInt();

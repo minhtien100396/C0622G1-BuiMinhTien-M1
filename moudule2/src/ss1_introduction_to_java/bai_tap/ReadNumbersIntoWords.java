@@ -2,237 +2,237 @@ package ss1_introduction_to_java.bai_tap;
 
 import java.util.Scanner;
 
-public class DocSoThanhChu {
+public class ReadNumbersIntoWords {
     public static void main(String[] args) {
         System.out.println("Nhập vào một số nguyên");
-        int soNguyen = new Scanner(System.in).nextInt();
-        int donVi = soNguyen % 10;
-        int hangChuc = soNguyen % 100 - donVi;
-        int hangTram = soNguyen % 1000 - hangChuc - donVi;
-        String ketQua = "";
+        int integer = new Scanner(System.in).nextInt();
+        int unitDigit = integer % 10;
+        int tensDigit = integer % 100 - unitDigit;
+        int hundredsDigit = integer % 1000 - tensDigit - unitDigit;
+        String result = "";
 
         //Số nguyên < 0 và số nguyên >1000 thì nhập lại
-        if (soNguyen > 0 && soNguyen < 1000) {
+        if (integer > 0 && integer < 1000) {
 
-            if (hangTram != 0) {
-                switch (hangTram) {
+            if (hundredsDigit != 0) {
+                switch (hundredsDigit) {
                     case 100: {
-                        ketQua += "Một trăm ";
+                        result += "Một trăm ";
                     }
                     break;
                     case 200: {
-                        ketQua += "Hai trăm ";
+                        result += "Hai trăm ";
                     }
                     break;
                     case 300: {
-                        ketQua += "Ba trăm ";
+                        result += "Ba trăm ";
                     }
                     break;
                     case 400: {
-                        ketQua += "Bốn trăm ";
+                        result += "Bốn trăm ";
                     }
                     break;
                     case 500: {
-                        ketQua += "Năm trăm ";
+                        result += "Năm trăm ";
                     }
                     break;
                     case 600: {
-                        ketQua += "Sáu trăm ";
+                        result += "Sáu trăm ";
                     }
                     break;
                     case 700: {
-                        ketQua += "Bảy trăm ";
+                        result += "Bảy trăm ";
                     }
                     break;
                     case 800: {
-                        ketQua += "Tám trăm ";
+                        result += "Tám trăm ";
                     }
                     break;
                     case 900: {
-                        ketQua += "Chín trăm ";
+                        result += "Chín trăm ";
                     }
                     break;
                 }
-                switch (hangChuc) {
+                switch (tensDigit) {
                     case 0:
-                        if (donVi != 0) {
-                            ketQua += "linh ";
+                        if (unitDigit != 0) {
+                            result += "linh ";
                         }
                         break;
                     case 10: {
-                        ketQua += "mười ";
+                        result += "mười ";
                     }
                     break;
                     case 20: {
-                        ketQua += "hai mươi ";
+                        result += "hai mươi ";
                     }
                     break;
                     case 30: {
-                        ketQua += "ba mươi ";
+                        result += "ba mươi ";
                     }
                     break;
                     case 40: {
-                        ketQua += "bốn mươi ";
+                        result += "bốn mươi ";
                     }
                     break;
                     case 50: {
-                        ketQua += "Năm mươi ";
+                        result += "Năm mươi ";
                     }
                     break;
                     case 60: {
-                        ketQua += "sáu mươi ";
+                        result += "sáu mươi ";
                     }
                     break;
                     case 70: {
-                        ketQua += "bảy mươi ";
+                        result += "bảy mươi ";
                     }
                     break;
                     case 80: {
-                        ketQua += "tám mươi ";
+                        result += "tám mươi ";
                     }
                     break;
                     case 90: {
-                        ketQua += "chín mươi ";
+                        result += "chín mươi ";
                     }
                     break;
                 }
-                switch (donVi) {
+                switch (unitDigit) {
                     case 1: {
-                        if (hangChuc == 10) {
-                            ketQua += "một ";
+                        if (tensDigit == 10) {
+                            result += "một ";
                         } else {
-                            ketQua += "mốt ";
+                            result += "mốt ";
                         }
                     }
                     break;
                     case 2: {
-                        ketQua += "hai ";
+                        result += "hai ";
                     }
                     break;
                     case 3: {
-                        ketQua += "ba ";
+                        result += "ba ";
                     }
                     break;
                     case 4: {
-                        ketQua += "bốn ";
+                        result += "bốn ";
                     }
                     break;
                     case 5: {
-                        if (hangChuc == 0) {
-                            ketQua += "năm ";
+                        if (tensDigit == 0) {
+                            result += "năm ";
                         } else {
-                            ketQua += "lăm ";
+                            result += "lăm ";
                         }
                     }
                     break;
                     case 6: {
-                        ketQua += "sáu ";
+                        result += "sáu ";
                     }
                     break;
                     case 7: {
-                        ketQua += "bảy ";
+                        result += "bảy ";
                     }
                     break;
                     case 8: {
-                        ketQua += "tám ";
+                        result += "tám ";
                     }
                     break;
                     case 9: {
-                        ketQua += "chín ";
+                        result += "chín ";
                     }
                     break;
                 }
             } else {
-                switch (hangChuc) {
+                switch (tensDigit) {
                     case 10: {
-                        ketQua += "Mười ";
+                        result += "Mười ";
                     }
                     break;
                     case 20: {
-                        ketQua += "Hai mươi ";
+                        result += "Hai mươi ";
                     }
                     break;
                     case 30: {
-                        ketQua += "Ba mươi ";
+                        result += "Ba mươi ";
                     }
                     break;
                     case 40: {
-                        ketQua += "Bốn mươi ";
+                        result += "Bốn mươi ";
                     }
                     break;
                     case 50: {
-                        ketQua += "Năm mươi ";
+                        result += "Năm mươi ";
                     }
                     break;
                     case 60: {
-                        ketQua += "Sáu mươi ";
+                        result += "Sáu mươi ";
                     }
                     break;
                     case 70: {
-                        ketQua += "Bảy mươi ";
+                        result += "Bảy mươi ";
                     }
                     break;
                     case 80: {
-                        ketQua += "Tám mươi ";
+                        result += "Tám mươi ";
                     }
                     break;
                     case 90: {
-                        ketQua += "Chín mươi ";
+                        result += "Chín mươi ";
                     }
                     break;
                 }
 
-                switch (donVi) {
+                switch (unitDigit) {
                     case 1: {
-                        if ((hangChuc == 10) || (hangChuc == 0)) {
-                            ketQua += "một ";
+                        if ((tensDigit == 10) || (tensDigit == 0)) {
+                            result += "một ";
                         } else {
-                            ketQua += "mốt ";
+                            result += "mốt ";
                         }
                     }
                     break;
                     case 2: {
-                        ketQua += "hai ";
+                        result += "hai ";
                     }
                     break;
                     case 3: {
-                        ketQua += "ba ";
+                        result += "ba ";
                     }
                     break;
                     case 4: {
-                        ketQua += "bốn ";
+                        result += "bốn ";
                     }
                     break;
                     case 5: {
-                        if (hangChuc == 0) {
-                            ketQua += "Năm ";
+                        if (tensDigit == 0) {
+                            result += "Năm ";
                         } else {
-                            ketQua += "lăm ";
+                            result += "lăm ";
                         }
                     }
                     break;
                     case 6: {
-                        ketQua += "sáu ";
+                        result += "sáu ";
                     }
                     break;
                     case 7: {
-                        ketQua += "bảy ";
+                        result += "bảy ";
                     }
                     break;
                     case 8: {
-                        ketQua += "tám ";
+                        result += "tám ";
                     }
                     break;
                     case 9: {
-                        ketQua += "chín ";
+                        result += "chín ";
                     }
                     break;
                 }
             }
-            System.out.println(ketQua);
-        } else if (soNguyen == 0) {
-            ketQua += "Không";
-            System.out.println(ketQua);
+            System.out.println(result);
+        } else if (integer == 0) {
+            result += "Không";
+            System.out.println(result);
         } else {
             System.out.println("Vui lòng nhập lại.");
         }

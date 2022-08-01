@@ -2,7 +2,7 @@ package ss1_introduction_to_java.thuc_hanh;
 
 import java.util.Scanner;
 
-public class KiemTraNamNhuan {
+public class CheckLeapYear {
     public static void main(String[] args) {
         /*Ứng dụng cho phép người dùng nhập vào một năm, sau đó sẽ đưa ra thông báo là năm đó là
         năm nhuận hay không phải là năm nhuận.
@@ -13,11 +13,11 @@ public class KiemTraNamNhuan {
         */
 
         System.out.println("Nhập vào một năm bất kì");
-        int nam = new Scanner(System.in).nextInt();
-        if ((nam % 4 == 0 && nam % 100 != 0) || (nam % 100 == 0 && nam % 400 == 0)) {
-            System.out.println("Năm " + nam + " là năm nhuận");
+        int year = new Scanner(System.in).nextInt();
+        if ((year % 4 == 0 && year % 100 != 0) || (year % 100 == 0 && year % 400 == 0)) {
+            System.out.println("Năm " + year + " là năm nhuận");
         } else {
-            System.out.println("Năm " + nam + " không phải là năm nhuận");
+            System.out.println("Năm " + year + " không phải là năm nhuận");
         }
     }
 }
