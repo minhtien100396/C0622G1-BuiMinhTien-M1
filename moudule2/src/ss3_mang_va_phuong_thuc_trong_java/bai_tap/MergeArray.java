@@ -4,14 +4,15 @@ import java.util.Arrays;
 
 public class MergeArray {
     public static void main(String[] args) {
-        int [] firstArr = {1,2,3,4,5};
-        int [] secondArr = {6,7,8};
-        System.out.println(firstArr.length);
-        int [] thirdArr = new int [firstArr.length+secondArr.length];
-        System.out.println(thirdArr.length);
-        for (int i = 0; i < firstArr.length ; i++) {
-            firstArr[i]=thirdArr[i];
+        int[] firstArr = {1, 2, 3, 4, 5};
+        int[] secondArr = {6, 7, 8, 5, 2, 1, 1, 2, 4, 5};
+        int[] thirdArr = new int[firstArr.length + secondArr.length];
+        for (int i = 0; i < firstArr.length; i++) {
+            thirdArr[i] = firstArr[i];
         }
-        //System.out.println(Arrays.toString(thirdArr));
+        for (int i = 0; i < secondArr.length; i++) {
+            thirdArr[firstArr.length + i] = secondArr[i];
+        }
+        System.out.println(Arrays.toString(thirdArr));
     }
 }
