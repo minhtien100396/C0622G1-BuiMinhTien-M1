@@ -5,7 +5,8 @@ import java.util.Scanner;
 public class ReadNumbersIntoWords {
     public static void main(String[] args) {
         System.out.println("Nhập vào một số nguyên");
-        int integer = new Scanner(System.in).nextInt();
+        Scanner scanner = new Scanner(System.in);
+        int integer = Integer.parseInt(scanner.nextLine());
         int unitDigit = integer % 10;
         int tensDigit = integer % 100 - unitDigit;
         int hundredsDigit = integer % 1000 - tensDigit - unitDigit;

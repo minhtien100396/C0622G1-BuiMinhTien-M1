@@ -19,15 +19,15 @@ public class DisplayGeometry {
             System.out.println("0. Exit");
             System.out.println("Lựa chọn của bạn là:");
 
-            choice = scanner.nextInt();
+            choice = Integer.parseInt(scanner.nextLine());
 
             switch (choice) {
                 case 1:
                     while (lengthOfRectangle <= 0 || widthOfRectangle <= 0) {
                         System.out.println("Nhập chiều dài hình chữ nhật");
-                        lengthOfRectangle = scanner.nextInt();
+                        lengthOfRectangle = Integer.parseInt(scanner.nextLine());
                         System.out.println("Nhập chiều rộng hình chữ nhật");
-                        widthOfRectangle = scanner.nextInt();
+                        widthOfRectangle = Integer.parseInt(scanner.nextLine());
                     }
                     for (int i = 0; i < widthOfRectangle; i++) {
                         for (int j = 0; j < lengthOfRectangle; j++) {
@@ -41,7 +41,7 @@ public class DisplayGeometry {
                 case 2:
                     while (triangleSideBot <= 0) {
                         System.out.println("Hãy nhập cạnh hình tam giác");
-                        triangleSideBot = scanner.nextInt();
+                        triangleSideBot = Integer.parseInt(scanner.nextLine());
                     }
                     for (int i = 1; i <= triangleSideBot; i++) {
                         for (int j = 1; j <= i; j++) {
@@ -55,7 +55,7 @@ public class DisplayGeometry {
                 case 3:
                     while (triangleSideTop <= 0) {
                         System.out.println("Hãy nhập cạnh hình tam giác");
-                        triangleSideTop = scanner.nextInt();
+                        triangleSideTop = Integer.parseInt(scanner.nextLine());
                     }
                     for (int i = triangleSideTop; i >= 1; i--) {
                         for (int j = 1; j <= i; j++) {

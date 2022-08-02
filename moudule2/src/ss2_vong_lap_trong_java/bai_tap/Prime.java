@@ -22,7 +22,7 @@ public class Prime {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nhập giá trị giới hạn hiển thị");
-        int number = scanner.nextInt();
+        int number = Integer.parseInt(scanner.nextLine());
         int check = 1;
         System.out.println("Hiển thị 20 chữ số nguyên tố đầu tiên");
         for (int i = 2; i < number; i++) {
