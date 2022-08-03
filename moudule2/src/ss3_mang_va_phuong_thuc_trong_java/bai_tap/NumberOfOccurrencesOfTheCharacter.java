@@ -11,7 +11,8 @@ public class NumberOfOccurrencesOfTheCharacter {
         char oneChar = scanner.next().charAt(0);
         System.out.printf("Chuỗi bạn vừa nhập là : '%s'", chain);
         int count = 0;
-        for (int i = 0; i < chain.length(); i++) {
+        int i;
+        for (i = 0; i < chain.length(); i++) {
             if (oneChar == chain.charAt(i)) {
                 count++;
             }

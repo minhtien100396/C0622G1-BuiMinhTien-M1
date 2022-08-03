@@ -25,9 +25,12 @@ public class Prime {
         int number = Integer.parseInt(scanner.nextLine());
         int check = 1;
         System.out.println("Hiển thị 20 chữ số nguyên tố đầu tiên");
-        for (int i = 2; i < number; i++) {
-            int count = 0;
-            for (int j = 2; j <= i; j++) {
+        int i;
+        int count;
+        int j;
+        for (i = 2; i < number; i++) {
+            count = 0;
+            for (j = 2; j <= i; j++) {
                 if (i % j == 0) {
                     count++;
                 }

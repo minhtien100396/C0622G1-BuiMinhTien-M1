@@ -32,8 +32,10 @@ public class MaxArray {
 
         //Khởi tạo mảng
         int[][] array = new int[elementsArray2][elementsArray1];
-        for (int i = 0; i < elementsArray2; i++) {
-            for (int j = 0; j < elementsArray1; j++) {
+        int i;
+        int j;
+        for (i = 0; i < elementsArray2; i++) {
+            for (j = 0; j < elementsArray1; j++) {
                 System.out.printf("Nhập vào array[%d][%d] = ", i, j);
                 array[i][j] = Integer.parseInt(scanner.nextLine());
             }
@@ -42,8 +44,8 @@ public class MaxArray {
         int row = 0;
         int columns = 0;
         int max = array[0][0];
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
+        for (i = 0; i < array.length; i++) {
+            for (j = 0; j < array[i].length; j++) {
                 System.out.print(array[i][j] + "\t");
                 if (max < array[i][j]) {
                     max = array[i][j];

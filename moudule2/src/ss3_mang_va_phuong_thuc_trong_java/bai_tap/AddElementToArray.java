@@ -18,7 +18,8 @@ public class AddElementToArray {
         //Khởi tạo mảng không chứa giá trị
         int[] arr = new int[number];
         //Gán giá trị cho phần tử của mảng
-        for (int i = 0; i < number; i++) {
+        int i;
+        for (i = 0; i < number; i++) {
             System.out.printf("Nhập vào arr[%d] = ", i);
             arr[i] = Integer.parseInt(scanner.nextLine());
         }
@@ -37,7 +38,7 @@ public class AddElementToArray {
 
         //Duyệt mảng
 
-        for (int i = arr.length - 1; i > index; i--) {
+        for (i = arr.length - 1; i > index; i--) {
             arr[i] = arr[i - 1];
         }
         arr[index] = numberInserted;

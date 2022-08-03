@@ -18,14 +18,15 @@ public class MinArray {
         } while (isNumber);
 
         int[] arr = new int[number];
-        for (int i = 0; i < number; i++) {
+        int i;
+        for (i = 0; i < number; i++) {
             System.out.printf("Nhập vào arr[%d] = ", i);
             arr[i] = Integer.parseInt(scanner.nextLine());
         }
 
         int min = arr[0];
         int index = 0;
-        for (int i = 0; i < arr.length; i++) {
+        for (i = 0; i < arr.length; i++) {
             if (min > arr[i]) {
                 min = arr[i];
                 index = i;

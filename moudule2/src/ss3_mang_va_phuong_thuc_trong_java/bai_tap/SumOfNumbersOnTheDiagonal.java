@@ -28,15 +28,17 @@ public class SumOfNumbersOnTheDiagonal {
         } while (isElemenns);
 
         int[][] arr = new int[row][elemens];
-        for (int i = 0; i < row; i++) {
-            for (int j = 0; j < elemens; j++) {
+        int i;
+        int j;
+        for (i = 0; i < row; i++) {
+            for (j = 0; j < elemens; j++) {
                 System.out.printf("Nhập vào giá trị cho phần tử arr[%d][%d] = ", i, j);
                 arr[i][j] = Integer.parseInt(scanner.nextLine());
             }
         }
         int sum = 0;
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[i].length; j++) {
+        for (i = 0; i < arr.length; i++) {
+            for (j = 0; j < arr[i].length; j++) {
                 if (i == j) {
                     sum += arr[i][j];
                 }

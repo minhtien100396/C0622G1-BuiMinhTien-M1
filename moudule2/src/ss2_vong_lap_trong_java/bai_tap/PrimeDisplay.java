@@ -13,15 +13,18 @@ public class PrimeDisplay {
         không bằng mã đã thực hiện ở bước 1. In ra màn hình nếu gặp số nguyên tố.
         */
         System.out.println("Hiển thị các số nguyên tố nhỏ hơn 100");
-        for (int i = 2; i < 100; i++) {
-            int count = 0;
-            for (int j = 2; j <= i; j++) {
+        int i;
+        int j;
+        int count;
+        for (i = 2; i < 100; i++) {
+            count = 0;
+            for (j = 2; j <= i; j++) {
                 if (i % j == 0) {
                     count++;
                 }
             }
             if (count == 1) {
-                System.out.print(i+" ");
+                System.out.print(i + " ");
             }
         }
     }

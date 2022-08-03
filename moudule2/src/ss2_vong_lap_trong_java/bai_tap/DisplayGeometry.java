@@ -21,6 +21,8 @@ public class DisplayGeometry {
 
             choice = Integer.parseInt(scanner.nextLine());
 
+            int i;
+            int j;
             switch (choice) {
                 case 1:
                     while (lengthOfRectangle <= 0 || widthOfRectangle <= 0) {
@@ -29,8 +31,8 @@ public class DisplayGeometry {
                         System.out.println("Nhập chiều rộng hình chữ nhật");
                         widthOfRectangle = Integer.parseInt(scanner.nextLine());
                     }
-                    for (int i = 0; i < widthOfRectangle; i++) {
-                        for (int j = 0; j < lengthOfRectangle; j++) {
+                    for (i = 0; i < widthOfRectangle; i++) {
+                        for (j = 0; j < lengthOfRectangle; j++) {
                             System.out.print("* ");
                         }
                         System.out.println();
@@ -43,8 +45,9 @@ public class DisplayGeometry {
                         System.out.println("Hãy nhập cạnh hình tam giác");
                         triangleSideBot = Integer.parseInt(scanner.nextLine());
                     }
-                    for (int i = 1; i <= triangleSideBot; i++) {
-                        for (int j = 1; j <= i; j++) {
+
+                    for (i = 1; i <= triangleSideBot; i++) {
+                        for (j = 1; j <= i; j++) {
                             System.out.print("* ");
                         }
                         System.out.println();
@@ -57,8 +60,8 @@ public class DisplayGeometry {
                         System.out.println("Hãy nhập cạnh hình tam giác");
                         triangleSideTop = Integer.parseInt(scanner.nextLine());
                     }
-                    for (int i = triangleSideTop; i >= 1; i--) {
-                        for (int j = 1; j <= i; j++) {
+                    for (i = triangleSideTop; i >= 1; i--) {
+                        for (j = 1; j <= i; j++) {
                             System.out.print("* ");
                         }
                         System.out.println();
