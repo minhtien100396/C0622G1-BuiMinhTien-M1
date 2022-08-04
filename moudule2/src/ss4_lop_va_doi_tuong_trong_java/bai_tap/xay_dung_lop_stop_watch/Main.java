@@ -27,7 +27,8 @@ public class Main {
         } while (number <= 0);
 
         int[] array = new int[number];
-        for (int i = 0; i < array.length; i++) {
+        int i;
+        for (i = 0; i < array.length; i++) {
             array[i] = (int) Math.round(Math.random() * array.length + 1);
         }
         return array;
@@ -35,10 +36,13 @@ public class Main {
 
     //Sắp xếp mảng
     public static int[] sortArray(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = i + 1; j < arr.length; j++) {
+        int i;
+        int j;
+        int temp;
+        for (i = 0; i < arr.length; i++) {
+            for (j = i + 1; j < arr.length; j++) {
                 if (arr[i] > arr[j]) {
-                    int temp = arr[j];
+                    temp = arr[j];
                     arr[j] = arr[i];
                     arr[i] = temp;
                 }

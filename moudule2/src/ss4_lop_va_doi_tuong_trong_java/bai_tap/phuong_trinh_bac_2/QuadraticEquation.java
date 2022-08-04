@@ -42,14 +42,17 @@ public class QuadraticEquation {
     }
 
     public double getDiscriminant() {
+
         return delta = Math.pow(this.b, 2) - 4 * this.a * this.c;
     }
 
     public double getGetRoot1() {
+
         return getRoot1 = (-this.b + Math.sqrt(this.getDiscriminant())) / (2 * this.a);
     }
 
     public double getGetRoot2() {
+
         return getRoot2 = (-this.b - Math.sqrt(this.getDiscriminant())) / (2 * this.a);
     }
 
