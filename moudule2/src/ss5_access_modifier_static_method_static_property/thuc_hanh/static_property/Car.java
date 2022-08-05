@@ -1,4 +1,4 @@
-package ss5_access_modifier_static_method_static_property.luyen_tap.static_property;
+package ss5_access_modifier_static_method_static_property.thuc_hanh.static_property;
 
 public class Car {
     private String name;

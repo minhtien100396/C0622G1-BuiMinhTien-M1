@@ -15,16 +15,12 @@ public class Fan {
         return this.speed;
     }
 
-    public boolean getStatus() {
-        return this.status;
-    }
-
-    public void isOff() {
-        this.status = false;
-    }
-
-    public void isOn() {
+    public void setStatus(boolean status) {
         this.status = true;
+    }
+
+    public boolean isOn() {
+        return status;
     }
 
     public double getRadius() {
@@ -56,7 +52,7 @@ public class Fan {
     //phương thức toString()
 
     public void display() {
-        if (this.getStatus()) {
+        if (this.isOn()) {
             if (this.speed < 1 || this.speed > 3) {
                 System.out.println("Tốc độ quạt chỉ từ 1 đến 3. Hãy nhập lại");
             } else {

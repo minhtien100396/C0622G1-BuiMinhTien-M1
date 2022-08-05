@@ -12,7 +12,7 @@ public class Main {
         fan1.setColor("Yellow");
         fan1.setSpeed(3);
         fan1.setRadius(10);
-        fan1.isOn();
+        fan1.setStatus(true);
         fan1.display();
         //Thuộc tính fan2
         System.out.println();

@@ -19,7 +19,7 @@ public class Main {
             System.out.println("x1 = " + quadraticEquation2.getGetRoot1());
             System.out.println("x2 = " + quadraticEquation2.getGetRoot2());
         } else if (delta == 0) {
-            System.out.println("Phương trình có 1 nghiệm duy nhất x1 = x2 = " + quadraticEquation2.getGetRoot());
+            System.out.println("Phương trình có 1 nghiệm duy nhất x1 = x2 = " + quadraticEquation2.getGetRoot1());
         } else {
             System.out.println("Phương trình vô nghiệm");
         }
