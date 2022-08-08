@@ -4,13 +4,15 @@ public class Test {
     private boolean isMale;
     private String name;
     private int age;
+
     public void isMale(boolean male) {
-        isMale = true;
+        isMale = male;
     }
 
     public boolean getIsMale() {
          return this.isMale;
     }
+
 
 
     public String getName(){

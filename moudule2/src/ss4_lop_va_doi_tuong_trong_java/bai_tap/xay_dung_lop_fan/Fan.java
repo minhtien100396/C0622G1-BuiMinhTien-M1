@@ -16,7 +16,7 @@ public class Fan {
     }
 
     public void setStatus(boolean status) {
-        this.status = true;
+        this.status = status;
     }
 
     public boolean isOn() {

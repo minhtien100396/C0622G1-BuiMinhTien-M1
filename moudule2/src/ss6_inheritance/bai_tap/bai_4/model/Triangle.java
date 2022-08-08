@@ -1,14 +1,14 @@
 package ss6_inheritance.bai_tap.bai_4.model;
 
-public class Shape {
+public class Triangle {
     private double side1 = 1;
     private double side2 = 1;
     private double side3 = 1;
 
-    public Shape() {
+    public Triangle() {
     }
 
-    public Shape(double side1, double side2, double side3) {
+    public Triangle(double side1, double side2, double side3) {
         this.side1 = side1;
         this.side2 = side2;
         this.side3 = side3;
