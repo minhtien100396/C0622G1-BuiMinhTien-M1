@@ -1,6 +1,15 @@
-package ss7_abstraction_interface.bai_tap.bai_2.model;
+package ss7_abstraction_interface.bai_tap.bai_1.model;
 
-public abstract class Shape {
+public abstract class Shape implements Resizeable {
+
+
+    @Override
+    public void resize(double percent) {
+
+    }
+
+    public abstract double getArea();
+
     private String color = "green";
     private boolean filled = true;
 
@@ -27,7 +36,6 @@ public abstract class Shape {
     public void setFilled(boolean filled) {
         this.filled = filled;
     }
-    public abstract double getArea();
 
     @Override
     public String toString() {

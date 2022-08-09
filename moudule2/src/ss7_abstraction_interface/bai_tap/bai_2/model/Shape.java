@@ -1,6 +1,6 @@
-package com.codegym;
+package ss7_abstraction_interface.bai_tap.bai_2.model;
 
-public class Shape {
+public abstract class Shape {
     private String color = "green";
     private boolean filled = true;
 
@@ -28,6 +28,7 @@ public class Shape {
         this.filled = filled;
     }
 
+
     @Override
     public String toString() {
         return "A Shape with color of "
@@ -35,4 +36,6 @@ public class Shape {
                 + " and "
                 + (isFilled() ? "filled" : "not filled");
     }
+
+    public abstract double getArea();
 }

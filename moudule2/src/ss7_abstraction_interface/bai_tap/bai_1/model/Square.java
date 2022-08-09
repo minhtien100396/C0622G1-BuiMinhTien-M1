@@ -1,6 +1,6 @@
-package ss7_abstraction_interface.bai_tap.bai_2.model;
+package ss7_abstraction_interface.bai_tap.bai_1.model;
 
-public class Square extends Shape implements Colorable {
+public class Square extends Shape {
     private double edge = 1.0;
 
     public double getEdge() {
@@ -22,8 +22,8 @@ public class Square extends Shape implements Colorable {
         return this.edge * this.edge;
     }
 
-    @Override
-    public void howtoColor() {
-        System.out.println("Color all four sides..");
+    public void resize(double percent) {
+        this.edge += this.edge * this.edge * percent / 100;
     }
 }
+

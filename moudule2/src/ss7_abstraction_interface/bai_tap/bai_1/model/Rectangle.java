@@ -1,4 +1,4 @@
-package ss7_abstraction_interface.bai_tap.bai_2.model;
+package ss7_abstraction_interface.bai_tap.bai_1.model;
 
 public class Rectangle extends Shape {
     private double width = 1.0;
@@ -50,5 +50,10 @@ public class Rectangle extends Shape {
                 + getLength()
                 + ", which is a subclass of "
                 + super.toString();
+    }
+
+    public void resize(double percent) {
+        this.width += this.width * percent / 100;
+        this.length += this.length * length / 100;
     }
 }

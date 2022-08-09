@@ -1,4 +1,4 @@
-package com.codegym;
+package ss7_abstraction_interface.bai_tap.bai_2.model;
 
 public class Rectangle extends Shape {
     private double width = 1.0;

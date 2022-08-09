@@ -11,6 +11,7 @@ public class Point3D extends Point2D {
         this.z = z;
     }
 
+
     public float getZ() {
         return z;
     }
@@ -38,4 +39,5 @@ public class Point3D extends Point2D {
                 ", z=" + z +
                 '}';
     }
+
 }

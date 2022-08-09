@@ -1,4 +1,6 @@
-package ss7_abstraction_interface.thuc_hanh.bai_2.model;
+package ss7_abstraction_interface.thuc_hanh.bai_3.model;
+
+import ss7_abstraction_interface.thuc_hanh.bai_2.model.Shape;
 
 public class Circle extends Shape {
     private double radius = 1.0;

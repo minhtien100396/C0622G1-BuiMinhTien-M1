@@ -1,4 +1,4 @@
-package ss7_abstraction_interface.bai_tap.bai_2.model;
+package ss7_abstraction_interface.bai_tap.bai_1.model;
 
 public class Circle extends Shape {
     private double radius = 1.0;
@@ -37,5 +37,9 @@ public class Circle extends Shape {
                 + getRadius()
                 + ", which is a subclass of "
                 + super.toString();
+    }
+
+    public void resize(double percent) {
+        this.radius += this.radius * percent / 100;
     }
 }
