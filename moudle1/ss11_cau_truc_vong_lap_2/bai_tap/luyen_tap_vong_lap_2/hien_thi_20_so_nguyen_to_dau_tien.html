@@ -24,21 +24,20 @@ Bước 4: Trong khi count < numbers thì:
 Kiểm tra xem N có phải là số nguyên tố không. Nếu N là số nguyên tố thì in ra giá trị của N và tăng giá trị của count lên 1
 Giá trị của N tăng lên 1 để kiểm tra số tiếp theo*/
 
-    let soNguyen = 2;
+    //let soNguyen = 2;
     let xetDieuKien = 0;
-    let soNguyenTo = "";
-    while (xetDieuKien < 20) {
-        let bienDem = 0;
-        for (let i = 2; i <= soNguyen; i++) {
-            if (soNguyen % i === 0) {
-                bienDem++;
+        for (let i = 2; i <= 1000; i++) {
+            let bienDem = 0;
+            if (xetDieuKien <= 20){
+                for (let j = 2; j <=i ; j++) {
+                    if (i % j === 0) {
+                        bienDem++;
+                    }
+                }
+                if (bienDem == 1) {
+                    document.write(i + "<br>") ;
+                    xetDieuKien++;
+                }
             }
-        }
-        if (bienDem == 1) {
-            soNguyenTo += soNguyen + "<br>";
-            xetDieuKien++;
-        }
-        soNguyen++;
     }
-    document.write(soNguyenTo + "<br>");
 </script>
