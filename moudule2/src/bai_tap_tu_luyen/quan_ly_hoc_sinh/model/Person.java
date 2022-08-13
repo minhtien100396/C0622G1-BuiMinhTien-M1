@@ -52,9 +52,9 @@ public class Person {
     public String toString() {
         return
                 "id=" + id +
-                ", name='" + name + '\'' +
-                ", dateOfBirth='" + dateOfBirth + '\'' +
-                ", gender=" + gender + ", "
+                        ", name='" + name + '\'' +
+                        ", dateOfBirth='" + dateOfBirth + '\'' +
+                        ", gender=" + gender + ", "
                 ;
     }
 }

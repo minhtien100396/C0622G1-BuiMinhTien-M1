@@ -4,7 +4,7 @@ public class ProgrammmingBook extends Book {
     private String language;
     private String framework;
 
-    public ProgrammmingBook() {
+    public ProgrammmingBook(int bookCode, String name, double price, String author, String language, String framework) {
     }
 
     public String getLanguage() {

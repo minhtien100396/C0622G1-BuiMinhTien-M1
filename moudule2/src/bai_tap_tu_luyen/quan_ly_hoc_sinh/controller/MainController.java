@@ -19,10 +19,10 @@ public class MainController {
             int choice = Integer.parseInt(scanner.nextLine());
             switch (choice){
                 case 1:
-                    TeacherController.teacherManagement();
+                    teacherController.teacherManagement();
                     break;
                 case 2:
-                    StudentController.studentManagement();
+                    studentController.studentManagement();
                     break;
                 case 3:
                     System.out.println("Cám ơn bạn đã sử dụng phần mềm của chúng tôi.");
