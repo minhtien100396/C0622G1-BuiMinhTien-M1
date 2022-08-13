@@ -1,20 +1,14 @@
 package bai_tap_tu_luyen.quan_ly_phuong_tien.controller;
 
-import bai_tap_tu_luyen.quan_ly_phuong_tien.service.IOtoService;
-import bai_tap_tu_luyen.quan_ly_phuong_tien.service.IXeMayService;
-import bai_tap_tu_luyen.quan_ly_phuong_tien.service.IXeTaiService;
-import bai_tap_tu_luyen.quan_ly_phuong_tien.service.impl.OtoService;
-import bai_tap_tu_luyen.quan_ly_phuong_tien.service.impl.XeMayService;
-import bai_tap_tu_luyen.quan_ly_phuong_tien.service.impl.XeTaiService;
+import bai_tap_tu_luyen.quan_ly_phuong_tien.service.IPhuongTienService;
+import bai_tap_tu_luyen.quan_ly_phuong_tien.service.impl.PhuongTienService;
 
 import java.util.Scanner;
 
 public class MainController {
-    public void quanLyPhuongTien() {
+    public void quanLyAll() {
         Scanner scanner = new Scanner(System.in);
-        IOtoService otoService = new OtoService();
-        IXeTaiService xeTaiService = new XeTaiService();
-        IXeMayService xeMayService = new XeMayService();
+        IPhuongTienService phuongTienService = new PhuongTienService();
         while (true) {
             System.out.println("---------------------------------------------------------------------");
             System.out.println("Chào mừng bạn đến với phần mềm quản lý phương tiện giao thông");
@@ -29,27 +23,10 @@ public class MainController {
             switch (choice) {
                 case 1:
                     System.out.println("--------------------------------------------------");
-                    System.out.println("Chào mừng bạn đến với chức năng Thêm Mới");
-                    System.out.println("1. Thêm mới Oto");
-                    System.out.println("2. Thêm mới xe tải");
-                    System.out.println("3. Thêm mới xe máy");
-                    System.out.println("4. Thoát");
+                    System.out.println("Chào mừng bạn đến với chức năng thêm mới phương tiện");
+                    System.out.println("Hãy thêm những thuộc tính chung của phương tiện");
                     System.out.println("-------------------------------------------");
-                    System.out.println("Bạn muốn thêm mới phương tiện: ");
-                    int choice1 = Integer.parseInt(scanner.nextLine());
-                    switch (choice1) {
-                        case 1:
-                            otoService.themMoiOTo();
-                            break;
-                        case 2:
-                            xeTaiService.themMoiXeTai();
-                            break;
-                        case 3:
-                            xeMayService.themMoiXeMay();
-                            break;
-                        case 4:
-                            return;
-                    }
+                    phuongTienService.themMoiPhuongTien();
                     break;
                 case 2:
                     System.out.println("--------------------------------------------------");
@@ -57,75 +34,38 @@ public class MainController {
                     System.out.println("1. Hiển thị Oto");
                     System.out.println("2. Hiển thị xe tải");
                     System.out.println("3. Hiển thị xe máy");
-                    System.out.println("4. Thoát");
+                    System.out.println("4. Hiển thị toàn bộ phương tiện");
+                    System.out.println("5. Thoát");
                     System.out.println("-------------------------------------------");
                     System.out.println("Bạn muốn hiển thị phương tiện: ");
                     int choice2 = Integer.parseInt(scanner.nextLine());
                     switch (choice2) {
                         case 1:
-                            otoService.hienThiOto();
+                            phuongTienService.hienThiOto();
                             break;
                         case 2:
-                            xeTaiService.hienThiXeTai();
+                            phuongTienService.hienThiXeTai();
                             break;
                         case 3:
-                            xeMayService.hienThiXeMay();
+                            phuongTienService.hienThiXeMay();
                             break;
                         case 4:
+                            phuongTienService.hienThiAll();
+                            break;
+                        case 5:
                             return;
                     }
                     break;
                 case 3:
                     System.out.println("--------------------------------------------------");
                     System.out.println("Chào mừng bạn đến với chức năng Xóa");
-                    System.out.println("1. Xóa Oto");
-                    System.out.println("2. Xóa xe tải");
-                    System.out.println("3. Xóa xe máy");
-                    System.out.println("4. Thoát");
-                    System.out.println("-------------------------------------------");
-                    System.out.println("Bạn muốn xóa phương tiện: ");
-                    int choice3 = Integer.parseInt(scanner.nextLine());
-                    switch (choice3) {
-                        case 1:
-                            otoService.xoaOto();
-                            break;
-                        case 2:
-                            xeTaiService.xoaXeTai();
-                            break;
-                        case 3:
-                            xeMayService.xoaXeMay();
-                            break;
-                        case 4:
-                            return;
-                    }
+                    phuongTienService.xoaPhuongTien();
                     break;
                 case 4:
                     System.out.println("--------------------------------------------------");
                     System.out.println("Chào mừng bạn đến với chức năng Tìm Kiếm");
-                    System.out.println("1. Tìm kiếm Oto");
-                    System.out.println("2. Tìm kiếm xe tải");
-                    System.out.println("3. Tìm kiếm xe máy");
-                    System.out.println("4. Thoát");
-                    System.out.println("-------------------------------------------");
-                    System.out.println("Bạn muốn tìm kiếm phương tiện: ");
-                    int choice4 = Integer.parseInt(scanner.nextLine());
-                    switch (choice4) {
-                        case 1:
-                            otoService.timKiemOto();
-                            break;
-                        case 2:
-                            xeTaiService.timKiemXeTai();
-                            break;
-                        case 3:
-                            xeMayService.timKiemXeMay();
-                            break;
-                        case 4:
-                            return;
-                    }
+                    phuongTienService.timKiemPhuongTien();
                     break;
-                case 5:
-                    System.out.println("Cám ơn bạn đã sử dụng phần mềm");
-                    return;
             }
         }
     }
