@@ -22,10 +22,6 @@ public class MainController {
             int choice = Integer.parseInt(scanner.nextLine());
             switch (choice) {
                 case 1:
-                    System.out.println("--------------------------------------------------");
-                    System.out.println("Chào mừng bạn đến với chức năng thêm mới phương tiện");
-                    System.out.println("Hãy thêm những thuộc tính chung của phương tiện");
-                    System.out.println("-------------------------------------------");
                     phuongTienService.themMoiPhuongTien();
                     break;
                 case 2:
@@ -57,15 +53,14 @@ public class MainController {
                     }
                     break;
                 case 3:
-                    System.out.println("--------------------------------------------------");
-                    System.out.println("Chào mừng bạn đến với chức năng Xóa");
                     phuongTienService.xoaPhuongTien();
                     break;
                 case 4:
-                    System.out.println("--------------------------------------------------");
-                    System.out.println("Chào mừng bạn đến với chức năng Tìm Kiếm");
                     phuongTienService.timKiemPhuongTien();
                     break;
+                case 5:
+                    System.out.println("Cám ơn bạn đã sử dụng phần mềm");
+                    System.exit(0);
             }
         }
     }

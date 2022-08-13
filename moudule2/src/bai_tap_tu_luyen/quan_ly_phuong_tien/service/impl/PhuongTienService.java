@@ -25,6 +25,10 @@ public class PhuongTienService implements IPhuongTienService {
 
     @Override
     public void themMoiPhuongTien() {
+        System.out.println("--------------------------------------------------");
+        System.out.println("Chào mừng bạn đến với chức năng thêm mới phương tiện");
+        System.out.println("Hãy thêm những thuộc tính chung của phương tiện");
+        System.out.println("-------------------------------------------");
         PhuongTienGiaoThong phuongTienGiaoThong = this.thongTinPhuongTien();
         phuongTienGiaoThongs.add(phuongTienGiaoThong);
         if (phuongTienGiaoThong instanceof Oto) {
@@ -69,6 +73,8 @@ public class PhuongTienService implements IPhuongTienService {
 
     @Override
     public void xoaPhuongTien() {
+        System.out.println("--------------------------------------------------");
+        System.out.println("Chào mừng bạn đến với chức năng Xóa");
         System.out.println("Hãy nhập vào biển kiểm soát cần xóa");
         String bienKiemSoat = scanner.nextLine();
         int count = 0;
@@ -94,6 +100,8 @@ public class PhuongTienService implements IPhuongTienService {
 
     @Override
     public void timKiemPhuongTien() {
+        System.out.println("--------------------------------------------------");
+        System.out.println("Chào mừng bạn đến với chức năng Tìm Kiếm");
         System.out.println("Hãy nhập vào biển kiểm soát cần tìm");
         String bienKiemSoat = scanner.nextLine();
         int count = 0;
