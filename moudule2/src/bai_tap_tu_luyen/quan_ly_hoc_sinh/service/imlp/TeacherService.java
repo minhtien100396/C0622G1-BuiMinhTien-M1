@@ -44,22 +44,30 @@ public class TeacherService implements ITeacherService {
 
     @Override
     public void changeTeacherInfo() {
-        Teacher teacher = this.findTeacher();
-        if (teacher == null) {
-            System.out.println("Giáo viên bạn cần thay đổi thông tin không có trong trung tâm ");
+        if (teachers.isEmpty()) {
+            System.out.println("Không tồn tại giáo viên để thay đổi. Hãy thêm giáo viên vào");
         } else {
-            System.out.println("Bạn chắc chắn muốn thay đổi thông tin của giáo viên có ID là " + teacher.getId() + " không?");
-            System.out.println("1. Có");
-            System.out.println("2. Không");
-            int choice = Integer.parseInt(scanner.nextLine());
-            if (choice == 1) {
-                    teachers.set(teacher.getId(),infoTeacher() );
-                    System.out.println("Bạn đã thay đổi thông tin thành công");
+            System.out.println("Hãy nhập ID bạn muốn thay đổi");
+            int id = Integer.parseInt(scanner.nextLine());
+            for (int i = 0; i < teachers.size(); i++) {
+                if (!(teachers.get(i).getId() == id) || teachers.size() <= 0) {
+                    System.out.println("Id bạn nhập không tồn tại");
+                } else {
+                    System.out.println("Bạn chắc chắn muốn thay đổi thông tin của giáo viên không?");
+                    System.out.println("1. Có");
+                    System.out.println("2. Không");
+                    int choice = Integer.parseInt(scanner.nextLine());
+                    if (choice == 1) {
+                        teachers.set(i, infoTeacher());
+                        System.out.println("Bạn đã thay đổi thông tin thành công");
+                    }
+                }
             }
         }
     }
+
     public Teacher findTeacher() {
-        System.out.println("Nhâp vào ID bạn muốn xử lý");
+        System.out.println("Nhâp vào ID bạn muốn xóa");
         int id = Integer.parseInt(scanner.nextLine());
         for (int i = 0; i < teachers.size(); i++) {
             if (teachers.get(i).getId() == id) {

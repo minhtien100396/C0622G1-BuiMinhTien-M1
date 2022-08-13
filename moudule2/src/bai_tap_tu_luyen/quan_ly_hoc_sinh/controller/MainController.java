@@ -8,7 +8,6 @@ import java.util.Scanner;
 public class MainController {
     public static void manage() {
         Scanner scanner = new Scanner(System.in);
-        //IMainControllerService mainControllerService = new MainControllerService();
         StudentController studentController = new StudentController();
         TeacherController teacherController = new TeacherController();
         while (true) {

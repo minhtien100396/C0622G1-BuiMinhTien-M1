@@ -44,23 +44,31 @@ public class StudentService implements IStudentService {
 
     @Override
     public void changeStudenInfo() {
-        Student student = this.findStudent();
-        if (student == null) {
-            System.out.println("Học sinh bạn cần thay đổi thông tin không có trong lớp ");
+        if (students.isEmpty()) {
+            System.out.println("Không tồn tại học sinh để thay đổi. Hãy thêm học sinh vào");
         } else {
-            System.out.println("Bạn chắc chắn muốn thay đổi thông tin của học sinh có ID là " + student.getId() + " không?");
-            System.out.println("1. Có");
-            System.out.println("2. Không");
-            int choice = Integer.parseInt(scanner.nextLine());
-            if (choice == 1) {
-                students.set((student.getId() - 1), this.infoStudent());
-                System.out.println("Bạn đã thay đổi thông tin thành công");
+            System.out.println("Hãy nhập ID bạn muốn thay đổi");
+            int id = Integer.parseInt(scanner.nextLine());
+            for (int i = 0; i < students.size(); i++) {
+                if (!(students.get(i).getId() == id)) {
+                    System.out.println("Id bạn nhập không tồn tại");
+                } else {
+                    System.out.println("Bạn chắc chắn muốn thay đổi thông tin của học sinh không?");
+                    System.out.println("1. Có");
+                    System.out.println("2. Không");
+                    int choice = Integer.parseInt(scanner.nextLine());
+                    if (choice == 1) {
+                        students.set(i, infoStudent());
+                        System.out.println("Bạn đã thay đổi thông tin thành công");
+                    }
+                }
             }
         }
+
     }
 
     public Student findStudent() {
-        System.out.println("Nhâp vào ID");
+        System.out.println("Nhâp vào ID cần xóa");
         int id = Integer.parseInt(scanner.nextLine());
         for (int i = 0; i < students.size(); i++) {
             if (students.get(i).getId() == id) {
