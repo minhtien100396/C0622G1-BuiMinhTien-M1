@@ -78,14 +78,23 @@ public class PhuongTienService implements IPhuongTienService {
         System.out.println("Hãy nhập vào biển kiểm soát cần xóa");
         String bienKiemSoat = scanner.nextLine();
         int count = 0;
-        for (PhuongTienGiaoThong phuongTienGiaoThong : phuongTienGiaoThongs) {
-            if (phuongTienGiaoThong.getBienKiemSoat().equalsIgnoreCase(bienKiemSoat)) {
-                System.out.println("Bạn chắc chắn xóa " + phuongTienGiaoThong.getBienKiemSoat() + " không?");
+        for (int i = 0; i < phuongTienGiaoThongs.size(); i++) {
+            if (phuongTienGiaoThongs.get(i).getBienKiemSoat().equalsIgnoreCase(bienKiemSoat)) {
+                if (phuongTienGiaoThongs.get(i) instanceof Oto) {
+                    otos.remove(phuongTienGiaoThongs.get(i));
+                }
+                if (phuongTienGiaoThongs.get(i) instanceof XeMay) {
+                    xeMays.remove(phuongTienGiaoThongs.get(i));
+                }
+                if (phuongTienGiaoThongs.get(i) instanceof XeTai) {
+                    xeTais.remove(phuongTienGiaoThongs.get(i));
+                }
+                System.out.println("Bạn chắc chắn xóa biển kiếm soát " + phuongTienGiaoThongs.get(i).getBienKiemSoat() + " không?");
                 System.out.println("1.  Có");
                 System.out.println("2. Không");
                 int choice = Integer.parseInt(scanner.nextLine());
                 if (choice == 1) {
-                    phuongTienGiaoThongs.remove(phuongTienGiaoThong);
+                    phuongTienGiaoThongs.remove(phuongTienGiaoThongs.get(i));
                     System.out.println("Đã xóa thành công");
                     count++;
                 } else {
@@ -96,7 +105,9 @@ public class PhuongTienService implements IPhuongTienService {
         if (count == 0) {
             System.out.println("Biển kiểm soát không tồn tại");
         }
+
     }
+
 
     @Override
     public void timKiemPhuongTien() {
