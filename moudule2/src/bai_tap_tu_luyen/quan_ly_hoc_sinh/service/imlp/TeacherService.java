@@ -45,15 +45,15 @@ public class TeacherService implements ITeacherService {
     @Override
     public void changeTeacherInfo() {
         if (teachers.isEmpty()) {
-            System.out.println("Không tồn tại giáo viên để thay đổi. Hãy thêm giáo viên vào");
+            System.out.println("Không tồn tại học sinh để thay đổi. Hãy thêm học sinh vào");
         } else {
             System.out.println("Hãy nhập ID bạn muốn thay đổi");
             int id = Integer.parseInt(scanner.nextLine());
+            int count = 0;
             for (int i = 0; i < teachers.size(); i++) {
-                if (!(teachers.get(i).getId() == id) || teachers.size() <= 0) {
-                    System.out.println("Id bạn nhập không tồn tại");
-                } else {
-                    System.out.println("Bạn chắc chắn muốn thay đổi thông tin của giáo viên không?");
+                if (teachers.get(i).getId() == id) {
+                    count++;
+                    System.out.println("Bạn chắc chắn muốn thay đổi thông tin của học sinh không?");
                     System.out.println("1. Có");
                     System.out.println("2. Không");
                     int choice = Integer.parseInt(scanner.nextLine());
@@ -62,6 +62,9 @@ public class TeacherService implements ITeacherService {
                         System.out.println("Bạn đã thay đổi thông tin thành công");
                     }
                 }
+            }
+            if (count == 0) {
+                System.out.println("ID bạn nhập không hợp lệ");
             }
         }
     }

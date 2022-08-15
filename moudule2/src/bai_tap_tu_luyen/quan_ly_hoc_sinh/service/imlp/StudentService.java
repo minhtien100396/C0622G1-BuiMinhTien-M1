@@ -49,10 +49,10 @@ public class StudentService implements IStudentService {
         } else {
             System.out.println("Hãy nhập ID bạn muốn thay đổi");
             int id = Integer.parseInt(scanner.nextLine());
+            int count = 0 ;
             for (int i = 0; i < students.size(); i++) {
-                if (!(students.get(i).getId() == id)) {
-                    System.out.println("Id bạn nhập không tồn tại");
-                } else {
+                if (students.get(i).getId() == id) {
+                    count++;
                     System.out.println("Bạn chắc chắn muốn thay đổi thông tin của học sinh không?");
                     System.out.println("1. Có");
                     System.out.println("2. Không");
@@ -62,6 +62,9 @@ public class StudentService implements IStudentService {
                         System.out.println("Bạn đã thay đổi thông tin thành công");
                     }
                 }
+            }
+            if (count == 0){
+                System.out.println("ID bạn nhập không hợp lệ");
             }
         }
 

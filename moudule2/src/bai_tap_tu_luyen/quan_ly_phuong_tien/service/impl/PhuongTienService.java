@@ -105,7 +105,6 @@ public class PhuongTienService implements IPhuongTienService {
         if (count == 0) {
             System.out.println("Biển kiểm soát không tồn tại");
         }
-
     }
 
 
