@@ -1,27 +1,25 @@
 package ss12_map_tree_comparator_comparable.luyen_tap;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class DemoTruyCapKey {
     public static void main(String[] args) {
-        Map<Integer, String> map = new HashMap<>();
-        map.put(1, "Uy");
-        map.put(2, "Huy");
-        map.put(3, "Tiến");
-//        System.out.println(map);
-//        for (Map.Entry<Integer, String> entry : map.entrySet()) {
-//            System.out.printf("%s - %s\n", entry.getKey(), entry.getValue());
-//        }
-        Map<Integer,String> map1 = new HashMap<>();
-        map1.put(1, "Uy");
-        map1.put(2, "Huy");
-        map1.put(3, "Tiến");
-        Map<String,String> map2 = new HashMap<>();
-        Map.Entry<String,String> entry1 = map2.entrySet().iterator().next();
-        String key = entry1.getKey();
-        String value = entry1.getValue();
-        System.out.println(key);
+        Map<User, String> map = new TreeMap<>();
+//            @Override
+//            public int compare(User o1, User o2) {
+//                if (o1.id > o2.id) return 1;
+//                if (o1.id < o2.id) return -1;
+//                return 0;
+//            }
+//        });
+        map.put(new User(5, "Tiến"), "Học Sinh");
+        map.put(new User(2, "Bia"), "Giáo viên");
+        map.put(new User(3, "Huy"), "Bảo vệ");
+        Map<User,String> map1 = new TreeMap<>(map);
+        map1.put(new User(43, "Sáng"), "Bảo vệ");
+        map1.putAll(map);
+        for (User item : map1.keySet()) {
+            System.out.printf("%s - %s\n", item, map1.get(item));
+        }
     }
 }

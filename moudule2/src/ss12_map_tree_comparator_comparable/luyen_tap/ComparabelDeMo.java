@@ -1,5 +1,7 @@
 package ss12_map_tree_comparator_comparable.luyen_tap;
 
+import ss12_map_tree_comparator_comparable.bai_tap.bai_1.model.Produce;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -13,7 +15,6 @@ public class ComparabelDeMo implements Comparable<ComparabelDeMo> {
         if (o.age<this.age) return 1;
         return 0;
     }
-
     private int age;
     private String name;
 

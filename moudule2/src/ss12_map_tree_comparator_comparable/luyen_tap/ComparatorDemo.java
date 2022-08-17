@@ -33,7 +33,6 @@ public class ComparatorDemo {
                     return 1;
                 if (o1.age < o2.age)
                     return -1;
-
                 return 0;
             }
         };

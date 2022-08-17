@@ -9,7 +9,13 @@ import java.util.Scanner;
 
 public class StudentService implements IStudentService {
     private Scanner scanner = new Scanner(System.in);
-    public List<Student> students = new ArrayList<>();
+    public static List<Student> students = new ArrayList<>();
+
+    static {
+        students.add(new Student(1, "Nguyễn Văn Huy", "10/25/2001", "Male", 2, "C0622G1"));
+        students.add(new Student(2, "Bùi Minh Tiến", "10/03/1996", "Male", 3, "C0622G1"));
+        students.add(new Student(2, "Đỗ Ức Uy", "20/03/1995", "Male", 4, "C0622G1"));
+    }
 
     @Override
     public void addStudent() {
@@ -49,7 +55,7 @@ public class StudentService implements IStudentService {
         } else {
             System.out.println("Hãy nhập ID bạn muốn thay đổi");
             int id = Integer.parseInt(scanner.nextLine());
-            int count = 0 ;
+            int count = 0;
             for (int i = 0; i < students.size(); i++) {
                 if (students.get(i).getId() == id) {
                     count++;
@@ -63,15 +69,43 @@ public class StudentService implements IStudentService {
                     }
                 }
             }
-            if (count == 0){
+            if (count == 0) {
                 System.out.println("ID bạn nhập không hợp lệ");
             }
         }
 
     }
 
+    @Override
+    public void findIdStudent() {
+        Student student = this.findStudent();
+        if (student == null) {
+            System.out.println("ID bạn nhập không hợp lệ. Hãy nhập lại");
+        } else {
+            System.out.println("Thông tin tìm được là:");
+            System.out.println(student);
+        }
+    }
+
+    @Override
+    public void findNameStuden() {
+        System.out.println("Hãy nhập vào tên bạn muốn tìm kiếm");
+        String name = scanner.nextLine();
+        int count = 1;
+        for (Student student : students) {
+            if (student.getName().contains(name)) {
+                count++;
+                System.out.println("Thông tin sau khi tìm kiếm được là:");
+                System.out.println(student);
+            }
+        }
+        if (count == 0) {
+            System.out.println("Tên bạn nhập không tồn tại");
+        }
+    }
+
     public Student findStudent() {
-        System.out.println("Nhâp vào ID cần xóa");
+        System.out.println("Nhâp vào ID bạn muốn thao tác");
         int id = Integer.parseInt(scanner.nextLine());
         for (int i = 0; i < students.size(); i++) {
             if (students.get(i).getId() == id) {

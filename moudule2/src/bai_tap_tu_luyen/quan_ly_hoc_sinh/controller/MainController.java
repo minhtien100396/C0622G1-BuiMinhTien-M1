@@ -1,7 +1,5 @@
 package bai_tap_tu_luyen.quan_ly_hoc_sinh.controller;
 
-//import bai_tap_tu_luyen.quan_ly_hoc_sinh.service.IMainControllerService;
-//import bai_tap_tu_luyen.quan_ly_hoc_sinh.service.imlp.MainControllerService;
 
 import java.util.Scanner;
 

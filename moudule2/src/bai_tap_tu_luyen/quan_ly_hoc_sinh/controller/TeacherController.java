@@ -16,6 +16,7 @@ public class TeacherController {
             System.out.println("2. Thêm giáo viên");
             System.out.println("3. Xóa giáo viên");
             System.out.println("4. Thay đổi thông tin giáo viên");
+            System.out.println("5. Tìm kiếm thông tin giáo viên");
             System.out.println("5. Exit");
             System.out.println("Hãy nhập lựa chọn của bạn (1->5)");
             int choice = Integer.parseInt(scanner.nextLine());
@@ -33,7 +34,23 @@ public class TeacherController {
                     teacherService.changeTeacherInfo();
                     break;
                 case 5:
-                    return;
+                    System.out.println("Chào mừng bạn đến với chức năng tìm kiếm");
+                    System.out.println("1. Tìm kiếm theo ID");
+                    System.out.println("2. Tìm kiếm theo tên");
+                    System.out.println("3. Exit");
+                    System.out.println("Mời bạn nhập vào kiểu tìm kiếm:");
+                    int choice2 = Integer.parseInt(scanner.nextLine());
+                    switch (choice2){
+                        case 1:
+                            teacherService.findIdTeacher();
+                            break;
+                        case 2:
+                            teacherService.findNameTeacher();
+                            break;
+                        case 3:
+                            return;
+                    }
+                    break;
             }
         }
     }

@@ -8,4 +8,8 @@ public interface IStudentService {
     void removeStudent();
 
     void changeStudenInfo();
+
+    void findIdStudent();
+
+    void findNameStuden();
 }
