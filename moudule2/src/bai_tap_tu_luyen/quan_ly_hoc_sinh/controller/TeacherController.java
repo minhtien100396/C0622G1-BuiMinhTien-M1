@@ -17,7 +17,8 @@ public class TeacherController {
             System.out.println("3. Xóa giáo viên");
             System.out.println("4. Thay đổi thông tin giáo viên");
             System.out.println("5. Tìm kiếm thông tin giáo viên");
-            System.out.println("5. Exit");
+            System.out.println("6. Sắp xếp theo tên giáo viên");
+            System.out.println("7. Exit");
             System.out.println("Hãy nhập lựa chọn của bạn (1->5)");
             int choice = Integer.parseInt(scanner.nextLine());
             switch (choice) {
@@ -51,6 +52,11 @@ public class TeacherController {
                             return;
                     }
                     break;
+                case 6:
+                    teacherService.sortNameTeacher();
+                    break;
+                case 7:
+                    return;
             }
         }
     }

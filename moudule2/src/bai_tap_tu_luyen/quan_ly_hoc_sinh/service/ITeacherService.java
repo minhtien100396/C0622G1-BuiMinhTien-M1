@@ -13,4 +13,6 @@ public interface ITeacherService {
     void findIdTeacher();
 
     void findNameTeacher();
+
+    void sortNameTeacher();
 }

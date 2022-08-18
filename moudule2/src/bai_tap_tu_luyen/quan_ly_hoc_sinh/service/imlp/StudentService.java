@@ -14,7 +14,7 @@ public class StudentService implements IStudentService {
     static {
         students.add(new Student(1, "Nguyễn Văn Huy", "10/25/2001", "Male", 2, "C0622G1"));
         students.add(new Student(2, "Bùi Minh Tiến", "10/03/1996", "Male", 3, "C0622G1"));
-        students.add(new Student(2, "Đỗ Ức Uy", "20/03/1995", "Male", 4, "C0622G1"));
+        students.add(new Student(2, "Dỗ Đức Uy", "20/03/1995", "Male", 4, "C0622G1"));
     }
 
     @Override
@@ -102,6 +102,22 @@ public class StudentService implements IStudentService {
         if (count == 0) {
             System.out.println("Tên bạn nhập không tồn tại");
         }
+    }
+
+    @Override
+    public void sortNameStudent() {
+        for (int i = 0; i < students.size() - 1; i++) {
+            for (int j = 0; j < students.size() - 1-i; j++) {
+                if (students.get(j).getName().toLowerCase().compareTo(students.get(j + 1).getName().toLowerCase()) >= 0) {
+                    Student temp = students.get(j+1);
+                    students.set(j+1, students.get(j));
+                    students.set(j, temp);
+                }
+            }
+
+
+        }
+        displayStudent();
     }
 
     public Student findStudent() {

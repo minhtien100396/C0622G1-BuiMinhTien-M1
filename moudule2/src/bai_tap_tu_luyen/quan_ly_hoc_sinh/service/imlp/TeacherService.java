@@ -13,8 +13,8 @@ public class TeacherService implements ITeacherService {
     public static List<Teacher> teachers = new ArrayList<>();
     static {
         teachers.add(new Teacher(1, "Nguyễn Văn Hải", "10/5/2001", "Male", "Java"));
-        teachers.add(new Teacher(2, "Nguyễn Trần Chánh", "20/03/1996", "Male", "JavaScript"));
-        teachers.add(new Teacher(3, "Đỗ Ức Uy", "10/03/1995", "Male", "PHP"));
+        teachers.add(new Teacher(2, "Huỳnh Trần Chánh", "20/03/1996", "Male", "JavaScript"));
+        teachers.add(new Teacher(3, "Dỗ Ức Uy", "10/03/1995", "Male", "PHP"));
     }
 
     @Override
@@ -101,6 +101,22 @@ public class TeacherService implements ITeacherService {
         if (count == 0) {
             System.out.println("Tên bạn nhập không tồn tại");
         }
+    }
+
+    @Override
+    public void sortNameTeacher() {
+        for (int i = 0; i < teachers.size() - 1; i++) {
+            for (int j = 0; j < teachers.size() - 1-i; j++) {
+                if (teachers.get(j).getName().toLowerCase().compareTo(teachers.get(j + 1).getName().toLowerCase()) >= 0) {
+                    Teacher temp = teachers.get(j+1);
+                    teachers.set(j+1, teachers.get(j));
+                    teachers.set(j, temp);
+                }
+            }
+
+
+        }
+        displayTeacher();
     }
 
     public Teacher findTeacher() {
