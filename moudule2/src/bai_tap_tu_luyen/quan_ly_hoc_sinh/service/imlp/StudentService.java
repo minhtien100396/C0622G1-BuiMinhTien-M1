@@ -106,11 +106,14 @@ public class StudentService implements IStudentService {
 
     @Override
     public void sortNameStudent() {
-        for (int i = 0; i < students.size() - 1; i++) {
-            for (int j = 0; j < students.size() - 1-i; j++) {
+        boolean isSwap = true;
+        for (int i = 0; i < students.size() - 1 && isSwap; i++) {
+            isSwap = false;
+            for (int j = 0; j < students.size() - 1 - i; j++) {
                 if (students.get(j).getName().toLowerCase().compareTo(students.get(j + 1).getName().toLowerCase()) >= 0) {
-                    Student temp = students.get(j+1);
-                    students.set(j+1, students.get(j));
+                    isSwap = true;
+                    Student temp = students.get(j + 1);
+                    students.set(j + 1, students.get(j));
                     students.set(j, temp);
                 }
             }

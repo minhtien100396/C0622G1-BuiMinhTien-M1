@@ -4,17 +4,20 @@ import java.util.Arrays;
 
 public class BubleSort {
     public static void main(String[] args) {
-        int[] array = {5, 7, 2, 1, 6, 0, -2, 9, 25, -10};
+        int[] array = {5, 7, 9,10 };
         System.out.println(Arrays.toString(insertionSort(array)));
     }
 
     public static int[] insertionSort(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = i + 1; j < arr.length ; j++) {
-                if (arr[i]>arr[j]){
-                    int temp = arr[i];
-                    arr[i]=arr[j];
-                    arr[j]=temp;
+        boolean isSwap = true;
+        for (int i = 0; i < arr.length - 1 && isSwap; i++) {
+            isSwap = false;
+            for (int j = 0; j < arr.length - 1 - i; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    isSwap = true;
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
                 }
             }
         }

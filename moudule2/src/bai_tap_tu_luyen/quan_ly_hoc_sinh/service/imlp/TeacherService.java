@@ -11,6 +11,7 @@ import java.util.Scanner;
 public class TeacherService implements ITeacherService {
     private Scanner scanner = new Scanner(System.in);
     public static List<Teacher> teachers = new ArrayList<>();
+
     static {
         teachers.add(new Teacher(1, "Nguyễn Văn Hải", "10/5/2001", "Male", "Java"));
         teachers.add(new Teacher(2, "Huỳnh Trần Chánh", "20/03/1996", "Male", "JavaScript"));
@@ -105,16 +106,17 @@ public class TeacherService implements ITeacherService {
 
     @Override
     public void sortNameTeacher() {
-        for (int i = 0; i < teachers.size() - 1; i++) {
-            for (int j = 0; j < teachers.size() - 1-i; j++) {
+        boolean isSwap = true;
+        for (int i = 0; i < teachers.size() - 1 && isSwap; i++) {
+            isSwap = false;
+            for (int j = 0; j < teachers.size() - 1 - i; j++) {
                 if (teachers.get(j).getName().toLowerCase().compareTo(teachers.get(j + 1).getName().toLowerCase()) >= 0) {
-                    Teacher temp = teachers.get(j+1);
-                    teachers.set(j+1, teachers.get(j));
+                    isSwap = true;
+                    Teacher temp = teachers.get(j + 1);
+                    teachers.set(j + 1, teachers.get(j));
                     teachers.set(j, temp);
                 }
             }
-
-
         }
         displayTeacher();
     }
