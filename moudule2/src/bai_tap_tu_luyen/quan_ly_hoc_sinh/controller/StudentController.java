@@ -53,7 +53,7 @@ public class StudentController {
                                         studentService.findIdStudent();
                                         break;
                                     case 2:
-                                        studentService.findNameStuden();
+                                        studentService.findNameStudent();
                                         break;
                                     case 3:
                                         return;

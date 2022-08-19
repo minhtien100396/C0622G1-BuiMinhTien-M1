@@ -104,7 +104,7 @@ public class StudentService implements IStudentService {
     }
 
     @Override
-    public void findNameStuden() {
+    public void findNameStudent() {
         System.out.println("Hãy nhập vào tên bạn muốn tìm kiếm");
         String name = scanner.nextLine();
         int count = 1;
