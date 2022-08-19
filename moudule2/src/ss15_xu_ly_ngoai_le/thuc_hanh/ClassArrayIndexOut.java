@@ -18,7 +18,7 @@ public class ClassArrayIndexOut {
                 System.out.println("Mày nhập ngáo à. Mảng chỉ có 100 phần tử thôi");
                 check = true;
                 System.out.println("Nhập lại đi mày");
-            } catch (NumberFormatException e) {
+            } catch (java.lang.NumberFormatException e) {
                 System.out.println("Mày ngáo chưa. Nhập chữ làm gì?");
                 check = true;
                 System.out.println("Nhập lại đi mày");

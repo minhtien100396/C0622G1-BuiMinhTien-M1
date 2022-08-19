@@ -2,6 +2,7 @@ package bai_tap_tu_luyen.quan_ly_hoc_sinh.controller;
 
 import bai_tap_tu_luyen.quan_ly_hoc_sinh.service.ITeacherService;
 import bai_tap_tu_luyen.quan_ly_hoc_sinh.service.imlp.TeacherService;
+import bai_tap_tu_luyen.quan_ly_hoc_sinh.service.utils.exception.SearchException;
 
 import java.util.Scanner;
 
@@ -35,23 +36,37 @@ public class TeacherController {
                     teacherService.changeTeacherInfo();
                     break;
                 case 5:
-                    System.out.println("Chào mừng bạn đến với chức năng tìm kiếm");
-                    System.out.println("1. Tìm kiếm theo ID");
-                    System.out.println("2. Tìm kiếm theo tên");
-                    System.out.println("3. Exit");
-                    System.out.println("Mời bạn nhập vào kiểu tìm kiếm:");
-                    int choice2 = Integer.parseInt(scanner.nextLine());
-                    switch (choice2){
-                        case 1:
-                            teacherService.findIdTeacher();
-                            break;
-                        case 2:
-                            teacherService.findNameTeacher();
-                            break;
-                        case 3:
-                            return;
+                    int choice2;
+                    while (true) {
+                        try {
+                            System.out.println("Chào mừng bạn đến với chức năng tìm kiếm");
+                            System.out.println("1. Tìm kiếm theo ID");
+                            System.out.println("2. Tìm kiếm theo tên");
+                            System.out.println("3. Exit");
+                            System.out.println("Mời bạn nhập vào kiểu tìm kiếm:");
+                            choice2 = Integer.parseInt(scanner.nextLine());
+                            if (choice2 < 1 || choice2 > 3) {
+                                throw new SearchException("Vui lòng chọn đúng kiểu tìm kiếm!");
+                            } else {
+                                switch (choice2) {
+                                    case 1:
+                                        teacherService.findIdTeacher();
+                                        break;
+                                    case 2:
+                                        teacherService.findNameTeacher();
+                                        break;
+                                    case 3:
+                                        return;
+                                }
+                            }
+                        } catch (SearchException e) {
+                            System.out.println(e.getMessage());
+                        } catch (NumberFormatException e) {
+                            System.out.println("Nhập sai định dạng. Vui lòng nhập lại");
+                        } catch (Exception e) {
+                            System.out.println("Chương trình có vấn đề. Hãy kiểm tra lại");
+                        }
                     }
-                    break;
                 case 6:
                     teacherService.sortNameTeacher();
                     break;
