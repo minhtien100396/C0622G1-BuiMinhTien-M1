@@ -2,36 +2,38 @@ package bai_tap_tu_luyen.quan_ly_hoc_sinh.service.imlp;
 
 import bai_tap_tu_luyen.quan_ly_hoc_sinh.model.Student;
 import bai_tap_tu_luyen.quan_ly_hoc_sinh.service.IStudentService;
+import bai_tap_tu_luyen.quan_ly_hoc_sinh.service.read_and_write.ReadFileUtil;
+import bai_tap_tu_luyen.quan_ly_hoc_sinh.service.read_and_write.WriteFileUtil;
 import bai_tap_tu_luyen.quan_ly_hoc_sinh.service.utils.exception.*;
 
+import java.io.IOException;
 import java.util.*;
 
 public class StudentService implements IStudentService {
     private Scanner scanner = new Scanner(System.in);
-    public static List<Student> students = new ArrayList<>();
-
-    static {
-        students.add(new Student(1, "Nguyễn Văn Huy", "10/25/2001", "Male", 2, "C0622G1"));
-        students.add(new Student(2, "Bùi Minh Tiến", "10/03/1996", "Male", 3, "C0622G1"));
-        students.add(new Student(2, "Dỗ Đức Uy", "20/03/1995", "Male", 4, "C0622G1"));
-    }
+    public static List<Student> students;
+    private static final String PATH_FILE = "src\\bai_tap_tu_luyen\\quan_ly_hoc_sinh\\data\\students.txt";
 
     @Override
-    public void addStudent() {
+    public void addStudent() throws IOException {
+        students = ReadFileUtil.readStudentFile(PATH_FILE);
         Student student = this.infoStudent();
         students.add(student);
         System.out.println("Bạn đã thêm thành công!");
+        WriteFileUtil.writeStudentFile(PATH_FILE, students);
     }
 
     @Override
-    public void displayStudent() {
+    public void displayStudent() throws IOException {
+        students = ReadFileUtil.readStudentFile(PATH_FILE);
         for (Student student : students) {
             System.out.println(student);
         }
     }
 
     @Override
-    public void removeStudent() {
+    public void removeStudent() throws IOException {
+        students = ReadFileUtil.readStudentFile(PATH_FILE);
         Student student = this.findStudent();
         if (student == null) {
             System.out.println("Học sinh này không có trong lớp");
@@ -45,10 +47,13 @@ public class StudentService implements IStudentService {
                 System.out.println("Bạn đã xóa thành công");
             }
         }
+        WriteFileUtil.writeStudentFile(PATH_FILE, students);
     }
 
     @Override
-    public void changeStudenInfo() {
+    public void changeStudenInfo() throws IOException {
+        students = ReadFileUtil.readStudentFile(PATH_FILE);
+
         if (students.isEmpty()) {
             System.out.println("Không tồn tại học sinh để thay đổi. Hãy thêm học sinh vào");
         } else {
@@ -83,17 +88,20 @@ public class StudentService implements IStudentService {
                     System.out.println(e.getMessage());
                 } catch (NumberFormatException e) {
                     System.out.println("Bạn nhập sai cú pháp, hãy nhập lại");
-                }catch (Exception e) {
+                } catch (Exception e) {
                     System.out.println("Chương trình có vấn đề. Hãy kiểm tra lại");
                 }
 
             }
         }
+        WriteFileUtil.writeStudentFile(PATH_FILE, students);
 
     }
 
     @Override
-    public void findIdStudent() {
+    public void findIdStudent() throws IOException {
+        students = ReadFileUtil.readStudentFile(PATH_FILE);
+
         Student student = this.findStudent();
         if (student == null) {
             System.out.println("ID bạn nhập không hợp lệ. Hãy nhập lại");
@@ -104,7 +112,8 @@ public class StudentService implements IStudentService {
     }
 
     @Override
-    public void findNameStudent() {
+    public void findNameStudent() throws IOException {
+        students = ReadFileUtil.readStudentFile(PATH_FILE);
         System.out.println("Hãy nhập vào tên bạn muốn tìm kiếm");
         String name = scanner.nextLine();
         int count = 1;
@@ -121,7 +130,8 @@ public class StudentService implements IStudentService {
     }
 
     @Override
-    public void sortNameStudent() {
+    public void sortNameStudent() throws IOException {
+        students = ReadFileUtil.readStudentFile(PATH_FILE);
         boolean isSwap = true;
         for (int i = 0; i < students.size() - 1 && isSwap; i++) {
             isSwap = false;
@@ -133,13 +143,14 @@ public class StudentService implements IStudentService {
                     students.set(j, temp);
                 }
             }
-
-
         }
+        WriteFileUtil.writeStudentFile(PATH_FILE, students);
         displayStudent();
     }
 
-    public Student findStudent() {
+
+    public Student findStudent() throws IOException {
+        students = ReadFileUtil.readStudentFile(PATH_FILE);
         int id;
         while (true) {
             try {
@@ -164,7 +175,8 @@ public class StudentService implements IStudentService {
     }
 
 
-    public Student infoStudent() {
+    public Student infoStudent() throws IOException {
+        students = ReadFileUtil.readStudentFile(PATH_FILE);
         int id;
         while (true) {
             try {
@@ -287,4 +299,6 @@ public class StudentService implements IStudentService {
         Student student = new Student(id, name, dateOfBirth, gender, point, nameClass);
         return student;
     }
+
+
 }

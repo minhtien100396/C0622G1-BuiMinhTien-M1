@@ -10,7 +10,6 @@ import java.util.*;
 public class NhanVienService implements INhanVienService {
     Scanner scanner = new Scanner(System.in);
     private static List<NhanVien> nhanViens = new ArrayList<>();
-
     static {
         nhanViens.add(new NhanVienFullTime(1, "Tiến", 20, "093111", "minhtien", 10, 5, 1000));
         nhanViens.add(new NhanVienFullTime(2, "Trung", 16, "09154", "minhtrung", 5, 2, 50));

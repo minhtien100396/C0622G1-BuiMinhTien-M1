@@ -17,9 +17,10 @@ public class Teacher extends Person {
 
     @Override
     public String toString() {
-        return "Teacher{" +
-                super.toString() +
-                "specialize='" + specialize + '\'' +
-                '}';
+//        return "Teacher{" +
+//                super.toString() +
+//                "specialize='" + specialize + '\'' +
+//                '}';
+        return String.format("%s,%s,%s,%s,%s",this.getId(),this.getName(),this.getDateOfBirth(),this.getGender(),specialize);
     }
 }

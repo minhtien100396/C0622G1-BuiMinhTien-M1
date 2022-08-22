@@ -1,0 +1,4 @@
+1,Chanhs,10/03/2011,Nam,Hoas
+5,Hải,10/03/1995,nam,toán
+1,Nam,12/12/2011,Nữ,Toán
+21,Tuấn,12/12/2011,Nam,Toán

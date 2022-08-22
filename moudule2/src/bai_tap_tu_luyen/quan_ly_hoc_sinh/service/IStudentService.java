@@ -1,17 +1,20 @@
 package bai_tap_tu_luyen.quan_ly_hoc_sinh.service;
 
+import java.io.IOException;
+
 public interface IStudentService {
-    void addStudent();
+    void addStudent() throws IOException;
 
-    void displayStudent();
+    void displayStudent() throws IOException;
 
-    void removeStudent();
+    void removeStudent() throws IOException;
 
-    void changeStudenInfo();
+    void changeStudenInfo() throws IOException;
 
-    void findIdStudent();
+    void findIdStudent() throws IOException;
 
-    void findNameStudent();
+    void findNameStudent() throws IOException;
 
-    void sortNameStudent();
+    void sortNameStudent() throws IOException;
+
 }

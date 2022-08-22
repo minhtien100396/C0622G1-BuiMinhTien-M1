@@ -31,6 +31,8 @@ public class InputTheSideOfTheTriangle {
                 System.out.println("Cạnh của tam giác phải là một số!");
             } catch (SumIllegalTriangleException e) {
                 System.out.println(e.getMessage());
+            } catch (Exception e){
+                System.out.println("Chương trình xảy ra lỗi. Hãy kiểm tra lại");
             }
         }
 

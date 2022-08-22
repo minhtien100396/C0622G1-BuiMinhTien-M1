@@ -37,10 +37,11 @@ public class Student extends Person {
 
     @Override
     public String toString() {
-        return "Student{" +
-                super.toString() +
-                "point=" + point +
-                ", className='" + className + '\'' +
-                '}';
+//        return "Student{" +
+//                super.toString() +
+//                "point=" + point +
+//                ", className='" + className + '\'' +
+//                '}';
+        return String.format("%s,%s,%s,%s,%s,%s",this.getId(),this.getName(),this.getDateOfBirth(), this.getGender(),point,className);
     }
 }

@@ -3,38 +3,41 @@ package bai_tap_tu_luyen.quan_ly_hoc_sinh.service.imlp;
 import bai_tap_tu_luyen.quan_ly_hoc_sinh.model.Student;
 import bai_tap_tu_luyen.quan_ly_hoc_sinh.model.Teacher;
 import bai_tap_tu_luyen.quan_ly_hoc_sinh.service.ITeacherService;
+import bai_tap_tu_luyen.quan_ly_hoc_sinh.service.read_and_write.ReadFileUtil;
+import bai_tap_tu_luyen.quan_ly_hoc_sinh.service.read_and_write.WriteFileUtil;
 import bai_tap_tu_luyen.quan_ly_hoc_sinh.service.utils.exception.*;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class TeacherService implements ITeacherService {
     private Scanner scanner = new Scanner(System.in);
-    public static List<Teacher> teachers = new ArrayList<>();
-
-    static {
-        teachers.add(new Teacher(1, "Nguyễn Văn Hải", "10/5/2001", "Male", "Java"));
-        teachers.add(new Teacher(2, "Huỳnh Trần Chánh", "20/03/1996", "Male", "JavaScript"));
-        teachers.add(new Teacher(3, "Dỗ Ức Uy", "10/03/1995", "Male", "PHP"));
-    }
+    public static List<Teacher> teachers;
+    private static final String PATH_FILE = "src\\bai_tap_tu_luyen\\quan_ly_hoc_sinh\\data\\teachers.txt";
 
     @Override
-    public void addTeacher() {
+    public void addTeacher() throws IOException {
+        teachers = ReadFileUtil.readTeacherFile(PATH_FILE);
         Teacher teacher = this.infoTeacher();
         teachers.add(teacher);
         System.out.println("Bạn đã thêm thành công!");
+        WriteFileUtil.writeTeacherFile(PATH_FILE, teachers);
     }
 
     @Override
-    public void displayTeacher() {
+
+    public void displayTeacher() throws IOException {
+        teachers = ReadFileUtil.readTeacherFile(PATH_FILE);
         for (Teacher teacher : teachers) {
             System.out.println(teacher);
         }
     }
 
     @Override
-    public void removeTeacher() {
+    public void removeTeacher() throws IOException {
+        teachers = ReadFileUtil.readTeacherFile(PATH_FILE);
         Teacher teacher = this.findTeacher();
         if (teacher == null) {
             System.out.println("Giáo viên này không có trong CodeGym");
@@ -48,10 +51,12 @@ public class TeacherService implements ITeacherService {
                 System.out.println("Bạn đã xóa thành công");
             }
         }
+        WriteFileUtil.writeTeacherFile(PATH_FILE, teachers);
     }
 
     @Override
-    public void changeTeacherInfo() {
+    public void changeTeacherInfo() throws IOException {
+        teachers = ReadFileUtil.readTeacherFile(PATH_FILE);
         if (teachers.isEmpty()) {
             System.out.println("Không tồn tại giáo viên để thay đổi. Hãy thêm giáo viên vào");
         } else {
@@ -90,10 +95,12 @@ public class TeacherService implements ITeacherService {
 
             }
         }
+        WriteFileUtil.writeTeacherFile(PATH_FILE, teachers);
     }
 
     @Override
-    public void findIdTeacher() {
+    public void findIdTeacher() throws IOException {
+        teachers = ReadFileUtil.readTeacherFile(PATH_FILE);
         Teacher teacher = this.findTeacher();
         if (teacher == null) {
             System.out.println("ID bạn nhập không hợp lệ. Hãy nhập lại");
@@ -104,7 +111,8 @@ public class TeacherService implements ITeacherService {
     }
 
     @Override
-    public void findNameTeacher() {
+    public void findNameTeacher() throws IOException {
+        teachers = ReadFileUtil.readTeacherFile(PATH_FILE);
         System.out.println("Hãy nhập vào tên bạn muốn tìm kiếm");
         String name = scanner.nextLine();
         int count = 1;
@@ -121,7 +129,8 @@ public class TeacherService implements ITeacherService {
     }
 
     @Override
-    public void sortNameTeacher() {
+    public void sortNameTeacher() throws IOException {
+        teachers = ReadFileUtil.readTeacherFile(PATH_FILE);
         boolean isSwap = true;
         for (int i = 0; i < teachers.size() - 1 && isSwap; i++) {
             isSwap = false;
@@ -134,6 +143,7 @@ public class TeacherService implements ITeacherService {
                 }
             }
         }
+        WriteFileUtil.writeTeacherFile(PATH_FILE, teachers);
         displayTeacher();
     }
 
@@ -243,8 +253,7 @@ public class TeacherService implements ITeacherService {
             try {
                 System.out.println("Mời bạn nhập vào giới tính cho giáo viên");
                 gender = scanner.nextLine();
-                check = (!(gender.equalsIgnoreCase("nam"))) && (!(gender.equalsIgnoreCase(" nữ")));
-                if (check) {
+                if (!(gender.equalsIgnoreCase("Nam"))  && !(gender.equalsIgnoreCase("Nữ"))) {
                     throw new GenderException("Hãy nhập lại giới tính!!! (Giới tính chỉ có thể là \"nam\" hoặc \"nữ\")");
                 }
                 break;

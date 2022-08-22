@@ -4,10 +4,11 @@ import bai_tap_tu_luyen.quan_ly_hoc_sinh.service.IStudentService;
 import bai_tap_tu_luyen.quan_ly_hoc_sinh.service.imlp.StudentService;
 import bai_tap_tu_luyen.quan_ly_hoc_sinh.service.utils.exception.SearchException;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class StudentController {
-    public static void studentManagement() {
+    public static void studentManagement() throws IOException {
         Scanner scanner = new Scanner(System.in);
         IStudentService studentService = new StudentService();
         while (true) {
