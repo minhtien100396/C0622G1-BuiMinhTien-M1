@@ -15,7 +15,7 @@ public class StudentService implements IStudentService {
     private static final String PATH_FILE = "src\\bai_tap_tu_luyen\\quan_ly_hoc_sinh\\data\\students.txt";
 
     @Override
-    public void addStudent() throws IOException {
+    public void addStudent() throws IOException, ClassNotFoundException {
         students = ReadFileUtil.readStudentFile(PATH_FILE);
         Student student = this.infoStudent();
         students.add(student);

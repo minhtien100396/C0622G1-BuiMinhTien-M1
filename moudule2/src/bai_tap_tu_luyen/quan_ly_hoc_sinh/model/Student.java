@@ -18,6 +18,7 @@ public class Student extends Person {
         this.className = className;
     }
 
+
     public double getPoint() {
         return point;
     }

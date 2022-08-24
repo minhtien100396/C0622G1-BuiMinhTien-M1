@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class StudentController {
-    public static void studentManagement() throws IOException {
+    public static void studentManagement() throws IOException, ClassNotFoundException {
         Scanner scanner = new Scanner(System.in);
         IStudentService studentService = new StudentService();
         while (true) {

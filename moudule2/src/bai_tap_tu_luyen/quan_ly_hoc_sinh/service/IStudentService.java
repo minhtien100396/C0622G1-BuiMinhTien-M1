@@ -3,7 +3,7 @@ package bai_tap_tu_luyen.quan_ly_hoc_sinh.service;
 import java.io.IOException;
 
 public interface IStudentService {
-    void addStudent() throws IOException;
+    void addStudent() throws IOException, ClassNotFoundException;
 
     void displayStudent() throws IOException;
 

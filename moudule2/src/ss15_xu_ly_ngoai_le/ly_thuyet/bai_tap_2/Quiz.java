@@ -1,5 +1,9 @@
 package ss15_xu_ly_ngoai_le.ly_thuyet.bai_tap_2;
 
+import ss15_xu_ly_ngoai_le.bai_tap.IllegalTriangleException;
+
+import java.io.IOException;
+
 public class Quiz {
     public static void main(String[] args) {
         try {

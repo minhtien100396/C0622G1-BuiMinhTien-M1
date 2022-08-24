@@ -37,6 +37,7 @@ public class MainController {
                 System.out.println(e.getMessage());
             } catch (NumberFormatException e) {
                 System.out.println("Hãy nhập đúng cú pháp!");
+                e.printStackTrace();
             } catch (Exception e) {
                 System.out.println("Chương trình có vấn đề. Hãy kiểm tra lại");
             }
