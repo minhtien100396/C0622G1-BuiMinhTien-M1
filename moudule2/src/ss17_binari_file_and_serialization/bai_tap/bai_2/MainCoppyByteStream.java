@@ -13,15 +13,15 @@ public class MainCoppyByteStream {
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         List<Object> studentList = new ArrayList<>();
-        studentList.add(new Student(1, "Bia"));
-        studentList.add(new Student(2, "Tiến"));
-        studentList.add(new Student(3, "Vinh"));
-        System.out.println("-------------------------------------------");
-        System.out.println("Dữ liệu ở file ban đầu");
-        WriteFile.writeFile(PATH_FILE, studentList);
+//        studentList.add(new Student(1, "Bia"));
+//        studentList.add(new Student(2, "Tiến"));
+//        studentList.add(new Student(3, "Vinh"));
+//        System.out.println("-------------------------------------------");
+//        System.out.println("Dữ liệu ở file ban đầu");
+        //WriteFile.writeFile(PATH_FILE, studentList);
         List<Object> list = ReadFile.readFile(PATH_FILE);
-        System.out.println("-------------------------------------------");
-        System.out.println("Dữ liệu ở file sau khi coppy");
+//        System.out.println("-------------------------------------------");
+//        System.out.println("Dữ liệu ở file sau khi coppy");
         WriteFile.writeFile(PATH_FILE1,list);
     }
 }
