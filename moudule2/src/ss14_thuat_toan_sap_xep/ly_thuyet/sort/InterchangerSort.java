@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class InterchangerSort {
     public static void main(String[] args) {
-        int[] array = {5, -7, 4, 2, 1 - 6, 0, 15, -1, 7, -9, 3};
+        int[] array = {-1, 150, 190, 170, -1, -1, 180, 160};
         System.out.println(Arrays.toString(sortArray(array)));
     }
 

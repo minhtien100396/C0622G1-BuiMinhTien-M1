@@ -3,7 +3,7 @@ package ss17_binari_file_and_serialization.ly_thuyet.bai_1.model;
 import java.io.Serializable;
 
 public class Person implements Serializable {
-    private int id;
+    private transient int id;
     private String name;
     private String dateOfBirth;
     private String gender;

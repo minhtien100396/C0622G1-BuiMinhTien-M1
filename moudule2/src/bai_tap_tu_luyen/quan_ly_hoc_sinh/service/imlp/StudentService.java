@@ -5,14 +5,18 @@ import bai_tap_tu_luyen.quan_ly_hoc_sinh.service.IStudentService;
 import bai_tap_tu_luyen.quan_ly_hoc_sinh.service.read_and_write.ReadFileUtil;
 import bai_tap_tu_luyen.quan_ly_hoc_sinh.service.read_and_write.WriteFileUtil;
 import bai_tap_tu_luyen.quan_ly_hoc_sinh.service.utils.exception.*;
+import bai_tap_tu_luyen.quan_ly_hoc_sinh.service.utils.regex.IdRegex;
 
 import java.io.IOException;
 import java.util.*;
+import java.util.regex.Pattern;
 
 public class StudentService implements IStudentService {
     private Scanner scanner = new Scanner(System.in);
     public static List<Student> students;
     private static final String PATH_FILE = "src\\bai_tap_tu_luyen\\quan_ly_hoc_sinh\\data\\students.txt";
+    private static final String NAME_REGEX = "^[A-Za-z ]{5,50}$";
+    private static final String CLASS_NAME_REGEX = "(A|C)[0-9]{4}(G|I)[1]";
 
     @Override
     public void addStudent() throws IOException, ClassNotFoundException {
@@ -195,28 +199,16 @@ public class StudentService implements IStudentService {
             }
         }
         String name;
-        String str = "123456\7890!@#$%^&*()_+-={}[]';:'?<>,./|~`";
-        String[] newStr = str.split("");
         while (true) {
-            try {
-                System.out.println("Mời bạn nhập vào tên của học sinh");
-                name = scanner.nextLine();
-                String[] newName = name.trim().split("");
-                for (int i = 0; i < newName.length; i++) {
-                    for (int j = 0; j < newStr.length; j++) {
-                        if ((newName[i].equalsIgnoreCase(newStr[j]))) {
-                            throw new NameException("Tên không hợp lệ. Hãy nhập lại!");
-                        }
-                    }
-                }
+            System.out.println("Mời bạn nhập vào tên của học sinh");
+            name = scanner.nextLine();
+            Pattern pattern = Pattern.compile(NAME_REGEX);
+            if (pattern.matcher(name).find()) {
                 break;
-            } catch (NameException e) {
-                System.out.println(e.getMessage());
-            } catch (Exception e) {
-                System.out.println("Chương trình có vấn đề. Hãy kiểm tra lại");
+            } else {
+                System.out.println("Tên bạn nhập không hợp lệ.");
             }
         }
-
         String dateOfBirth;
         while (true) {
             try {
@@ -288,13 +280,15 @@ public class StudentService implements IStudentService {
 
         String nameClass;
         while (true) {
-            try {
-                System.out.println("Mời bạn nhập vào lớp học của học sinh");
-                nameClass = scanner.nextLine();
+            System.out.println("Mời bạn nhập vào lớp học của học sinh");
+            nameClass = scanner.nextLine();
+            Pattern pattern = Pattern.compile(CLASS_NAME_REGEX);
+            if (pattern.matcher(nameClass).find()) {
                 break;
-            } catch (Exception e) {
-                System.out.println("Chương trình có vấn đề. Hãy kiểm tra lại");
+            } else {
+                System.out.println("Tên lớp không hợp lệ");
             }
+
         }
         Student student = new Student(id, name, dateOfBirth, gender, point, nameClass);
         return student;

@@ -17,12 +17,12 @@ public class ProduceService implements IProduceService {
 
     @Override
     public void addProduce() throws IOException, ClassNotFoundException {
+        products = ReadFile.readFileProduct(PATH_FILE);
         System.out.println("------------------------------------------------");
         System.out.println("Chào mừng bạn đến với chức năng thêm mới");
         products.add(infoProduce());
         System.out.println("Bạn đã thêm thành công");
         WriteFile.writeFileProduce(PATH_FILE, products);
-        products = ReadFile.readFileProduct(PATH_FILE);
     }
 
     @Override

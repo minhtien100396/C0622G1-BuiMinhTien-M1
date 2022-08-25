@@ -1,10 +1,14 @@
 package case_study.task_1.controllers;
 
+import case_study.task_1.services.IEmployeeService;
+import case_study.task_1.services.impl.EmployeeServiceImpl;
+
 import java.util.Scanner;
 
 public class FuramaController {
     public static void displayMainMenu() {
         Scanner scanner = new Scanner(System.in);
+        IEmployeeService employeeService = new EmployeeServiceImpl();
         while (true) {
             System.out.println("------------------------------------");
             System.out.println("MENU");
@@ -35,8 +39,10 @@ public class FuramaController {
                             } else {
                                 switch (choice1) {
                                     case 1:
+
                                         break;
                                     case 2:
+                                        employeeService.addEmployee();
                                         break;
                                     case 3:
                                         break;

@@ -7,11 +7,20 @@ import java.util.List;
 
 public class ReadFile {
     public static List<Product> readFileProduct(String path) throws IOException, ClassNotFoundException {
-        List<Product> productList;
+        List<Product> productList=null;
         FileInputStream fileInputStream = new FileInputStream(path);
-        ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
-        productList = (List<Product>) objectInputStream.readObject();
-        objectInputStream.close();
+
+        try {
+            if (fileInputStream.available() == 0) {
+                throw new EOFException("File hiện tại đang trống");
+            } else {
+                ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+                productList = (List<Product>) objectInputStream.readObject();
+                objectInputStream.close();
+            }
+        } catch (EOFException e) {
+            System.out.println(e.getMessage());
+        }
         return productList;
     }
 }

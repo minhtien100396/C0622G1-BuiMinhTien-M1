@@ -11,11 +11,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class TeacherService implements ITeacherService {
     private Scanner scanner = new Scanner(System.in);
     public static List<Teacher> teachers;
     private static final String PATH_FILE = "src\\bai_tap_tu_luyen\\quan_ly_hoc_sinh\\data\\teachers.txt";
+    private static final String NAME_REGEX = "^[A-Za-z ]{5,50}$";
 
     @Override
     public void addTeacher() throws IOException {
@@ -191,25 +193,14 @@ public class TeacherService implements ITeacherService {
             }
         }
         String name;
-        String str = "123456\7890!@#$%^&*()_+-={}[]';:'?<>,./|~`";
-        String[] newStr = str.split("");
         while (true) {
-            try {
-                System.out.println("Mời bạn nhập vào tên của giáo viên");
-                name = scanner.nextLine();
-                String[] newName = name.trim().split("");
-                for (int i = 0; i < newName.length; i++) {
-                    for (int j = 0; j < newStr.length; j++) {
-                        if ((newName[i].equalsIgnoreCase(newStr[j]))) {
-                            throw new NameException("Tên không hợp lệ. Hãy nhập lại!");
-                        }
-                    }
-                }
+            System.out.println("Mời bạn nhập vào tên của học sinh");
+            name = scanner.nextLine();
+            Pattern pattern = Pattern.compile(NAME_REGEX);
+            if (pattern.matcher(name).find()) {
                 break;
-            } catch (NameException e) {
-                System.out.println(e.getMessage());
-            } catch (Exception e) {
-                System.out.println("Chương trình có vấn đề. Hãy kiểm tra lại");
+            } else {
+                System.out.println("Tên bạn nhập không hợp lệ.");
             }
         }
 
