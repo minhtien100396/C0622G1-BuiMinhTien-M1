@@ -39,7 +39,7 @@ public class HashMapDemo {
         //clear():Xóa tất cả phần tử của map
         //myMap.clear();
         for (Integer key:myMap.keySet()) {
-            System.out.println(myMap.get(key));
+            System.out.println(myMap.get(key)+" "+key);
         }
         //size():Kiểm tra kích thước của map
         System.out.println(myMap.size());

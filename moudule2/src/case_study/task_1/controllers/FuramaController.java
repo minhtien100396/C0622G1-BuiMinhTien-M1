@@ -1,14 +1,25 @@
 package case_study.task_1.controllers;
 
+import case_study.task_1.services.IBookingService;
+import case_study.task_1.services.ICustomerService;
 import case_study.task_1.services.IEmployeeService;
+import case_study.task_1.services.IFacilityService;
+import case_study.task_1.services.impl.BookingServiceImpl;
+import case_study.task_1.services.impl.CustomerServiceImpl;
 import case_study.task_1.services.impl.EmployeeServiceImpl;
+import case_study.task_1.services.impl.FacilityServiceImpl;
+import case_study.task_1.utils.exception.ChoiceException;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class FuramaController {
     public static void displayMainMenu() {
         Scanner scanner = new Scanner(System.in);
         IEmployeeService employeeService = new EmployeeServiceImpl();
+        ICustomerService customerService = new CustomerServiceImpl();
+        IFacilityService facilityService = new FacilityServiceImpl();
+        IBookingService bookingService =  new BookingServiceImpl();
         while (true) {
             System.out.println("------------------------------------");
             System.out.println("MENU");
@@ -19,149 +30,289 @@ public class FuramaController {
             System.out.println("5. Promotion Management");
             System.out.println("6. Exit");
             System.out.println("Hãy nhập lựa chọn của bạn");
-            int choice = Integer.parseInt(scanner.nextLine());
-            if (choice < 1 || choice > 6) {
-                System.out.println("Hãy nhập lựa chọn có trong MENU");
-            } else {
-                switch (choice) {
-                    case 1:
-                        while (true) {
-                            System.out.println("------------------------------------");
-                            System.out.println("MENU EMPLOYEE MANAGEMENT ");
-                            System.out.println("1. Display list employees");
-                            System.out.println("2. Add new employee");
-                            System.out.println("3. Edit employee");
-                            System.out.println("4. Return main menu");
-                            System.out.println("Hãy nhập lựa chọn của bạn ");
-                            int choice1 = Integer.parseInt(scanner.nextLine());
-                            if (choice1 < 1 || choice1 > 4) {
-                                System.out.println("Hãy nhập lựa chọn có trong MENU EMPLOYEE MANAGEMENT");
-                            } else {
-                                switch (choice1) {
-                                    case 1:
-
-                                        break;
-                                    case 2:
-                                        employeeService.addEmployee();
-                                        break;
-                                    case 3:
-                                        break;
-                                    case 4:
-                                        break;
+            try {
+                int choice = Integer.parseInt(scanner.nextLine());
+                if (choice < 1 || choice > 6) {
+                    throw new ChoiceException("Hãy nhập lựa chọn có trong MENU");
+                } else {
+                    switch (choice) {
+                        case 1:
+                            while (true) {
+                                System.out.println("------------------------------------");
+                                System.out.println("MENU EMPLOYEE MANAGEMENT ");
+                                System.out.println("1. Display list employees");
+                                System.out.println("2. Add new employee");
+                                System.out.println("3. Edit employee");
+                                System.out.println("4. Return main menu");
+                                boolean check = false;
+                                int choice1;
+                                try {
+                                    System.out.println("Hãy nhập lựa chọn của bạn");
+                                    choice1 = Integer.parseInt(scanner.nextLine());
+                                    if (choice1 < 1 || choice1 > 4) {
+                                        throw new ChoiceException("Hãy nhập lựa chọn có trong MENU EMPLOYEE MANAGEMENT");
+                                    } else {
+                                        switch (choice1) {
+                                            case 1:
+                                                employeeService.displayListEmployee();
+                                                check = true;
+                                                break;
+                                            case 2:
+                                                employeeService.addEmployee();
+                                                check = true;
+                                                break;
+                                            case 3:
+                                                employeeService.editEmployee();
+                                                check = true;
+                                                break;
+                                            case 4:
+                                                break;
+                                        }
+                                    }
+                                } catch (ChoiceException e) {
+                                    System.out.println(e.getMessage());
+                                    check = true;
+                                } catch (NumberFormatException e) {
+                                    System.out.println("Lựa chọn của bạn không hợp lệ. Hãy kiểm tra lại");
+                                    check = true;
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                                if (!check) {
+                                    break;
                                 }
                             }
                             break;
-                        }
-                        break;
-                    case 2:
-                        System.out.println("------------------------------------");
-                        System.out.println("MENU CUSTOMER MANAGEMENT");
-                        System.out.println("1. Display list customers");
-                        System.out.println("2. Add new customers");
-                        System.out.println("3. Edit customers");
-                        System.out.println("4. Return main menu");
-                        System.out.println("Hãy nhập lựa chọn của bạn ");
-                        int choice2 = Integer.parseInt(scanner.nextLine());
-                        if (choice2 < 1 || choice2 > 4) {
-                            System.out.println("Hãy nhập lựa chọn có trong MENU EMPLOYEE MANAGEMENT");
-                        } else {
-                            switch (choice2) {
-                                case 1:
+                        case 2:
+                            while (true) {
+                                System.out.println("------------------------------------");
+                                System.out.println("MENU CUSTOMER MANAGEMENT");
+                                System.out.println("1. Display list customers");
+                                System.out.println("2. Add new customers");
+                                System.out.println("3. Edit customers");
+                                System.out.println("4. Return main menu");
+                                boolean check = false;
+                                int choice1;
+                                try {
+                                    System.out.println("Hãy nhập lựa chọn của bạn ");
+                                    choice1 = Integer.parseInt(scanner.nextLine());
+                                    if (choice1 < 1 || choice1 > 4) {
+                                        throw new ChoiceException("Hãy nhập lựa chọn có trong MENU CUSTOMER MANAGEMENT");
+                                    } else {
+                                        switch (choice1) {
+                                            case 1:
+                                                customerService.displayListCustomer();
+                                                check = true;
+                                                break;
+                                            case 2:
+                                                customerService.addCustomer();
+                                                check = true;
+                                                break;
+                                            case 3:
+                                                customerService.editCustomer();
+                                                check = true;
+                                                break;
+                                            case 4:
+                                                break;
+                                        }
+                                    }
+                                } catch (ChoiceException e) {
+                                    System.out.println(e.getMessage());
+                                    check = true;
+                                } catch (NumberFormatException e) {
+                                    System.out.println("Lựa chọn của bạn không hợp lệ. Hãy kiểm tra lại");
+                                    check = true;
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                                if (!check) {
                                     break;
-                                case 2:
-                                    break;
-                                case 3:
-                                    break;
-                                case 4:
-                                    break;
+                                }
                             }
                             break;
-                        }
-                        break;
-                    case 3:
-                        System.out.println("------------------------------------");
-                        System.out.println("MENU FACILITY MANAGEMENT");
-                        System.out.println("1. Display list facility");
-                        System.out.println("2. Add new facility");
-                        System.out.println("3. Display list facility maintenance");
-                        System.out.println("4. Return main menu");
-                        System.out.println("Hãy nhập lựa chọn của bạn ");
-                        int choice3 = Integer.parseInt(scanner.nextLine());
-                        if (choice3 < 1 || choice3 > 4) {
-                            System.out.println("Hãy nhập lựa chọn có trong MENU FACILITY MANAGEMENT");
-                        } else {
-                            switch (choice3) {
-                                case 1:
+                        case 3:
+                            while (true) {
+                                System.out.println("------------------------------------");
+                                System.out.println("MENU FACILITY MANAGEMENT");
+                                System.out.println("1. Display list facility");
+                                System.out.println("2. Add new facility");
+                                System.out.println("3. Display list facility maintenance");
+                                System.out.println("4. Menten list facility maintenance");
+                                System.out.println("5. Return main menu");
+                                boolean check = false;
+                                int choice1;
+                                int choice2;
+                                try {
+                                    System.out.println("--------------------------------------------------");
+                                    System.out.println("Hãy nhập lựa chọn của bạn ");
+                                    choice1 = Integer.parseInt(scanner.nextLine());
+                                    if (choice1 < 1 || choice1 > 5) {
+                                        throw new ChoiceException("Lựa chọn của bạn không hợp lệ");
+                                    } else {
+                                        switch (choice1) {
+                                            case 1:
+                                                facilityService.displayListFacility();
+                                                check = true;
+                                                break;
+                                            case 2:
+                                                while (true) {
+                                                    System.out.println("Hãy lựa chọn loại hình dịch vụ bạn muốn thêm vào");
+                                                    System.out.println("1. New Villa");
+                                                    System.out.println("2. New House");
+                                                    System.out.println("3. New Room");
+                                                    System.out.println("4. Back to menu");
+                                                    boolean check1 = false;
+                                                    try {
+                                                        choice2 = Integer.parseInt(scanner.nextLine());
+                                                        if (choice2 < 1 || choice2 > 4) {
+                                                            throw new ChoiceException("Hãy nhập lựa chọn có trong MENU FACILITY MANAGEMENT");
+                                                        } else {
+                                                            switch (choice2) {
+                                                                case 1:
+                                                                    facilityService.addNewVilla();
+                                                                    check1 = true;
+                                                                    break;
+                                                                case 2:
+                                                                    facilityService.addNewHouse();
+                                                                    check1 = true;
+                                                                    break;
+                                                                case 3:
+                                                                    facilityService.addNewRoom();
+                                                                    check1 = true;
+                                                                    break;
+                                                                case 4:
+                                                                    break;
+                                                            }
+                                                        }
+
+                                                    } catch (ChoiceException e) {
+                                                        check1 = true;
+                                                        System.out.println(e.getMessage());
+                                                    }catch (NumberFormatException e) {
+                                                        check1 = true;
+                                                        System.out.println("Lựa chọn của bạn không hợp lệ. Hãy kiểm tra lại");
+                                                    } catch (IOException e) {
+                                                        e.printStackTrace();
+                                                    }
+                                                    if (!check1) {
+                                                        break;
+                                                    }
+                                                }
+
+                                                check = true;
+                                                break;
+                                            case 3:
+                                                facilityService.displayListFacilityMaintenance();
+                                                check = true;
+                                                break;
+                                            case 4:
+                                                facilityService.maintenanceFacility();
+                                                check = true;
+                                                break;
+                                            case 5:
+                                                break;
+                                        }
+                                    }
+                                } catch (ChoiceException e) {
+                                    System.out.println(e.getMessage());
+                                    check = true;
+                                } catch (NumberFormatException e) {
+                                    System.out.println("Lựa chọn của bạn không hợp lệ. Hãy kiểm tra lại");
+                                    check = true;
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                                if (!check) {
                                     break;
-                                case 2:
-                                    break;
-                                case 3:
-                                    break;
-                                case 4:
-                                    break;
+                                }
                             }
                             break;
-                        }
-                        break;
-                    case 4:
-                        System.out.println("------------------------------------");
-                        System.out.println("MENU BOOKING MANAGEMENT");
-                        System.out.println("1. Add new booking");
-                        System.out.println("2. Display list booking");
-                        System.out.println("3. Create new constracts");
-                        System.out.println("4. Display list contracts");
-                        System.out.println("5. Edit contracts");
-                        System.out.println("6. Return main menu");
-                        System.out.println("Hãy nhập lựa chọn của bạn ");
-                        int choice4 = Integer.parseInt(scanner.nextLine());
-                        if (choice4 < 1 || choice4 > 6) {
-                            System.out.println("Hãy nhập lựa chọn có trong MENU BOOKING MANAGEMENT");
-                        } else {
-                            switch (choice4) {
-                                case 1:
+                        case 4:
+                            while (true) {
+                                System.out.println("------------------------------------");
+                                System.out.println("MENU BOOKING MANAGEMENT");
+                                System.out.println("1. Add new booking");
+                                System.out.println("2. Display list booking");
+                                System.out.println("3. Create new constracts");
+                                System.out.println("4. Display list contracts");
+                                System.out.println("5. Edit contracts");
+                                System.out.println("6. Return main menu");
+                                boolean check = false;
+                                int choice1;
+                                try {
+                                    System.out.println("Hãy nhập lựa chọn của bạn ");
+                                    choice1 = Integer.parseInt(scanner.nextLine());
+                                    if (choice1 < 1 || choice1 > 6) {
+                                        throw new ChoiceException("Hãy nhập lựa chọn có trong MENU BOOKING MANAGEMENT");
+                                    } else {
+                                        switch (choice1) {
+                                            case 1:
+                                                bookingService.addBooking();
+                                                check = true;
+                                                break;
+                                            case 2:
+                                                bookingService.displayBooking();
+                                                check = true;
+                                                break;
+                                            case 3:
+                                                check = true;
+                                                break;
+                                            case 4:
+                                                check = true;
+                                                break;
+                                            case 5:
+                                                check = true;
+                                                break;
+                                            case 6:
+                                                break;
+                                        }
+                                    }
+                                } catch (ChoiceException e) {
+                                    System.out.println(e.getMessage());
+                                    check = true;
+                                } catch (NumberFormatException e) {
+                                    System.out.println("Lựa chọn của bạn không hợp lệ. Hãy kiểm tra lại");
+                                    check = true;
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                                if (!check) {
                                     break;
-                                case 2:
-                                    break;
-                                case 3:
-                                    break;
-                                case 4:
-                                    break;
-                                case 5:
-                                    break;
-                                case 6:
-                                    break;
+                                }
                             }
                             break;
-                        }
-                        break;
-                    case 5:
-                        System.out.println("------------------------------------");
-                        System.out.println("MENU PROMOTION  MANAGEMENT");
-                        System.out.println("1. Display list customers use service");
-                        System.out.println("2. Display list customers get voucher");
-                        System.out.println("3. Return main menu");
-                        System.out.println("Hãy nhập lựa chọn của bạn ");
-                        int choice5 = Integer.parseInt(scanner.nextLine());
-                        if (choice5 < 1 || choice5 > 3) {
-                            System.out.println("Hãy nhập lựa chọn có trong MENU PROMOTION MANAGEMENT");
-                        } else {
-                            switch (choice5) {
-                                case 1:
-                                    break;
-                                case 2:
-                                    break;
-                                case 3:
-                                    break;
+                        case 5:
+                            System.out.println("------------------------------------");
+                            System.out.println("MENU PROMOTION  MANAGEMENT");
+                            System.out.println("1. Display list customers use service");
+                            System.out.println("2. Display list customers get voucher");
+                            System.out.println("3. Return main menu");
+                            System.out.println("Hãy nhập lựa chọn của bạn ");
+                            int choice5 = Integer.parseInt(scanner.nextLine());
+                            if (choice5 < 1 || choice5 > 3) {
+                                System.out.println("Hãy nhập lựa chọn có trong MENU PROMOTION MANAGEMENT");
+                            } else {
+                                switch (choice5) {
+                                    case 1:
+                                        break;
+                                    case 2:
+                                        break;
+                                    case 3:
+                                        break;
+                                }
+                                break;
                             }
                             break;
-                        }
-                        break;
-                    case 6:
-                        System.out.println("Cám ơn bạn đã sử dụng ứng dụng");
-                        return;
+                        case 6:
+                            System.out.println("Cám ơn bạn đã sử dụng ứng dụng");
+                            return;
+                    }
                 }
+            } catch (ChoiceException e) {
+                System.out.println(e.getMessage());
+            } catch (NumberFormatException e) {
+                System.out.println("Hãy nhập đúng lựa chọn trên menu");
             }
         }
-
     }
 }

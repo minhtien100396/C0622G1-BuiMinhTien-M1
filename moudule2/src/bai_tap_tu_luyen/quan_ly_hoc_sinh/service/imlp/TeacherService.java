@@ -6,6 +6,7 @@ import bai_tap_tu_luyen.quan_ly_hoc_sinh.service.ITeacherService;
 import bai_tap_tu_luyen.quan_ly_hoc_sinh.service.read_and_write.ReadFileUtil;
 import bai_tap_tu_luyen.quan_ly_hoc_sinh.service.read_and_write.WriteFileUtil;
 import bai_tap_tu_luyen.quan_ly_hoc_sinh.service.utils.exception.*;
+import bai_tap_tu_luyen.quan_ly_hoc_sinh.service.utils.validate.Validate;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -173,99 +174,12 @@ public class TeacherService implements ITeacherService {
         }
     }
 
-
     public Teacher infoTeacher() {
-        int id;
-        while (true) {
-            try {
-                System.out.println("Mời bạn nhập vào Id của giáo viên");
-                id = Integer.parseInt(scanner.nextLine());
-                if (id <= 0) {
-                    throw new IdException("ID phải là số nguyên dương. Vui lòng nhập lại");
-                }
-                break;
-            } catch (NumberFormatException e) {
-                System.out.println("ID phải là số. Vui lòng nhập lại");
-            } catch (IdException e) {
-                System.out.println(e.getMessage());
-            } catch (Exception e) {
-                System.out.println("Chương trình có vấn đề. Hãy kiểm tra lại");
-            }
-        }
-        String name;
-        while (true) {
-            System.out.println("Mời bạn nhập vào tên của học sinh");
-            name = scanner.nextLine();
-            Pattern pattern = Pattern.compile(NAME_REGEX);
-            if (pattern.matcher(name).find()) {
-                break;
-            } else {
-                System.out.println("Tên bạn nhập không hợp lệ.");
-            }
-        }
-
-        String dateOfBirth;
-        while (true) {
-            try {
-                System.out.println("Mời bạn nhập vào ngày tháng năm sinh của giáo viên (DD/MM/YYYY)");
-                dateOfBirth = scanner.nextLine();
-                String[] arr = dateOfBirth.trim().split("/");
-                for (int i = 0; i < arr.length; i++) {
-                    Integer.parseInt(arr[i]);
-                    if (Integer.parseInt(arr[0]) <= 0 || Integer.parseInt(arr[0]) > 31) {
-                        throw new DayBirthDayException("Ngày sinh không hợp lệ (1->31)");
-                    }
-                    if (Integer.parseInt(arr[1]) <= 0 || Integer.parseInt(arr[1]) > 12) {
-                        throw new MonthBirthDayException("Tháng sinh không hợp lệ (1->12)");
-                    }
-                    if (Integer.parseInt(arr[2]) <= 1920 || Integer.parseInt(arr[1]) > 2022) {
-                        throw new YearBirthDayException("Năm sinh không hợp lệ (1920->2022)");
-                    }
-
-                }
-
-                break;
-            } catch (DayBirthDayException e) {
-                System.out.println(e.getMessage());
-            } catch (MonthBirthDayException e) {
-                System.out.println(e.getMessage());
-            } catch (YearBirthDayException e) {
-                System.out.println(e.getMessage());
-            } catch (NumberFormatException e) {
-                System.out.println("Vui lòng nhập đúng cú pháp");
-            } catch (Exception e) {
-                System.out.println("Chương trình có vấn đề. Hãy kiểm tra lại");
-            }
-
-        }
-        String gender;
-        boolean check;
-        while (true) {
-            try {
-                System.out.println("Mời bạn nhập vào giới tính cho giáo viên");
-                gender = scanner.nextLine();
-                if (!(gender.equalsIgnoreCase("Nam"))  && !(gender.equalsIgnoreCase("Nữ"))) {
-                    throw new GenderException("Hãy nhập lại giới tính!!! (Giới tính chỉ có thể là \"nam\" hoặc \"nữ\")");
-                }
-                break;
-            } catch (GenderException e) {
-                System.out.println(e.getMessage());
-            } catch (Exception e) {
-                System.out.println("Chương trình có vấn đề. Hãy kiểm tra lại");
-            }
-        }
-
-        String specialize;
-        while (true) {
-            try {
-                System.out.println("Mời bạn nhập vào chuyên ngành của giáo viên");
-                specialize = scanner.nextLine();
-                break;
-            } catch (Exception e) {
-                System.out.println("Chương trình có vấn đề. Hãy kiểm tra lại");
-            }
-        }
-
+        int id = Validate.inputId("ID");
+        String name = Validate.inputName("Tên giáo viên");
+        String dateOfBirth = Validate.inputDateOfBirth("ngày tháng năm sinh");
+        String gender = Validate.inputGender("giới tính");
+        String specialize = Validate.inputSpecialize("chuyên môn của giảng viên");
         Teacher teacher = new Teacher(id, name, dateOfBirth, gender, specialize);
         return teacher;
     }

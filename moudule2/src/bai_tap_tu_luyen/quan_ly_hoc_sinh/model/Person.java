@@ -1,6 +1,6 @@
 package bai_tap_tu_luyen.quan_ly_hoc_sinh.model;
 
-public class Person {
+public abstract class Person {
     private int id;
     private String name;
     private String dateOfBirth;

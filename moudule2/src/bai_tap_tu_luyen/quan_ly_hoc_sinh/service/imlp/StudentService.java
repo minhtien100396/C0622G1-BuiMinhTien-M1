@@ -5,7 +5,7 @@ import bai_tap_tu_luyen.quan_ly_hoc_sinh.service.IStudentService;
 import bai_tap_tu_luyen.quan_ly_hoc_sinh.service.read_and_write.ReadFileUtil;
 import bai_tap_tu_luyen.quan_ly_hoc_sinh.service.read_and_write.WriteFileUtil;
 import bai_tap_tu_luyen.quan_ly_hoc_sinh.service.utils.exception.*;
-import bai_tap_tu_luyen.quan_ly_hoc_sinh.service.utils.regex.IdRegex;
+import bai_tap_tu_luyen.quan_ly_hoc_sinh.service.utils.validate.Validate;
 
 import java.io.IOException;
 import java.util.*;
@@ -15,8 +15,6 @@ public class StudentService implements IStudentService {
     private Scanner scanner = new Scanner(System.in);
     public static List<Student> students;
     private static final String PATH_FILE = "src\\bai_tap_tu_luyen\\quan_ly_hoc_sinh\\data\\students.txt";
-    private static final String NAME_REGEX = "^[A-Za-z ]{5,50}$";
-    private static final String CLASS_NAME_REGEX = "(A|C)[0-9]{4}(G|I)[1]";
 
     @Override
     public void addStudent() throws IOException, ClassNotFoundException {
@@ -136,18 +134,19 @@ public class StudentService implements IStudentService {
     @Override
     public void sortNameStudent() throws IOException {
         students = ReadFileUtil.readStudentFile(PATH_FILE);
-        boolean isSwap = true;
-        for (int i = 0; i < students.size() - 1 && isSwap; i++) {
-            isSwap = false;
-            for (int j = 0; j < students.size() - 1 - i; j++) {
-                if (students.get(j).getName().toLowerCase().compareTo(students.get(j + 1).getName().toLowerCase()) >= 0) {
-                    isSwap = true;
-                    Student temp = students.get(j + 1);
-                    students.set(j + 1, students.get(j));
-                    students.set(j, temp);
-                }
-            }
-        }
+//        boolean isSwap = true;
+//        for (int i = 0; i < students.size() - 1 && isSwap; i++) {
+//            isSwap = false;
+//            for (int j = 0; j < students.size() - 1 - i; j++) {
+//                if (students.get(j).getName().toLowerCase().compareTo(students.get(j + 1).getName().toLowerCase()) >= 0) {
+//                    isSwap = true;
+//                    Student temp = students.get(j + 1);
+//                    students.set(j + 1, students.get(j));
+//                    students.set(j, temp);
+//                }
+//            }
+//        }
+        Collections.sort(students, Comparator.comparingDouble(Student::getPoint));
         WriteFileUtil.writeStudentFile(PATH_FILE, students);
         displayStudent();
     }
@@ -181,118 +180,34 @@ public class StudentService implements IStudentService {
 
     public Student infoStudent() throws IOException {
         students = ReadFileUtil.readStudentFile(PATH_FILE);
-        int id;
-        while (true) {
-            try {
-                System.out.println("Mời bạn nhập vào Id của học sinh");
-                id = Integer.parseInt(scanner.nextLine());
-                if (id <= 0) {
-                    throw new IdException("ID phải là số nguyên dương. Vui lòng nhập lại");
-                }
-                break;
-            } catch (NumberFormatException e) {
-                System.out.println("ID phải là số. Vui lòng nhập lại");
-            } catch (IdException e) {
-                System.out.println(e.getMessage());
-            } catch (Exception e) {
-                System.out.println("Chương trình có vấn đề. Hãy kiểm tra lại");
-            }
-        }
-        String name;
-        while (true) {
-            System.out.println("Mời bạn nhập vào tên của học sinh");
-            name = scanner.nextLine();
-            Pattern pattern = Pattern.compile(NAME_REGEX);
-            if (pattern.matcher(name).find()) {
-                break;
-            } else {
-                System.out.println("Tên bạn nhập không hợp lệ.");
-            }
-        }
-        String dateOfBirth;
-        while (true) {
-            try {
-                System.out.println("Mời bạn nhập vào ngày tháng năm sinh của học sinh (DD/MM/YYYY)");
-                dateOfBirth = scanner.nextLine();
-                String[] arr = dateOfBirth.trim().split("/");
-                for (int i = 0; i < arr.length; i++) {
-                    Integer.parseInt(arr[i]);
-                    if (Integer.parseInt(arr[0]) <= 0 || Integer.parseInt(arr[0]) > 31) {
-                        throw new DayBirthDayException("Ngày sinh không hợp lệ (1->31)");
-                    }
-                    if (Integer.parseInt(arr[1]) <= 0 || Integer.parseInt(arr[1]) > 12) {
-                        throw new MonthBirthDayException("Tháng sinh không hợp lệ (1->12)");
-                    }
-                    if (Integer.parseInt(arr[2]) <= 1920 || Integer.parseInt(arr[1]) > 2022) {
-                        throw new YearBirthDayException("Năm sinh không hợp lệ (1920->2022)");
-                    }
-
-                }
-
-                break;
-            } catch (DayBirthDayException e) {
-                System.out.println(e.getMessage());
-            } catch (MonthBirthDayException e) {
-                System.out.println(e.getMessage());
-            } catch (YearBirthDayException e) {
-                System.out.println(e.getMessage());
-            } catch (NumberFormatException e) {
-                System.out.println("Vui lòng nhập đúng cú pháp");
-            } catch (Exception e) {
-                System.out.println("Chương trình có vấn đề. Hãy kiểm tra lại");
-            }
-
-        }
-        String gender;
-        boolean check;
-        while (true) {
-            try {
-                System.out.println("Mời bạn nhập vào giới tính cho học sinh");
-                gender = scanner.nextLine();
-                check = (!(gender.equalsIgnoreCase("nam"))) && (!(gender.equalsIgnoreCase(" nữ")));
-                if (check) {
-                    throw new GenderException("Hãy nhập lại giới tính!!! (Giới tính chỉ có thể là \"nam\" hoặc \"nữ\")");
-                }
-                break;
-            } catch (GenderException e) {
-                System.out.println(e.getMessage());
-            } catch (Exception e) {
-                System.out.println("Chương trình có vấn đề. Hãy kiểm tra lại");
-            }
-        }
-        double point;
-        while (true) {
-            try {
-                System.out.println("Mời bạn nhập vào số điểm của học sinh");
-                point = Double.parseDouble(scanner.nextLine());
-                if (point < 0 || point > 10) {
-                    throw new PointException("Điểm bạn nhập vào không hợp lệ. Hãy nhập lại! (1->10)");
-                }
-                break;
-            } catch (NumberFormatException e) {
-                System.out.println("Bạn nhập sai định dạng. Vui lòng nhập lại");
-            } catch (PointException e) {
-                System.out.println(e.getMessage());
-            } catch (Exception e) {
-                System.out.println("Chương trình có vấn đề. Hãy kiểm tra lại");
-            }
-        }
-
-        String nameClass;
-        while (true) {
-            System.out.println("Mời bạn nhập vào lớp học của học sinh");
-            nameClass = scanner.nextLine();
-            Pattern pattern = Pattern.compile(CLASS_NAME_REGEX);
-            if (pattern.matcher(nameClass).find()) {
-                break;
-            } else {
-                System.out.println("Tên lớp không hợp lệ");
-            }
-
-        }
+        int id = getIdAndCheck();
+        String name = Validate.inputName("Tên học sinh");
+        String dateOfBirth = Validate.inputDateOfBirth("ngày tháng năm sinh");
+        String gender = Validate.inputGender("giới tính");
+        double point = Validate.inputPoint("điểm của học sinh");
+        String nameClass = Validate.inputClassName("tên lớp");
         Student student = new Student(id, name, dateOfBirth, gender, point, nameClass);
         return student;
     }
 
+    private int getIdAndCheck() {
+        int id;
+        while (true) {
+            id = Validate.inputId("ID");
+            if (checkID(id)) {
+                break;
+            } else {
+                System.out.println("ID " + id + " đã tồn tại");
+            }
+        }
+        return id;
+    }
 
+    private boolean checkID(int id) {
+        for (Student student : students) {
+            if (student.getId() == id)
+                return false;
+        }
+        return true;
+    }
 }

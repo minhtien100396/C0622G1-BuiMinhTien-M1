@@ -1,35 +1,46 @@
 package case_study.task_1.models;
 
+import java.time.LocalDate;
+
 public class Employee extends Person {
-    private String IdEmployee;
+    private String idEmployee;
     private String level;
     private String position;
     private double salary;
 
+
     public Employee() {
     }
 
-    public Employee(String name, String dateOfBirth, boolean gender, long idNumber, String phoneNumber, String email, String idEmployee, String level, String position, double salary) {
-        super(name, dateOfBirth, gender, idNumber, phoneNumber, email);
-        IdEmployee = idEmployee;
+    @Override
+    public String getInfo() {
+        return String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s", this.getName(), this.getDateOfBirth(), this.getGender(), this.getIdCard(), this.getPhoneNumber(),
+                this.getEmail(), idEmployee, level, position, salary);
+    }
+
+    public Employee(String name, LocalDate dateOfBirth, String gender, String idCard, String phoneNumber,
+                    String email, String idEmployee, String level, String position, double salary) {
+        super(name, dateOfBirth, gender, idCard, phoneNumber, email);
+        this.idEmployee = idEmployee;
         this.level = level;
         this.position = position;
         this.salary = salary;
     }
 
+
     public Employee(String idEmployee, String level, String position, double salary) {
-        IdEmployee = idEmployee;
+        this.idEmployee = idEmployee;
         this.level = level;
         this.position = position;
         this.salary = salary;
     }
 
     public String getIdEmployee() {
-        return IdEmployee;
+        return idEmployee;
     }
 
     public void setIdEmployee(String idEmployee) {
-        IdEmployee = idEmployee;
+        this.idEmployee = idEmployee;
     }
 
     public String getLevel() {
@@ -55,15 +66,9 @@ public class Employee extends Person {
     public void setSalary(double salary) {
         this.salary = salary;
     }
-
     @Override
     public String toString() {
-        return "Employee{" +
-                super.toString() +
-                "IdEmployee='" + IdEmployee + '\'' +
-                ", level='" + level + '\'' +
-                ", position='" + position + '\'' +
-                ", salary=" + salary +
-                '}';
+        return String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s", this.getName(), this.getDateOfBirth(), this.getGender(), this.getIdCard(), this.getPhoneNumber(),
+                this.getEmail(), idEmployee, level, position, salary);
     }
 }

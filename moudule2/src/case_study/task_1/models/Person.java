@@ -1,21 +1,23 @@
 package case_study.task_1.models;
 
+import java.time.LocalDate;
+
 public abstract class Person {
-    private  String name;
-    private String dateOfBirth;
-    private boolean gender;
-    private long IdNumber;
+    private String name;
+    private LocalDate dateOfBirth;
+    private String gender;
+    private String idCard;
     private String phoneNumber;
     private String email;
 
     public Person() {
     }
 
-    public Person(String name, String dateOfBirth, boolean gender, long idNumber, String phoneNumber, String email) {
+    public Person(String name, LocalDate dateOfBirth, String gender, String idCard, String phoneNumber, String email) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.gender = gender;
-        IdNumber = idNumber;
+        this.idCard = idCard;
         this.phoneNumber = phoneNumber;
         this.email = email;
     }
@@ -28,28 +30,28 @@ public abstract class Person {
         this.name = name;
     }
 
-    public String getDateOfBirth() {
+    public LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
+    public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public boolean isGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(boolean gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 
-    public long getIdNumber() {
-        return IdNumber;
+    public String getIdCard() {
+        return idCard;
     }
 
-    public void setIdNumber(long idNumber) {
-        IdNumber = idNumber;
+    public void setIdCard(String idCard) {
+        this.idCard = idCard;
     }
 
     public String getPhoneNumber() {
@@ -68,13 +70,15 @@ public abstract class Person {
         this.email = email;
     }
 
+    public abstract String getInfo();
+
     @Override
     public String toString() {
         return "Person{" +
                 "name='" + name + '\'' +
                 ", dateOfBirth='" + dateOfBirth + '\'' +
                 ", gender=" + gender +
-                ", IdNumber=" + IdNumber +
+                ", IdCard=" + idCard +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", email='" + email + '\'' +
                 '}';
