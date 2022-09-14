@@ -12,12 +12,12 @@ create database bai_tap_1;
 use bai_tap_1;
 
 create table phieu_xuat(
-so_px int primary key auto_increment not null,
+so_px int primary key auto_increment,
 ngay_xuat datetime
 );
 
 create table vat_tu(
-ma_vat_tu int primary key auto_increment not null,
+ma_vat_tu int primary key auto_increment,
 ten_vat_tu varchar(50)
 );
 
@@ -32,7 +32,7 @@ foreign key(ma_vat_tu) references vat_tu(ma_vat_tu)
 );
 
 create table phieu_nhap(
-so_pn int primary key auto_increment not null,
+so_pn int primary key auto_increment,
 ngay_nhap datetime
 );
 
@@ -47,19 +47,20 @@ foreign key(ma_vat_tu) references vat_tu(ma_vat_tu)
 );
 
 create table nha_cung_cap(
-ma_nha_cung_cap int primary key auto_increment not null,
+ma_nha_cung_cap int primary key auto_increment,
 ten_nha_cung_cap varchar(50),
 dia_chi varchar(50)
 );
 
 create table don_dat_hang(
-so_dh int primary key auto_increment not null,
+so_dh int primary key auto_increment,
 ngay_dh datetime,
 ma_nha_cung_cap int,
 foreign key(ma_nha_cung_cap) references nha_cung_cap(ma_nha_cung_cap)
 );
 
 create table so_dien_thoai (
+ma_dien_thoai int primary key auto_increment,
 so_dien_thoai varchar(50),
 ma_nha_cung_cap int,
 foreign key(ma_nha_cung_cap) references nha_cung_cap(ma_nha_cung_cap)

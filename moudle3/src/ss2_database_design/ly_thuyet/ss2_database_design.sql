@@ -10,7 +10,7 @@
 -- Thuộc tính khóa: elip có gạch dưới
 -- Thuộc tính đa trị: elip lồng nhau (là thuộc tính có nhiều giá trị)
 -- Hình thoi: thể hiên các mối quan hệ -> sử dung động từ
-
+create database demo_c06;
 use demo_c06;
 create table tai_khoan(
 -- not null: bắt buộc nhập thông tin khi thêm mới hoặc sửa
@@ -43,6 +43,11 @@ ma_lop_hoc int,
 foreign key (ma_lop_hoc) references lop_hoc(ma_lop_hoc),
 foreign key (usename) references tai_khoan(usename)
 );
+
+  --   insert into lop_hoc(ten_lop_hoc) values ("C0622G1"); 
+--    insert into tai_khoan values ("minhtien","123456"); 
+--     insert into hoc_vien(ten_hoc_vien,ngay_sinh,email,usename,ma_lop_hoc) values ("Tiến","1996-03-10","minhtien@gmail.com","minhtien",1); 
+--   insert into hoc_vien(ten_hoc_vien,ngay_sinh,email,usename,ma_lop_hoc) values ("Tiến","1996-03-10","minhtien@gmail.com","minhtien",2); 
 
 create table dia_chi(
 -- phân tích xem thuộc tính đa trị là quan hệ 1-n hay n-n . Nếu n-n thì phải chuyển sang B5.

@@ -104,6 +104,7 @@ ma_hop_dong_chi_tiet int primary key auto_increment,
 so_luong int,
 ma_hop_dong int,
 ma_dich_vu_di_kem int,
+unique(ma_hop_dong,ma_dich_vu_di_kem),
 foreign key (ma_hop_dong) references hop_dong(ma_hop_dong),
 foreign key (ma_dich_vu_di_kem) references dich_vu_di_kem(ma_dich_vu_di_kem)
 );

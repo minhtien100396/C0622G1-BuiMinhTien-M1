@@ -2,14 +2,14 @@ create database quan_ly_sinh_vien;
 use quan_ly_sinh_vien;
 
 create table class (
-class_id int primary key auto_increment not null,
+class_id int primary key auto_increment,
 class_name varchar(60) not null,
 star_date datetime not null,
 `status` bit -- bit chứa số từ 1 - 64 giá trị mặc định là 1
 );
 
 create table student (
-student_id int primary key auto_increment not null,
+student_id int primary key auto_increment,
 student_name varchar(30) not null,
 address varchar(50),
 phone varchar(20),
@@ -19,14 +19,14 @@ foreign key (class_id) references class(class_id)
 );
 
 create table `subject`(
-sub_id int primary key auto_increment not null,
+sub_id int primary key auto_increment,
 sub_name varchar(50),
 credit tinyint not null default 1 check(credit >= 1),
 status bit default 1
 );
 
 create table mark (
-mark_id int primary key auto_increment not null,
+mark_id int primary key auto_increment,
 sub_id int not null ,
 student_id int not null ,
 mark float default 0  check(mark between 0 and 100),
