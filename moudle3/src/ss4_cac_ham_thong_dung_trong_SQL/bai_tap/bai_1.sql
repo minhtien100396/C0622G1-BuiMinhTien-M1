@@ -95,6 +95,16 @@ where credit in  (
         from subject
 );
 
+-- Hiển thị các thông tin môn học có điểm thi lớn nhất.
+select `subject`.*, mark.mark
+from `subject`
+join mark
+on `subject`.sub_id = mark.sub_id
+where mark in (
+	select max(mark.mark)
+    from mark
+);
+
 -- Hiển thị các thông tin sinh viên và điểm trung bình của mỗi sinh viên, xếp hạng theo thứ tự điểm giảm dần
 select student.student_id, student.student_name, ifnull(avg(mark.mark),0) as average 
 from student 
