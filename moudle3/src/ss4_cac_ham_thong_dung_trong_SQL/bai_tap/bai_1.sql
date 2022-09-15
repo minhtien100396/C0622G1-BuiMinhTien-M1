@@ -86,3 +86,19 @@ having average >= all(
 	select avg(mark.mark)
 	from mark
 );
+
+-- Hiển thị tất cả các thông tin môn học (bảng subject) có credit lớn nhất.
+select `subject`.sub_id,max(`subject`.credit) as max_creadit
+from `subject`
+where credit in  (
+		select max(credit) 
+        from subject
+);
+
+-- Hiển thị các thông tin sinh viên và điểm trung bình của mỗi sinh viên, xếp hạng theo thứ tự điểm giảm dần
+select student.student_id, student.student_name, ifnull(avg(mark.mark),0) as average 
+from student 
+left join mark
+on student.student_id = mark.student_id	 
+group by mark.student_id 
+order by average desc;
