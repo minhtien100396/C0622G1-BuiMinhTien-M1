@@ -434,3 +434,18 @@ on hop_dong.ma_nhan_vien = nhan_vien.ma_nhan_vien
 where (year(hop_dong.ngay_lam_hop_dong) between "2020" and "2021")
 group by hop_dong.ma_nhan_vien 
 having so_luong_hop_dong_lap_duoc<= 3 ; 
+
+-- Task 16
+-- Xóa những Nhân viên chưa từng lập được hợp đồng nào từ năm 2019 đến năm 2021.
+
+delete from nhan_vien
+where nhan_vien.ma_nhan_vien not in (
+	select hop_dong.ma_nhan_vien 
+	from hien_thi_nhan_vien
+	join hop_dong
+	on hien_thi_nhan_vien.ma_nhan_vien = hop_dong.ma_nhan_vien
+    where hop_dong.ma_nhan_vien is not null
+);
+
+drop view hien_thi_nhan_vien;
+delete from hien_thi_nhan_vien;
