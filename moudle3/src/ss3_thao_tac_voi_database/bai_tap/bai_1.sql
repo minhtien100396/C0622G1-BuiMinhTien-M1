@@ -22,7 +22,7 @@ create table `subject`(
 sub_id int primary key auto_increment,
 sub_name varchar(50),
 credit tinyint not null default 1 check(credit >= 1),
-status bit default 1
+`status` bit default 1
 );
 
 create table mark (
@@ -64,13 +64,18 @@ insert into mark (sub_id,student_id,mark,exam_times) values (1, 1, 8, 1),
 															(2, 1, 12, 1);
                                                             
 -- Hiển thị danh sách tất cả các học viên 
-select * from student ;      
+select * 
+from student ;      
 
 -- Hiển thị danh sách các học viên đang theo học.     
-select * from student where `status` = true;       
+select * 
+from student 
+where `status` = true;       
 
 -- Hiển thị danh sách các môn học có thời gian học nhỏ hơn 10 giờ.
-select * from subject where credit < 10;     
+select * 
+from `subject` 
+where credit < 10;     
 
 -- Hiển thị danh sách học viên lớp A1;                              
 select student.student_id, student.student_name, class.class_name 
@@ -85,19 +90,27 @@ select student.student_id,student.student_name,`subject`.sub_name,mark.mark
 from student
 join mark
 on student.student_id = mark.student_id
-join subject
-on subject.sub_id = mark.sub_id
-where subject.sub_name = "CF";		
+join `subject`
+on `subject`.sub_id = mark.sub_id
+where `subject`.sub_name = "CF";		
 
 -- Hiển thị tất cả các sinh viên có tên bắt đầu bảng ký tự ‘h’
-select * from student where student_name like "h%";
+select * 
+from student 
+where student_name like "h%";
 
 -- Hiển thị các thông tin lớp học có thời gian bắt đầu vào tháng 12.
-select * from class where month(star_date)=12;
+select * 
+from class 
+where month(star_date)=12;
 
 -- Hiển thị tất cả các thông tin môn học có credit trong khoảng từ 3-5.
-select * from subject where credit between 5 and 10;
-select * from subject where credit >=3 and credit <=5;
+select * 
+from `subject`
+ where credit between 5 and 10;
+select * 
+from `subject` 
+where credit >=3 and credit <=5;
 
 -- Thay đổi mã lớp(ClassID) của sinh viên có tên ‘Hung’ là 2.
 set SQL_SAFE_UPDATES = 0;
@@ -107,10 +120,10 @@ set SQL_SAFE_UPDATES = 1;
 
 -- Hiển thị các thông tin: StudentName, SubName, Mark. Dữ liệu sắp xếp theo điểm thi (mark) giảm dần.
 -- nếu trùng sắp theo tên tăng dần.
-select student.student_name,subject.sub_name,mark.mark 
+select student.student_name,`subject`.sub_name,mark.mark 
 from student
 join mark 
 on student.student_id = mark.student_id
-join subject
-on subject.sub_id = mark.sub_id
+join `subject`
+on `subject`.sub_id = mark.sub_id
 order by mark desc, student.student_name;

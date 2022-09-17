@@ -60,7 +60,8 @@ insert into order_detail values (1,1,3),
 								(2,3,3);
 													  
 -- Hiển thị các thông tin gồm order_id, order_date, order_total_price của tất cả các hóa đơn trong bảng Order
-select `order`.order_id, `order`.order_date, `order`.order_total_price from `order`;			
+select `order`.order_id, `order`.order_date, `order`.order_total_price 
+from `order`;			
 
 -- Hiển thị danh sách các khách hàng đã mua hàng, và danh sách sản phẩm được mua bởi các khách
 select `order`.order_id, customer.customer_id,customer.customer_name,product.product_name
@@ -82,7 +83,7 @@ where `order_id` is null;
 -- Hiển thị mã hóa đơn, ngày bán và giá tiền của từng hóa đơn 
 -- (giá một hóa đơn được tính bằng tổng giá bán của từng loại mặt hàng xuất hiện trong hóa đơn.
 -- Giá bán của từng loại được tính = odQTY*pPrice)
- select `order`.order_id,`order`.order_date, sum(odQTY*product_price) as order_id_price
+select `order`.order_id,`order`.order_date, sum(odQTY*product_price) as order_id_price
 from `order`
 join order_detail	
 on order_detail.order_id = `order`.order_id
