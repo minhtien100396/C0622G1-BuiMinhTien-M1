@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="423f4c8b-fff8-475d-b7d6-96fb01b2f8d6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/moudle3.iml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss6_css/ly_thuyet/css/external_file_css.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss6_css/ly_thuyet/text_css.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss6_css/ly_thuyet/text_selector.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss6_css/ly_thuyet/text_the_p.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss6_css/text_box_model.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study_1/he_thong_quan_ly_furama.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study_1/he_thong_quan_ly_furama.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +54,7 @@
       <updated>1662709849418</updated>
       <workItem from="1662709852246" duration="13000" />
       <workItem from="1662709893418" duration="25000" />
+      <workItem from="1663597090674" duration="1173000" />
     </task>
     <servers />
   </component>
