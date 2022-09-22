@@ -60,6 +60,30 @@ body {
 }
 #menu-top ul li a:hover{
     color: orange;
+}#menu-top ul {
+    margin: 0px;
+    padding: 0px;
+
+}
+
+#menu-top ul li {
+    list-style: none;
+    padding: 0px;
+    float: left;
+
+}
+
+#menu-top ul li a {
+    text-decoration: none;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    padding: 0px 20px 0px 20px;
+    border-right: 1px solid black;
+    color: white;
+}
+#menu-top ul li a:hover{
+    color: orange;
 }
 
 #menu-top ul li a.active {

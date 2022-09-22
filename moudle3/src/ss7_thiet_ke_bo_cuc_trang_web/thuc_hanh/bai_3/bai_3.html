@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo menu ngang</title>
+    <style>
+        body{
+            font-size: 15px;
+            font-family: "Lucida Sans Unicode";
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .menu ul {
+            background: black;
+            list-style-type: none;
+            text-align: center;
+            width: 100%;
+        }
+        .menu ul li {
+            display: inline-table;
+            width: 240px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            position: relative;
+        }
+        .menu ul li a {
+            text-decoration: none;
+            display: block;
+            color: white;
+            font-weight: bold;
+        }
+        .menu ul li:hover{
+            background: red;
+            cursor: pointer;
+        }
+        .sub-menu{
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: 40px;
+        }
+        .menu ul li:hover .sub-menu{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="menu">
+    <ul>
+        <li><a href="#">Sem 1</a>
+            <ul class="sub-menu">
+                <li><a href="#">Computing Fundametal</a></li>
+                <li><a href="#">C Programming</a></li>
+                <li><a href="#">Building Dynamic Website</a></li>
+                <li><a href="#">MS Transact-SQL</a></li>
+                <li><a href="#">Project</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Sem 2</a>
+            <ul class="sub-menu">
+                <li><a href="#">Computing Fundametal</a></li>
+                <li><a href="#">C Programming</a></li>
+                <li><a href="#">Building Dynamic Website</a></li>
+                <li><a href="#">MS Transact-SQL</a></li>
+                <li><a href="#">Project</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Sem 3</a>
+            <ul class="sub-menu">
+                <li><a href="#">Computing Fundametal</a></li>
+                <li><a href="#">C Programming</a></li>
+                <li><a href="#">Building Dynamic Website</a></li>
+                <li><a href="#">MS Transact-SQL</a></li>
+                <li><a href="#">Project</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Sem 4</a>
+            <ul class="sub-menu">
+                <li><a href="#">Computing Fundametal</a></li>
+                <li><a href="#">C Programming</a></li>
+                <li><a href="#">Building Dynamic Website</a></li>
+                <li><a href="#">MS Transact-SQL</a></li>
+                <li><a href="#">Project</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

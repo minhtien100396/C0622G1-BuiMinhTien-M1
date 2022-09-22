@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo bố cục cơ bản</title>
+    <style>
+        .col-1 {
+            width: 8.33%;
+        }
+
+        .col-2 {
+            width: 16.66%;
+        }
+
+        .col-3 {
+            width: 25%;
+        }
+
+        .col-4 {
+            width: 33.33%;
+        }
+
+        .col-5 {
+            width: 41.66%;
+        }
+
+        .col-6 {
+            width: 50%;
+        }
+
+        .col-7 {
+            width: 58.33%;
+        }
+
+        .col-8 {
+            width: 66.66%;
+        }
+
+        .col-9 {
+            width: 75%;
+        }
+
+        .col-10 {
+            width: 83.33%;
+        }
+
+        .col-11 {
+            width: 91.66%;
+        }
+
+        .col-12 {
+            width: 100%;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Tất cả column căn chỉnh về bên trái và phân chia nôi dụng trong ô padding 5px */
+        [class*="col-"] {
+            float: left;
+            padding: 5px;
+        }
+
+        /*thẻ giả: sau mỗi dòng sẽ tạo ra thẻ giả sẽ reset lại lateout để những dòng phía sau không bị ảnh hưởng
+        bởi các dòng trước đó*/
+        .row::after {
+            clear: both;
+            display: block;
+            content: " ";
+        }
+
+        @media only screen and (max-width: 768px) {
+            [class*="col-"] {
+                width: 100%;
+            }
+
+            .header-title-cartoon {
+                background: pink;
+                color: white;
+                border-radius: 10%;
+            }
+        }
+        #head-left {
+            background: #32a4e7;
+            height: 80px;
+        }
+        #head-right {
+            background: #4CAF50;
+            height: 80px;
+        }
+        #head-link {
+            background: #d4d4d4;
+            height: 30px;
+        }
+        #head-search {
+            background: red;
+            height: 30px;
+        }
+        .head-link{
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        #main-left{
+            height: 500px;
+        }
+        #main-center {
+            height: 500px;
+        }
+        #main-right{
+            height: 500px;
+            margin-bottom: 40px;
+        }
+        .main {
+            margin-top: 5px;
+        }
+        .main-left-row-1{
+            background: orange;
+            height: 200px;
+
+        }
+        .main-left-row-2{
+            background: orange;
+            height: 250px;
+            margin-top: 5px;
+        }
+
+        .main-right-row-1{
+            background: rebeccapurple;
+            height: 170px;
+            margin-bottom: 5px;
+        }
+        #footer-left{
+            background: #32a4e7;
+            height: 40px;
+        }
+        #footer-right{
+            background: yellow;
+            height: 40px;
+        }
+        .main-center-row-1-column-1{
+            background: #32a4e7;
+            height: 200px;
+        }
+        .main-center-row-1-column-2 {
+            background: #32a4e7;
+            height: 200px;
+        }
+        #main-center {
+            margin-top: -5px;
+        }
+        .main-center-row-2 {
+            background: red;
+            height: 135px;
+        }
+    </style>
+</head>
+<body>
+<div class="row">
+    <div class="col-3" id = "head-left"></div>
+    <div class="col-9" id = "head-right"></div>
+</div>
+<div class="row head-link">
+    <div class="col-9" id = "head-link"></div>
+    <div class="col-3" id = "head-search"></div>
+</div>
+<div class="row main" >
+    <div class="col-2" id = "main-left">
+        <div class="row main-left-row-1"></div>
+        <div class="row main-left-row-2"></div>
+    </div>
+    <div class="col-7" id = "main-center">
+        <div class="row main-center-row-1">
+            <div class="col-6">
+                <div class="row">
+                    <div class="col-12  main-center-row-1-column-1"></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="row">
+                    <div class="col-12  main-center-row-1-column-2"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="row">
+                    <div class="col-12  main-center-row-2"></div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="row">
+                    <div class="col-12  main-center-row-2"></div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="row">
+                    <div class="col-12  main-center-row-2"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="row">
+                    <div class="col-12  main-center-row-2"></div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="row">
+                    <div class="col-12  main-center-row-2"></div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="row">
+                    <div class="col-12  main-center-row-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-3" id = "main-right">
+        <div class="row main-right-row-1">
+            <div class="col-12 main-right-row-1"></div>
+        </div>
+        <div class="row main-right-row-1">
+            <div class="col-12 main-right-row-1"></div>
+        </div>
+        <div class="row main-right-row-1">
+            <div class="col-12 main-right-row-1"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6" id = "footer-left">
+            <div class="row">
+                <div class="col-12 footer-left"></div>
+            </div>
+        </div>
+        <div class="col-6" id = "footer-right">
+            <div class="row">
+                <div class="col-12 footer-right"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

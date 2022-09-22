@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo menu ngang</title>
+    <style>
+        body{
+            font-family: Tahoma;
+            font-size: 15px;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .menu {
+            background: black;
+            height: 40px;
+        }
+        .menu li {
+            float: left;
+            list-style: none;
+            position: relative;
+        }
+        .menu li a {
+            width: 100px;
+            height: 40px;
+            text-decoration: none;
+            color: white;
+            border-right: 1px solid white;
+            text-align: center;
+            display: block;
+            line-height: 40px;
+        }
+        .sub-menu li a {
+            width: 200px;
+            text-align: left;
+            padding-left: 10px;
+        }
+        .menu li a:hover{
+            background-color: red;
+            cursor: pointer;
+        }
+        .sub-menu {
+            background: black;
+            position: absolute;
+            top: 40px;
+            left: 15px;
+            display: none;
+        }
+        .menu ul li:hover .sub-menu{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="menu">
+    <ul>
+        <li><a href="#">Sem 1</a>
+            <ul class="sub-menu">
+                <li><a href="#">Computing Fundametal</a></li>
+                <li><a href="#">C Programming</a></li>
+                <li><a href="#">Building Dynamic Website</a></li>
+                <li><a href="#">MS Transact-SQL</a></li>
+                <li><a href="#">Project</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Sem 2</a></li>
+        <li><a href="#">Sem 3</a></li>
+        <li><a href="#">Sem 4</a></li>
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo menu dọc</title>
+    <style>
+        body {
+            font-family: Arial;
+            font-size: 15px;
+        }
+
+        .menu ul {
+            background: #d4d4d4;
+            width: 250px;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .menu ul li {
+            width: auto;
+            height: 40px;
+            line-height: 40px;
+            border-bottom: 1px solid #f1f1f1;
+            padding: 0 1em;
+            position: relative;
+        }
+
+        .menu ul li a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            display: block;
+        }
+
+        .menu ul li:hover {
+            background: orange;
+        }
+        .menu .sub-menu {
+            position: absolute;
+            left: 250px;
+            top: 0px;
+            display: none;
+        }
+        .menu ul li:hover .sub-menu {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<h3>ACCP i10</h3>
+<div class="menu">
+    <ul>
+        <li><a href="#">Sem 1</a>
+            <ul class="sub-menu">
+                <li><a href="#">Cloud Computing</a></li>
+                <li><a href="#">APJ - I</a></li>
+                <li><a href="#">APJ - II</a></li>
+                <li><a href="#">APJ - III</a></li>
+                <li><a href="#">eProject</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Sem 2</a>
+            <ul class="sub-menu">
+                <li><a href="#">Computing Fundametal</a></li>
+                <li><a href="#">C Programming</a></li>
+                <li><a href="#">Building Dynamic Website</a></li>
+                <li><a href="#">MS Transact-SQL</a></li>
+                <li><a href="#">Project</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Sem 3</a></li>
+        <li><a href="#">Sem 4</a></li>
+        <li><a href="#">Sem 5</a></li>
+    </ul>
+</div>
+</body>
+</html>

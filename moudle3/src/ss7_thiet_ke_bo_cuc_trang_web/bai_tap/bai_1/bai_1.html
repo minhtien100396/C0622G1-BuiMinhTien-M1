@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo layout với các thẻ HTML5 và CSS</title>
+    <style>
+        /* Phân chỉa tỉ lệ của 12 column*/
+        .col-1 {
+            width: 8.33%;
+        }
+
+        .col-2 {
+            width: 16.66%;
+        }
+
+        .col-3 {
+            width: 25%;
+        }
+
+        .col-4 {
+            width: 33.33%;
+        }
+
+        .col-5 {
+            width: 41.66%;
+        }
+
+        .col-6 {
+            width: 50%;
+        }
+
+        .col-7 {
+            width: 58.33%;
+        }
+
+        .col-8 {
+            width: 66.66%;
+        }
+
+        .col-9 {
+            width: 75%;
+        }
+
+        .col-10 {
+            width: 83.33%;
+        }
+
+        .col-11 {
+            width: 91.66%;
+        }
+
+        .col-12 {
+            width: 100%;
+        }
+
+        /*Chỉnh hết thành border-box: không làm ảnh hưởng đến phần tử bên ngoài*/
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Tất cả column căn chỉnh về bên trái và phân chia nôi dụng trong ô padding 5px */
+        [class*="col-"] {
+            float: left;
+            padding: 5px;
+        }
+
+        /*thẻ giả: sau mỗi dòng sẽ tạo ra thẻ giả sẽ reset lại lateout để những dòng phía sau không bị ảnh hưởng
+        bởi các dòng trước đó*/
+        .row::after {
+            clear: both;
+            display: block;
+            content: " ";
+        }
+        *{
+            margin: 0px;
+            padding: 0;
+        }
+
+        @media only screen and (max-width: 768px) {
+            [class*="col-"] {
+                width: 100%;
+            }
+        }
+        .header {
+            background: black;
+            color: white;
+            line-height: 80px;
+            font-weight: bold;
+            font-size: 40px;
+            padding-left:20px ;
+            margin: 0 10px;
+            width: 75%;
+        }
+        .nav {
+            margin: 0 12px;
+
+        }
+        .nav ul {
+            margin-bottom: 10px;
+            margin-top: 10px;
+            height: 15px;
+            line-height: 15px;
+            list-style: none;
+        }
+        .nav ul li {
+           float: left;
+        }
+        .nav ul li a {
+            text-decoration: none;
+            color: black;
+            padding-right: 20px;
+        }
+        .content {
+            margin: 0px 13px;
+            background: #d4d4d4;
+            height: 400px;
+            margin-bottom: 5px;
+            width: 75%;
+        }
+        .tag {
+            margin-top: 20px;
+            font-size: 25px;
+            padding-left: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .section {
+            background: white;
+            padding-bottom: 10px;
+            margin: -10px 17px 8px;
+            height: 150px;
+            width: 95%;
+        }
+        .tag-1{
+            font-size: 25px;
+            font-weight: bold;
+        }
+        .footer{
+            background: black;
+            color: white;
+            margin: 0 10px;
+            line-height: 60px;
+            width: 75%;
+        }
+    </style>
+</head>
+<body>
+<div class="row header">
+    <div class="col-12">Monday Times</div>
+</div>
+<div class="row nav">
+    <div class="col-12 a">
+        <ul>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Sport</a></li>
+            <li><a href="#">Weather</a></li>
+        </ul>
+    </div>
+</div>
+<div class="row content">
+    <div class="col-12 tag">News Section</div>
+    <div class="col-12">
+        <div class="row section">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-12 tag-1">News Article</div>
+                </div>
+                <div class="row">
+                    <div class="col-12">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in porta lorem. Morbi condimentum est nibh, et consectetur tortor feugiat at.</div>
+                </div>
+                <div class="row">
+                    <div class="col-12">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in porta lorem. Morbi condimentum est nibh, et consectetur tortor feugiat at.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12" >
+        <div class="row section">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-12 tag-1">News Article</div>
+                </div>
+                <div class="row">
+                    <div class="col-12">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in porta lorem. Morbi condimentum est nibh, et consectetur tortor feugiat at.</div>
+                </div>
+                <div class="row">
+                    <div class="col-12">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in porta lorem. Morbi condimentum est nibh, et consectetur tortor feugiat at.</div>
+                </div>
+            </div>
+        </div>
+        <div class="row article">
+            <div class="col-12"></div>
+        </div>
+    </div>
+
+</div>
+<div class="row footer">
+    <div class="col-12">© 2014 Monday Times. All rights reserved.</div>
+</div>
+<div class="row"></div>
+</body>
+</html>

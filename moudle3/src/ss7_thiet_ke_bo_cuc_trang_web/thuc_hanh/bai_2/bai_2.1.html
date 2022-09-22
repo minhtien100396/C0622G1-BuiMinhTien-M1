@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo menu dọc</title>
+    <style>
+        body {
+            font-family: inherit;
+            font-size: 15px;
+        }
+
+        .menu ul {
+            background: black;
+            padding: 0px;
+            width: 250px;
+            list-style-type: none;
+        }
+
+        .menu ul li {
+            height: 40px;
+            line-height: 40px;
+            padding: 0 20px;
+            border-bottom: 1px solid white;
+            position: relative;
+        }
+
+        .menu ul li a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .menu ul li:hover {
+            background: red;
+            cursor: pointer;
+        }
+
+        .sub-menu {
+            position: absolute;
+            left: 250px;
+            top: 0px;
+            visibility: hidden;
+        }
+
+        .menu ul li:hover .sub-menu {
+            visibility:visible ;
+            background: rebeccapurple;
+        }
+        .menu ul li .sub-menu li:hover  {
+            background: orange;
+        }
+    </style>
+</head>
+<body>
+<h3>ACCP i10</h3>
+<div class="menu">
+    <ul>
+        <li><a href="#">Sem 1</a>
+            <ul class="sub-menu">
+                <li><a href="#">Computing Fundametal</a></li>
+                <li><a href="#">C Programming</a></li>
+                <li><a href="#">Building Dynamic Website</a></li>
+                <li><a href="#">MS Transact-SQL</a></li>
+                <li><a href="#">Project</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Sem 2</a>
+            <ul class="sub-menu">
+                <li><a href="#">Cloud Computing</a></li>
+                <li><a href="#">APJ - I</a></li>
+                <li><a href="#">APJ - II</a></li>
+                <li><a href="#">APJ - III</a></li>
+                <li><a href="#">eProject</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Sem 3</a>
+            <ul class="sub-menu">
+                <li><a href="#">Cloud Computing</a></li>
+                <li><a href="#">APJ - I</a></li>
+                <li><a href="#">APJ - II</a></li>
+                <li><a href="#">APJ - III</a></li>
+                <li><a href="#">eProject</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Sem 4</a>
+            <ul class="sub-menu">
+                <li><a href="#">Cloud Computing</a></li>
+                <li><a href="#">APJ - I</a></li>
+                <li><a href="#">APJ - II</a></li>
+                <li><a href="#">APJ - III</a></li>
+                <li><a href="#">eProject</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
