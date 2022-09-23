@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo layout với RWD</title>
+    <meta name= "viewport" content="width=device-width, lnitial-scale=1.0">
+    <style>
+        /* Phân chỉa tỉ lệ của 12 column*/
+        .col-1 {
+            width: 8.33%;
+        }
+
+        .col-2 {
+            width: 16.66%;
+        }
+
+        .col-3 {
+            width: 25%;
+        }
+
+        .col-4 {
+            width: 33.33%;
+        }
+
+        .col-5 {
+            width: 41.66%;
+        }
+
+        .col-6 {
+            width: 50%;
+        }
+
+        .col-7 {
+            width: 58.33%;
+        }
+
+        .col-8 {
+            width: 66.66%;
+        }
+
+        .col-9 {
+            width: 75%;
+        }
+
+        .col-10 {
+            width: 83.33%;
+        }
+
+        .col-11 {
+            width: 91.66%;
+        }
+
+        .col-12 {
+            width: 100%;
+        }
+
+        /*Chỉnh hết thành border-box: không làm ảnh hưởng đến phần tử bên ngoài*/
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Tất cả column căn chỉnh về bên trái và phân chia nôi dụng trong ô padding 5px */
+        [class*="col-"] {
+            float: left;
+            /*padding: 5px;*/
+        }
+
+        /*thẻ giả: sau mỗi dòng sẽ tạo ra thẻ giả sẽ reset lại lateout để những dòng phía sau không bị ảnh hưởng
+        bởi các dòng trước đó*/
+        .row::after {
+            clear: both;
+            display: block;
+            content: " ";
+        }
+        @media only screen and (max-width: 768px) {
+            [class*="col-"] {
+                width: 100%;
+            }
+        }
+        body{
+            font-family: Tahoma;
+            font-size: 15px;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .menu {
+            background: black;
+            height: 40px;
+        }
+        .menu li {
+            float: left;
+            list-style: none;
+            position: relative;
+        }
+        .menu li a {
+            width: 100px;
+            height: 40px;
+            text-decoration: none;
+            color: white;
+            border-right: 1px solid white;
+            text-align: center;
+            display: block;
+            line-height: 40px;
+        }
+        .sub-menu li a {
+            width: 200px;
+            text-align: left;
+            padding-left: 10px;
+        }
+        .menu li:hover{
+            background-color: red;
+            cursor: pointer;
+        }
+        .sub-menu {
+            background: black;
+            position: absolute;
+            top: 40px;
+            left: 0px;
+            display: none;
+        }
+        .menu ul li:hover .sub-menu{
+            display: block;
+        }
+        .logo {
+            background: black;
+            height: 40px;
+            color: white;
+            line-height: 40px;
+            text-align: center;
+            border-right: 1px solid white;
+            font-weight: bold;
+        }
+        .login {
+            background: black url("img/icons8-enter-30.png") no-repeat 2px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            font-weight: bold;
+            text-indent: 10px;
+        }
+        .login a {
+            text-decoration: none;
+            color: white;
+        }
+        .left{
+            background: #d4d4d4;
+            height: 500px;
+            text-align: center;
+        }
+        .left div div   {
+            margin-top: 20px;
+        }
+        .left div a {
+            text-decoration: none;
+            color: #32a4e7;
+        }
+        .right {
+            float: right;
+            background: #d4d4d4;
+            height: 500px;
+            text-align: center;
+        }
+        .right div div   {
+            margin-top: 20px;
+            border: 1px solid grey;
+            height: 50px;
+            width: 80%;
+            margin-left: 20px;
+            line-height: 50px;
+            background: white;
+        }
+        .center p {
+            text-align: left;
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        .center h1,h2 {
+            padding-left: 20px;
+            margin-bottom: 10px;
+            margin-top: 20px;
+        }
+        .center hr {
+            margin: 0 10px;
+        }
+        .center{
+            height: 500px;
+        }
+        .footer {
+            background: black;
+            line-height: 75px;
+            height: 75px;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div class="row">
+    <div class="col-1">
+        <div class="row">
+            <div class="col-12 logo">Logo</div>
+        </div>
+    </div>
+    <div class="col-10">
+        <div class="row">
+            <div class="col-12 menu">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Project</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">Computing Fundametal</a></li>
+                            <li><a href="#">C Programming</a></li>
+                            <li><a href="#">Building Dynamic Website</a></li>
+                            <li><a href="#">MS Transact-SQL</a></li>
+                            <li><a href="#">Project</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-1">
+        <div class="row">
+            <div class="col-12 login"><a href="#">Login</a></div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-2 left">
+        <div class="row">
+            <div class="col-12"><a href="#">Link 1</a></div>
+        </div>
+        <div class="row">
+            <div class="col-12"><a href="#">Link 2</a></div>
+        </div>
+        <div class="row">
+            <div class="col-12"><a href="#">Link 3</a></div>
+        </div>
+    </div>
+    <div class="col-8 center">
+        <h1>Welcome</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
+            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+            laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+        </p>
+        <hr>
+        <h2>Test</h2>
+        <p>Lorem ipsum...</p>
+    </div>
+    <div class="col-2 right">
+        <div class="row">
+            <div class="col-12">ADS</div>
+        </div>
+        <div class="row">
+            <div class="col-12">ADS</div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 footer">
+        Footer Text
+    </div>
+</div>
+</body>
+</html>
