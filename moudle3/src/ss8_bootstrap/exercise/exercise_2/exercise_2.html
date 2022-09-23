@@ -35,11 +35,115 @@
             text-decoration-style: revert;
             text-decoration-color: black;
         }
-        .img-text{
+
+        .img-text {
             position: absolute;
-            top:200px;
+            top: 170px;
             right: 70px;
             width: 35%;
+        }
+
+        .img-text span:hover {
+            border-bottom: 2px solid #0a53be;
+            cursor: pointer;
+        }
+
+        a:hover i {
+            margin-left: 1px;
+        }
+
+        .list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            margin-bottom: 10px;
+        }
+
+
+        .list li a {
+            text-decoration: none;
+            margin-left: 70px;
+            height: 60px;
+            line-height: 60px;
+            color: #0a53be;
+        }
+
+        .list .icon-1 {
+            background: url("img/img-2.jpg") no-repeat 2px;
+            margin-right: 20px;
+        }
+
+        .list .icon-2 {
+            background: url("img/img-3.jpg") no-repeat 2px;
+            margin-right: 20px;
+        }
+
+        .list .icon-3 {
+            background: url("img/img-4.jpg") no-repeat 2px;
+            margin-right: 20px;
+        }
+        .list .icon-4 {
+            background: url("img/img-5.jpg") no-repeat 2px;
+            margin-right: 20px;
+        }
+        .list .icon-5 {
+            background: url("img/img-6.jpg") no-repeat 2px;
+        }
+        .display{
+            margin-top: -300px;
+            height: 200px;
+        }
+        .img{
+            margin-left: 740px;
+            width: 32%;
+        }
+        .pos {
+            position: absolute;
+            top: 1070px;
+            left: 100px;
+            line-height: 40px;
+        }
+        .pos a {
+            text-decoration: none;
+            color: #0a53be;
+            font-weight: bold;
+        }
+        .pos a span:hover{
+            border-bottom: 2px solid #0a53be;
+        }
+        .pos a span:hover i{
+            margin-left: 1px;
+        }
+        .flex{
+            display: flex;
+            margin-bottom: 10px;
+        }
+        .flex a {
+            margin-left: 20px;
+            margin-top: 4px;
+            text-decoration: none;
+            color: #0a53be;
+            font-weight: bold;
+            font-size: 25px;
+        }
+        .flex a span:hover{
+            border-bottom: 2px solid #0a53be;
+        }
+        .laptop {
+            margin-top: 60px;
+            margin-left: 60px;
+            height: 200px;
+        }
+        .laptop a {
+            color: #0a53be;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .laptop a:hover span{
+            border-bottom: 2px solid #0a53be;
+        }
+        .list a:hover {
+            border-bottom: 2px solid #0a53be;
         }
     </style>
 </head>
@@ -128,20 +232,184 @@
         </div>
     </nav>
 </div>
-<div class="container-fluid">
+<div class="container">
     <div class="row">
         <div class="col-lg-12 px-0">
             <img class="vh-100 w-100 position-relative" src="img/img-1.jpg" alt="Ảnh Nền">
             <div class="img-text">
                 <h1 class="mb-4" style="font-size: 50px">Laptops designed by Microsoft</h1>
-                <h5 style="line-height: 30px">Surface laptops and 2-in-1s with Windows 11 empower you to create at home, in the classroom, and on the go.</h5>
-                <a target="_self" class="mscom-link c-call-to-action c-glyph f-lightweight x-hidden-focus" aria-label="Shop deals on Surface products." href="https://www.microsoft.com/en-us/store/b/surface-deals" data-bi-id="n1r1a3" data-bi-name="shop deals" data-bi-bhvr="PARTNERREFERRAL" data-bi-type="text" data-bi-prtnm="ms store" data-bi-prod="surface deals"><span>Shop deals</span></a>
-                <a target="_self" class="mscom-link c-call-to-action c-glyph f-lightweight" aria-label="Explore all Surface products." href="#DeviceShowcase_1" data-bi-id="n2r1a3" data-bi-name="explore all products"><span>Explore all products</span></a>
+                <h5 class="mb-4" style="line-height: 30px">Surface laptops and 2-in-1s with Windows 11 empower you to
+                    create at home, in the classroom, and on the go.</h5>
+                <a class="text-decoration-none fw-bold" style="color: #0a53be"><span>Shop deals</span> <i><</i></a>
+                <a class="mx-3 text-decoration-none fw-bold" style="color: #0a53be"><span>Explore all products</span>
+                    <i><</i></a>
             </div>
-
         </div>
     </div>
 </div>
+<div class="container">
+    <div class="row px-0 vh-100 mt-lg-5">
+        <div class="col-lg-12">
+            <div class="row mt-5">
+                <div class="col-lg-12 ">
+                    <h1 style="font-size: 50px">For all the ways you create</h1>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-lg-12 ">
+                    <ul class="d-flex list">
+                        <li class="icon-1 "><a href="#"><span class="fw-bold ">Compare devices</span> </a></li>
+                        <li class="icon-2 "><a href="#"><span class="fw-bold">Help me choose</span> </a></li>
+                        <li class="icon-3 "><a href="#"><span class="fw-bold">Surface deals</span> </a></li>
+                        <li class="icon-4 "><a href="#"><span class="fw-bold">Surface for Education</span> </a></li>
+                        <li class="icon-5 "><a href="#"><span class="fw-bold">Surface for Business</span> </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 display"style="background: #f1f1f1">
+            <div>
+                <img class="img" src="img/log-1.png" alt="Ảnh Nền">
+            </div>
+            <div class="pos">
+                <h1 class="mb-0" style="font-size: 35px">Microsoft Event​</h1>
+                <p class="mb-0" style="font-size: 18px">Watch live at 10am ET on October 12, 2022</p>
+                <a href="#"><span>Save the date</span> <i> > </i> </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 px-0">
+            <div class="flex">
+                <h1 class="mb-2" style="font-size: 35px">2-in-1 PCs​</h1>
+                <a href="#"><span>See all Surface 2-in-1 PCs</span> <i> > </i> </a>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 px-0">
+                    <div class="ratio ratio-16x9">
+                        <iframe width="711" height="400" src="https://www.youtube.com/embed/Jd2GK0qDtRg" title="Introducing Microsoft Mesh" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-lg-12 px-0">
+                    <div class="ratio ratio-16x9">
+                        <iframe width="711" height="400" src="https://www.youtube.com/embed/Jd2GK0qDtRg" title="Introducing Microsoft Mesh" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6" >
+            <div class="row laptop">
+                <div class="col-lg-6 ">
+                    <div class="card" style="width: 11rem;">
+                        <img src="img/img-7.jpg" class="card-img-top" alt="Hình Laptop">
+                        <div class="card-body">
+                            <a class="card-title"><span>Surface Pro 8</span> <i> > </i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card" style="width: 11rem;">
+                        <img src="img/img-7.jpg" class="card-img-top" alt="Hình Laptop">
+                        <div class="card-body">
+                            <a class="card-title"><span>Surface Pro 8</span> <i> > </i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row laptop">
+                <div class="col-lg-6 ">
+                    <div class="card" style="width: 11rem;">
+                        <img src="img/img-7.jpg" class="card-img-top" alt="Hình Laptop">
+                        <div class="card-body">
+                            <a class="card-title"><span>Surface Pro 8</span> <i> > </i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card" style="width: 11rem;">
+                        <img src="img/img-7.jpg" class="card-img-top" alt="Hình Laptop">
+                        <div class="card-body">
+                            <a class="card-title"><span>Surface Pro 8</span> <i> > </i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row laptop">
+                <div class="col-lg-6 ">
+                    <div class="card" style="width: 11rem;">
+                        <img src="img/img-7.jpg" class="card-img-top" alt="Hình Laptop">
+                        <div class="card-body">
+                            <a class="card-title"><span>Surface Pro 8</span> <i> > </i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card" style="width: 11rem;">
+                        <img src="img/img-7.jpg" class="card-img-top" alt="Hình Laptop">
+                        <div class="card-body">
+                            <a class="card-title"><span>Surface Pro 8</span> <i> > </i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+        </div>
+    </div>
+<div class="container">
+    <div class="row px-0 vh-100 mt-lg-5">
+        <div class="col-lg-12">
+            <div class="row mt-5">
+                <div class="col-lg-12 ">
+                    <h1 style="font-size: 50px">Innovation meets inspiration</h1>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="img/img-10.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/img-12.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/img-9.jfif" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row mt-3">
+        <div class="col-lg-12 bg-black" style="height: 60px; color: white; line-height: 60px; font-size: 14px">
+            <div class="container">
+                * Some software, accessories, and devices sold separately.
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
 <script src="../../../bootstrap/js/bootstrap.bundle.js"></script>
 </body>
 </html>
