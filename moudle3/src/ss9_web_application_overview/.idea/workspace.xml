@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="48fce10f-f745-4f05-97c5-7464c969bb67" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/practice/exercise_1/src/servlet/SumServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/exercise_1/web/sum_2_number.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/exercise_2/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/exercise_2/server_time/src/main/java/ServerTimeServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theory/src/servlet/SumServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theory/web/result_finall.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theory/web/sum_servlet_JSP.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/src.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss8_bootstrap/exercise/exercise_2/exercise_2.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ss8_bootstrap/exercise/exercise_2/exercise_2.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="2FFynbSG9qmuASJalr8mx6ahAVH" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/practice/exercise_1" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="48fce10f-f745-4f05-97c5-7464c969bb67" name="Default Changelist" comment="" />
+      <created>1664102294270</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1664102294270</updated>
+      <workItem from="1664102295520" duration="28000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="421" y="115" key="FileChooserDialogImpl" timestamp="1664102322067">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="421" y="115" key="FileChooserDialogImpl/0.0.1280.720@0.0.1280.720" timestamp="1664102322067" />
+  </component>
+</project>

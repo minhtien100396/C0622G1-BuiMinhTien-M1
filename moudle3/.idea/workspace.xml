@@ -2,18 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="423f4c8b-fff8-475d-b7d6-96fb01b2f8d6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ss6_css/ly_thuyet/css/external_file_css.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss6_css/ly_thuyet/text_css.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss6_css/ly_thuyet/text_selector.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss6_css/ly_thuyet/text_the_p.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss6_css/text_box_model.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss9_web_application_overview/exercise/exercise_1/src/servlet/DiscountServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss9_web_application_overview/exercise/exercise_1/web/error.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss9_web_application_overview/exercise/exercise_1/web/product_discount.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss9_web_application_overview/practice/exercise_1/src/servlet/SumServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss9_web_application_overview/practice/exercise_1/web/sum_2_number.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss9_web_application_overview/practice/exercise_2/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss9_web_application_overview/practice/exercise_2/server_time/src/main/java/ServerTimeServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss9_web_application_overview/practice/exercise_3/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss9_web_application_overview/practice/exercise_3/html_css/demo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss9_web_application_overview/practice/exercise_3/src/servlet/LoginServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss9_web_application_overview/practice/exercise_3/web/result_login.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss9_web_application_overview/practice/exercise_4/src/servlet/currencyConversionServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss9_web_application_overview/practice/exercise_4/web/currency_conversion.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss9_web_application_overview/practice/exercise_5/src/servlet/DictionaryServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss9_web_application_overview/practice/exercise_5/web/dictionary.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss9_web_application_overview/theory/src/servlet/SumServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss9_web_application_overview/theory/web/result_finall.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss9_web_application_overview/theory/web/sum_servlet_JSP.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/case_study_1/he_thong_quan_ly_furama.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study_1/he_thong_quan_ly_furama.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.idea/src.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss8_bootstrap/exercise/exercise_2/exercise_2.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss8_bootstrap/exercise/exercise_2/exercise_2.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -25,10 +49,12 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
@@ -55,10 +81,26 @@
       <workItem from="1662709852246" duration="13000" />
       <workItem from="1662709893418" duration="25000" />
       <workItem from="1663597090674" duration="1173000" />
+      <workItem from="1664007845002" duration="549000" />
+      <workItem from="1664106078666" duration="9403000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="420" y="238" key="#Tomcat_Server" timestamp="1664008359196">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="420" y="238" key="#Tomcat_Server/0.0.1280.720@0.0.1280.720" timestamp="1664008359196" />
+    <state x="421" y="101" key="FileChooserDialogImpl" timestamp="1664008388484">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="421" y="101" key="FileChooserDialogImpl/0.0.1280.720@0.0.1280.720" timestamp="1664008388484" />
+    <state x="91" y="0" key="new project wizard" timestamp="1664008396048">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="91" y="0" key="new project wizard/0.0.1280.720@0.0.1280.720" timestamp="1664008396048" />
   </component>
 </project>

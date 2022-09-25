@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            font-size: 15px;
+            font-family: Arial;
+        }
+        form {
+            width: 40%;
+        }
+        input{
+            margin-bottom: 15px;
+            height: 25px;
+            text-align: center;
+            margin-left:10px ;
+        }
+        label{
+            font-weight: bold;
+        }
+        .row2 {
+            padding-left: 75px;
+        }
+        .row3{
+            padding-left: 19px;
+        }
+    </style>
+</head>
+<body>
+<form action="">
+    <fieldset>
+        <legend style="text-align: center"><h2>Product Discount Calculator</h2></legend>
+        <div class="row1">
+            <label>Product Description :</label>
+            <input type="text" name="describe" placeholder="Mô tả của sản phẩm" size="30px">
+        </div>
+        <div class="row2">
+            <label>List Price :</label>
+            <input type="text" name="price" placeholder="Giá niêm yết của sản phẩm" size="30px">
+        </div>
+        <div class="row3">
+            <label>Discount Percent :</label>
+            <input type="text" name="price" placeholder="Tỷ lệ chiết khấu (phần trăm)" size="30px">
+        </div>
+        <div style="text-align: center;margin-top: 20px">
+            <input type="submit" value="Calculate Discount" style="margin-left: 0px; height: 30px; width: 150px;" >
+        </div>
+    </fieldset>
+</form>
+</body>
+</html>
