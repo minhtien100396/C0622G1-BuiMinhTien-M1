@@ -4,10 +4,10 @@
     <title>Ứng dụng Product Discount Calculator</title>
 </head>
 <body>
-<h3><%=request.getAttribute("describe")%></h3>
-<h3><%=request.getAttribute("price")%></h3>
-<h3><%=request.getAttribute("discount")%></h3>
-<h3><%=request.getAttribute("discountAmount")%></h3>
-<h3><%=request.getAttribute("discountPrice")%></h3>
+<h3>Mô tả của sản phẩm : ${describe}</h3>
+<h3>Giá niêm yết của sản phẩm : ${price} VNĐ</h3>
+<h3>Tỷ lệ chiết khấu (phần trăm) : ${discount}%</h3>
+<h3>Lượng chiết khấu : ${discountAmount}VNĐ</h3>
+<h3>Giá sau khi đã được chiết khấu : ${discountPrice} VNĐ</h3>
 </body>
 </html>

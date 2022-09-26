@@ -2,30 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="423f4c8b-fff8-475d-b7d6-96fb01b2f8d6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ss9_web_application_overview/exercise/exercise_1/src/servlet/DiscountServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss9_web_application_overview/exercise/exercise_1/web/error.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss9_web_application_overview/exercise/exercise_1/web/product_discount.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss9_web_application_overview/practice/exercise_1/src/servlet/SumServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss9_web_application_overview/practice/exercise_1/web/sum_2_number.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss9_web_application_overview/practice/exercise_2/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss9_web_application_overview/practice/exercise_2/server_time/src/main/java/ServerTimeServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss9_web_application_overview/practice/exercise_3/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss9_web_application_overview/practice/exercise_3/html_css/demo.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss9_web_application_overview/practice/exercise_3/src/servlet/LoginServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss9_web_application_overview/practice/exercise_3/web/result_login.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss9_web_application_overview/practice/exercise_4/src/servlet/currencyConversionServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss9_web_application_overview/practice/exercise_4/web/currency_conversion.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss9_web_application_overview/practice/exercise_5/src/servlet/DictionaryServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss9_web_application_overview/practice/exercise_5/web/dictionary.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss9_web_application_overview/theory/src/servlet/SumServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss9_web_application_overview/theory/web/result_finall.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss9_web_application_overview/theory/web/sum_servlet_JSP.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.idea/src.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss8_bootstrap/exercise/exercise_2/exercise_2.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss8_bootstrap/exercise/exercise_2/exercise_2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss9_web_application_overview/exercise/exercise_1/out/artifacts/exercise_1_war_exploded/WEB-INF/classes/servlet/DiscountServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss9_web_application_overview/exercise/exercise_1/out/artifacts/exercise_1_war_exploded/WEB-INF/classes/servlet/DiscountServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss9_web_application_overview/exercise/exercise_1/out/artifacts/exercise_1_war_exploded/error.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss9_web_application_overview/exercise/exercise_1/out/artifacts/exercise_1_war_exploded/error.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss9_web_application_overview/exercise/exercise_1/out/artifacts/exercise_1_war_exploded/product_discount.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss9_web_application_overview/exercise/exercise_1/out/artifacts/exercise_1_war_exploded/product_discount.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss9_web_application_overview/exercise/exercise_1/out/production/exercise_1/servlet/DiscountServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss9_web_application_overview/exercise/exercise_1/out/production/exercise_1/servlet/DiscountServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss9_web_application_overview/exercise/exercise_1/src/servlet/DiscountServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss9_web_application_overview/exercise/exercise_1/src/servlet/DiscountServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss9_web_application_overview/exercise/exercise_1/web/error.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss9_web_application_overview/exercise/exercise_1/web/error.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss9_web_application_overview/exercise/exercise_1/web/product_discount.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss9_web_application_overview/exercise/exercise_1/web/product_discount.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +66,8 @@
       <workItem from="1662709893418" duration="25000" />
       <workItem from="1663597090674" duration="1173000" />
       <workItem from="1664007845002" duration="549000" />
-      <workItem from="1664106078666" duration="9403000" />
+      <workItem from="1664106078666" duration="9923000" />
+      <workItem from="1664152977089" duration="2705000" />
     </task>
     <servers />
   </component>

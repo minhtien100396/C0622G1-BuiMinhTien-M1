@@ -4,6 +4,6 @@
     <title>Ứng dụng Product Discount Calculator</title>
 </head>
 <body>
-<h3><%=request.getAttribute("result")%></h3>
+<h3>${result}</h3>
 </body>
 </html>
