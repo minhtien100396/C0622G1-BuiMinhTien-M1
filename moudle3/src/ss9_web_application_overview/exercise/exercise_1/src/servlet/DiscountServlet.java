@@ -21,10 +21,10 @@ public class DiscountServlet extends HttpServlet {
         double discountPrice = price - discountAmount;
         if (discount < 0 || discount > 100) {
             request.setAttribute("result", "Tỷ lệ chiết khấu bạn nhập vào không hợp lệ (0-100%)");
-            request.getRequestDispatcher("error.jsp").forward(request, response);
+            request.getRequestDispatcher("product_discount.jsp").forward(request, response);
         } else if (price < 0) {
             request.setAttribute("result", "Giá sản phẩm bạn nhập vào không hợp lệ (>=0)");
-            request.getRequestDispatcher("error.jsp").forward(request, response);
+            request.getRequestDispatcher("product_discount.jsp").forward(request, response);
         } else {
             request.setAttribute("describe", describe);
             request.setAttribute("price", price);
