@@ -14,6 +14,7 @@
         <th>DateOfBirth</th>
         <th>Gender</th>
         <th>Grade</th>
+        <th>ClassId</th>
     </tr>
     <%--    var: đại diện cho từng phần tử trong danh sách studentList,
             Còn item đại diện cho danh sách--%>
@@ -56,6 +57,15 @@
                         VeryGood
                     </c:otherwise>
                 </c:choose>
+            </td>
+            <c:if test="${!classMap.containsKey(studentObj.classId)}">
+                <td>
+                    Chua co lop 1
+                </td>
+            </c:if>
+
+                    <td>
+                    ${classMap.get(studentObj.classId)}
             </td>
         </tr>
     </c:forEach>

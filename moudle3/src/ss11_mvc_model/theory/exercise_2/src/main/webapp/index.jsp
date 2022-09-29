@@ -357,11 +357,11 @@
 								<label for="selectAll"></label>
 							</span>
                     </th>
-                    <th>Id</th>
                     <th>Name</th>
                     <th>Price</th>
                     <th>Description</th>
                     <th>Manufacture</th>
+                    <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -385,7 +385,7 @@
                                                                                data-toggle="tooltip"
                                                                                title="Edit">&#xE254;</i></a>
                             <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"
-                               data-id="${productObj.id}"><i class="material-icons"
+                               data-id="${productObj.   id}"><i class="material-icons"
                                                              data-toggle="tooltip"
                                                              title="Delete">&#xE872;</i></a>
                         </td>

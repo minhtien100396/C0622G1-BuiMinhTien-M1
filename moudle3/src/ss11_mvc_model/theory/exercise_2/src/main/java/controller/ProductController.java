@@ -29,7 +29,7 @@ public class ProductController extends HttpServlet {
                 request.getRequestDispatcher("index.jsp").forward(request, response);
                 break;
             default:
-                 id = Integer.parseInt(request.getParameter("id"));
+                id = Integer.parseInt(request.getParameter("id"));
                 String name = request.getParameter("name");
                 Double price = Double.valueOf(request.getParameter("price"));
                 String description = request.getParameter("description");

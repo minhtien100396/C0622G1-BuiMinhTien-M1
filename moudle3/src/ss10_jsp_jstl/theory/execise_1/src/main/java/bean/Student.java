@@ -6,16 +6,18 @@ public class Student {
     private String dateOfBirth;
     private Integer gender;
     private Double grade;
+    private  Integer classId;
 
     public Student() {
     }
 
-    public Student(Integer id, String name, String dateOfBirth, Integer gender, Double grade) {
+    public Student(Integer id, String name, String dateOfBirth, Integer gender, Double grade, Integer classId) {
         this.id = id;
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.gender = gender;
         this.grade = grade;
+        this.classId = classId;
     }
 
     public Integer getId() {
@@ -56,5 +58,13 @@ public class Student {
 
     public void setGrade(Double grade) {
         this.grade = grade;
+    }
+
+    public Integer getClassId() {
+        return classId;
+    }
+
+    public void setClassId(Integer classId) {
+        this.classId = classId;
     }
 }

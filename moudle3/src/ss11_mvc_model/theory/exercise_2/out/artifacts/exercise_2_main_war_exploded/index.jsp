@@ -357,11 +357,11 @@
 								<label for="selectAll"></label>
 							</span>
                     </th>
-                    <th>Id</th>
                     <th>Name</th>
                     <th>Price</th>
                     <th>Description</th>
                     <th>Manufacture</th>
+                    <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
