@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Tạo ứng dụng quản lý sản phẩm</title>
+    <title>Tạo ứng dụng quản lý khách hàng</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -284,19 +284,26 @@
         .modal form label {
             font-weight: normal;
         }
+
         .form {
-            height: 27px;
-            line-height: 27px;
+            height: 28px;
+            line-height: 28px;
         }
+
         .form button {
             width: 100px;
             background: orange;
             color: white;
             border: 1px solid orange;
+            margin-left: 8px;
         }
-        .search1{
-            padding-left: 161px;
-            text-align: right;
+
+        .form input {
+            border: 1px solid orange;
+        }
+
+        .search1 {
+            text-align: center;
         }
     </style>
     <script>
@@ -331,20 +338,22 @@
         <div class="table-wrapper">
             <div class="table-title">
                 <div class="row">
-                    <div class="col-md-3">
-                        <h2>Manage <b>Products</b></h2>
+                    <div class="col-sm-3">
+                        <h2>Manage <b>Customers</b></h2>
                     </div>
-                    <div class="col-md-5 search1" >
-                        <form action="?action=search" method="post" class="form">
+                    <div class="col-sm-5 search1">
+                        <form action="?actionCustomer=search" method="post" class="form">
                             <input name="search">
                             <button>Search</button>
                         </form>
                     </div>
-                    <div cclass="col-md-4">
-                        <a href="#addEmployeeModal" class="add btn btn-success" data-toggle="modal"><i
-                                class="material-icons">&#xE147;</i> <span>Add New Products</span></a>
-                        <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i
+                    <div class="col-sm-4">
+                        <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i
+                                class="material-icons">&#xE147;</i> <span>Add New Customer</span></a>
+                        <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal" hidden><i
                                 class="material-icons">&#xE15C;</i> <span>Delete</span></a>
+                        <a href="#deleteAll" class="btn btn-danger" data-toggle="modal"><i
+                                class="material-icons">&#xE15C;</i> <span>Delete All</span></a>
                     </div>
                 </div>
             </div>
@@ -357,15 +366,15 @@
 								<label for="selectAll"></label>
 							</span>
                     </th>
+                    <th>No</th>
                     <th>Name</th>
-                    <th>Price</th>
-                    <th>Description</th>
-                    <th>Manufacture</th>
+                    <th>Email</th>
+                    <th>Address</th>
                     <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach var="productObj" items="${products}">
+                <c:forEach var="customer" items="${customers}" varStatus="loop">
                     <tr>
                         <td>
 							<span class="custom-checkbox">
@@ -373,24 +382,25 @@
 								<label for="checkbox1"></label>
 							</span>
                         </td>
-                        <td>${productObj.name}</td>
-                        <td>${productObj.price}</td>
-                        <td>${productObj.description}</td>
-                        <td>${productObj.manufacture}</td>
+                        <td>${loop.count}</td>
+                        <td>${customer.name}</td>
+                        <td>${customer.email}</td>
+                        <td>${customer.address}</td>
                         <td>
-                            <a href="#addEmployeeModal" class="edit" data-toggle="modal" data-id="${productObj.id}"
-                               data-name="${productObj.name}" data-price="${productObj.price}"
-                               data-description="${productObj.description}"
-                               data-manufacture="${productObj.manufacture}"><i class="material-icons"
-                                                                               data-toggle="tooltip"
-                                                                               title="Edit">&#xE254;</i></a>
-                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"
-                               data-id="${productObj.   id}"><i class="material-icons"
-                                                             data-toggle="tooltip"
-                                                             title="Delete">&#xE872;</i></a>
+                            <a href="#editEmployeeModal" class="edit" data-toggle="modal" data-id="${customer.id}"
+                               data-name="${customer.name}" data-email="${customer.email}"
+                               data-address="${customer.address}"><i
+                                    class="material-icons"
+                                    data-toggle="tooltip"
+                                    title="Edit">&#xE254;</i></a>
+                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal" data-id="${customer.id}"><i
+                                    class="material-icons"
+                                    data-toggle="tooltip"
+                                    title="Delete">&#xE872;</i></a>
                         </td>
                     </tr>
                 </c:forEach>
+
                 </tbody>
             </table>
             <div class="clearfix">
@@ -412,28 +422,26 @@
 <div id="addEmployeeModal" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="?action=save" method="post">
+            <form action="?actionCustomer=add" method="post">
                 <div class="modal-header">
-                    <h4 class="modal-title"></h4>
+                    <h4 class="modal-title">Add Customer</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <input type="hidden" name="id" value="0">
+                    <div>
+                        <input type="hidden" name="id" value="0">
+                    </div>
                     <div class="form-group">
                         <label>Name</label>
                         <input type="text" class="form-control" required name="name">
                     </div>
                     <div class="form-group">
-                        <label>Price</label>
-                        <input type="text" class="form-control" required name="price">
+                        <label>Email</label>
+                        <input type="email" class="form-control" required name="email">
                     </div>
                     <div class="form-group">
-                        <label>Description</label>
-                        <textarea class="form-control" required name="description"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label>Manufacture</label>
-                        <input type="text" class="form-control" required name="manufacture">
+                        <label>Address</label>
+                        <input class="form-control" required name="address">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -444,14 +452,48 @@
         </div>
     </div>
 </div>
+<!-- Edit Modal HTML -->
+<div id="editEmployeeModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="?actionCustomer=edit" method="post">
+                <div class="modal-header">
+                    <h4 class="modal-title">Edit Product</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <input type="hidden" name="id">
+                    </div>
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" class="form-control" required name="name">
+                    </div>
+                    <div class="form-group">
+                        <label>email</label>
+                        <input type="email" class="form-control" required name="email">
+                    </div>
+                    <div class="form-group">
+                        <label>Address</label>
+                        <input class="form-control" required name="address">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                    <input type="submit" class="btn btn-info" value="Save">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 <!-- Delete Modal HTML -->
 <div id="deleteEmployeeModal" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form method="post" action="?action=delete">
+            <form action="?actionCustomer=delete" method="post">
                 <input type="hidden" name="id">
                 <div class="modal-header">
-                    <h4 class="modal-title">Delete Employee</h4>
+                    <h4 class="modal-title">Delete Customer</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
@@ -466,27 +508,36 @@
         </div>
     </div>
 </div>
+<div id="deleteAll" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="?actionCustomer=deleteAll" method="post">
+                <div class="modal-header">
+                    <h4 class="modal-title">Delete All Customers</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to delete these Records?</p>
+                    <p class="text-warning"><small>This action cannot be undone.</small></p>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                    <input type="submit" class="btn btn-danger" value="Delete">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
 <script>
-    $(".add").click(function () {
-        $(".modal-title").text("Add Products")
-    });
     $(".edit").click(function () {
-        $(".modal-title").text("Edit Products")
         $("input[name='id']").val($(this).data('id'));
         $("input[name='name']").val($(this).data('name'));
-        $("input[name='price']").val($(this).data('price'));
-        $("textarea[name='description']").val($(this).data('description'));
-        $("input[name='manufacture']").val($(this).data('manufacture'));
+        $("input[name='email']").val($(this).data('email'));
+        $("input[name='address']").val($(this).data('address'));
     });
-    // Cú pháp của Jquery
     $(".delete").click(function () {
         $("input[name='id']").val($(this).data('id'));
     })
-    //    Cú pháp chuẩn của Js
-    // var tmp = document.querySelector(".delete");
-    // tmp.onclick = function () {
-    //     alert("abc")
-    // }
 </script>
-</body>
 </html>
