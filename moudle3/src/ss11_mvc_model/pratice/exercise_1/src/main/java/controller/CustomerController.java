@@ -2,7 +2,7 @@ package controller;
 
 import bean.Customer;
 import service.ICustomerService;
-import service.impl.CustomerServiceImpl;
+import service.impl.CustomerService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,7 +13,7 @@ import java.io.IOException;
 
 @WebServlet(name = "CustomerController")
 public class CustomerController extends HttpServlet {
-    ICustomerService iCustomerService = new CustomerServiceImpl();
+    ICustomerService iCustomerService = new CustomerService();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String actionCustomer = request.getParameter("actionCustomer");
@@ -26,9 +26,11 @@ public class CustomerController extends HttpServlet {
             case "delete":
                 id = Integer.parseInt(request.getParameter("id"));
                 iCustomerService.delete(id);
+                response.sendRedirect("/");
                 break;
             case "deleteAll":
                 iCustomerService.deleteAll();
+                response.sendRedirect("/");
                 break;
             case "search":
                 name = request.getParameter("search");
@@ -42,6 +44,7 @@ public class CustomerController extends HttpServlet {
                 address = request.getParameter("address");
                 customer = new Customer(id, name, email, address);
                 iCustomerService.edit(customer);
+                response.sendRedirect("/");
                 break;
             default:
                 id = Integer.parseInt(request.getParameter("id"));
@@ -50,9 +53,8 @@ public class CustomerController extends HttpServlet {
                 address = request.getParameter("address");
                 customer = new Customer(id, name, email, address);
                 iCustomerService.add(customer);
+                response.sendRedirect("/");
         }
-        request.setAttribute("customers", iCustomerService.getAll());
-        request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

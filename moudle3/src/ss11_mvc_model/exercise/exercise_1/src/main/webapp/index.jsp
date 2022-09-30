@@ -291,7 +291,7 @@
         }
 
         .form button {
-            width: 100px;
+            width: 80px;
             background: orange;
             color: white;
             border: 1px solid orange;
@@ -304,6 +304,9 @@
 
         .search1 {
             text-align: center;
+        }
+        .search1 button:hover {
+            background: darkorange;
         }
     </style>
     <script>
@@ -338,20 +341,20 @@
         <div class="table-wrapper">
             <div class="table-title">
                 <div class="row">
-                    <div class="col-sm-3">
+                    <div class="col-md-3">
                         <h2>Manage <b>Products</b></h2>
                     </div>
-                    <div class="col-sm-5 search1">
+                    <div class="col-md-5 search1">
                         <form action="?actionProduct=search" method="post" class="form">
                             <input name="search">
                             <button>Search</button>
                         </form>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-md-4">
                         <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i
                                 class="material-icons">&#xE147;</i> <span>Add New Product</span></a>
-                        <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal" hidden><i
-                                class="material-icons">&#xE15C;</i> <span>Delete</span></a>
+<%--                        <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal" ><i--%>
+<%--                                class="material-icons">&#xE15C;</i> <span>Delete</span></a>--%>
                         <a href="#deleteAll" class="btn btn-danger" data-toggle="modal"><i
                                 class="material-icons">&#xE15C;</i> <span>Delete All</span></a>
                     </div>
@@ -501,6 +504,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <form action="?actionProduct=delete" method="post">
+<%--                <input type="hidden" name="actionProduct" value="delete">--%>
                 <input type="hidden" name="id">
                 <div class="modal-header">
                     <h4 class="modal-title">Delete Product</h4>

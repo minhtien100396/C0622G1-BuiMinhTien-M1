@@ -2,13 +2,13 @@ package service.impl;
 
 import bean.Customer;
 import repository.ICustomerRepo;
-import repository.impl.CustomerRepoImpl;
+import repository.impl.CustomerRepo;
 import service.ICustomerService;
 
 import java.util.List;
 
-public class CustomerServiceImpl implements ICustomerService {
-    ICustomerRepo iCustomerRepo = new CustomerRepoImpl();
+public class CustomerService implements ICustomerService {
+    ICustomerRepo iCustomerRepo = new CustomerRepo();
     @Override
     public List<Customer> getAll() {
         return iCustomerRepo.getAll();

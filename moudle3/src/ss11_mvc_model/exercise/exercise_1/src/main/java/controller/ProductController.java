@@ -23,17 +23,21 @@ public class ProductController extends HttpServlet {
         String description;
         String manufacture;
         Product product;
+        String search;
         switch (actionProduct) {
             case "delete":
                 id = Integer.parseInt(request.getParameter("id"));
                 iProductService.delete(id);
+                response.sendRedirect("/");
+//                doGet(request,response);
                 break;
             case "deleteAll":
                 iProductService.deleteAll();
+                response.sendRedirect("/");
                 break;
             case "search":
-                name = request.getParameter("search");
-                request.setAttribute("products",iProductService.search(name));
+                search = request.getParameter("search");
+                request.setAttribute("products",iProductService.search(search));
                 request.getRequestDispatcher("index.jsp").forward(request,response);
                 break;
             case "edit":
@@ -44,6 +48,7 @@ public class ProductController extends HttpServlet {
                 manufacture = request.getParameter("manufacture");
                 product = new Product(id, name, price, description, manufacture);
                 iProductService.edit(product);
+                response.sendRedirect("/");
                 break;
             default:
                 id = Integer.parseInt(request.getParameter("id"));
@@ -53,9 +58,8 @@ public class ProductController extends HttpServlet {
                 manufacture = request.getParameter("manufacture");
                 product = new Product(id, name, price, description, manufacture);
                 iProductService.add(product);
+                response.sendRedirect("/");
         }
-        request.setAttribute("products", iProductService.getAll());
-        request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

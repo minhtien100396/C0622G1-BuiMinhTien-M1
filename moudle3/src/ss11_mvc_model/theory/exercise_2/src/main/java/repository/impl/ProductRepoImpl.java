@@ -12,6 +12,9 @@ public class ProductRepoImpl implements IProductRepo {
 
     public ProductRepoImpl() {
         products.add(new Product(1, "Nokia 222", 123, "des1", "nokia"));
+        products.add(new Product(22, "Nokia 222", 123, "des1", "nokia"));
+        products.add(new Product(33, "Nokia 222", 123, "des1", "nokia"));
+        products.add(new Product(11, "Nokia 222", 123, "des1", "nokia"));
         products.add(new Product(2, "Iphone 13", 456, "des2", "apple"));
         products.add(new Product(3, "LG 666", 666, "des3", "LG"));
         products.add(new Product(4, "Samsung E333", 777, "des5", "S amsung"));

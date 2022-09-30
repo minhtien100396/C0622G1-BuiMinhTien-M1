@@ -290,7 +290,7 @@
             line-height: 28px;
         }
 
-        .form button {
+        .form .button {
             width: 100px;
             background: orange;
             color: white;
@@ -344,7 +344,7 @@
                     <div class="col-sm-5 search1">
                         <form action="?actionCustomer=search" method="post" class="form">
                             <input name="search">
-                            <button>Search</button>
+                            <input type="submit" value="Search" class="button">
                         </form>
                     </div>
                     <div class="col-sm-4">

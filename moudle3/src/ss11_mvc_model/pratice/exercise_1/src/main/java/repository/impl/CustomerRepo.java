@@ -6,7 +6,7 @@ import repository.ICustomerRepo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CustomerRepoImpl implements ICustomerRepo {
+public class CustomerRepo implements ICustomerRepo {
     private static List<Customer> customers = new ArrayList<>();
 
     static {

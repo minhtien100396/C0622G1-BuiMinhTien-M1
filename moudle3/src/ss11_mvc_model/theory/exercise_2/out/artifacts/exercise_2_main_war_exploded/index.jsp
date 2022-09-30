@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Bootstrap CRUD Data Table for Database with Modal Form</title>
+    <title>Tạo ứng dụng quản lý sản phẩm</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -385,7 +385,7 @@
                                                                                data-toggle="tooltip"
                                                                                title="Edit">&#xE254;</i></a>
                             <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"
-                               data-id="${productObj.id}"><i class="material-icons"
+                               data-id="${productObj.   id}"><i class="material-icons"
                                                              data-toggle="tooltip"
                                                              title="Delete">&#xE872;</i></a>
                         </td>

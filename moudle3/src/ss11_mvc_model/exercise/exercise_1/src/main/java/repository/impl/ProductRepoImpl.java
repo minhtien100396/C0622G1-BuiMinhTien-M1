@@ -52,6 +52,7 @@ public class ProductRepoImpl implements IProductRepo {
             }
         }
         return searchResult;
+//        return products.stream().filter(f -> f.getName().contains(name)).collect(Collectors.toList());
     }
 
     @Override
