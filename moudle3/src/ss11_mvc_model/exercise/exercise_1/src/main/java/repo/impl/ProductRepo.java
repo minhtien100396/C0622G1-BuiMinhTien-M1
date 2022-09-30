@@ -1,12 +1,12 @@
-package repository.impl;
+package repo.impl;
 
-import bean.Product;
-import repository.IProductRepo;
+import model.Product;
+import repo.IProductRepo;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductRepoImpl implements IProductRepo {
+public class ProductRepo implements IProductRepo {
     private static List<Product> products = new ArrayList<>();
 
     static {

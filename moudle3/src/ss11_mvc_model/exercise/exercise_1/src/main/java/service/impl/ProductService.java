@@ -1,14 +1,14 @@
 package service.impl;
 
-import bean.Product;
-import repository.IProductRepo;
-import repository.impl.ProductRepoImpl;
+import model.Product;
+import repo.IProductRepo;
+import repo.impl.ProductRepo;
 import service.IProductService;
 
 import java.util.List;
 
-public class ProductServiceImpl implements IProductService {
-    IProductRepo iProductRepo = new ProductRepoImpl();
+public class ProductService implements IProductService {
+    IProductRepo iProductRepo = new ProductRepo();
     @Override
     public List<Product> getAll() {
         return iProductRepo.getAll();

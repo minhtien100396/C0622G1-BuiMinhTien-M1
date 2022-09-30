@@ -1,6 +1,6 @@
 package service;
 
-import bean.Product;
+import model.Product;
 
 import java.util.List;
 

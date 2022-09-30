@@ -1,6 +1,6 @@
-package repository;
+package repo;
 
-import bean.Product;
+import model.Product;
 
 import java.util.List;
 
