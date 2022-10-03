@@ -2,12 +2,20 @@ package service;
 
 import model.User;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public interface IUserService {
-    List<User> getAll();
-    void add(User user);
-    void edit (int id,User user);
-    void delete (int id);
-    User findById(int id);
+    void insertUser(User user) throws SQLException;
+
+    User selectUser(int id);
+
+    List<User> selectAllUsers();
+
+    boolean deleteUser(int id) throws SQLException;
+
+    boolean updateUser(User user) throws SQLException;
+
+    List<User> selectUser(String country);
+
 }

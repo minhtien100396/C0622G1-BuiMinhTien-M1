@@ -2,9 +2,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>Trang Chủ</title>
+    <title>$Title$</title>
   </head>
   <body>
-  <c:redirect url="/home"></c:redirect>
+  <c:redirect url="/users"></c:redirect>
   </body>
 </html>

@@ -11,9 +11,7 @@ repositories {
 }
 
 dependencies {
-    compile group: 'javax.servlet', name: 'jstl', version: '1.2'
-    providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version:'3.+'
-    compileJava.options.encoding = 'UTF-8'
-    tasks.withType(JavaCompile) {options.encoding = 'UTF-8'}
-    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.11'
+    compileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
+    implementation group: 'javax.servlet', name: 'jstl', version: '1.2'
+    implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.23'
 }

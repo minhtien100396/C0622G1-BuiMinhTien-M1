@@ -1,32 +1,59 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Add New User</title>
+    <title>User Management Application</title>
 </head>
 <body>
-<h1 style="text-align: center">User Management</h1>
-<h2 style="text-align: center"><a href="/user">List All User</a></h2>
-<h3 style="text-align: center">Edit User</h3>
-<form action="/user?actionUser=edit" method="post">
-    <div>
-        ID:
-        <input type="text" name="id" value="${user.id}" readonly>
-    </div>
-    <div>
-        User Name:
-        <input type="text" name="name" value="${user.name}">
-    </div>
-    <div>
-        User Email:
-        <input type="email" name="email" value="${user.email}">
-    </div>
-    <div>
-        Country:
-        <input type="text" name="country" value="${user.country}">
-    </div>
-    <input type="submit" value="Edit">
-</form>
-<h3>${mess}</h3>
+<center>
+    <h1>User Management</h1>
+    <h2>
+        <a href="/users">List All Users</a>
+    </h2>
+</center>
+<div align="center">
+    <form method="post">
+        <table border="1" cellpadding="5">
+            <caption>
+                <h2>
+                    Edit User
+                </h2>
+            </caption>
+            <c:if test="${user != null}">
+                    <input type="hidden" name="id" value="<c:out value='${user.id}' />"/>
+            </c:if>
+            <tr>
+                <th>User Name:</th>
+                <td>
+                    <input type="text" name="name" size="45"
+                           value="<c:out value='${user.name}' />"
+                    />
+                </td>
+            </tr>
+            <tr>
+                <th>User Email:</th>
+                <td>
+                    <input type="text" name="email" size="45"
+                           value="<c:out value='${user.email}' />"
+                    />
+                </td>
+            </tr>
+            <tr>
+                <th>Country:</th>
+                <td>
+                    <input type="text" name="country" size="15"
+                           value="<c:out value='${user.country}' />"
+                    />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Save"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
 </body>
 </html>
