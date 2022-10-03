@@ -37,6 +37,6 @@ public class UserService implements IUserService {
 
     @Override
     public  List<User> selectUser(String country) {
-        return userRepository.selectUser(country);
+        return userRepository.selectUser("%"+country+"%");
     }
 }

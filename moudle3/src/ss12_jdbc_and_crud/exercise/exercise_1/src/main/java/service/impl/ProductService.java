@@ -20,18 +20,18 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public void edit(Product product) {
-        iProductRepo.edit(product);
+    public boolean edit(Product product) {
+        return iProductRepo.edit(product);
     }
 
     @Override
-    public void delete(int id) {
-        iProductRepo.delete(id);
+    public boolean delete(int id) {
+        return iProductRepo.delete(id);
     }
 
     @Override
-    public List<Product> search(String name) {
-        return iProductRepo.search(name);
+    public List<Product> search(String data) {
+        return iProductRepo.search(data);
     }
 
     @Override

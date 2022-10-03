@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(name = "ProductController")
 public class ProductController extends HttpServlet {
@@ -37,7 +38,7 @@ public class ProductController extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("products", iProductService.getAll());
-        request.getRequestDispatcher("/view/customer/index.jsp").forward(request, response);
+        request.getRequestDispatcher("/view/product/index.jsp").forward(request, response);
     }
 
     private void add(HttpServletRequest request, HttpServletResponse response) {
@@ -70,11 +71,18 @@ public class ProductController extends HttpServlet {
         }
     }
 
-    private void search(HttpServletRequest request, HttpServletResponse response) {
+    private void search(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String search = request.getParameter("search");
-        request.setAttribute("products", iProductService.search(search));
+        List<Product> productList;
+        if (search.equals("")) {
+            response.sendRedirect("/");
+            return;
+        } else {
+            productList = iProductService.search(search);
+        }
+        request.setAttribute("products", productList);
         try {
-            request.getRequestDispatcher("/view/customer/index.jsp").forward(request, response);
+            request.getRequestDispatcher("/view/product/index.jsp").forward(request, response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {

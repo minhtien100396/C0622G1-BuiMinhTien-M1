@@ -7,8 +7,8 @@ import java.util.List;
 public interface IProductRepo {
     List<Product> getAll();
     void add(Product product);
-    void edit(Product product);
-    void delete (int id);
-    List<Product> search(String name);
+    boolean edit(Product product);
+    boolean delete (int id);
+    List<Product> search(String data);
     void deleteAll();
 }

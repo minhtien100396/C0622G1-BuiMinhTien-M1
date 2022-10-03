@@ -309,6 +309,8 @@
             background: darkorange;
         }
     </style>
+    <link rel="stylesheet" href="../../bootstrap520/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../../datatables/css/dataTables.bootstrap5.min.css"/>
     <script>
         $(document).ready(function () {
             // Activate tooltip
@@ -360,7 +362,7 @@
                     </div>
                 </div>
             </div>
-            <table class="table table-striped table-hover">
+            <table class="table table-striped table-hover" id="tableStudent" class="table table-striped table-bordered" style="width:100%">
                 <thead>
                 <tr>
                     <th>
@@ -408,18 +410,18 @@
 
                 </tbody>
             </table>
-            <div class="clearfix">
-                <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
-                <ul class="pagination">
-                    <li class="page-item disabled"><a href="#">Previous</a></li>
-                    <li class="page-item"><a href="#" class="page-link">1</a></li>
-                    <li class="page-item"><a href="#" class="page-link">2</a></li>
-                    <li class="page-item active"><a href="#" class="page-link">3</a></li>
-                    <li class="page-item"><a href="#" class="page-link">4</a></li>
-                    <li class="page-item"><a href="#" class="page-link">5</a></li>
-                    <li class="page-item"><a href="#" class="page-link">Next</a></li>
-                </ul>
-            </div>
+<%--            <div class="clearfix">--%>
+<%--                <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>--%>
+<%--                <ul class="pagination">--%>
+<%--                    <li class="page-item disabled"><a href="#">Previous</a></li>--%>
+<%--                    <li class="page-item"><a href="#" class="page-link">1</a></li>--%>
+<%--                    <li class="page-item"><a href="#" class="page-link">2</a></li>--%>
+<%--                    <li class="page-item active"><a href="#" class="page-link">3</a></li>--%>
+<%--                    <li class="page-item"><a href="#" class="page-link">4</a></li>--%>
+<%--                    <li class="page-item"><a href="#" class="page-link">5</a></li>--%>
+<%--                    <li class="page-item"><a href="#" class="page-link">Next</a></li>--%>
+<%--                </ul>--%>
+<%--            </div>--%>
         </div>
     </div>
 </div>
@@ -554,5 +556,17 @@
     $(".delete").click(function () {
         $("input[name='id']").val($(this).data('id'));
     })
+</script>
+<script src="../../jquery/jquery-3.5.1.min.js"></script>
+<script src="../../datatables/js/jquery.dataTables.min.js"></script>
+<script src="../../datatables/js/dataTables.bootstrap5.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#tableStudent').dataTable({
+            "dom": 'lrtip',
+            "lengthChange": false,
+            "pageLength": 5
+        });
+    });
 </script>
 </html>
