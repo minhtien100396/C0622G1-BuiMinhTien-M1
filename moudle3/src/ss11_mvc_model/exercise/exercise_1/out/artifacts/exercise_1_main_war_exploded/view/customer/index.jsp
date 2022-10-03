@@ -553,6 +553,7 @@
     });
     $(".delete").click(function () {
         $("input[name='id']").val($(this).data('id'));
-    })
+    });
+
 </script>
 </html>

@@ -7,7 +7,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c39568a7-bf0e-4880-82d1-9e0e49a9c37d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12_jdbc_and_crud/practice/exercise_2/src/main/java/config/FilterUTF8.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12_jdbc_and_crud/practice/exercise_2/src/main/java/controller/HomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12_jdbc_and_crud/practice/exercise_2/src/main/java/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12_jdbc_and_crud/practice/exercise_2/src/main/java/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12_jdbc_and_crud/practice/exercise_2/src/main/java/repo/IUserRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12_jdbc_and_crud/practice/exercise_2/src/main/java/repo/impl/BaseRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12_jdbc_and_crud/practice/exercise_2/src/main/java/repo/impl/UserRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12_jdbc_and_crud/practice/exercise_2/src/main/java/service/IUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12_jdbc_and_crud/practice/exercise_2/src/main/java/service/impl/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12_jdbc_and_crud/practice/exercise_2/src/main/webapp/view/home.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12_jdbc_and_crud/practice/exercise_2/src/main/webapp/view/user/add.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12_jdbc_and_crud/practice/exercise_2/src/main/webapp/view/user/delete.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12_jdbc_and_crud/practice/exercise_2/src/main/webapp/view/user/edit.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12_jdbc_and_crud/practice/exercise_2/src/main/webapp/view/user/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12_jdbc_and_crud/theory/product/src/main/java/controller/ProductServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12_jdbc_and_crud/theory/product/src/main/java/model/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12_jdbc_and_crud/theory/product/src/main/java/repository/IProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12_jdbc_and_crud/theory/product/src/main/java/repository/impl/ProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12_jdbc_and_crud/theory/product/src/main/java/service/IProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12_jdbc_and_crud/theory/product/src/main/java/service/impl/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12_jdbc_and_crud/theory/product/src/main/webapp/view/product/create.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12_jdbc_and_crud/theory/product/src/main/webapp/view/product/delete.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12_jdbc_and_crud/theory/product/src/main/webapp/view/product/edit.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12_jdbc_and_crud/theory/product/src/main/webapp/view/product/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12_jdbc_and_crud/theory/product/src/main/webapp/view/product/search.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12_jdbc_and_crud/theory/product/src/main/webapp/view/product/view.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -16,22 +41,14 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/bean/Product.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/controller/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/controller/ProductController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/repository/IProductRepo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/repository/impl/ProductRepoImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/service/IProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/service/IProductService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/service/impl/ProductServiceImpl.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/exercise_1_main_war_exploded/WEB-INF/classes/controller/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/exercise_1_main_war_exploded/WEB-INF/classes/controller/ProductController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/exercise_1_main_war_exploded/WEB-INF/classes/repository/impl/ProductRepoImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/exercise_1_main_war_exploded/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bean/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/exercise_1_main_war_exploded/view/customer/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/exercise_1_main_war_exploded/view/customer/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/IProductRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repo/IProductRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/impl/ProductRepoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repo/impl/ProductRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/IProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/IProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/impl/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/customer/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/customer/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/customer/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../theory/exercise_1/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../theory/exercise_1/.gradle/6.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../theory/exercise_1/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../theory/exercise_1/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../theory/exercise_1/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../theory/exercise_1/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,19 +90,19 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../bai_giang/moudle3/demo_jstl_c06" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\code_gym\code_gym\bai_tap_githup\moudle3\src\ss11_mvc_model\exercise\exercise_1\src\main\webapp" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\code_gym\code_gym\bai_tap_githup\moudle3\src\ss11_mvc_model\exercise\exercise_1\src\main\webapp\view\customer" />
       <recent name="D:\code_gym\code_gym\bai_tap_githup\moudle3\src\ss11_mvc_model\exercise\exercise_1\src\main\webapp\view" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\code_gym\code_gym\bai_tap_githup\moudle3\src\ss11_mvc_model\exercise\exercise_1\src\main\webapp" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.652">
@@ -193,7 +210,17 @@
       <workItem from="1664469187376" duration="3585000" />
       <workItem from="1664473645831" duration="188000" />
       <workItem from="1664502096090" duration="16000" />
-      <workItem from="1664520288531" duration="8723000" />
+      <workItem from="1664520288531" duration="8998000" />
+      <workItem from="1664542868505" duration="110000" />
+      <workItem from="1664588058379" duration="1935000" />
+      <workItem from="1664590341803" duration="3279000" />
+      <workItem from="1664693830475" duration="350000" />
+      <workItem from="1664699587291" duration="1583000" />
+      <workItem from="1664727148339" duration="762000" />
+      <workItem from="1664728882933" duration="1996000" />
+      <workItem from="1664765228548" duration="354000" />
+      <workItem from="1664765775942" duration="792000" />
+      <workItem from="1664778818932" duration="219000" />
     </task>
     <servers />
   </component>
@@ -213,58 +240,58 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="446" y="76" key="#com.intellij.ide.util.MemberChooser/0.0.1280.720@0.0.1280.720" timestamp="1664464897362" />
-    <state x="421" y="115" key="FileChooserDialogImpl" timestamp="1664526206884">
+    <state x="421" y="115" key="FileChooserDialogImpl" timestamp="1664778539399">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="421" y="115" key="FileChooserDialogImpl/0.0.1280.720@0.0.1280.720" timestamp="1664526206884" />
-    <state width="845" height="262" key="GridCell.Tab.0.bottom" timestamp="1664532922943">
+    <state x="421" y="115" key="FileChooserDialogImpl/0.0.1280.720@0.0.1280.720" timestamp="1664778539399" />
+    <state width="845" height="156" key="GridCell.Tab.0.bottom" timestamp="1664779040617">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="845" height="262" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1664532922943" />
-    <state width="845" height="262" key="GridCell.Tab.0.center" timestamp="1664532922943">
+    <state width="845" height="156" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1664779040617" />
+    <state width="845" height="156" key="GridCell.Tab.0.center" timestamp="1664779040617">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="845" height="262" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1664532922943" />
-    <state width="845" height="262" key="GridCell.Tab.0.left" timestamp="1664532922943">
+    <state width="845" height="156" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1664779040617" />
+    <state width="845" height="156" key="GridCell.Tab.0.left" timestamp="1664779040617">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="845" height="262" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1664532922943" />
-    <state width="845" height="262" key="GridCell.Tab.0.right" timestamp="1664532922943">
+    <state width="845" height="156" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1664779040617" />
+    <state width="845" height="156" key="GridCell.Tab.0.right" timestamp="1664779040617">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="845" height="262" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1664532922943" />
-    <state width="845" height="262" key="GridCell.Tab.1.bottom" timestamp="1664532922943">
+    <state width="845" height="156" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1664779040617" />
+    <state width="845" height="156" key="GridCell.Tab.1.bottom" timestamp="1664779040617">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="845" height="262" key="GridCell.Tab.1.bottom/0.0.1280.720@0.0.1280.720" timestamp="1664532922943" />
-    <state width="845" height="262" key="GridCell.Tab.1.center" timestamp="1664532922943">
+    <state width="845" height="156" key="GridCell.Tab.1.bottom/0.0.1280.720@0.0.1280.720" timestamp="1664779040617" />
+    <state width="845" height="156" key="GridCell.Tab.1.center" timestamp="1664779040617">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="845" height="262" key="GridCell.Tab.1.center/0.0.1280.720@0.0.1280.720" timestamp="1664532922943" />
-    <state width="845" height="262" key="GridCell.Tab.1.left" timestamp="1664532922943">
+    <state width="845" height="156" key="GridCell.Tab.1.center/0.0.1280.720@0.0.1280.720" timestamp="1664779040617" />
+    <state width="845" height="156" key="GridCell.Tab.1.left" timestamp="1664779040617">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="845" height="262" key="GridCell.Tab.1.left/0.0.1280.720@0.0.1280.720" timestamp="1664532922943" />
-    <state width="845" height="262" key="GridCell.Tab.1.right" timestamp="1664532922943">
+    <state width="845" height="156" key="GridCell.Tab.1.left/0.0.1280.720@0.0.1280.720" timestamp="1664779040617" />
+    <state width="845" height="156" key="GridCell.Tab.1.right" timestamp="1664779040617">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="845" height="262" key="GridCell.Tab.1.right/0.0.1280.720@0.0.1280.720" timestamp="1664532922943" />
-    <state width="845" height="262" key="GridCell.Tab.2.bottom" timestamp="1664532922943">
+    <state width="845" height="156" key="GridCell.Tab.1.right/0.0.1280.720@0.0.1280.720" timestamp="1664779040617" />
+    <state width="845" height="156" key="GridCell.Tab.2.bottom" timestamp="1664779040617">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="845" height="262" key="GridCell.Tab.2.bottom/0.0.1280.720@0.0.1280.720" timestamp="1664532922943" />
-    <state width="845" height="262" key="GridCell.Tab.2.center" timestamp="1664532922943">
+    <state width="845" height="156" key="GridCell.Tab.2.bottom/0.0.1280.720@0.0.1280.720" timestamp="1664779040617" />
+    <state width="845" height="156" key="GridCell.Tab.2.center" timestamp="1664779040617">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="845" height="262" key="GridCell.Tab.2.center/0.0.1280.720@0.0.1280.720" timestamp="1664532922943" />
-    <state width="845" height="262" key="GridCell.Tab.2.left" timestamp="1664532922943">
+    <state width="845" height="156" key="GridCell.Tab.2.center/0.0.1280.720@0.0.1280.720" timestamp="1664779040617" />
+    <state width="845" height="156" key="GridCell.Tab.2.left" timestamp="1664779040617">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="845" height="262" key="GridCell.Tab.2.left/0.0.1280.720@0.0.1280.720" timestamp="1664532922943" />
-    <state width="845" height="262" key="GridCell.Tab.2.right" timestamp="1664532922943">
+    <state width="845" height="156" key="GridCell.Tab.2.left/0.0.1280.720@0.0.1280.720" timestamp="1664779040617" />
+    <state width="845" height="156" key="GridCell.Tab.2.right" timestamp="1664779040617">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="845" height="262" key="GridCell.Tab.2.right/0.0.1280.720@0.0.1280.720" timestamp="1664532922943" />
+    <state width="845" height="156" key="GridCell.Tab.2.right/0.0.1280.720@0.0.1280.720" timestamp="1664779040617" />
     <state width="845" height="262" key="GridCell.Tab.3.bottom" timestamp="1664532572882">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
