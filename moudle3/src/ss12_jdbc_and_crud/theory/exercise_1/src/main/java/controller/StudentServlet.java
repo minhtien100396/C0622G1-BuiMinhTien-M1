@@ -56,6 +56,16 @@ public class StudentServlet extends HttpServlet {
             case "delete":
 
                 break;
+            case "transaction":
+                String msg = studentService.callTransaction();
+                request.setAttribute("msg",msg);
+                request.getRequestDispatcher("result_transaction.jsp").forward(request,response);
+                break;
+            case "search":
+                String search = request.getParameter("search");
+                request.setAttribute("studenListServlet",studentService.findByKeyWord(search));
+                request.getRequestDispatcher("/index.jsp").forward(request,response);
+                break;
             default:
                 request.setAttribute("studenListServlet", studentService.findAll());
                 request.getRequestDispatcher("index.jsp").forward(request, response);

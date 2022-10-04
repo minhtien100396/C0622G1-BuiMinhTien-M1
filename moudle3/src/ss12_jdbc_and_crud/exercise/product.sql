@@ -23,4 +23,6 @@ delete from product where id = 6;
 
 select * from product where `name` like "%n%";
 
-drop table product;
+set SQL_SAFE_UPDATES = 0 ;
+delete from product;
+set SQL_SAFE_UPDATES = 1 ;

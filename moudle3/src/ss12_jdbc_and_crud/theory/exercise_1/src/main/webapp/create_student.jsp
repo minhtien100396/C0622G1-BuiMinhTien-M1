@@ -5,7 +5,7 @@
 </head>
 <body>
 <form action="/student_servlet" method="post">
-    <input type="hidden" name="actionUser" value="create">
+        <input type="hidden" name="actionUser" value="create">
     <div>Name:</div>
     <div>
         <input type="text" name="nameStudent">

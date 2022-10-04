@@ -305,6 +305,7 @@
         .search1 {
             text-align: center;
         }
+
         .search1 button:hover {
             background: darkorange;
         }
@@ -355,14 +356,15 @@
                     <div class="col-md-4">
                         <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i
                                 class="material-icons">&#xE147;</i> <span>Add New Product</span></a>
-<%--                        <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal" ><i--%>
-<%--                                class="material-icons">&#xE15C;</i> <span>Delete</span></a>--%>
+                        <%--                        <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal" ><i--%>
+                        <%--                                class="material-icons">&#xE15C;</i> <span>Delete</span></a>--%>
                         <a href="#deleteAll" class="btn btn-danger" data-toggle="modal"><i
                                 class="material-icons">&#xE15C;</i> <span>Delete All</span></a>
                     </div>
                 </div>
             </div>
-            <table class="table table-striped table-hover" id="tableStudent" class="table table-striped table-bordered" style="width:100%">
+            <table class="table table-striped table-hover" id="tableStudent" class="table table-striped table-bordered"
+                   style="width:100%">
                 <thead>
                 <tr>
                     <th>
@@ -410,18 +412,18 @@
 
                 </tbody>
             </table>
-<%--            <div class="clearfix">--%>
-<%--                <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>--%>
-<%--                <ul class="pagination">--%>
-<%--                    <li class="page-item disabled"><a href="#">Previous</a></li>--%>
-<%--                    <li class="page-item"><a href="#" class="page-link">1</a></li>--%>
-<%--                    <li class="page-item"><a href="#" class="page-link">2</a></li>--%>
-<%--                    <li class="page-item active"><a href="#" class="page-link">3</a></li>--%>
-<%--                    <li class="page-item"><a href="#" class="page-link">4</a></li>--%>
-<%--                    <li class="page-item"><a href="#" class="page-link">5</a></li>--%>
-<%--                    <li class="page-item"><a href="#" class="page-link">Next</a></li>--%>
-<%--                </ul>--%>
-<%--            </div>--%>
+            <%--            <div class="clearfix">--%>
+            <%--                <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>--%>
+            <%--                <ul class="pagination">--%>
+            <%--                    <li class="page-item disabled"><a href="#">Previous</a></li>--%>
+            <%--                    <li class="page-item"><a href="#" class="page-link">1</a></li>--%>
+            <%--                    <li class="page-item"><a href="#" class="page-link">2</a></li>--%>
+            <%--                    <li class="page-item active"><a href="#" class="page-link">3</a></li>--%>
+            <%--                    <li class="page-item"><a href="#" class="page-link">4</a></li>--%>
+            <%--                    <li class="page-item"><a href="#" class="page-link">5</a></li>--%>
+            <%--                    <li class="page-item"><a href="#" class="page-link">Next</a></li>--%>
+            <%--                </ul>--%>
+            <%--            </div>--%>
         </div>
     </div>
 </div>
@@ -506,7 +508,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <form action="?actionProduct=delete" method="post">
-<%--                <input type="hidden" name="actionProduct" value="delete">--%>
+                <%--                <input type="hidden" name="actionProduct" value="delete">--%>
                 <input type="hidden" name="id">
                 <div class="modal-header">
                     <h4 class="modal-title">Delete Product</h4>
@@ -565,7 +567,7 @@
         $('#tableStudent').dataTable({
             "dom": 'lrtip',
             "lengthChange": false,
-            "pageLength": 5
+            "pageLength": 3
         });
     });
 </script>

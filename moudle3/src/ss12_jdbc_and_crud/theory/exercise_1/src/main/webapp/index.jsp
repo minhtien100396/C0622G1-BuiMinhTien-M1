@@ -7,6 +7,13 @@
 <body>
 <table border="1px" width="100%" style="text-align: center">
     <caption><h1>Bảng Danh Sách Sinh Viên</h1></caption>
+    <div>
+        <form action="/?actionUser=search">
+            <input type="hidden" name="actionUser" value="search">
+            <input type="search" name="search">
+            <input type="submit" value="Search">
+        </form>
+    </div>
     <tr>
         <th>No</th>
         <th>Id</th>
@@ -48,6 +55,6 @@
         </tr>
     </c:forEach>
 </table>
-<a href="/student_servlet?actionUser=create">Create new student</a>
+<a href="/?actionUser=create">Create new student</a>
 </body>
 </html>

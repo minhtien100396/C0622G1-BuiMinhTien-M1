@@ -8,4 +8,6 @@ public interface IStudentRepository {
     List<Student> findAll();
     Student findById(Integer id);
     void save(Student student);
+    String callTransaction();
+    List<Student> findByKeyWord(String key);
 }

@@ -25,4 +25,14 @@ public class StudentService implements IStudentService {
         studentRepository.save(student);
     }
 
+    @Override
+    public List<Student> findByKeyWord(String key) {
+        return studentRepository.findByKeyWord(key);
+    }
+
+    @Override
+    public String callTransaction() {
+        return studentRepository.callTransaction();
+    }
+
 }
