@@ -1,8 +1,8 @@
-package repo.impl;
+package repository.impl;
 
 import model.Product;
-import repo.BaseRepository;
-import repo.IProductRepo;
+import repository.BaseRepository;
+import repository.IProductRepository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductRepo implements IProductRepo {
+public class ProductRepository implements IProductRepository {
     private static final String SELECT_ALL_PRODUCTS = "select * from product";
     private static final String ADD_PRODUCT = "insert into product (name, price, description, manufacture) values ( ?,?,?,?)";
     private static final String UPDATE_PRODUCT = "update product\n" + "set `name`= ?, price = ?, `description` = ?, manufacture = ?\n" + "where id = ?";

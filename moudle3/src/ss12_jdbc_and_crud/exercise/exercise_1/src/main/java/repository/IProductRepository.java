@@ -1,10 +1,10 @@
-package repo;
+package repository;
 
 import model.Product;
 
 import java.util.List;
 
-public interface IProductRepo {
+public interface IProductRepository {
     List<Product> getAll();
     void add(Product product);
     boolean edit(Product product);

@@ -51,3 +51,17 @@ end;
 drop procedure edit_user_by_id;
 -- gọi store procedure
 call edit_user_by_id(16,"Tiến","minhtien@gmail.com","Việt Nam");
+
+-- Tạo store procedure xoá sản phẩm theo id
+delimiter //
+create procedure delete_user_by_id(p_id int)
+begin
+		delete 
+        from users
+		where id = p_id;
+end;
+// delimiter ;
+-- xóa store procedure
+drop procedure delete_user_by_id;
+-- gọi store procedure
+call delete_user_by_id(17);

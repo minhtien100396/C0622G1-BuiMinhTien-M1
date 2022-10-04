@@ -1,41 +1,41 @@
 package service.impl;
 
 import model.Product;
-import repo.IProductRepo;
-import repo.impl.ProductRepo;
+import repository.IProductRepository;
+import repository.impl.ProductRepository;
 import service.IProductService;
 
 import java.util.List;
 
 public class ProductService implements IProductService {
-    IProductRepo iProductRepo = new ProductRepo();
+    IProductRepository iProductRepository = new ProductRepository();
     @Override
     public List<Product> getAll() {
-        return iProductRepo.getAll();
+        return iProductRepository.getAll();
     }
 
     @Override
     public void add(Product product) {
-        iProductRepo.add(product);
+        iProductRepository.add(product);
     }
 
     @Override
     public boolean edit(Product product) {
-        return iProductRepo.edit(product);
+        return iProductRepository.edit(product);
     }
 
     @Override
     public boolean delete(int id) {
-        return iProductRepo.delete(id);
+        return iProductRepository.delete(id);
     }
 
     @Override
     public List<Product> search(String data) {
-        return iProductRepo.search(data);
+        return iProductRepository.search(data);
     }
 
     @Override
     public void deleteAll() {
-        iProductRepo.deleteAll();
+        iProductRepository.deleteAll();
     }
 }
