@@ -21,19 +21,34 @@
             <tr>
                 <th>User Name:</th>
                 <td>
-                    <input type="text" name="name" id="name" size="45"/>
+                    <input type="text" name="name" id="name" size="45" value='${user.name}'/>
+                    <p style="text-align: left;color: red">
+                        <c:if test="${messageNameError!=null}">
+                            ${messageNameError}
+                        </c:if>
+                    </p>
                 </td>
             </tr>
             <tr>
                 <th>User Email:</th>
                 <td>
-                    <input type="text" name="email" id="email" size="45"/>
+                    <input type="text" name="email" id="email" size="45" value='${user.email}'/>
+                    <p style="text-align: left;color: red">
+                        <c:if test="${messageEmailError!=null}">
+                            ${messageEmailError}
+                        </c:if>
+                    </p>
                 </td>
             </tr>
             <tr>
                 <th>Country:</th>
                 <td>
-                    <input type="text" name="country" id="country" size="15"/>
+                    <input type="text" name="country" id="country" size="15" value='${user.country}'/>
+                    <p style="text-align: left;color: red">
+                        <c:if test="${messageCountryError!=null}">
+                            ${messageCountryError}
+                        </c:if>
+                    </p>
                 </td>
             </tr>
             <tr>
@@ -44,5 +59,12 @@
         </table>
     </form>
 </div>
+<p style="text-align: center">
+    <span style="color:blue">
+        <c:if test="${messageSuccess!=null}">
+            ${messageSuccess}
+        </c:if>
+    </span>
+</p>
 </body>
 </html>

@@ -3,6 +3,7 @@ package controller;
 import model.User;
 import service.IUserService;
 import service.impl.UserService;
+import validation.Validate;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -114,26 +115,100 @@ public class UserController extends HttpServlet {
 
     private void insertUser(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
+        // Khai báo các biến cần regex
+        String emailError = null;
+        String nameError = null;
+        String countryError = null;
+        //Biến flag check xem có thuộc tính nào sai định dạng với Regex hay không?
+        boolean flag = false;
+
+
         String name = request.getParameter("name");
+
+        //Kiểm tra thuộc tính có đúng định dạng không nếu không đúng định dạng đổi flag =true, chuyển xuống if dưới
+        if (Validate.regexName(name)) {
+            nameError = "Tên không đúng định dạng (chỉ chứa 5-50 kí tự)";
+            flag = true;
+        }
+
+
         String email = request.getParameter("email");
+        if (Validate.regexEmail(email)) {
+            emailError = "Email không đúng định dạng (XXXXX@XX.XX)";
+            flag = true;
+        }
+
+
         String country = request.getParameter("country");
+        if (Validate.regexCountry(country)) {
+            countryError = "Quốc gia không đúng định dạng (chỉ chứa 5-50 kí tự)";
+            flag = true;
+        }
+
+
         User newUser = new User(name, email, country);
-        userService.insertUser(newUser);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/view/user/create.jsp");
-        dispatcher.forward(request, response);
+
+        // Nếu có thuộc tính không đúng định dạng thì rơi vào đây
+        if (flag) {
+            request.setAttribute("messageEmailError", emailError);
+            request.setAttribute("messageNameError", nameError);
+            request.setAttribute("messageCountryError", countryError);
+            request.setAttribute("user", newUser);
+            request.getRequestDispatcher("/view/user/create.jsp").forward(request, response);
+        } else {
+            userService.insertUser(newUser);
+            request.setAttribute("messageSuccess", "Bạn đã thêm mới thành công");
+            request.getRequestDispatcher("/view/user/create.jsp").forward(request, response);
+        }
     }
 
     private void updateUser(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
+
+        // Khai báo các biến cần regex
+        String emailError = null;
+        String nameError = null;
+        String countryError = null;
+        //Biến flag check xem có thuộc tính nào sai định dạng với Regex hay không?
+        boolean flag = false;
+
         int id = Integer.parseInt(request.getParameter("id"));
+
+
         String name = request.getParameter("name");
+        //Kiểm tra thuộc tính có đúng định dạng không nếu không đúng định dạng đổi flag =true, chuyển xuống if dưới
+        if (Validate.regexName(name)) {
+            nameError = "Tên không đúng định dạng (chỉ chứa 5-50 kí tự)";
+            flag = true;
+        }
+
         String email = request.getParameter("email");
+        if (Validate.regexEmail(email)) {
+            emailError = "Email không đúng định dạng (XXXXX@XX.XX)";
+            flag = true;
+        }
+
+
         String country = request.getParameter("country");
+        if (Validate.regexCountry(country)) {
+            countryError = "Quốc gia không đúng định dạng (chỉ chứa 5-50 kí tự)";
+            flag = true;
+        }
 
         User book = new User(id, name, email, country);
-        userService.updateUser(book);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/view/user/edit.jsp");
-        dispatcher.forward(request, response);
+
+        // Nếu có thuộc tính không đúng định dạng thì rơi vào đây
+        if (flag) {
+            request.setAttribute("messageEmailError", emailError);
+            request.setAttribute("messageNameError", nameError);
+            request.setAttribute("messageCountryError", countryError);
+            request.setAttribute("user", book);
+            request.getRequestDispatcher("/view/user/edit.jsp").forward(request, response);
+        } else {
+            userService.updateUser(book);
+            request.setAttribute("messageSuccess", "Bạn đã chỉnh sửa thành công");
+            request.getRequestDispatcher("/view/user/edit.jsp").forward(request, response);
+        }
     }
 
     private void deleteUser(HttpServletRequest request, HttpServletResponse response)

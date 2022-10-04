@@ -29,6 +29,11 @@
                     <input type="text" name="name" size="45"
                            value="<c:out value='${user.name}' />"
                     />
+                    <p style="text-align: left;color: red">
+                        <c:if test="${messageNameError!=null}">
+                            ${messageNameError}
+                        </c:if>
+                    </p>
                 </td>
             </tr>
             <tr>
@@ -37,6 +42,11 @@
                     <input type="text" name="email" size="45"
                            value="<c:out value='${user.email}' />"
                     />
+                    <p style="text-align: left;color: red">
+                        <c:if test="${messageEmailError!=null}">
+                            ${messageEmailError}
+                        </c:if>
+                    </p>
                 </td>
             </tr>
             <tr>
@@ -45,6 +55,11 @@
                     <input type="text" name="country" size="15"
                            value="<c:out value='${user.country}' />"
                     />
+                    <p style="text-align: left;color: red">
+                        <c:if test="${messageCountryError!=null}">
+                            ${messageCountryError}
+                        </c:if>
+                    </p>
                 </td>
             </tr>
             <tr>
@@ -55,5 +70,12 @@
         </table>
     </form>
 </div>
+<p style="text-align: center">
+    <span style="color:blue">
+        <c:if test="${messageSuccess!=null}">
+            ${messageSuccess}
+        </c:if>
+    </span>
+</p>
 </body>
 </html>
