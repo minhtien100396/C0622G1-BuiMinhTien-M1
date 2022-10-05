@@ -64,4 +64,4 @@ end;
 -- xóa store procedure
 drop procedure delete_user_by_id;
 -- gọi store procedure
-call delete_user_by_id(17);
+call delete_products_by_id(7);

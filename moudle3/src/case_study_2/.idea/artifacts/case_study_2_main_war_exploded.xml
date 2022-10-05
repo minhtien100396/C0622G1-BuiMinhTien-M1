@@ -6,6 +6,11 @@
         <element id="directory" name="classes">
           <element id="module-output" name="case_study_2.main" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Gradle: javax.servlet:jstl:1.2" />
+          <element id="library" level="project" name="Gradle: mysql:mysql-connector-java:8.0.23" />
+          <element id="library" level="project" name="Gradle: com.google.protobuf:protobuf-java:3.11.4" />
+        </element>
       </element>
       <element id="javaee-facet-resources" facet="case_study_2.main/web/Web Gradle : case_study_2-1.0-SNAPSHOT.war" />
     </root>
