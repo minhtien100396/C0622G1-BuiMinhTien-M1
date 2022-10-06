@@ -42,10 +42,10 @@ public class UserController extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String action = request.getParameter("action");
-        if (action == null) {
-            action = "";
-        }
+            String action = request.getParameter("action");
+            if (action == null) {
+                action = "";
+            }
 
         try {
             switch (action) {
@@ -116,7 +116,7 @@ public class UserController extends HttpServlet {
     private void insertUser(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
         // Khai báo các biến cần regex
-        String emailError = null;
+        String  emailError = null;
         String nameError = null;
         String countryError = null;
         //Biến flag check xem có thuộc tính nào sai định dạng với Regex hay không?

@@ -60,11 +60,11 @@
             </td>
             <c:if test="${!classMap.containsKey(studentObj.classId)}">
                 <td>
-                    Chua co lop 1
+                    Chua co lop
                 </td>
             </c:if>
 
-                    <td>
+            <td>
                     ${classMap.get(studentObj.classId)}
             </td>
         </tr>

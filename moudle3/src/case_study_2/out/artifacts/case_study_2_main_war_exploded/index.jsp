@@ -53,10 +53,10 @@
                                 Employee
                             </a>
                             <ul class="dropdown-menu bg-black">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="/employee">Employee Management</a></li>
+                                <li><a class="dropdown-item" href="/employee?action=create">Add New Employee</a></li>
                                 <li><hr class="dropdown-divider bg-light"></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li><a class="dropdown-item" href="#">Edit Employee Information</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -64,10 +64,10 @@
                                 Customer
                             </a>
                             <ul class="dropdown-menu bg-black">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="/customer">Customer Management</a></li>
+                                <li><a class="dropdown-item" href="#">Create New Customer</a></li>
                                 <li><hr class="dropdown-divider bg-light"></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li><a class="dropdown-item" href="#">Edit Customer Information</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown bg-black">
@@ -75,10 +75,10 @@
                                 Service
                             </a>
                             <ul class="dropdown-menu bg-black">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="/service">Service Management</a></li>
+                                <li><a class="dropdown-item" href="#">Create New Service</a></li>
                                 <li><hr class="dropdown-divider bg-light"></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li><a class="dropdown-item" href="#">Edit Service Information</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -86,10 +86,10 @@
                                 Contract
                             </a>
                             <ul class="dropdown-menu bg-black">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="/contract">Contract Management</a></li>
+                                <li><a class="dropdown-item" href="#">Create New Contract</a></li>
                                 <li><hr class="dropdown-divider bg-light"></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li><a class="dropdown-item" href="#">Edit Contract Information</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -99,10 +99,11 @@
                     </form>
                 </div>
             </div>
-        </nav>    </div>
+        </nav>
+    </div>
 </div>
 <div class="container-fluid">
-    <div class="container" style="height: 2170px">
+    <div class="container" style="height: 2320px">
         <div class="row" style="margin-top: 10px">
             <div class="col-lg-4">
                 <div class="row">
@@ -268,17 +269,16 @@
     </div>
 </div>
 <div class="container-fluid" style="margin-top: 10px">
-    <div class="container">
-        <div class="row mt-3">
+    <div class="container-fluid">
+        <div class="row" style="margin: 0px 0px">
             <div class="col-lg-12 bg-black" style="height: 60px; color: white; line-height: 60px; font-size: 14px">
-                <div class="container">
+                <div>
                     <span style="color: pink">* Some software, accessories, and devices sold separately.</span>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 <script src="../bootstrap/js/bootstrap.js"></script>
 <script src="../bootstrap/js/bootstrap.min.js"></script>
 <script src="../bootstrap/js/bootstrap.bundle.min.js"></script></body>

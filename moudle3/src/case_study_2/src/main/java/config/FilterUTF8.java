@@ -21,6 +21,4 @@ public class FilterUTF8 implements Filter {
     public void destroy() {
 
     }
-
-
 }
