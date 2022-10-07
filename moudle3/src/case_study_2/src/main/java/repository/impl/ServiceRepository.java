@@ -18,6 +18,10 @@ public class ServiceRepository implements IServiceRepository {
     private static final String DELETE_SERVICE_BY_ID = "delete from facility where id = ?;";
     private static final String SELECT_RENT_TYPE = "select * from rent_type;";
     private static final String SELECT_FACILITY_TYPE = "select * from facility_type;";
+    private static final String INSERT_SERVICE = "INSERT INTO facility (`name`, `area`, `cost`, `max_people`, `standard_room`, `description_other_convenience`, `pool_area`, `number_of_floors`, `facility_free`, `rent_type_id`, `facility_type_id`) \n" + "VALUES \n" + "(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+    private static final String UPDATE_SERVICE = "update facility set `name`=?,  area = ?, cost = ?, max_people = ?, rent_type_id = ?,facility_type_id = ?,standard_room =?,\n" +
+            "description_other_convenience = ?, pool_area= ?, number_of_floors = ?,facility_free = ? \n" +
+            "where id = ? ;";
 
     @Override
     public List<Service> selectAllService() {
@@ -48,15 +52,15 @@ public class ServiceRepository implements IServiceRepository {
     }
 
     @Override
-    public Service selectService(int id) {
+    public Service selectService(int idKey) {
         Service service = null;
         try {
             Connection connection = BaseRepository.getConnectDB();
             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_SERVICE_BY_ID);
-            preparedStatement.setInt(1, id);
+            preparedStatement.setInt(1, idKey);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-//                int id = resultSet.getInt("id");
+                int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
                 int area = resultSet.getInt("area");
                 double cost = resultSet.getDouble("cost");
@@ -150,6 +154,50 @@ public class ServiceRepository implements IServiceRepository {
             throwables.printStackTrace();
         }
         return facilityTypeMap;
+    }
+
+    @Override
+    public void insertService(Service service) throws SQLException {
+        Connection connection = BaseRepository.getConnectDB();
+        PreparedStatement preparedStatement = connection.prepareStatement(INSERT_SERVICE);
+        preparedStatement.setString(1, service.getName());
+        preparedStatement.setInt(2, service.getArea());
+        preparedStatement.setDouble(3, service.getCost());
+        preparedStatement.setInt(4, service.getMaxPeople());
+        preparedStatement.setInt(5, service.getRentTypeId());
+        preparedStatement.setInt(6, service.getFacilityTypeId());
+        preparedStatement.setString(7, service.getStandardRoom());
+        preparedStatement.setString(8, service.getDescriptionOtherConvenience());
+        preparedStatement.setDouble(9, service.getPoolArea());
+        preparedStatement.setInt(10, service.getNumberOfFloors());
+        preparedStatement.setString(11, service.getFacilityFree());
+        preparedStatement.executeUpdate();
+    }
+
+    @Override
+    public boolean updateService(Service service) {
+        boolean rowUpdated=false;
+        Connection connection = BaseRepository.getConnectDB();
+        PreparedStatement preparedStatement = null;
+        try {
+            preparedStatement = connection.prepareStatement(UPDATE_SERVICE);
+            preparedStatement.setString(1, service.getName());
+            preparedStatement.setInt(2, service.getArea());
+            preparedStatement.setDouble(3, service.getCost());
+            preparedStatement.setInt(4, service.getMaxPeople());
+            preparedStatement.setInt(5, service.getRentTypeId());
+            preparedStatement.setInt(6, service.getFacilityTypeId());
+            preparedStatement.setString(7, service.getStandardRoom());
+            preparedStatement.setString(8, service.getDescriptionOtherConvenience());
+            preparedStatement.setDouble(9, service.getPoolArea());
+            preparedStatement.setInt(10, service.getNumberOfFloors());
+            preparedStatement.setString(11, service.getFacilityFree());
+            preparedStatement.setInt(12, service.getId());
+            rowUpdated = preparedStatement.executeUpdate() > 0;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return rowUpdated;
     }
 }
 

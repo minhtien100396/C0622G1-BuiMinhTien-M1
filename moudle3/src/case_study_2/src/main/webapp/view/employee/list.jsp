@@ -412,7 +412,7 @@
                             <th>Position</th>
                             <th>Education Degree</th>
                             <th>Division</th>
-                            <th>Action</th>
+                            <th style="width: 150px">Action</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -452,38 +452,39 @@
                                 <td>${divisionMap.get(employee.divisionId)}</td>
 
                                 <td style="text-align: center">
-                                        <%--                                    <!-- Button trigger modal EDIT -->--%>
-                                        <%--                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"--%>
-                                        <%--                                            data-bs-target="#exampleModal1${user.id}">--%>
-                                        <%--                                        Chỉnh Sửa--%>
-                                        <%--                                    </button>--%>
 
-                                        <%--                                    <!-- Modal -->--%>
-                                        <%--                                    <div class="modal fade" id="exampleModal1${user.id}" tabindex="-1"--%>
-                                        <%--                                         aria-labelledby="exampleModalLabel" aria-hidden="true">--%>
-                                        <%--                                        <div class="modal-dialog">--%>
-                                        <%--                                            <div class="modal-content">--%>
-                                        <%--                                                <div class="modal-header">--%>
-                                        <%--                                                    <h5 class="modal-title" id="exampleModalLabel1" style="color: #000">Thay đổi thông tin</h5>--%>
-                                        <%--                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"--%>
-                                        <%--                                                            aria-label="Close"></button>--%>
-                                        <%--                                                </div>--%>
-                                        <%--                                                <div class="modal-body" style="color: #000">--%>
-                                        <%--                                                    Bạn có muốn thay đổi thông tin <strong class="text-danger">${employee.name}</strong> không ?--%>
-                                        <%--                                                </div>--%>
-                                        <%--                                                <div class="modal-footer">--%>
-                                        <%--                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close--%>
-                                        <%--                                                    </button>--%>
-                                        <%--                                                    <a href="/users?action=edit&id=${user.id}" class="btn btn-secondary">Thay Đổi</a>--%>
-                                        <%--                                                </div>--%>
-                                        <%--                                            </div>--%>
-                                        <%--                                        </div>--%>
-                                        <%--                                    </div>--%>
+                                    <!-- Button trigger modal EDIT -->
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal1${employee.id}">
+                                        Chỉnh Sửa
+                                    </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal1${employee.id}" tabindex="-1"
+                                         aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel1" style="color: #000">Thay đổi thông tin</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body" style="color: #000">
+                                                    Bạn có muốn thay đổi thông tin <strong class="text-danger">${employee.name}</strong> không ?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close
+                                                    </button>
+                                                    <a href="/employee?action=edit&id=${employee.id}" class="btn btn-secondary">Thay Đổi</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
 
                                     <!-- Button trigger modal DELETE -->
                                     <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                            data-bs-target="#exampleModal${employee.id}" style="margin-top: 10px">
+                                            data-bs-target="#exampleModal${employee.id}">
                                         Xoá
                                     </button>
 

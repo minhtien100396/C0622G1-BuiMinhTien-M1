@@ -377,10 +377,9 @@
                                 <div class="col-lg-6">
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <button class="btn btn-outline-success" type="submit"
-                                                    style="color: pink;border-color: pink; border-width: 3px; line-height: 45px">
-                                                <span>Add New Contract</span>
-                                            </button>
+                                            <a href="/customer?action=create"> <input class="btn btn-outline-success" type="submit" value="Add New Customer"
+                                                               style="color: pink;border-color: pink; border-width: 3px; line-height: 45px"></a>
+
                                         </div>
                                     </div>
                                 </div>
@@ -407,12 +406,12 @@
                         <tr>
                             <th>ID</th>
                             <th style="width: 200px">Name</th>
-                            <th>DateOfBirth</th>
+                            <th>Date Of Birth</th>
                             <th>Gender</th>
                             <th>Email</th>
-                            <th style="width: 300px">Address</th>
+                            <th style="width: 200px">Address</th>
                             <th>Customer Type Id</th>
-                            <th style="width: 100px">Action</th>
+                            <th style="width: 150px">Action</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -438,40 +437,40 @@
 
                                 <td>${customerTypeMap.get(customer.customerTypeId)}</td>
                                 <td style="text-align: center">
-                                        <%--                                    <!-- Button trigger modal EDIT -->--%>
-                                        <%--                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"--%>
-                                        <%--                                            data-bs-target="#exampleModal1${user.id}">--%>
-                                        <%--                                        Chỉnh Sửa--%>
-                                        <%--                                    </button>--%>
+                                    <!-- Button trigger modal EDIT -->
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal1${customer.id}">
+                                        Chỉnh Sửa
+                                    </button>
 
-                                        <%--                                    <!-- Modal -->--%>
-                                        <%--                                    <div class="modal fade" id="exampleModal1${user.id}" tabindex="-1"--%>
-                                        <%--                                         aria-labelledby="exampleModalLabel" aria-hidden="true">--%>
-                                        <%--                                        <div class="modal-dialog">--%>
-                                        <%--                                            <div class="modal-content">--%>
-                                        <%--                                                <div class="modal-header">--%>
-                                        <%--                                                    <h5 class="modal-title" id="exampleModalLabel1" style="color: #000">Thay đổi thông tin</h5>--%>
-                                        <%--                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"--%>
-                                        <%--                                                            aria-label="Close"></button>--%>
-                                        <%--                                                </div>--%>
-                                        <%--                                                <div class="modal-body" style="color: #000">--%>
-                                        <%--                                                    Bạn có muốn thay đổi thông tin <strong class="text-danger">${employee.name}</strong> không ?--%>
-                                        <%--                                                </div>--%>
-                                        <%--                                                <div class="modal-footer">--%>
-                                        <%--                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close--%>
-                                        <%--                                                    </button>--%>
-                                        <%--                                                    <a href="/users?action=edit&id=${user.id}" class="btn btn-secondary">Thay Đổi</a>--%>
-                                        <%--                                                </div>--%>
-                                        <%--                                            </div>--%>
-                                        <%--                                        </div>--%>
-                                        <%--                                    </div>--%>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal1${customer.id}" tabindex="-1"
+                                         aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel1" style="color: #000">Thay đổi thông tin</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body" style="color: #000">
+                                                    Bạn có muốn thay đổi thông tin <strong class="text-danger">${customer.name}</strong> không ?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close
+                                                    </button>
+                                                    <a href="/customer?action=edit&id=${customer.id}" class="btn btn-secondary">Thay Đổi</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
 
 
 
                                     <!-- Button trigger modal DELETE -->
                                     <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                            data-bs-target="#exampleModal${customer.id}" style="margin-top: 10px">
+                                            data-bs-target="#exampleModal${customer.id}">
                                         Xoá
                                     </button>
 

@@ -1,7 +1,6 @@
 package service.impl;
 
 import model.Employee;
-import model.Position;
 import repository.IEmployeeRepository;
 import repository.impl.EmployeeRepository;
 import service.IEmployeeService;
@@ -18,8 +17,8 @@ public class EmployeeService implements IEmployeeService {
     }
 
     @Override
-    public Employee selectEmployee(int id) {
-        return employeeRepository.selectEmployee(id);
+    public Employee selectEmployee(int idKey) {
+        return employeeRepository.selectEmployee(idKey);
     }
 
     @Override
@@ -45,5 +44,15 @@ public class EmployeeService implements IEmployeeService {
     @Override
     public Map<Integer, String> selectAllDivision() {
         return employeeRepository.selectAllDivision();
+    }
+
+    @Override
+    public void insertEmployee(Employee employee) throws SQLException {
+        employeeRepository.insertEmployee(employee);
+    }
+
+    @Override
+    public boolean updateEmployee(Employee employee) throws SQLException {
+        return employeeRepository.updateEmployee(employee);
     }
 }

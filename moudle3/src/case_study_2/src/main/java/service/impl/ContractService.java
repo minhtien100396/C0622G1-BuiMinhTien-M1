@@ -16,13 +16,23 @@ public class ContractService implements IContractService {
     }
 
     @Override
-    public Contract selectContract(int id) {
-        return contractRepository.selectContract(id);
+    public Contract selectContract(int idKey) {
+        return contractRepository.selectContract(idKey);
     }
 
     @Override
     public boolean deleteContract(int id) throws SQLException {
         return contractRepository.deleteContract(id);
+    }
+
+    @Override
+    public void insertContract(Contract contract) throws SQLException {
+        contractRepository.insertContract(contract);
+    }
+
+    @Override
+    public boolean updateContract(Contract contract) throws SQLException {
+        return contractRepository.updateContract(contract);
     }
 
 //    @Override

@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.Date;
 import java.sql.SQLException;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -22,7 +23,75 @@ public class ServiceServlet extends HttpServlet {
     IServiceService serviceService = new ServiceSevice();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String action = request.getParameter("action");
+        if (action == null) {
+            action = "";
+        }
+        switch (action) {
+            case "create":
+                insertNewService(request, response);
+                break;
+            case "edit":
+                updateService(request, response);
+                break;
+        }
+    }
 
+    private void updateService(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("id"));
+        String name = request.getParameter("name");
+        int area = Integer.parseInt(request.getParameter("area"));
+        double cost = Double.parseDouble(request.getParameter("cost"));
+        int maxPeople = Integer.parseInt(request.getParameter("maxPeople"));
+        int rentTypeId = Integer.parseInt(request.getParameter("rentTypeId"));
+        int facilityTypeId = Integer.parseInt(request.getParameter("facilityTypeId"));
+        String standardRoom = request.getParameter("standardRoom");
+        String descriptionOtherConvenience = request.getParameter("descriptionOtherConvenience");
+        double poolArea = Double.parseDouble(request.getParameter("poolArea"));
+        int numberOfFloors = Integer.parseInt(request.getParameter("numberOfFloors"));
+        String facilityFree = request.getParameter("facilityFree");
+        Service service = new Service(id,name, area, cost, maxPeople, rentTypeId, facilityTypeId, standardRoom, descriptionOtherConvenience, poolArea, numberOfFloors, facilityFree);
+        try {
+            serviceService.updateService(service);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        request.setAttribute("mess", "Successfully Edit");
+        try {
+            request.getRequestDispatcher("/view/service/edit.jsp").forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void insertNewService(HttpServletRequest request, HttpServletResponse response) {
+        String name = request.getParameter("name");
+        int area = Integer.parseInt(request.getParameter("area"));
+        double cost = Double.parseDouble(request.getParameter("cost"));
+        int maxPeople = Integer.parseInt(request.getParameter("maxPeople"));
+        int rentTypeId = Integer.parseInt(request.getParameter("rentTypeId"));
+        int facilityTypeId = Integer.parseInt(request.getParameter("facilityTypeId"));
+        String standardRoom = request.getParameter("standardRoom");
+        String descriptionOtherConvenience = request.getParameter("descriptionOtherConvenience");
+        double poolArea = Double.parseDouble(request.getParameter("poolArea"));
+        int numberOfFloors = Integer.parseInt(request.getParameter("numberOfFloors"));
+        String facilityFree = request.getParameter("facilityFree");
+        Service service = new Service(name, area, cost, maxPeople, rentTypeId, facilityTypeId, standardRoom, descriptionOtherConvenience, poolArea, numberOfFloors, facilityFree);
+        try {
+            serviceService.insertService(service);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        request.setAttribute("mess", "Successfully added new");
+        try {
+            request.getRequestDispatcher("/view/service/create.jsp").forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -33,8 +102,10 @@ public class ServiceServlet extends HttpServlet {
 
         switch (action) {
             case "create":
+                addNewService(request, response);
                 break;
             case "edit":
+                showEditForm(request, response);
                 break;
             case "delete":
                 deleteService(request, response);
@@ -45,6 +116,29 @@ public class ServiceServlet extends HttpServlet {
             default:
                 listService(request, response);
                 break;
+        }
+    }
+
+    private void showEditForm(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("id"));
+        Service service = serviceService.selectService(id);
+        try {
+            request.getRequestDispatcher("/view/service/edit.jsp").forward(request,response);
+            request.setAttribute("service",service);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void addNewService(HttpServletRequest request, HttpServletResponse response) {
+        try {
+            request.getRequestDispatcher("/view/service/create.jsp").forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -79,8 +173,8 @@ public class ServiceServlet extends HttpServlet {
 
     private void listService(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Service> serviceList = serviceService.selectAllService();
-        Map<Integer,String> rentTypeMap = serviceService.selectAllRentType();
-        Map<Integer,String> facilityTypeMap = serviceService.selectAllFacilityType();
+        Map<Integer, String> rentTypeMap = serviceService.selectAllRentType();
+        Map<Integer, String> facilityTypeMap = serviceService.selectAllFacilityType();
         request.setAttribute("serviceList", serviceList);
         request.setAttribute("rentTypeMap", rentTypeMap);
         request.setAttribute("facilityTypeMap", facilityTypeMap);

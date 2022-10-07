@@ -54,9 +54,8 @@
                             </a>
                             <ul class="dropdown-menu bg-black">
                                 <li><a class="dropdown-item" href="/employee">Employee Management</a></li>
-                                <li><a class="dropdown-item" href="/employee?action=create">Add New Employee</a></li>
                                 <li><hr class="dropdown-divider bg-light"></li>
-                                <li><a class="dropdown-item" href="#">Edit Employee Information</a></li>
+                                <li><a class="dropdown-item" href="/employee?action=create">Add New Employee</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -65,9 +64,8 @@
                             </a>
                             <ul class="dropdown-menu bg-black">
                                 <li><a class="dropdown-item" href="/customer">Customer Management</a></li>
-                                <li><a class="dropdown-item" href="#">Create New Customer</a></li>
                                 <li><hr class="dropdown-divider bg-light"></li>
-                                <li><a class="dropdown-item" href="#">Edit Customer Information</a></li>
+                                <li><a class="dropdown-item" href="/customer?action=create">Create New Customer</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown bg-black">
@@ -76,9 +74,8 @@
                             </a>
                             <ul class="dropdown-menu bg-black">
                                 <li><a class="dropdown-item" href="/service">Service Management</a></li>
-                                <li><a class="dropdown-item" href="#">Create New Service</a></li>
                                 <li><hr class="dropdown-divider bg-light"></li>
-                                <li><a class="dropdown-item" href="#">Edit Service Information</a></li>
+                                <li><a class="dropdown-item" href="/service?action=create">Create New Service</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -87,9 +84,8 @@
                             </a>
                             <ul class="dropdown-menu bg-black">
                                 <li><a class="dropdown-item" href="/contract">Contract Management</a></li>
-                                <li><a class="dropdown-item" href="#">Create New Contract</a></li>
                                 <li><hr class="dropdown-divider bg-light"></li>
-                                <li><a class="dropdown-item" href="#">Edit Contract Information</a></li>
+                                <li><a class="dropdown-item" href="/contract?action=create">Create New Contract</a></li>
                             </ul>
                         </li>
                     </ul>

@@ -120,10 +120,12 @@ CREATE TABLE facility (
     facility_free TEXT,
     FOREIGN KEY (rent_type_id)
         REFERENCES rent_type (id)
-        ON DELETE CASCADE,
+        ON DELETE CASCADE
+        ON UPDATE CASCADE,
     FOREIGN KEY (facility_type_id)
         REFERENCES facility_type (id)
         ON DELETE CASCADE
+        ON UPDATE CASCADE
 );
 
 -- Hợp đồng (deposit : tiền cọc)
@@ -328,4 +330,19 @@ VALUES
 (7,2,1,2),
 (8,2,12,2);
 
-	 
+select * from facility;
+select * from employee;
+-- set SQL_SAFE_UPDATES = 0 ;
+-- set FOREIGN_KEY_CHECKS=0;
+update facility set `name`="33",  area = 32, cost = 12, max_people=12, rent_type_id=2,facility_type_id=2,standard_room="1232",
+description_other_convenience = "2132", pool_area= 123, number_of_floors=12,facility_free="123" 
+where id =1;
+
+
+	update  employee set  `name` = 'Tiến', `date_of_birth` = '1970-11-07', `id_card` = '456231786', 
+	`salary` = 232, `phone_number` ="32323", `email` = "232@gmail.com", `address`= "321321", `position_id`= 1, 
+	`education_degree_id`= 2, `division_id`= 2
+	where id =1;	
+    
+    update customer set customer_type_id = 1, name="22", date_of_birth= "1970-11-07" , gender = 0, 
+    id_card ="2", phone_number ="22", email = "222", 

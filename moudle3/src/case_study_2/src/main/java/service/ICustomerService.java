@@ -9,8 +9,10 @@ import java.util.Map;
 
 public interface ICustomerService {
     List<Customer> selectAllCustomer();
-    Customer selectCustomer(int id);
+    Customer selectCustomer(int idKey);
     List<Customer> selectCustomer(String keyName);
     boolean deleteCustomer(int id) throws SQLException;
     Map<Integer,String> selectAllCustomerType();
+    void insertCustomer(Customer customer) throws SQLException;
+    boolean updateCustomer(Customer customer) throws SQLException;
 }

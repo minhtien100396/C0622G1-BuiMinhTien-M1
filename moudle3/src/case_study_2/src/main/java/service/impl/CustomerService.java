@@ -17,8 +17,8 @@ public class CustomerService implements ICustomerService {
     }
 
     @Override
-    public Customer selectCustomer(int id) {
-        return customerRepository.selectCustomer(id);
+    public Customer selectCustomer(int idKey) {
+        return customerRepository.selectCustomer(idKey);
     }
 
     @Override
@@ -34,5 +34,15 @@ public class CustomerService implements ICustomerService {
     @Override
     public Map<Integer, String> selectAllCustomerType() {
         return customerRepository.selectAllCustomerType();
+    }
+
+    @Override
+    public void insertCustomer(Customer customer) throws SQLException {
+        customerRepository.insertCustomer(customer);
+    }
+
+    @Override
+    public boolean updateCustomer(Customer customer) throws SQLException {
+        return customerRepository.updateCustomer(customer);
     }
 }

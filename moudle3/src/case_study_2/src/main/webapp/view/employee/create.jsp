@@ -45,29 +45,46 @@
 </div>
 <div style="margin: 20px 500px">
     <form action="/employee?action=create" method="post">
-        <%--    <pre>ID:       <input type="text" name="id"/></pre>--%>
-        <pre>Name:     <input type="text" name="name"> </pre>
-        <pre>Gender :  <input type="radio" name="gender" value="true">Nam <input type="radio" value="false" name="gender"> Nữ </pre>
-        <pre>Birthday: <input type="date" name="birthday"> </pre>
-        <pre>Point:    <input type="number" name="point"> </pre>
-        <c:if test="${map.get('point')!=null}">
-            <span>${map.get('point')}</span>
-        </c:if>
-        <%--    <pre>Account:  <input type="text" name="account"> </pre>--%>
-        <pre>Email:    <input type="text" name="email"> </pre>
-        <c:if test="${map.get('email')!=null}">
-            <span>${map.get('email')}</span>
-        </c:if>
-        <pre>ClassId:  <select name="classId">
-                   <option value="">Chọn lớp</option>
-                   <c:forEach var="cls" items="${classList}">
-                       <option value="${cls.id}">${cls.name}</option>
-                   </c:forEach>
-                    </select></pre>
-        <pre>           <button>Save</button></pre>
+        <pre>Name:              <input type="text" name="name"> </pre>
+<%--        <pre>Gender :  <input type="radio" name="gender" value="true">Nam --%>
+<%--            <input type="radio" value="false" name="gender"> Nữ --%>
+<%--        </pre>--%>
+        <pre>Birthday:          <input type="date" name="dateOfBirth"> </pre>
+        <pre>IdCard:            <input type="text" name="idCard"> </pre>
+        <pre>Salary:            <input type="text" name="salary"> </pre>
+        <pre>PhoneNumber:       <input type="text" name="phoneNumber"> </pre>
+        <pre>Email:             <input type="text" name="email"> </pre>
+        <pre>Address:           <input type="text" name="address"> </pre>
+        <pre>Position:          <select name="position">
+                   <option value="">Chọn Vị Trí</option>
+                   <option value="1">Lễ Tân</option>
+                   <option value="2">Phục Vụ</option>
+                   <option value="3">Chuyên viên</option>
+                   <option value="4">Giám sát</option>
+                   <option value="5">Quản lý</option>
+                   <option value="6">Giám đốc</option>
+            </select>
+        </pre>
+        <pre>Education Degree:  <select name="educationDegree">
+                   <option value="">Chọn Trình Độ Học Vấn</option>
+                   <option value="1">Trung Cấp</option>
+                   <option value="2">Cao Đẳng</option>
+                   <option value="3">Đại Học</option>
+                   <option value="4">Sau Đại Học</option>
+            </select>
+        </pre>
+        <pre>Division:          <select name="division">
+                   <option value="">Chọn Bộ Phận</option>
+                   <option value="1">Sale-Marketing</option>
+                   <option value="2">Hành chính</option>
+                   <option value="3">Phục vụ</option>
+                   <option value="4">Quản lý</option>
+            </select>
+        </pre>
+        <pre>                    <input type="submit" value="Add"></pre>
     </form>
 </div>
-
+<pre>                                                                               ${mess}</pre>
 <script src="../../bootstrap/js/bootstrap.js"></script>
 <script src="../../bootstrap/js/bootstrap.min.js"></script>
 <script src="../../bootstrap/js/bootstrap.bundle.min.js"></script>

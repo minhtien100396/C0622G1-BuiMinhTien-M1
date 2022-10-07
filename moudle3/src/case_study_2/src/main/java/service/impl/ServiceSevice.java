@@ -1,5 +1,6 @@
 package service.impl;
 
+import model.Contract;
 import model.Service;
 import repository.IServiceRepository;
 import repository.impl.ServiceRepository;
@@ -17,8 +18,8 @@ public class ServiceSevice implements IServiceService {
     }
 
     @Override
-    public Service selectService(int id) {
-        return serviceRepository.selectService(id);
+    public Service selectService(int idKey) {
+        return serviceRepository.selectService(idKey);
     }
 
     @Override
@@ -40,4 +41,15 @@ public class ServiceSevice implements IServiceService {
     public Map<Integer, String> selectAllFacilityType() {
         return serviceRepository.selectAllFacilityType();
     }
+
+    @Override
+    public void insertService(Service service) throws SQLException {
+        serviceRepository.insertService(service);
+    }
+
+    @Override
+    public boolean updateService(Service service) throws SQLException {
+        return serviceRepository.updateService(service);
+    }
+
 }

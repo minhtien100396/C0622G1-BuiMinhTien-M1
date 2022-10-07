@@ -14,6 +14,15 @@ public class Contract {
     public Contract() {
     }
 
+    public Contract(Date startDate, Date endDate, double deposit, int employeeId, int customerId, int facilityId) {
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.deposit = deposit;
+        this.employeeId = employeeId;
+        this.customerId = customerId;
+        this.facilityId = facilityId;
+    }
+
     public Contract(int id, Date startDate, Date endDate, double deposit, int employeeId, int customerId, int facilityId) {
         this.id = id;
         this.startDate = startDate;
