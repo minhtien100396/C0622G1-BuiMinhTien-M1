@@ -16,7 +16,7 @@ import java.util.List;
 
 @WebServlet(name = "ContractServlet", urlPatterns = "/contract")
 public class ContractServlet extends HttpServlet {
-    IContractService contractService = new ContractService();
+    private IContractService contractService = new ContractService();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
@@ -41,7 +41,7 @@ public class ContractServlet extends HttpServlet {
         int employeeId = Integer.parseInt(request.getParameter("employeeId"));
         int customerId = Integer.parseInt(request.getParameter("customerId"));
         int facilityId = Integer.parseInt(request.getParameter("facilityId"));
-        Contract contract = new Contract(id,startDate, endDate, deposit, employeeId, customerId, facilityId);
+        Contract contract = new Contract(id, startDate, endDate, deposit, employeeId, customerId, facilityId);
         try {
             contractService.updateContract(contract);
         } catch (SQLException throwables) {

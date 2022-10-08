@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -43,28 +44,56 @@
         </div>
     </div>
 </div>
-<div style="margin: 20px 500px">
+<div style="margin: 20px 530px;width: 100%" >
     <form action="/customer?action=create" method="post">
-        <pre>Name:              <input type="text" name="name"> </pre>
-        <pre>Gender :           <input type="radio" name="gender" value="1">Nam      <input type="radio" value="0" name="gender"> Nữ</pre>
-        <pre>Birthday:          <input type="date" name="dateOfBirth"> </pre>
-        <pre>IdCard:            <input type="text" name="idCard"> </pre>
-        <pre>PhoneNumber:       <input type="text" name="phoneNumber"> </pre>
-        <pre>Email:             <input type="text" name="email"> </pre>
-        <pre>Address:           <input type="text" name="address"> </pre>
-        <pre>Customer Type:     <select name="customerType">
-                   <option value="">Chọn Loại Khách</option>
-                   <option value="1">Diamond</option>
-                   <option value="2">Platinium</option>
-                   <option value="3">Gold</option>
-                   <option value="4">Silver</option>
-                   <option value="5">Member</option>
-            </select>
-        </pre>
+        <pre>Name:              <input type="text" name="name" value="${customer.name}"> </pre>
+        <c:if test="${map.get('name')!=null}">
+            <pre>               <span style="color:red;">${map.get('name')}</span></pre>
+        </c:if>
+<%--        <pre>Gender :           <input type="radio" name="gender" value="1">Nam      <input type="radio" value="0" name="gender"> Nữ</pre>--%>
+        <pre>Gender:            <select name="gender" >
+                   <option value=100>-Select-</option>
+                   <option value=1>Male</option>
+                   <option value=2>Female</option>
+            </select></pre>
+        <c:if test="${map.get('gender') != null}">
+            <pre>               <span style="color:red;">${map.get("gender")}</span></pre>
+        </c:if>
+        <pre>Birthday:          <input type="date" name="dateOfBirth" required> </pre>
+        <c:if test="${map.get('dateOfBirth')!=null}">
+            <pre>               <span style="color:red;">${map.get('dateOfBirth')}</span></pre>
+        </c:if>
+        <pre>IdCard:            <input type="text" name="idCard" value="${customer.idCard}"> </pre>
+        <c:if test="${map.get('idCard')!=null}">
+            <pre>               <span style="color:red;">${map.get('idCard')}</span></pre>
+        </c:if>
+        <pre>PhoneNumber:       <input type="text" name="phoneNumber" value="${customer.phoneNumber}"> </pre>
+        <c:if test="${map.get('phoneNumber')!=null}">
+            <pre>               <span style="color:red;">${map.get('phoneNumber')}</span></pre>
+        </c:if>
+        <pre>Email:             <input type="text" name="email" value="${customer.email}"> </pre>
+        <c:if test="${map.get('email')!=null}">
+            <pre>               <span style="color:red;">${map.get('email')}</span></pre>
+        </c:if>
+        <pre>Address:           <input type="text" name="address" value="${customer.address}"> </pre>
+        <c:if test="${map.get('address')!=null}">
+            <pre>               <span style="color:red;">${map.get('address')}</span></pre>
+        </c:if>
+        <pre>Customer Type:     <select name="customerTypeId" >
+                   <option value=100>-Select-</option>
+                   <option value=1>Diamond</option>
+                   <option value=2>Platinium</option>
+                   <option value=3>Gold</option>
+                   <option value=4>Silver</option>
+                   <option value=5>Member</option>
+            </select></pre>
+        <c:if test="${map.get('customerTypeId') != null}">
+            <pre>               <span style="color:red;">${map.get("customerTypeId")}</span></pre>
+        </c:if>
         <pre>                    <input type="submit" value="Add"></pre>
     </form>
 </div>
-<pre>                                                                               ${mess}</pre>
+<pre style="text-align: center"> ${mess}</pre>
 <script src="../../bootstrap/js/bootstrap.js"></script>
 <script src="../../bootstrap/js/bootstrap.min.js"></script>
 <script src="../../bootstrap/js/bootstrap.bundle.min.js"></script>

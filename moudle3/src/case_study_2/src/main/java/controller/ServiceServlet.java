@@ -20,7 +20,7 @@ import java.util.Map;
 
 @WebServlet(name = "ServiceServlet", urlPatterns = "/service")
 public class ServiceServlet extends HttpServlet {
-    IServiceService serviceService = new ServiceSevice();
+    private IServiceService serviceService = new ServiceSevice();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
@@ -50,7 +50,7 @@ public class ServiceServlet extends HttpServlet {
         double poolArea = Double.parseDouble(request.getParameter("poolArea"));
         int numberOfFloors = Integer.parseInt(request.getParameter("numberOfFloors"));
         String facilityFree = request.getParameter("facilityFree");
-        Service service = new Service(id,name, area, cost, maxPeople, rentTypeId, facilityTypeId, standardRoom, descriptionOtherConvenience, poolArea, numberOfFloors, facilityFree);
+        Service service = new Service(id, name, area, cost, maxPeople, rentTypeId, facilityTypeId, standardRoom, descriptionOtherConvenience, poolArea, numberOfFloors, facilityFree);
         try {
             serviceService.updateService(service);
         } catch (SQLException throwables) {
@@ -123,8 +123,8 @@ public class ServiceServlet extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         Service service = serviceService.selectService(id);
         try {
-            request.getRequestDispatcher("/view/service/edit.jsp").forward(request,response);
-            request.setAttribute("service",service);
+            request.setAttribute("service", service);
+            request.getRequestDispatcher("/view/service/edit.jsp").forward(request, response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {

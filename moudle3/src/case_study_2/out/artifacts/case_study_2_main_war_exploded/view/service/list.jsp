@@ -402,7 +402,7 @@
                            class="table table-striped table-bordered" style="width:100%">
                         <thead>
                         <tr>
-                            <th>ID</th>
+                            <th>No</th>
                             <th style="width: 200px">Name</th>
                             <th>Area</th>
                             <th>Cost</th>
@@ -415,9 +415,9 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <c:forEach var="service" items="${serviceList}">
+                        <c:forEach var="service" items="${serviceList}" varStatus="loop">
                             <tr>
-                                <td>${service.id}</td>
+                                <td>${loop.count}</td>
                                 <td>${service.name}</td>
                                 <td>${service.area}</td>
                                 <td>${service.cost}</td>
@@ -440,7 +440,7 @@
                                                                             <!-- Button trigger modal EDIT -->
                                                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                                                                     data-bs-target="#exampleModal1${service.id}">
-                                                                                Chỉnh Sửa
+                                                                                Change
                                                                             </button>
 
                                                                             <!-- Modal -->
@@ -449,17 +449,17 @@
                                                                                 <div class="modal-dialog">
                                                                                     <div class="modal-content">
                                                                                         <div class="modal-header">
-                                                                                            <h5 class="modal-title" id="exampleModalLabel1" style="color: #000">Thay đổi thông tin</h5>
+                                                                                            <h5 class="modal-title" id="exampleModalLabel1" style="color: #000">Change Information</h5>
                                                                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                                                                     aria-label="Close"></button>
                                                                                         </div>
                                                                                         <div class="modal-body" style="color: #000">
-                                                                                            Bạn có muốn thay đổi thông tin <strong class="text-danger">${service.name}</strong> không ?
+                                                                                            Do you want to change the information <strong class="text-danger">${service.name}</strong> ?
                                                                                         </div>
                                                                                         <div class="modal-footer">
                                                                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close
                                                                                             </button>
-                                                                                            <a href="/service?action=edit&id=${service.id}" class="btn btn-secondary">Thay Đổi</a>
+                                                                                            <a href="/service?action=edit&id=${service.id}" class="btn btn-secondary" style="color: white">Change</a>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
@@ -471,7 +471,7 @@
                                     <!-- Button trigger modal DELETE -->
                                     <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                             data-bs-target="#exampleModal${service.id}">
-                                        Xoá
+                                        Delete
                                     </button>
 
                                     <!-- Modal -->
@@ -490,7 +490,7 @@
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close
                                                     </button>
-                                                    <a  href="/service?action=delete&id=${service.id}" class="btn btn-secondary" ><span>Delete</span></a>
+                                                    <a  href="/service?action=delete&id=${service.id}" class="btn btn-secondary" ><span style="color: white">Delete</span></a>
                                                 </div>
                                             </div>
                                         </div>

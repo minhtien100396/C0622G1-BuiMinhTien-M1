@@ -403,7 +403,7 @@
                     <table class="table table-striped table-hover" id="tableStudent" class="table table-striped table-bordered" style="width:100%">
                         <thead>
                         <tr>
-                            <th>ID</th>
+                            <th>No</th>
                             <th>Start Date</th>
                             <th>End Date</th>
                             <th>Deposit</th>
@@ -414,9 +414,9 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <c:forEach var="contract" items="${contractList}">
+                        <c:forEach var="contract" items="${contractList}" varStatus="loop">
                             <tr>
-                                <td>${contract.id}</td>
+                                <td>${loop.count}</td>
                                 <td>${contract.startDate}</td>
                                 <td>${contract.endDate}</td>
                                 <td>
@@ -429,7 +429,7 @@
                                     <!-- Button trigger modal EDIT -->
                                     <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                             data-bs-target="#exampleModal1${contract.id}">
-                                        Chỉnh Sửa
+                                        Change
                                     </button>
 
                                     <!-- Modal -->
@@ -438,17 +438,17 @@
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel1" style="color: #000">Thay đổi thông tin</h5>
+                                                    <h5 class="modal-title" id="exampleModalLabel1" style="color: #000">Change Information</h5>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                             aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body" style="color: #000">
-                                                    Bạn có muốn thay đổi thông tin <strong class="text-danger">${contract.id}</strong> không ?
+                                                    Do you want to delete an service <strong class="text-danger">${contract.id}</strong> ?
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close
                                                     </button>
-                                                    <a href="/contract?action=edit&id=${contract.id}" class="btn btn-secondary">Thay Đổi</a>
+                                                    <a href="/contract?action=edit&id=${contract.id}" class="btn btn-secondary" style="color: white">Change</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -460,7 +460,7 @@
                                     <!-- Button trigger modal DELETE -->
                                     <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                             data-bs-target="#exampleModal${contract.id}">
-                                        Xoá
+                                        Delete
                                     </button>
 
                                     <!-- Modal -->
@@ -479,7 +479,7 @@
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close
                                                     </button>
-                                                    <a  href="/contract?action=delete&id=${contract.id}" class="btn btn-secondary" ><span>Delete</span></a>
+                                                    <a  href="/contract?action=delete&id=${contract.id}" class="btn btn-secondary"><span style="color: white">Delete</span></a>
                                                 </div>
                                             </div>
                                         </div>

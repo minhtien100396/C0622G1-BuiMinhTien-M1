@@ -33,7 +33,7 @@ public class CustomerRepository implements ICustomerRepository {
                 int id = resultSet.getInt("id");
                 int customerTypeId = resultSet.getInt("customer_type_id");
                 String name = resultSet.getString("name");
-                Date dateOfBirth = resultSet.getDate("date_of_birth");
+                String dateOfBirth = resultSet.getString("date_of_birth");
                 int gender = resultSet.getInt("gender");
                 String idCard = resultSet.getString("id_card");
                 String phoneNumber = resultSet.getString("phone_number");
@@ -59,7 +59,7 @@ public class CustomerRepository implements ICustomerRepository {
                 int id = resultSet.getInt("id");
                 int customerTypeId = resultSet.getInt("customer_type_id");
                 String name = resultSet.getString("name");
-                Date dateOfBirth = resultSet.getDate("date_of_birth");
+                String dateOfBirth = resultSet.getString("date_of_birth");
                 int gender = resultSet.getInt("gender");
                 String idCard = resultSet.getString("id_card");
                 String phoneNumber = resultSet.getString("phone_number");
@@ -85,7 +85,7 @@ public class CustomerRepository implements ICustomerRepository {
                 int id = resultSet.getInt("id");
                 int customerTypeId = resultSet.getInt("customer_type_id");
                 String name = resultSet.getString("name");
-                Date dateOfBirth = resultSet.getDate("date_of_birth");
+                String dateOfBirth = resultSet.getString("date_of_birth");
                 int gender = resultSet.getInt("gender");
                 String idCard = resultSet.getString("id_card");
                 String phoneNumber = resultSet.getString("phone_number");
@@ -129,25 +129,32 @@ public class CustomerRepository implements ICustomerRepository {
     }
 
     @Override
-    public void insertCustomer(Customer customer) throws SQLException {
+    public boolean insertCustomer(Customer customer) {
+        boolean rowUpdated = false;
         Connection connection = BaseRepository.getConnectDB();
-        PreparedStatement preparedStatement = connection.prepareStatement(INSERT_CUSTOMER);
-        preparedStatement.setString(1, customer.getName());
-        preparedStatement.setString(2, String.valueOf(customer.getDateOfBirth()));
-        preparedStatement.setInt(3, customer.getGender());
-        preparedStatement.setString(4, customer.getIdCard());
-        preparedStatement.setString(5, customer.getEmail());
-        preparedStatement.setString(6, customer.getPhoneNumber());
-        preparedStatement.setString(7, customer.getAddress());
-        preparedStatement.setInt(8, customer.getCustomerTypeId());
-        preparedStatement.executeUpdate();
+        PreparedStatement preparedStatement;
+        try {
+            preparedStatement = connection.prepareStatement(INSERT_CUSTOMER);
+            preparedStatement.setString(1, customer.getName());
+            preparedStatement.setString(2, String.valueOf(customer.getDateOfBirth()));
+            preparedStatement.setInt(3, customer.getGender());
+            preparedStatement.setString(4, customer.getIdCard());
+            preparedStatement.setString(5, customer.getEmail());
+            preparedStatement.setString(6, customer.getPhoneNumber());
+            preparedStatement.setString(7, customer.getAddress());
+            preparedStatement.setInt(8, customer.getCustomerTypeId());
+            rowUpdated = preparedStatement.executeUpdate() > 0;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return rowUpdated;
     }
 
     @Override
-    public boolean updateCustomer(Customer customer) throws SQLException {
+    public boolean updateCustomer(Customer customer) {
         boolean rowUpdated = false;
         Connection connection = BaseRepository.getConnectDB();
-        PreparedStatement preparedStatement = null;
+        PreparedStatement preparedStatement;
         try {
             preparedStatement = connection.prepareStatement(UPDATE_CUSTOMER);
             preparedStatement.setInt(1, customer.getCustomerTypeId());

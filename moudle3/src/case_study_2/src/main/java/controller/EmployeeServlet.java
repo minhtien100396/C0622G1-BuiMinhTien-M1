@@ -18,7 +18,7 @@ import java.util.Map;
 
 @WebServlet(name = "EmployeeServlet", urlPatterns = "/employee")
 public class EmployeeServlet extends HttpServlet {
-    IEmployeeService employeeService = new EmployeeService();
+    private IEmployeeService employeeService = new EmployeeService();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
@@ -47,7 +47,7 @@ public class EmployeeServlet extends HttpServlet {
         int position = Integer.parseInt(request.getParameter("position"));
         int educationDegree = Integer.parseInt(request.getParameter("educationDegree"));
         int division = Integer.parseInt(request.getParameter("division"));
-        Employee employee = new Employee(id,name, dateOfBirth, idCard, salary, phoneNumber, email, address, position, educationDegree, division);
+        Employee employee = new Employee(id, name, dateOfBirth, idCard, salary, phoneNumber, email, address, position, educationDegree, division);
         try {
             employeeService.updateEmployee(employee);
         } catch (SQLException throwables) {
@@ -80,8 +80,8 @@ public class EmployeeServlet extends HttpServlet {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        request.setAttribute("mess","Successfully added new");
-        request.getRequestDispatcher("/view/employee/create.jsp").forward(request,response);
+        request.setAttribute("mess", "Successfully added new");
+        request.getRequestDispatcher("/view/employee/create.jsp").forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -114,8 +114,8 @@ public class EmployeeServlet extends HttpServlet {
         Employee employee = employeeService.selectEmployee(id);
 
         try {
-            request.setAttribute("employee",employee);
-            request.getRequestDispatcher("/view/employee/edit.jsp").forward(request,response);
+            request.setAttribute("employee", employee);
+            request.getRequestDispatcher("/view/employee/edit.jsp").forward(request, response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {

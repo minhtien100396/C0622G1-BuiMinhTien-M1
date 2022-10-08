@@ -1,7 +1,6 @@
 package repository;
 
 import model.Customer;
-import model.Employee;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -13,6 +12,6 @@ public interface ICustomerRepository {
     List<Customer> selectCustomer(String keyName);
     boolean deleteCustomer(int id) throws SQLException;
     Map<Integer,String> selectAllCustomerType();
-    void insertCustomer(Customer customer) throws SQLException;
+    boolean insertCustomer(Customer customer) throws SQLException;
     boolean updateCustomer(Customer customer) throws SQLException;
 }

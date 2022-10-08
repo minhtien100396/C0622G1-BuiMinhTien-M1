@@ -13,12 +13,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 
 @WebServlet(name = "CustomerServlet", urlPatterns = "/customer")
 public class CustomerServlet extends HttpServlet {
-    ICustomerService customerService = new CustomerService();
+    private ICustomerService customerService = new CustomerService();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
@@ -36,9 +37,32 @@ public class CustomerServlet extends HttpServlet {
     }
 
     private void updateCustomer(HttpServletRequest request, HttpServletResponse response) {
+//        int id = Integer.parseInt(request.getParameter("id"));
+//        String name = request.getParameter("name");
+//        Date dateOfBirth = Date.valueOf(request.getParameter("dateOfBirth"));
+//        String idCard = request.getParameter("idCard");
+//        int gender = Integer.parseInt(request.getParameter("gender"));
+//        String phoneNumber = request.getParameter("phoneNumber");
+//        String email = request.getParameter("email");
+//        String address = request.getParameter("address");
+//        int customerTypeId = Integer.parseInt(request.getParameter("customerTypeId"));
+//        Customer customer = new Customer(id, customerTypeId, name, dateOfBirth, gender, idCard, phoneNumber, email, address);
+//        try {
+//            customerService.updateCustomer(customer);
+//        } catch (SQLException throwables) {
+//            throwables.printStackTrace();
+//        }
+//        request.setAttribute("mess", "Successfully Edit");
+//        try {
+//            request.getRequestDispatcher("/view/customer/edit.jsp").forward(request, response);
+//        } catch (ServletException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
         int id = Integer.parseInt(request.getParameter("id"));
         String name = request.getParameter("name");
-        Date dateOfBirth = Date.valueOf(request.getParameter("dateOfBirth"));
+        String dateOfBirth = request.getParameter("dateOfBirth");
         String idCard = request.getParameter("idCard");
         int gender = Integer.parseInt(request.getParameter("gender"));
         String phoneNumber = request.getParameter("phoneNumber");
@@ -47,11 +71,19 @@ public class CustomerServlet extends HttpServlet {
         int customerTypeId = Integer.parseInt(request.getParameter("customerTypeId"));
         Customer customer = new Customer(id, customerTypeId, name, dateOfBirth, gender, idCard, phoneNumber, email, address);
         try {
-            customerService.updateCustomer(customer);
+            Map<String, String> map = customerService.updateCustomer1(customer);
+            if (map.size() != 0) {
+                request.setAttribute("mess", "Edit Failure");
+                request.setAttribute("map", map);
+                request.setAttribute("customer", customer);
+            } else {
+                request.setAttribute("mess", "Successfully Edit");
+            }
+
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        request.setAttribute("mess", "Successfully Edit");
+
         try {
             request.getRequestDispatcher("/view/customer/edit.jsp").forward(request, response);
         } catch (ServletException e) {
@@ -63,20 +95,28 @@ public class CustomerServlet extends HttpServlet {
 
     private void insertNewCustomer(HttpServletRequest request, HttpServletResponse response) {
         String name = request.getParameter("name");
-        Date dateOfBirth = Date.valueOf(request.getParameter("dateOfBirth"));
+        String dateOfBirth = request.getParameter("dateOfBirth");
         String idCard = request.getParameter("idCard");
         int gender = Integer.parseInt(request.getParameter("gender"));
         String phoneNumber = request.getParameter("phoneNumber");
         String email = request.getParameter("email");
         String address = request.getParameter("address");
-        int customerType = Integer.parseInt(request.getParameter("customerType"));
-        Customer customer = new Customer(customerType, name, dateOfBirth, gender, idCard, phoneNumber, email, address);
+        int customerTypeId = Integer.parseInt(request.getParameter("customerTypeId"));
+        Customer customer = new Customer(customerTypeId, name, dateOfBirth, gender, idCard, phoneNumber, email, address);
         try {
-            customerService.insertCustomer(customer);
+            Map<String, String> map = customerService.insertCustomer(customer);
+            if (map.size() != 0) {
+                request.setAttribute("mess", "Add new failure");
+                request.setAttribute("map", map);
+                request.setAttribute("customer", customer);
+            } else {
+                request.setAttribute("mess", "Successfully added new");
+            }
+
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        request.setAttribute("mess", "Successfully added new");
+
         try {
             request.getRequestDispatcher("/view/customer/create.jsp").forward(request, response);
         } catch (ServletException e) {

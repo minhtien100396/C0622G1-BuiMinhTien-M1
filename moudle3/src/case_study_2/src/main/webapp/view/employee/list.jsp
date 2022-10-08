@@ -403,7 +403,7 @@
                            class="table table-striped table-bordered" style="width:100%">
                         <thead>
                         <tr>
-                            <th>ID</th>
+                            <th>No</th>
                             <th>Name</th>
                             <th>Date Of Birth</th>
                             <th>Salary</th>
@@ -416,9 +416,9 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <c:forEach var="employee" items="${employeeList}">
+                        <c:forEach var="employee" items="${employeeList}" varStatus="loop">
                             <tr>
-                                <td>${employee.id}</td>
+                                <td>${loop.count}</td>
                                 <td style="word-wrap: normal;">${employee.name}</td>
                                 <td>${employee.dateOfBirth}</td>
                                 <td>
@@ -456,7 +456,7 @@
                                     <!-- Button trigger modal EDIT -->
                                     <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                             data-bs-target="#exampleModal1${employee.id}">
-                                        Chỉnh Sửa
+                                        Change
                                     </button>
 
                                     <!-- Modal -->
@@ -465,17 +465,17 @@
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel1" style="color: #000">Thay đổi thông tin</h5>
+                                                    <h5 class="modal-title" id="exampleModalLabel1" style="color: #000">Change Information</h5>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                             aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body" style="color: #000">
-                                                    Bạn có muốn thay đổi thông tin <strong class="text-danger">${employee.name}</strong> không ?
+                                                    Do you want to delete an service <strong class="text-danger">${employee.name}</strong> ?
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close
                                                     </button>
-                                                    <a href="/employee?action=edit&id=${employee.id}" class="btn btn-secondary">Thay Đổi</a>
+                                                    <a href="/employee?action=edit&id=${employee.id}" class="btn btn-secondary" style="color: white">Change</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -485,7 +485,7 @@
                                     <!-- Button trigger modal DELETE -->
                                     <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                             data-bs-target="#exampleModal${employee.id}">
-                                        Xoá
+                                        Delete
                                     </button>
 
                                     <!-- Modal -->
@@ -508,7 +508,7 @@
                                                             data-bs-dismiss="modal">Close
                                                     </button>
                                                     <a href="/employee?action=delete&id=${employee.id}"
-                                                       class="btn btn-secondary"><span>Delete</span></a>
+                                                       class="btn btn-secondary"><span style="color: white">Delete</span></a>
                                                 </div>
                                             </div>
                                         </div>

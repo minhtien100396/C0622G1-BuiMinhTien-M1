@@ -1,7 +1,6 @@
 package service;
 
 import model.Customer;
-import model.Employee;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -13,6 +12,8 @@ public interface ICustomerService {
     List<Customer> selectCustomer(String keyName);
     boolean deleteCustomer(int id) throws SQLException;
     Map<Integer,String> selectAllCustomerType();
-    void insertCustomer(Customer customer) throws SQLException;
+    Map<String,String> insertCustomer(Customer customer) throws SQLException;
+    Map<String,String> updateCustomer1(Customer customer) throws SQLException;
     boolean updateCustomer(Customer customer) throws SQLException;
+
 }

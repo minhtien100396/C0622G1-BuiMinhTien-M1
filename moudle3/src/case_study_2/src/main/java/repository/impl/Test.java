@@ -5,7 +5,7 @@ import repository.ICustomerRepository;
 import repository.IEmployeeRepository;
 import repository.IServiceRepository;
 
-public class test {
+public class Test {
     public static void main(String[] args) {
         IEmployeeRepository repo = new EmployeeRepository();
         ICustomerRepository customerRepository = new CustomerRepository();

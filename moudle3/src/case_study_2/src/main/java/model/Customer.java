@@ -6,7 +6,7 @@ public class Customer {
     private int id;
     private int customerTypeId;
     private String name;
-    private Date dateOfBirth;
+    private String dateOfBirth;
     private int gender;
     private String idCard;
     private String phoneNumber;
@@ -16,7 +16,7 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(int customerTypeId, String name, Date dateOfBirth, int gender, String idCard, String phoneNumber, String email, String address) {
+    public Customer(int customerTypeId, String name, String dateOfBirth, int gender, String idCard, String phoneNumber, String email, String address) {
         this.customerTypeId = customerTypeId;
         this.name = name;
         this.dateOfBirth = dateOfBirth;
@@ -27,7 +27,7 @@ public class Customer {
         this.address = address;
     }
 
-    public Customer(int id, int customerTypeId, String name, Date dateOfBirth, int gender, String idCard, String phoneNumber, String email, String address) {
+    public Customer(int id, int customerTypeId, String name, String dateOfBirth, int gender, String idCard, String phoneNumber, String email, String address) {
         this.id = id;
         this.customerTypeId = customerTypeId;
         this.name = name;
@@ -63,11 +63,11 @@ public class Customer {
         this.name = name;
     }
 
-    public Date getDateOfBirth() {
+    public String getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(Date dateOfBirth) {
+    public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 

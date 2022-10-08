@@ -10,7 +10,8 @@ import java.util.List;
 import java.util.Map;
 
 public class EmployeeService implements IEmployeeService {
-    IEmployeeRepository employeeRepository = new EmployeeRepository();
+    private IEmployeeRepository employeeRepository = new EmployeeRepository();
+
     @Override
     public List<Employee> selectAllEmployee() {
         return employeeRepository.selectAllEmployee();
@@ -32,7 +33,7 @@ public class EmployeeService implements IEmployeeService {
     }
 
     @Override
-    public Map<Integer,String> selectAllPosition() {
+    public Map<Integer, String> selectAllPosition() {
         return employeeRepository.selectAllPosition();
     }
 

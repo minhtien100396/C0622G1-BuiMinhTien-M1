@@ -11,7 +11,8 @@ import java.util.List;
 import java.util.Map;
 
 public class ServiceSevice implements IServiceService {
-    IServiceRepository serviceRepository = new ServiceRepository();
+    private IServiceRepository serviceRepository = new ServiceRepository();
+
     @Override
     public List<Service> selectAllService() {
         return serviceRepository.selectAllService();
