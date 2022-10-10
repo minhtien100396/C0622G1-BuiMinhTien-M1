@@ -72,10 +72,15 @@ public class CustomerService implements ICustomerService {
         if (customer.getGender() == 100) {
             errorMap.put("gender", "Gender không được để trống!");
         }
-        int age = LocalDate.now().getYear() - LocalDate.parse(customer.getDateOfBirth()).getYear();
-        if (age < 18 || age > 100) {
-            errorMap.put("dateOfBirth", "Date Of Birth không hợp lệ (age>18 && age<100)");
+        if (customer.getDateOfBirth().equals("")){
+            errorMap.put("dateOfBirth", "Date Of Birth không được để trống!");
+        } else {
+            int age = LocalDate.now().getYear() - LocalDate.parse(customer.getDateOfBirth()).getYear();
+            if (age < 18 || age > 100) {
+                errorMap.put("dateOfBirth", "Date Of Birth không hợp lệ (age>18 && age<100)");
+            }
         }
+
         if (errorMap.size() == 0) {
             boolean check = customerRepository.insertCustomer(customer);
         }

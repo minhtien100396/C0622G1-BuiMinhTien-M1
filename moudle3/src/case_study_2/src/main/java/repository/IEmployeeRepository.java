@@ -1,5 +1,6 @@
 package repository;
 
+import dto.EmployeeDTO;
 import model.Employee;
 
 import java.sql.SQLException;
@@ -16,4 +17,6 @@ public interface IEmployeeRepository {
     Map<Integer,String> selectAllDivision();
     void insertEmployee(Employee employee) throws SQLException;
     boolean updateEmployee(Employee employee) throws SQLException;
+    List<Employee> search(String name, double salary, int positionId);
+    List<Employee> selectEmployeeByNameSalary(String searchName,double searchSalary);
 }

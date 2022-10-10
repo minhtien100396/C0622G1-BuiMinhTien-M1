@@ -1,7 +1,6 @@
 package repository.impl;
 
 import model.Employee;
-import model.Position;
 import repository.BaseRepository;
 import repository.IEmployeeRepository;
 
@@ -24,6 +23,8 @@ public class EmployeeRepository implements IEmployeeRepository {
             "`salary` = ?, `phone_number` =?, `email` = ?, `address`= ?, `position_id`= ?, \n" +
             "`education_degree_id`= ?, `division_id`= ?\n" +
             "where id =?;";
+    private static final String SEARCH_EMPLOYEE = "select * from employee\n" + "where `name` like ? and salary < ? and position_id = ?;";
+    private static final String SEARCH_EMPLOYEE_BY_NAME_SALARY = "select * from employee\n" + "where name like ? and salary < ?;";
 
     @Override
     public List<Employee> selectAllEmployee() {
@@ -216,5 +217,66 @@ public class EmployeeRepository implements IEmployeeRepository {
             throwables.printStackTrace();
         }
         return rowUpdated;
+    }
+
+    @Override
+    public List<Employee> search(String searchName, double searchSalary, int searchPositionId) {
+        List<Employee> employeeList = new ArrayList<>();
+        Connection connection = BaseRepository.getConnectDB();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SEARCH_EMPLOYEE);
+            preparedStatement.setString(1, "%" + searchName + "%");
+            preparedStatement.setDouble(2, searchSalary);
+            preparedStatement.setInt(3, searchPositionId);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                Date dateOfBirth = resultSet.getDate("date_of_birth");
+                String idCard = resultSet.getString("id_card");
+                double salary = resultSet.getDouble("salary");
+                String phoneNumber = resultSet.getString("phone_number");
+                String email = resultSet.getString("email");
+                String address = resultSet.getString("address");
+                int positionId = resultSet.getInt("position_id");
+                int educationDegreeId = resultSet.getInt("education_degree_id");
+                int divisionId = resultSet.getInt("division_id");
+                String userName = resultSet.getString("username");
+                employeeList.add(new Employee(id, name, dateOfBirth, idCard, salary, phoneNumber, email, address, positionId, educationDegreeId, divisionId, userName));
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return employeeList;
+    }
+
+    @Override
+    public List<Employee> selectEmployeeByNameSalary(String searchName, double searchSalary) {
+        List<Employee> employeeList = new ArrayList<>();
+        try {
+            Connection connection = BaseRepository.getConnectDB();
+            PreparedStatement preparedStatement = connection.prepareStatement(SEARCH_EMPLOYEE_BY_NAME_SALARY);
+            preparedStatement.setString(1, "%" + searchName + "%");
+            preparedStatement.setDouble(2, searchSalary);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                Date dateOfBirth = resultSet.getDate("date_of_birth");
+                String idCard = resultSet.getString("id_card");
+                double salary = resultSet.getDouble("salary");
+                String phoneNumber = resultSet.getString("phone_number");
+                String email = resultSet.getString("email");
+                String address = resultSet.getString("address");
+                int positionId = resultSet.getInt("position_id");
+                int educationDegreeId = resultSet.getInt("education_degree_id");
+                int divisionId = resultSet.getInt("division_id");
+                String userName = resultSet.getString("username");
+                employeeList.add(new Employee(id, name, dateOfBirth, idCard, salary, phoneNumber, email, address, positionId, educationDegreeId, divisionId, userName));
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return employeeList;
     }
 }

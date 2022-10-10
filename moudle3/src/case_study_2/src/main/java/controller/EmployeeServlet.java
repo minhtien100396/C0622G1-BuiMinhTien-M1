@@ -1,7 +1,6 @@
 package controller;
 
 import model.Employee;
-import model.Service;
 import service.IEmployeeService;
 import service.impl.EmployeeService;
 
@@ -103,9 +102,41 @@ public class EmployeeServlet extends HttpServlet {
             case "search":
                 searchEmployeeByName(request, response);
                 break;
+            case "search1":
+                searchEmployee(request, response);
+                break;
             default:
                 listEmployee(request, response);
                 break;
+        }
+    }
+
+    private void searchEmployee(HttpServletRequest request, HttpServletResponse response) {
+        String searchName = request.getParameter("searchName");
+        double searchSalary = Double.parseDouble(request.getParameter("searchSalary"));
+        int searchPosition = Integer.parseInt(request.getParameter("searchPosition"));
+        if (searchPosition == 100) {
+            request.setAttribute("positionMap", employeeService.selectAllPosition());
+            request.setAttribute("employeeList", employeeService.selectEmployeeByNameSalary(searchName, searchSalary));
+            Map<Integer, String> educationDegreeMap = employeeService.selectAllEducationDegree();
+            Map<Integer, String> divisionMap = employeeService.selectAllDivision();
+            request.setAttribute("educationDegreeMap", educationDegreeMap);
+            request.setAttribute("divisionMap", divisionMap);
+        } else {
+            request.setAttribute("positionMap", employeeService.selectAllPosition());
+            request.setAttribute("employeeList", employeeService.search(searchName, searchSalary, searchPosition));
+            Map<Integer, String> educationDegreeMap = employeeService.selectAllEducationDegree();
+            Map<Integer, String> divisionMap = employeeService.selectAllDivision();
+            request.setAttribute("educationDegreeMap", educationDegreeMap);
+            request.setAttribute("divisionMap", divisionMap);
+        }
+
+        try {
+            request.getRequestDispatcher("view/employee/list.jsp").forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -115,6 +146,12 @@ public class EmployeeServlet extends HttpServlet {
 
         try {
             request.setAttribute("employee", employee);
+            Map<Integer, String> positionMap = employeeService.selectAllPosition();
+            Map<Integer, String> educationDegreeMap = employeeService.selectAllEducationDegree();
+            Map<Integer, String> divisionMap = employeeService.selectAllDivision();
+            request.setAttribute("positionMap", positionMap);
+            request.setAttribute("educationDegreeMap", educationDegreeMap);
+            request.setAttribute("divisionMap", divisionMap);
             request.getRequestDispatcher("/view/employee/edit.jsp").forward(request, response);
         } catch (ServletException e) {
             e.printStackTrace();

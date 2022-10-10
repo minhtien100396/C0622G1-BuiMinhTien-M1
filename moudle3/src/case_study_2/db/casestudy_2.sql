@@ -332,6 +332,8 @@ VALUES
 
 select * from facility;
 select * from employee;
+select * from customer;
+select * from contract;
 -- set SQL_SAFE_UPDATES = 0 ;
 -- set FOREIGN_KEY_CHECKS=0;
 update facility set `name`="33",  area = 32, cost = 12, max_people=12, rent_type_id=2,facility_type_id=2,standard_room="1232",
@@ -339,10 +341,47 @@ description_other_convenience = "2132", pool_area= 123, number_of_floors=12,faci
 where id =1;
 
 
-	update  employee set  `name` = 'Tiến', `date_of_birth` = '1970-11-07', `id_card` = '456231786', 
-	`salary` = 232, `phone_number` ="32323", `email` = "232@gmail.com", `address`= "321321", `position_id`= 1, 
-	`education_degree_id`= 2, `division_id`= 2
-	where id =1;	
+UPDATE employee 
+SET 
+    `name` = 'Tiến',
+    date_of_birth = '1970-11-07',
+    id_card = '456231786',
+    salary = 232,
+    phone_number = '32323',
+    email = '232@gmail.com',
+    address = '321321',
+    position_id = 1,
+    education_degree_id = 2,
+    division_id = 2
+WHERE
+    id = 1;
     
-    update customer set customer_type_id = 1, name="22", date_of_birth= "1970-11-07" , gender = 0, 
-    id_card ="2", phone_number ="22", email = "222", 
+UPDATE customer 
+SET 
+    customer_type_id = 1,
+    name = '22',
+    date_of_birth = '1970-11-07',
+    gender = 0,
+    id_card = '2',
+    phone_number = '22',
+    email = '222',
+    address = '2222'
+WHERE
+    id = 1;
+    
+UPDATE contract 
+SET 
+    start_date = '1970-11-07',
+    end_date = '1970-11-07',
+    deposit = 2,
+    employee_id = 1,
+    customer_id = 1,
+    facility_id = 1
+WHERE
+    id = 1;
+        
+select employee.*, position.`name`
+from employee
+left join position
+on employee.position_id = position.id
+where employee.name like "%toan%" and employee.salary < 10000000000 and position.name like "%a%";

@@ -1,6 +1,5 @@
 package service.impl;
 
-import model.Contract;
 import model.Service;
 import repository.IServiceRepository;
 import repository.impl.ServiceRepository;

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -47,45 +48,46 @@
     <form action="/employee?action=edit" method="post">
         <input type="hidden" name="id" value="${employee.id}">
         <pre>Name:              <input type="text" name="name" value="${employee.name}"> </pre>
-        <%--        <pre>Gender :  <input type="radio" name="gender" value="true">Nam --%>
-        <%--            <input type="radio" value="false" name="gender"> Nữ --%>
-        <%--        </pre>--%>
         <pre>Birthday:          <input type="date" name="dateOfBirth" value="${employee.dateOfBirth}"> </pre>
         <pre>IdCard:            <input type="text" name="idCard" value="${employee.idCard}"> </pre>
         <pre>Salary:            <input type="text" name="salary" value="${employee.salary}"> </pre>
         <pre>PhoneNumber:       <input type="text" name="phoneNumber" value="${employee.phoneNumber}"> </pre>
         <pre>Email:             <input type="text" name="email" value="${employee.email}"> </pre>
         <pre>Address:           <input type="text" name="address" value="${employee.address}"> </pre>
-        <pre>Position:          <select name="position" value="${employee.positionId}">
-                   <option value="">Chọn Vị Trí</option>
-                   <option value="1">Lễ Tân</option>
-                   <option value="2">Phục Vụ</option>
-                   <option value="3">Chuyên viên</option>
-                   <option value="4">Giám sát</option>
-                   <option value="5">Quản lý</option>
-                   <option value="6">Giám đốc</option>
-            </select>
-        </pre>
-        <pre>Education Degree:  <select name="educationDegree" value="${employee.educationDegreeId}">
-                   <option value="">Chọn Trình Độ Học Vấn</option>
-                   <option value="1">Trung Cấp</option>
-                   <option value="2">Cao Đẳng</option>
-                   <option value="3">Đại Học</option>
-                   <option value="4">Sau Đại Học</option>
-            </select>
-        </pre>
-        <pre>Division:          <select name="division" value="${employee.divisionId}">
-                   <option value="">Chọn Bộ Phận</option>
-                   <option value="1">Sale-Marketing</option>
-                   <option value="2">Hành chính</option>
-                   <option value="3">Phục vụ</option>
-                   <option value="4">Quản lý</option>
-            </select>
-        </pre>
+        <pre>Position:          <select id="position" name="position">
+                                            <c:forEach var="position" items="${positionMap}">
+                                                <c:if test="${position.key == employee.positionId}">
+                                                    <option selected value="${position.key}">${position.value}</option>
+                                                </c:if>
+                                                <c:if test="${position.key != employee.positionId}">
+                                                    <option value="${position.key}">${position.value}</option>
+                                                </c:if>
+                                            </c:forEach>
+                                </select></pre>
+        <pre>Education Degree:  <select name="educationDegree">
+                                            <c:forEach var="educationDegree" items="${educationDegreeMap}">
+                                                <c:if test="${educationDegree.key == employee.educationDegreeId}">
+                                                    <option selected value="${educationDegree.key}">${educationDegree.value}</option>
+                                                </c:if>
+                                                <c:if test="${educationDegree.key != employee.educationDegreeId}">
+                                                    <option value="${educationDegree.key}">${educationDegree.value}</option>
+                                                </c:if>
+                                            </c:forEach>
+                                </select></pre>
+        <pre>Division:          <select name="division">
+                                            <c:forEach var="division" items="${divisionMap}">
+                                                <c:if test="${division.key == employee.divisionId}">
+                                                    <option selected value="${division.key}">${division.value}</option>
+                                                </c:if>
+                                                <c:if test="${division.key != employee.divisionId}">
+                                                    <option value="${division.key}">${division.value}</option>
+                                                </c:if>
+                                            </c:forEach>
+                                </select></pre>
         <pre>                    <input type="submit" value="Edit"></pre>
     </form>
 </div>
-<pre>                                                                               ${mess}</pre>
+<pre style="text-align: center"> ${mess}</pre>
 <script src="../../bootstrap/js/bootstrap.js"></script>
 <script src="../../bootstrap/js/bootstrap.min.js"></script>
 <script src="../../bootstrap/js/bootstrap.bundle.min.js"></script>

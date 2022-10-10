@@ -443,7 +443,7 @@
                                                             aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body" style="color: #000">
-                                                    Do you want to delete an service <strong class="text-danger">${contract.id}</strong> ?
+                                                    Do you want to change an service <strong class="text-danger">${contract.id}</strong> ?
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close

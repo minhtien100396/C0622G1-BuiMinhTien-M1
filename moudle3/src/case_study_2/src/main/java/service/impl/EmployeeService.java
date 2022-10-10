@@ -56,4 +56,14 @@ public class EmployeeService implements IEmployeeService {
     public boolean updateEmployee(Employee employee) throws SQLException {
         return employeeRepository.updateEmployee(employee);
     }
+
+    @Override
+    public List<Employee> search(String name, double salary, int positionId) {
+        return employeeRepository.search(name, salary, positionId);
+    }
+
+    @Override
+    public List<Employee> selectEmployeeByNameSalary(String searchName, double searchSalary) {
+        return employeeRepository.selectEmployeeByNameSalary(searchName, searchSalary);
+    }
 }

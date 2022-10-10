@@ -1,0 +1,18 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="de_11.main:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/de_11_main_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="de_11.main" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Gradle: javax.servlet:jstl:1.2" />
+          <element id="library" level="project" name="Gradle: mysql:mysql-connector-java:8.0.23" />
+          <element id="library" level="project" name="Gradle: com.google.protobuf:protobuf-java:3.11.4" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="de_11.main/web/Web Gradle : de_11-1.0-SNAPSHOT.war" />
+    </root>
+  </artifact>
+</component>

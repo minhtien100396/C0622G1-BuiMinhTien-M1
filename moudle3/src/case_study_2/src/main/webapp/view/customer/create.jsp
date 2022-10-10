@@ -59,7 +59,7 @@
         <c:if test="${map.get('gender') != null}">
             <pre>               <span style="color:red;">${map.get("gender")}</span></pre>
         </c:if>
-        <pre>Birthday:          <input type="date" name="dateOfBirth" required> </pre>
+        <pre>Birthday:          <input id="d" type="date" name="dateOfBirth"> </pre>
         <c:if test="${map.get('dateOfBirth')!=null}">
             <pre>               <span style="color:red;">${map.get('dateOfBirth')}</span></pre>
         </c:if>

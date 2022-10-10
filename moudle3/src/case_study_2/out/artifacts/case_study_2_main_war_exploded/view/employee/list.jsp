@@ -319,6 +319,18 @@
                     <img src="../../img/home_1.png" alt="" width="80" height="100"
                          class="d-inline-block align-content-center">
                 </a>
+                <form action="/employee" style="height: 30px; line-height: 30px">
+                    <input type="hidden" name="action" value="search1">
+                    <input type="text" name="searchName" placeholder="Name">
+                    <input type="number" name="searchSalary" placeholder=" < salary " value="20000000">
+                    <select name="searchPosition">
+                        <option selected value="100">- Position -</option>
+                        <c:forEach var="position" items="${positionMap}">
+                            <option value="${position.key}">${position.value}</option>
+                        </c:forEach>
+                    </select>
+                    <button type="submit">Search</button>
+                </form>
                 <strong style="color: white; font-family: 'Lucida Sans'; font-size: 20px; margin-right: 0px;color: pink">Bùi
                     Minh Tiến</strong>
             </div>
@@ -377,8 +389,10 @@
                                 <div class="col-lg-6">
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <a href="/employee?action=create"><input class="btn btn-outline-success" type="submit" value="Add New Employee"
-                                                              style="color: pink;border-color: pink; border-width: 3px; line-height: 45px"></a>
+                                            <a href="/employee?action=create"><input class="btn btn-outline-success"
+                                                                                     type="submit"
+                                                                                     value="Add New Employee"
+                                                                                     style="color: pink;border-color: pink; border-width: 3px; line-height: 45px"></a>
                                         </div>
                                     </div>
                                 </div>
@@ -465,17 +479,21 @@
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel1" style="color: #000">Change Information</h5>
+                                                    <h5 class="modal-title" id="exampleModalLabel1" style="color: #000">
+                                                        Change Information</h5>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                             aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body" style="color: #000">
-                                                    Do you want to delete an service <strong class="text-danger">${employee.name}</strong> ?
+                                                    Do you want to edit an service <strong
+                                                        class="text-danger">${employee.name}</strong> ?
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close
+                                                    <button type="button" class="btn btn-secondary"
+                                                            data-bs-dismiss="modal">Close
                                                     </button>
-                                                    <a href="/employee?action=edit&id=${employee.id}" class="btn btn-secondary" style="color: white">Change</a>
+                                                    <a href="/employee?action=edit&id=${employee.id}"
+                                                       class="btn btn-secondary" style="color: white">Change</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -508,7 +526,8 @@
                                                             data-bs-dismiss="modal">Close
                                                     </button>
                                                     <a href="/employee?action=delete&id=${employee.id}"
-                                                       class="btn btn-secondary"><span style="color: white">Delete</span></a>
+                                                       class="btn btn-secondary"><span
+                                                            style="color: white">Delete</span></a>
                                                 </div>
                                             </div>
                                         </div>
