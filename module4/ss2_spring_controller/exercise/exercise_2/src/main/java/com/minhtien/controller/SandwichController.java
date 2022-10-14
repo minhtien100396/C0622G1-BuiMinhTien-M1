@@ -16,7 +16,7 @@ public class SandwichController {
 
     @GetMapping("/sanwich")
     public String getResult(@RequestParam(value = "condiment") String[] condiment, Model model) {
-        model.addAttribute("condiment", Arrays.toString(condiment));
+        model.addAttribute("condiment",condiment);
         return "sanwich";
     }
 }

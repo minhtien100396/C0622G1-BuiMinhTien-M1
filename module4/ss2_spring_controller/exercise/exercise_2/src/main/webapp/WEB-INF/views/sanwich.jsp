@@ -44,6 +44,8 @@
     <hr>
     <input type="submit" value="Save">
 </form>
-<h1>${condiment}</h1>
+<c:forEach var="element" items="${condiment}">
+    <span>${element}</span>
+</c:forEach>
 </body>
 </html>
