@@ -14,6 +14,8 @@
         <th>DateOfBirth</th>
         <th>Gender</th>
         <th>Grade</th>
+        <th>Detail PathVariable</th>
+        <th>Detail RequestParam</th>
     </tr>
     <c:forEach var="student" items="${studentList}" varStatus="loop">
         <tr>
@@ -45,9 +47,12 @@
                     </c:otherwise>
                 </c:choose>
             </td>
+            <td><a href="/detail/${student.id}">Detail Student</a></td>
+            <td><a href="/detail?id=${student.id}">Detail Student</a></td>
         </tr>
     </c:forEach>
 </table>
-<a href="/student_servlet?actionUser=create">Create new student</a>
+<a href="/create">Create new student</a>
+<h1 style="color: blue">${msg}</h1>
 </body>
 </html>

@@ -30,11 +30,13 @@ public class StudentRepository implements IStudentRepository {
 
     @Override
     public Student findById(Integer id) {
-        return null;
+        return studentMap.get(id);
     }
 
     @Override
-    public void save(Student student) {
-
+    public void save(String name, String dateOfBirth) {
+        int id = (int) (Math.random()*100);
+        Student student1 = new Student(id,name,dateOfBirth,0,3.0);
+        studentMap.put(id,student1);
     }
 }

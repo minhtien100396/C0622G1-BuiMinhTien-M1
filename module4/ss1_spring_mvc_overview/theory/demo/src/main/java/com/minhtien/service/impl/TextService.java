@@ -22,7 +22,7 @@ public class TextService implements IStudentService {
     }
 
     @Override
-    public void save(Student student) {
+    public void save(String name, String dateOfBirth) {
 
     }
 }

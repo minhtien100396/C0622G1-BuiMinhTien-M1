@@ -26,11 +26,11 @@ public class StudentService implements IStudentService {
 
     @Override
     public Student findById(Integer id) {
-        return null;
+        return studentRepository.findById(id);
     }
 
     @Override
-    public void save(Student student) {
-
+    public void save(String name, String dateOfBirth) {
+        studentRepository.save(name,dateOfBirth);
     }
 }
