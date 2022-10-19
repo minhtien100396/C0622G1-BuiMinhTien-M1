@@ -13,18 +13,18 @@
     <caption><h1>Bảng Danh Sách Sinh Viên</h1></caption>
     <tr>
         <th>STT</th>
-<!--        <th>Id</th>-->
+        <!--        <th>Id</th>-->
         <th>Name</th>
         <th>DateOfBirth</th>
         <th>Gender</th>
         <th>Grade</th>
         <th>ClassRoom</th>
-        <!--        <th>Detail PathVariable</th>-->
-        <!--        <th>Detail RequestParam</th>-->
+        <th>Detail PathVariable</th>
+<!--        <th>Detail RequestParam</th>-->
     </tr>
     <tr th:each="student,loop : ${studentList}">
         <td th:text="${loop.count}"></td>
-<!--        <td th:text="${student.id}"></td>-->
+        <!--        <td th:text="${student.id}"></td>-->
         <td th:text="${student.name}"></td>
         <td th:text="${student.dateOfBirth}"></td>
         <td th:switch="${student.gender}">
@@ -39,8 +39,9 @@
             <span th:unless="${student.grade <9 }">Very Good</span>
         </td>
         <td th:text="${student.classRoom}"></td>
+        <td><a th:href="@{/{id}/detail(id=${student.id})}">Detail Student</a></td>
         <!--        <td><a href="/detail/${student.id}">Detail Student</a></td>-->
-        <!--        <td><a href="/detail?id=${student.id}">Detail Student</a></td>-->
+        <!--                <td><a href="/detail?id=${student.id}">Detail Student</a></td>-->
     </tr>
 </table>
 

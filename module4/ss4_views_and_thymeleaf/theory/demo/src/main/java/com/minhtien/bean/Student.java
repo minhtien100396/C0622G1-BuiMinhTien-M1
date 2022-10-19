@@ -1,11 +1,27 @@
 package com.minhtien.bean;
 
+import javax.persistence.*;
+
+// @Entity(name = "student") : Tên của Table mà chúng ta Mapping
+@Entity(name = "student")
 public class Student {
-    private Integer id;
-    private String name;
-    private String dateOfBirth;
+    //@Id : khai báo khóa chính
+    //Tìm hiểu thêm Custorm GeneratedValue
+    //DENTITY: tự động tăng
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id; //Thuộc tính id
+    @Column(name = "name")
+    private String name; // Thuộc tính name
+    // name: tên cột, columnDefinition: kiểu dữ liệu của cột
+    @Column(name = "birthday",columnDefinition = "DATE")
+    private String dateOfBirth;// Thuộc tính date_of_birth
+    // 0:Female, 1:Male
+    @Column(name = "gender")
     private Integer gender;
+    @Column(name = "point")
     private Double grade;
+    @Column(name = "class_room")
     private String classRoom;
 
     public Student(Integer id, String name, String dateOfBirth, Integer gender, Double grade, String classRoom) {

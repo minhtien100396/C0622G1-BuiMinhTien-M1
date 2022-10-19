@@ -39,10 +39,10 @@ public class StudentController {
 
     //Sử dụng ModelAndView
 //    Khi trả về 1 view kèm theo 1  đối tượng cho JSP thì ta sử dụng ModelAndView code sẽ gọn hơn
-    @GetMapping(value = "detail/{id}")
+    @GetMapping(value = "/{id}/detail")
     public ModelAndView getDetailStudentByPathVariable(@PathVariable(value = "id") int idKey) {
         Student student = studentService.findById(idKey);
-        return new ModelAndView("detail", "student", student);
+        return new ModelAndView("/detail", "student", student);
     }
 //    @GetMapping(value = "detail")
 //    public String getDetailStudentByRequestParam(@RequestParam(value = "id") int idKey){
