@@ -26,11 +26,22 @@ public class StudentService implements IStudentService {
 
     @Override
     public Student findById(Integer id) {
-        return studentRepository.findById(id);
+        //orElse sẽ trả về null nếu không tìm thây đối tượng student  có id là id
+        return this.studentRepository.findById(id).orElse(null);
     }
 
     @Override
     public void save(Student student) {
-        studentRepository.save(student);
+        //Sử dụng cho cả update và thêm mới
+        // Khi có id trong Student -> cập nhật
+        // id = null or không có trong DB -> thêm mới
+        this.studentRepository.save(student);
+//        studentRepository.deleteById(student.getId());
+    }
+
+    @Override
+    public List<Student> searchByName(String searchName) {
+//        return studentRepository.searchByName("%"+searchName+"%");
+        return studentRepository.searchByName("%"+searchName+"%");
     }
 }

@@ -21,23 +21,16 @@ public class Student {
     private Integer gender;
     @Column(name = "point")
     private Double grade;
-    @Column(name = "class_room")
-    private String classRoom;
 
-    public Student(Integer id, String name, String dateOfBirth, Integer gender, Double grade, String classRoom) {
-        this.id = id;
-        this.name = name;
-        this.dateOfBirth = dateOfBirth;
-        this.gender = gender;
-        this.grade = grade;
-        this.classRoom = classRoom;
-    }
+    @ManyToOne
+    @JoinColumn(name = "class_id")
+    private ClassRoom classRoom;
 
-    public String getClassRoom() {
+    public ClassRoom getClassRoom() {
         return classRoom;
     }
 
-    public void setClassRoom(String classRoom) {
+    public void setClassRoom(ClassRoom classRoom) {
         this.classRoom = classRoom;
     }
 

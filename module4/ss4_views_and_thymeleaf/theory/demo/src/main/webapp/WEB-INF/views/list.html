@@ -9,6 +9,10 @@
 <div th:insert="~{/header::header1}"></div>
 <a th:href="@{/create}">Add new student</a>
 <p s style="color: blue" th:if="${msg}" th:text="${msg}"></p>
+<form action="/search" method="get">
+    <input type="text" name="searchName">
+    <button type="submit">Search By Name</button>
+</form>
 <table border="1px" width="100%" style="text-align: center">
     <caption><h1>Bảng Danh Sách Sinh Viên</h1></caption>
     <tr>
@@ -38,7 +42,7 @@
             <span th:if="${student.grade  < 9 && student.grade >=8}">Good</span>
             <span th:unless="${student.grade <9 }">Very Good</span>
         </td>
-        <td th:text="${student.classRoom}"></td>
+        <td th:text="${student.classRoom.nameClass}"></td>
         <td><a th:href="@{/{id}/detail(id=${student.id})}">Detail Student</a></td>
         <!--        <td><a href="/detail/${student.id}">Detail Student</a></td>-->
         <!--                <td><a href="/detail?id=${student.id}">Detail Student</a></td>-->

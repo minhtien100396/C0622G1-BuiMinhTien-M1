@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.List;
+
 // Với value thì chúng ta  thay tên bean từ studentController -> student
 @Controller
 public class StudentController {
@@ -63,5 +65,11 @@ public class StudentController {
         studentService.save(student);
         redirectAttributes.addFlashAttribute("msg", "Thêm thành công");
         return "redirect:/list";
+    }
+    @GetMapping("/search")
+    public String searchByName(@RequestParam(value = "searchName", defaultValue = "") String searchName, Model model){
+        List<Student> studentList = studentService.searchByName(searchName);
+        model.addAttribute("studentList",studentList);
+        return "/list";
     }
 }
