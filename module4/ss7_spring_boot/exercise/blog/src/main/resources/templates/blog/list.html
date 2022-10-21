@@ -40,7 +40,7 @@
         <td th:text="${blog.author}"></td>
         <td th:text="${blog.topic}"></td>
         <td th:text="${blog.content}"></td>
-        <td th:text="${blog.category}"></td>
+        <td th:text="${blog.catagory.name}"></td>
         <td><a th:href="@{/blog/{id}/edit(id=${blog.id})}">Edit</a></td>
         <td><a th:href="@{/blog/{id}/delete(id=${blog.id})}">Delete</a></td>
         <td><a th:href="@{/blog/{id}/view(id=${blog.id})}">View</a></td>

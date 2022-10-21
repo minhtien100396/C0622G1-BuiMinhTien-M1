@@ -21,7 +21,11 @@
         <input type="text" th:field="*{grade}">
     </p>
     <p>ClassRooms</p>
-    <input type="checkbox" th:field="*{classRoom}" th:each="class : ${classRooms}" th:value="${class.id}" th:text="${class.nameClass}">
+    <!--    <input type="checkbox" th:field="*{classRoom}" th:each="class : ${classRooms}" th:value="${class.id}" th:text="${class.nameClass}">-->
+    <select th:field="*{classRoom}">
+        <option th:each="classRoom : ${classRooms}" th:value="${classRoom.id}" th:text="${classRoom.nameClass}">
+        </option>
+    </select>
     <p>
         <button type="submit">Create Student</button>
     </p>

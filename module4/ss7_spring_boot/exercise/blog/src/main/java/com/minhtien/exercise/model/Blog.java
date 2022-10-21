@@ -1,9 +1,6 @@
 package com.minhtien.exercise.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Blog {
@@ -13,18 +10,22 @@ public class Blog {
     private String author;
     private String topic;
     private String content;
-    private String category;
+
+    @ManyToOne
+    @JoinColumn(name = "catagory_id", referencedColumnName = "id")
+    private Catagory catagory;
+
+    public Catagory getCatagory() {
+        return catagory;
+    }
+
+    public void setCatagory(Catagory catagory) {
+        this.catagory = catagory;
+    }
 
     public Blog() {
     }
 
-    public Blog(Integer id, String author, String topic, String content, String category) {
-        this.id = id;
-        this.author = author;
-        this.topic = topic;
-        this.content = content;
-        this.category = category;
-    }
 
     public Integer getId() {
         return id;
@@ -58,11 +59,4 @@ public class Blog {
         this.content = content;
     }
 
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
 }
