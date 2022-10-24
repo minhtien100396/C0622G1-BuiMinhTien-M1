@@ -37,4 +37,9 @@ public class BlogService implements IBlogService {
     public Page<Blog> findByEcommerceId(int id, Pageable pageable) {
         return blogRepository.findByECommerceId(id,pageable);
     }
+
+    @Override
+    public Page<Blog> findByAuthorAndEcommerceId(String author, int id, Pageable pageable) {
+        return blogRepository.findAuthorECom(author,id,pageable);
+    }
 }

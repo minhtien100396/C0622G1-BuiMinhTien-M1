@@ -16,4 +16,6 @@ public interface IBlogService {
     Page<Blog> findByAuthor(String author, Pageable pageable);
 
     Page<Blog> findByEcommerceId (int id, Pageable pageable);
+
+    Page<Blog> findByAuthorAndEcommerceId(String author, int id, Pageable pageable);
 }

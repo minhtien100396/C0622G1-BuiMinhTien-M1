@@ -35,6 +35,10 @@ public class BlogController {
         }else if (author.isPresent() && !ecomId.isPresent()){
             model.addAttribute("blogList",blogService.findByAuthor(author.get(),pageable));
             model.addAttribute("author",author.get());
+        }else {
+            model.addAttribute("blogList",blogService.findByAuthorAndEcommerceId(author.get(),ecomId.get(),pageable));
+            model.addAttribute("author",author.get());
+            model.addAttribute("ecomId",ecomId.get());
         }
         model.addAttribute("ecomerList",commerceService.findAll());
         return "/list";
