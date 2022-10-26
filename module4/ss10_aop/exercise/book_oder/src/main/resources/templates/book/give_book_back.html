@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout ::  head"></head>
+<body>
+<h3>Give Book Back</h3>
+<div style="margin-bottom: 10px">
+    <a th:href="@{/book/home}">
+        Back to book List
+    </a>
+</div>
+<div id="form">
+    <form th:object="${oder}" method="post" th:action="@{/book/return}" novalidate>
+        <input type="hidden" th:field="*{id}"/>
+        <div>
+            <label>Code</label>
+            <input type="text" th:field="*{code}" placeholder="Input Code">
+        </div>
+        <input type="submit" value="Give Book Back">
+    </form>
+</div>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+
+</html>
