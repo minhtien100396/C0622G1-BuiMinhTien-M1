@@ -27,6 +27,7 @@
                 <th>QuantiTy</th>
                 <th>Up</th>
                 <th>Down</th>
+                <th>Total Money</th>
             </tr>
             </thead>
             <tbody>
@@ -46,6 +47,7 @@
                     <a class="btn btn-success" role="button" th:href="@{/delete/{id}(id=${productMap.key.id})}"
                        style="color: red;background-color: green">-</a>
                 </td>
+                <td th:text="${productMap.key.price*productMap.value}"></td>
             <tr>
 
                 <td colspan="4"> Total Money</td>
