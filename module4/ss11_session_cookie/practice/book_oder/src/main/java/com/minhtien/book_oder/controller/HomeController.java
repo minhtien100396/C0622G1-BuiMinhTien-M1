@@ -11,6 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -23,7 +25,13 @@ public class HomeController {
     private IOderService oderService;
 
     @GetMapping("/home")
-    public String displayHome(@RequestParam(value = "page", defaultValue = "0") int page, Model model) {
+    public String displayHome(@CookieValue(value = "cookieCount", defaultValue = "0") int cookieCcount,
+                              HttpServletResponse response,
+                              @RequestParam(value = "page", defaultValue = "0") int page, Model model) {
+        Cookie cookie = new Cookie("cookieCount", String.valueOf(cookieCcount+1));
+        cookie.setMaxAge(5);
+        response.addCookie(cookie);
+        model.addAttribute("cookie",cookie);
         model.addAttribute("bookPage", bookServicce.findAll(PageRequest.of(page, 5)));
         return "/book/home";
     }
@@ -38,9 +46,9 @@ public class HomeController {
         book.setCount(book.getCount() - 1);
         Oder oder = new Oder();
         int code = (int) (Math.random() * (99999 - 10000) + 10000);
-        if (oderService.findByCode(code) == null){
+        if (oderService.findByCode(code) == null) {
             oder.setCode(code);
-        }else {
+        } else {
             throw new Exception();
         }
         String date = String.valueOf(LocalDate.now());
