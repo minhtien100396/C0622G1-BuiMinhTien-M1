@@ -36,7 +36,7 @@ public class ProductController {
     }
 
     @GetMapping("/detail/{id}")
-    public String showDetail(@CookieValue(value = "idProduct") Integer idPrdoduct, @PathVariable(value = "id") int id, HttpServletResponse response,
+    public String showDetail(@PathVariable(value = "id") int id, HttpServletResponse response,
                              Model model) {
         Cookie cookie = new Cookie("idProduct", String.valueOf(id));
         cookie.setMaxAge(60 * 60 * 24 * 1);
