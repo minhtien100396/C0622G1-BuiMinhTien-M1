@@ -59,10 +59,10 @@ public class ProductController {
     }
 
     @GetMapping("/back/{id}")
-    public String backToHome(@PathVariable(value = "id") int id, Model model, HttpServletResponse response) {
+    public String backToHome(@PathVariable(value = "id") int id, HttpServletResponse response) {
         Cookie cookie = new Cookie("idProduct", id + "");
         cookie.setMaxAge(60 * 60 * 24 * 1);
-        cookie.setPath("/");
+        cookie.setPath("/"); // Mặc định xuất hiện tất cả các trang
         response.addCookie(cookie);
         return "redirect:/";
     }
