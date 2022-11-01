@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7f4c00a0-1fa8-4489-8a51-fda7caf9c662" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../practice/practice_1/practice_1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/practice_1/practice_2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/practice_2/src/main/java/com/example/demo/controller/HomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/practice_2/src/main/java/com/example/demo/controller/SmartphoneController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/practice_2/src/main/java/com/example/demo/model/Smartphone.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/practice_2/src/main/java/com/example/demo/repository/ISmartphoneRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/practice_2/src/main/java/com/example/demo/service/ISmartphoneService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/practice_2/src/main/java/com/example/demo/service/impl/SmartphoneService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/practice_2/src/main/resources/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/practice_2/webstorm/create.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="2GONmCXQ7HZj1yO2McwcDrArxRO" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../blog_web_service/blog" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\code_gym\code_gym\bai_tap_githup\module4\ss7_spring_boot\exercise\blog\src\main\resources\templates\blog" />
+      <recent name="D:\code_gym\code_gym\bai_tap_githup\module4\ss7_spring_boot\exercise\blog\src\main\java\com\minhtien\exercise" />
+      <recent name="D:\code_gym\code_gym\bai_tap_githup\module4\ss7_spring_boot\exercise\blog\src\main\resources\templates" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="ExerciseApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="exercise.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.minhtien.exercise.ExerciseApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7f4c00a0-1fa8-4489-8a51-fda7caf9c662" name="Default Changelist" comment="" />
+      <created>1666255826272</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1666255826272</updated>
+      <workItem from="1666255831360" duration="2234000" />
+      <workItem from="1666266429620" duration="1098000" />
+      <workItem from="1666315154466" duration="14351000" />
+      <workItem from="1666357638980" duration="11878000" />
+      <workItem from="1666496472830" duration="6018000" />
+      <workItem from="1666534057920" duration="4418000" />
+      <workItem from="1666539985852" duration="745000" />
+      <workItem from="1666582273930" duration="1537000" />
+      <workItem from="1666585237846" duration="101000" />
+      <workItem from="1666598808783" duration="4604000" />
+      <workItem from="1666672519206" duration="1153000" />
+      <workItem from="1666700022798" duration="67000" />
+      <workItem from="1666700126451" duration="31000" />
+      <workItem from="1666701127924" duration="620000" />
+      <workItem from="1666705421190" duration="5027000" />
+      <workItem from="1667203031518" duration="5029000" />
+      <workItem from="1667264942177" duration="801000" />
+      <workItem from="1667291377113" duration="2584000" />
+      <workItem from="1667297624645" duration="294000" />
+      <workItem from="1667305157971" duration="304000" />
+      <workItem from="1667305668080" duration="1387000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="446" y="67" key="#com.intellij.ide.util.MemberChooser" timestamp="1667306042539">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="446" y="67" key="#com.intellij.ide.util.MemberChooser/0.0.1280.720@0.0.1280.720" timestamp="1667306042539" />
+    <state x="396" y="63" key="#xdebugger.evaluate" timestamp="1666339102466">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="396" y="63" key="#xdebugger.evaluate/0.0.1280.720@0.0.1280.720" timestamp="1666339102466" />
+    <state x="421" y="115" key="FileChooserDialogImpl" timestamp="1667307161251">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="421" y="115" key="FileChooserDialogImpl/0.0.1280.720@0.0.1280.720" timestamp="1667307161251" />
+    <state width="1237" height="191" key="GridCell.Tab.0.bottom" timestamp="1667274014166">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="1237" height="191" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1667274014166" />
+    <state width="1237" height="191" key="GridCell.Tab.0.center" timestamp="1667274014165">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="1237" height="191" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1667274014165" />
+    <state width="1237" height="191" key="GridCell.Tab.0.left" timestamp="1667274014165">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="1237" height="191" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1667274014165" />
+    <state width="1237" height="191" key="GridCell.Tab.0.right" timestamp="1667274014165">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="1237" height="191" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1667274014165" />
+    <state width="1237" height="191" key="GridCell.Tab.1.bottom" timestamp="1667274014166">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="1237" height="191" key="GridCell.Tab.1.bottom/0.0.1280.720@0.0.1280.720" timestamp="1667274014166" />
+    <state width="1237" height="191" key="GridCell.Tab.1.center" timestamp="1667274014166">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="1237" height="191" key="GridCell.Tab.1.center/0.0.1280.720@0.0.1280.720" timestamp="1667274014166" />
+    <state width="1237" height="191" key="GridCell.Tab.1.left" timestamp="1667274014166">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="1237" height="191" key="GridCell.Tab.1.left/0.0.1280.720@0.0.1280.720" timestamp="1667274014166" />
+    <state width="1237" height="191" key="GridCell.Tab.1.right" timestamp="1667274014166">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="1237" height="191" key="GridCell.Tab.1.right/0.0.1280.720@0.0.1280.720" timestamp="1667274014166" />
+    <state width="1237" height="157" key="GridCell.Tab.2.bottom" timestamp="1667221415036">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="1237" height="157" key="GridCell.Tab.2.bottom/0.0.1280.720@0.0.1280.720" timestamp="1667221415036" />
+    <state width="1237" height="157" key="GridCell.Tab.2.center" timestamp="1667221415036">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="1237" height="157" key="GridCell.Tab.2.center/0.0.1280.720@0.0.1280.720" timestamp="1667221415036" />
+    <state width="1237" height="157" key="GridCell.Tab.2.left" timestamp="1667221415036">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="1237" height="157" key="GridCell.Tab.2.left/0.0.1280.720@0.0.1280.720" timestamp="1667221415036" />
+    <state width="1237" height="157" key="GridCell.Tab.2.right" timestamp="1667221415036">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="1237" height="157" key="GridCell.Tab.2.right/0.0.1280.720@0.0.1280.720" timestamp="1667221415036" />
+    <state x="93" y="93" width="1095" height="535" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1666364092409">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="93" y="93" width="1095" height="535" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1280.720@0.0.1280.720" timestamp="1666364092408" />
+    <state x="417" y="117" key="refactoring.ChangeSignatureDialog" timestamp="1666327587267">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="417" y="117" key="refactoring.ChangeSignatureDialog/0.0.1280.720@0.0.1280.720" timestamp="1666327587267" />
+    <state x="297" y="161" key="run.anything.popup" timestamp="1667203765945">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="297" y="161" key="run.anything.popup/0.0.1280.720@0.0.1280.720" timestamp="1667203765945" />
+  </component>
+</project>
