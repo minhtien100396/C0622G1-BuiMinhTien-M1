@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+<body>
+<h2>Create student</h2>
+<p id="result"></p>
+<p>Name:</p>
+<input type="text" id="name"/>
+<p>Date Of Birth</p>
+<input type="date" id="dateOfBirth">
+<p>ClassRooms</p>
+<!--    <input type="checkbox" th:field="*{classRoom}" th:each="class : ${classRooms}" th:value="${class.id}" th:text="${class.nameClass}">-->
+<select id="classRoom">
+    <option th:each="classRoom : ${classRooms}" th:value="${classRoom.id}" th:text="${classRoom.nameClass}">
+    </option>
+</select>
+<p>
+    <input type="button" value="Create new" id="btnClick"></input>
+</p>
+</form>
+<div th:insert="~{student/header::header1}"></div>
+</body>
+<script>
+    $(document).ready(function () {
+        $('#btnClick').click(function (event) {
+            var name = document.getElementById("name").value;
+            var dateOfBirth = document.getElementById("dateOfBirth").value;
+            var classRoom = document.getElementById("classRoom").value;
+            var object_json = {"name":name, "dateOfBirth":dateOfBirth,"classRoom":classRoom}
+            $.ajax({
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                type: "post",
+                url: "/rest/create",
+                data: JSON.stringify(object_json), // parse biến json -> 1 đối tượng json
+                success: function (student) {
+                    var content = "";
+                    content+="<span>Student was create</span>";
+                    content+=" " +student.name;
+                    document.getElementById("result").innerHTML = content;
+                },
+                error: function () {
+
+                }
+            })
+        })
+    })
+</script>
+</html>

@@ -7,9 +7,12 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.ReflectionUtils;
 import org.springframework.web.bind.annotation.*;
 
+import java.lang.reflect.Field;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/student/v1")
@@ -25,6 +28,8 @@ public class StudentRestController {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         return new ResponseEntity<>(studentList,HttpStatus.OK);
+
+
     }
 
     //Thêm tài nguyên
@@ -36,7 +41,7 @@ public class StudentRestController {
         return new ResponseEntity(HttpStatus.OK);
     }
 
-    //Update tài nguyên
+//    Update tài nguyên
     @PutMapping("/{id}")
     public ResponseEntity<Student> updateStudent(@PathVariable(value = "id") Integer id,
                                                  @RequestBody StudentDto studentDto){
@@ -52,15 +57,26 @@ public class StudentRestController {
     }
     @PatchMapping("/{id}")
     public ResponseEntity<Student> editStudent(@PathVariable(value = "id") Integer id,
-                                                 @RequestBody StudentDto studentDto){
+                                                 @RequestBody Map<Object, Object> fields){
         Student currentStudent = studentService.findById(id);
         if (currentStudent == null){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-//        currentStudent.setName(studentDto.getName());
-//        currentStudent.setGender(studentDto.getGender());
-        studentDto.setId(currentStudent.getId());
-        BeanUtils.copyProperties(studentDto,currentStudent);
+//
+
+
+        for(Map.Entry<Object, Object> entry : fields.entrySet()) {
+            Field field = ReflectionUtils.findField(Student.class, (String)entry.getKey());
+            field.setAccessible(true);
+            ReflectionUtils.setField(field, currentStudent, entry.getValue());
+        }
+
+        //duyet lamda
+//        fields.forEach((key, value)->{
+//            Field field = ReflectionUtils.findField(Student.class, (String)key);
+//            field.setAccessible(true);
+//            ReflectionUtils.setField(field, currentStudent, value);
+//        });
         studentService.save(currentStudent);
         return new ResponseEntity<Student>(currentStudent,HttpStatus.OK);
     }
