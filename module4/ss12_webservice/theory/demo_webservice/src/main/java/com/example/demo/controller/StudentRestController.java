@@ -14,6 +14,7 @@ import java.lang.reflect.Field;
 import java.util.List;
 import java.util.Map;
 
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/api/student/v1")
 public class StudentRestController {
