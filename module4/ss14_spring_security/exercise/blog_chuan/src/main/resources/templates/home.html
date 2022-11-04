@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec = "http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Home</h1>
+<!--Chưa xác thực-->
+<div sec:authorize="isAnonymous()">
+    <h2>Vui lòng đăng nhập</h2>
+</div>
+<!--Đã xác thực-->
+<div sec:authorize="isAuthenticated()">
+    <h2>Bạn đã đăng nhập</h2>
+    <h2>Xin chào bạn:
+    <span style="color: red" sec:authentication="principal.username"></span>
+    </h2>
+</div>
+<!--Tài nguyên của role Admin-->
+<div sec:authorize="hasRole('ADMIN')" style="color: green">
+    <span>EDIT</span>
+    <span>CREATE</span>
+    <span>DELETE</span>
+</div>
+<!--Tài nguyên của role USer-->
+<div sec:authorize="hasRole('USER')" style="color: blue">
+    <span>VIEW</span>
+    <span sec:authorize="hasRole('ADMIN')">TRANSACTION</span>
+</div>
+</body>
+</html>

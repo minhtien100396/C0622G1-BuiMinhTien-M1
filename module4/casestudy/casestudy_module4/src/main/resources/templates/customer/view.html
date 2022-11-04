@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head"></head>
+<body>
+<h3>View Customer</h3>
+<p>
+    <a class="back" style="width: 15%; text-decoration: none; text-align: center;background:darkgreen " th:href="@{/customer}">
+        Back To Page Customer
+    </a>
+</p>
+<table id="customers">
+    <thead>
+    <tr>
+        <th>Key</th>
+        <th>Value</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="cusdetail">
+        <td class="key">Id</td>
+        <td th:text="${customer.id}"></td>
+    </tr>
+
+
+    <tr class="cusdetail">
+        <td class="key">Name</td>
+        <td th:text="${customer.name}"></td>
+    </tr>
+
+
+    <tr class="cusdetail">
+        <td class="key">Address</td>
+        <td th:text="${customer.address}"></td>
+    </tr>
+
+
+    <tr class="cusdetail">
+        <td class="key">Date Of Birth</td>
+        <td th:text="${customer.dateOfBirth}"></td>
+    </tr>
+
+    <tr class="cusdetail">
+        <td class="key">Gender</td>
+        <td th:text="${customer.gender.gender}"></td>
+    </tr>
+
+
+    <tr class="cusdetail">
+        <td class="key">Email</td>
+        <td th:text="${customer.email}"></td>
+    </tr>
+
+
+    <tr class="cusdetail">
+        <td class="key">Id Card</td>
+        <td th:text="${customer.idCard}"></td>
+    </tr>
+
+
+    <tr class="cusdetail">
+        <td class="key">Phone Number</td>
+        <td th:text="${customer.phoneNumber}"></td>
+    </tr>
+
+
+    <tr class="cusdetail">
+        <td class="key">Status</td>
+        <td th:text="${customer.status}"></td>
+    </tr>
+
+
+    <tr class="cusdetail">
+        <td class="key">Customer Type</td>
+        <td th:text="${customer.customerType.name}"></td>
+    </tr>
+    </tbody>
+
+</table>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+</html>
