@@ -3,7 +3,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="/layout :: head"></head>
 <body>
-<h3>Create Customer</h3>
+<h3>Edit Customer</h3>
 <p>
     <a class="back" style="width: 15%; text-decoration: none; text-align: center;background:darkgreen "
        th:href="@{/customer}">
@@ -11,7 +11,7 @@
     </a>
 </p>
 <div id="form">
-    <form th:object="${customerDto}" method="post" th:action="@{/customer/create}" novalidate>
+    <form th:object="${customerDto}" method="post" th:action="@{/customer/edit}" novalidate>
         <input type="hidden" th:field="*{id}"/>
 
         <div>

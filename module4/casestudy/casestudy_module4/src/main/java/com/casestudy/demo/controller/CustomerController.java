@@ -1,17 +1,17 @@
 package com.casestudy.demo.controller;
 
+import com.casestudy.demo.dto.CustomerDto;
 import com.casestudy.demo.model.Customer;
 import com.casestudy.demo.service.ICustomerService;
 import com.casestudy.demo.service.ICustomerTypeService;
+import com.casestudy.demo.service.IGenderService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
@@ -22,6 +22,9 @@ public class CustomerController {
 
     @Autowired
     private ICustomerTypeService customerTypeService;
+
+    @Autowired
+    private IGenderService genderService;
 
     @GetMapping
     public String getListFind(@RequestParam(value = "page", defaultValue = "0") Integer page,
@@ -63,7 +66,39 @@ public class CustomerController {
     }
 
     @GetMapping("/create")
-    public String create(){
+    public String create(Model model){
+        model.addAttribute("customerType", customerTypeService.getList());
+        model.addAttribute("gender", genderService.getList());
+        model.addAttribute("customerDto", new CustomerDto());
         return "/customer/create";
+    }
+
+    @PostMapping("/create")
+    public String create(@ModelAttribute(value = "customerDto") CustomerDto customerDto,
+                         RedirectAttributes redirectAttributes){
+        Customer customer = new Customer();
+        BeanUtils.copyProperties(customerDto,customer);
+        customerService.save(customer);
+        redirectAttributes.addFlashAttribute("message", "Add new customer "+ customerDto.getName()+ " successfully!");
+        return "redirect:/customer";
+    }
+
+    @GetMapping("/{id}/edit")
+    public String edit(@PathVariable(value = "id") Integer id,
+                       Model model){
+        model.addAttribute("customerType", customerTypeService.getList());
+        model.addAttribute("gender", genderService.getList());
+        model.addAttribute("customerDto", customerService.findById(id));
+        return "/customer/edit";
+    }
+
+    @PostMapping("/edit")
+    public String edit(@ModelAttribute(value = "customerDto") CustomerDto customerDto,
+                         RedirectAttributes redirectAttributes){
+        Customer customer = new Customer();
+        BeanUtils.copyProperties(customerDto,customer);
+        customerService.save(customer);
+        redirectAttributes.addFlashAttribute("message", "Edit new customer "+ customerDto.getName()+ " successfully!");
+        return "redirect:/customer";
     }
 }

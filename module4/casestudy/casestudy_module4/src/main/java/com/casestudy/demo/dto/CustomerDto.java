@@ -1,38 +1,25 @@
-package com.casestudy.demo.model;
+package com.casestudy.demo.dto;
 
-import org.springframework.context.annotation.Bean;
+import com.casestudy.demo.model.Contract;
+import com.casestudy.demo.model.CustomerType;
+import com.casestudy.demo.model.Gender;
 
-import javax.persistence.*;
 import java.util.Set;
 
-@Entity
-public class Customer {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class CustomerDto {
     private Integer id;
-    @Column(name = "name")
     private String name;
-    @Column(name = "date_of_birth", columnDefinition = "DATE")
     private String dateOfBirth;
     private String idCard;
     private String phoneNumber;
     private String email;
     private String address;
-    @Column(name = "status", columnDefinition = "int default 1")
-    private Integer status;
-
-    @ManyToOne
-    @JoinColumn(name = "gender_id", referencedColumnName = "id")
+    private Integer status = 1;
     private Gender gender;
-
-    @ManyToOne
-    @JoinColumn(name = "customer_type_id", referencedColumnName = "id")
     private CustomerType customerType;
-
-    @OneToMany(mappedBy = "customer")
     private Set<Contract> contracts;
 
-    public Customer() {
+    public CustomerDto() {
     }
 
     public Integer getId() {
@@ -42,7 +29,6 @@ public class Customer {
     public void setId(Integer id) {
         this.id = id;
     }
-
 
     public String getName() {
         return name;
@@ -58,14 +44,6 @@ public class Customer {
 
     public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
-    }
-
-    public Gender getGender() {
-        return gender;
-    }
-
-    public void setGender(Gender gender) {
-        this.gender = gender;
     }
 
     public String getIdCard() {
@@ -106,6 +84,14 @@ public class Customer {
 
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
     }
 
     public CustomerType getCustomerType() {
