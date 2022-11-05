@@ -55,8 +55,8 @@ public class CustomerController {
         return "/customer/view";
     }
 
-    @GetMapping("/{id}/delete")
-    public String delete(@PathVariable(value = "id") Integer id,
+    @GetMapping("/delete")
+    public String delete(@RequestParam(value = "idDelete") Integer id,
                          RedirectAttributes redirectAttributes) {
         Customer customer = customerService.findById(id);
         customer.setStatus(0);

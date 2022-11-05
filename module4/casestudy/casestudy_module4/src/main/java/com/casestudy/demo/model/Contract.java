@@ -26,6 +26,10 @@ public class Contract {
     @OneToMany(mappedBy = "contract")
     private Set<ContractDetail> contractDetails;
 
+    @ManyToOne
+    @JoinColumn(name = "employee_id",referencedColumnName = "id")
+    private Employee employee;
+
     public Contract() {
     }
 
