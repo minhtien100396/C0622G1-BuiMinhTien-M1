@@ -19,78 +19,166 @@
     </tr>
     </thead>
     <tbody>
-    <tr class="cusdetail">
-        <td class="key">Id</td>
-        <td th:text="${facility.id}"></td>
-    </tr>
+    <div th:if="${facility.facilityType.id == 1}">
+        <tr class="cusdetail">
+            <td class="key">Id</td>
+            <td th:text="${facility.id}"></td>
+        </tr>
 
 
-    <tr class="cusdetail">
-        <td class="key">Name</td>
-        <td th:text="${facility.name}"></td>
-    </tr>
+        <tr class="cusdetail">
+            <td class="key">Name</td>
+            <td th:text="${facility.name}"></td>
+        </tr>
 
 
-    <tr class="cusdetail">
-        <td class="key">Area</td>
-        <td th:text="${facility.area}"></td>
-    </tr>
+        <tr class="cusdetail">
+            <td class="key">Area</td>
+            <td th:text="${facility.area}"></td>
+        </tr>
 
 
-    <tr class="cusdetail">
-        <td class="key">Cost</td>
-        <td th:text="${facility.cost}"></td>
-    </tr>
+        <tr class="cusdetail">
+            <td class="key">Cost</td>
+            <td th:text="${facility.cost}"></td>
+        </tr>
 
-    <tr class="cusdetail">
-        <td class="key">Description Other Convenience</td>
-        <td th:text="${facility.descriptionOtherConvenience}"></td>
-    </tr>
+        <tr class="cusdetail">
+            <td class="key">Max People</td>
+            <td th:text="${facility.maxPeople}"></td>
+        </tr>
 
+        <tr class="cusdetail">
+            <td class="key">Facility Rent</td>
+            <td th:text="${facility.rentType.name}"></td>
+        </tr>
 
-    <tr class="cusdetail">
-        <td class="key">Facility Free</td>
-        <td th:text="${facility.facilityFree}"></td>
-    </tr>
+        <tr class="cusdetail">
+            <td class="key">Standard Room</td>
+            <td th:text="${facility.standardRoom}"></td>
+        </tr>
 
+        <tr class="cusdetail">
+            <td class="key">Description Other Convenience</td>
+            <td th:text="${facility.descriptionOtherConvenience}"></td>
+        </tr>
 
-    <tr class="cusdetail">
-        <td class="key">Max People</td>
-        <td th:text="${facility.maxPeople}"></td>
-    </tr>
+        <tr class="cusdetail">
+            <td class="key">Pool Area</td>
+            <td th:text="${facility.poolArea}"></td>
+        </tr>
 
+        <tr class="cusdetail">
+            <td class="key">Number Of Floors</td>
+            <td th:text="${facility.numberOfFloors}"></td>
+        </tr>
 
-    <tr class="cusdetail">
-        <td class="key">Number Of Floors</td>
-        <td th:text="${facility.numberOfFloors}"></td>
-    </tr>
-
-    <tr class="cusdetail">
-        <td class="key">Pool Area</td>
-        <td th:text="${facility.poolArea}"></td>
-    </tr>
-
-    <tr class="cusdetail">
-        <td class="key">Standard Room</td>
-        <td th:text="${facility.standardRoom}"></td>
-    </tr>
-
-    <tr class="cusdetail">
-        <td class="key">Facility Type</td>
-        <td th:text="${facility.facilityType.name}"></td>
-    </tr>
-
-    <tr class="cusdetail">
-        <td class="key">Facility Rent</td>
-        <td th:text="${facility.rentType.name}"></td>
-    </tr>
+        <tr class="cusdetail">
+            <td class="key">Facility Type</td>
+            <td th:text="${facility.facilityType.name}"></td>
+        </tr>
+    </div>
+    <div th:if="${facility.facilityType.id == 2}">
+        <tr class="cusdetail">
+            <td class="key">Id</td>
+            <td th:text="${facility.id}"></td>
+        </tr>
 
 
-    <tr class="cusdetail">
-        <td class="key">Status</td>
-        <td th:text="${facility.status}"></td>
-    </tr>
+        <tr class="cusdetail">
+            <td class="key">Name</td>
+            <td th:text="${facility.name}"></td>
+        </tr>
 
+
+        <tr class="cusdetail">
+            <td class="key">Area</td>
+            <td th:text="${facility.area}"></td>
+        </tr>
+
+
+        <tr class="cusdetail">
+            <td class="key">Cost</td>
+            <td th:text="${facility.cost}"></td>
+        </tr>
+
+        <tr class="cusdetail">
+            <td class="key">Max People</td>
+            <td th:text="${facility.maxPeople}"></td>
+        </tr>
+
+        <tr class="cusdetail">
+            <td class="key">Facility Rent</td>
+            <td th:text="${facility.rentType.name}"></td>
+        </tr>
+
+        <tr class="cusdetail">
+            <td class="key">Standard Room</td>
+            <td th:text="${facility.standardRoom}"></td>
+        </tr>
+
+        <tr class="cusdetail">
+            <td class="key">Description Other Convenience</td>
+            <td th:text="${facility.descriptionOtherConvenience}"></td>
+        </tr>
+
+
+        <tr class="cusdetail">
+            <td class="key">Number Of Floors</td>
+            <td th:text="${facility.numberOfFloors}"></td>
+        </tr>
+
+        <tr class="cusdetail">
+            <td class="key">Facility Type</td>
+            <td th:text="${facility.facilityType.name}"></td>
+        </tr>
+    </div>
+    <div th:if="${facility.facilityType.id == 3}">
+        <tr class="cusdetail">
+            <td class="key">Id</td>
+            <td th:text="${facility.id}"></td>
+        </tr>
+
+
+        <tr class="cusdetail">
+            <td class="key">Name</td>
+            <td th:text="${facility.name}"></td>
+        </tr>
+
+
+        <tr class="cusdetail">
+            <td class="key">Area</td>
+            <td th:text="${facility.area}"></td>
+        </tr>
+
+
+        <tr class="cusdetail">
+            <td class="key">Cost</td>
+            <td th:text="${facility.cost}"></td>
+        </tr>
+
+        <tr class="cusdetail">
+            <td class="key">Max People</td>
+            <td th:text="${facility.maxPeople}"></td>
+        </tr>
+
+        <tr class="cusdetail">
+            <td class="key">Facility Rent</td>
+            <td th:text="${facility.rentType.name}"></td>
+        </tr>
+
+
+        <tr class="cusdetail">
+            <td class="key">Facility Free</td>
+            <td th:text="${facility.facilityFree}"></td>
+        </tr>
+
+
+        <tr class="cusdetail">
+            <td class="key">Facility Type</td>
+            <td th:text="${facility.facilityType.name}"></td>
+        </tr>
+    </div>
     </tbody>
 
 </table>
