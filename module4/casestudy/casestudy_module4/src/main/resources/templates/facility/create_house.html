@@ -4,15 +4,15 @@
 <head th:replace="/layout :: head"></head>
 <body>
 <header th:replace="/layout :: header"></header>
-<h3>Edit Customer</h3>
+<h3>Create House</h3>
 <p>
     <a class="back" style="width: 15%; text-decoration: none; text-align: center;background:darkgreen "
-       th:href="@{/customer}">
-        Back To Page Customer
+       th:href="@{/facility}">
+        Back To Page Facility
     </a>
 </p>
 <div id="form">
-    <form th:object="${customerDto}" method="post" th:action="@{/customer/edit}" novalidate>
+    <form th:object="${facilityDto}" method="post" th:action="@{/facility/villa/create}" novalidate>
         <input type="hidden" th:field="*{id}"/>
 
         <div>
@@ -21,45 +21,50 @@
         </div>
 
         <div>
-            <label>Address</label>
-            <input type="text" th:field="*{address}">
+            <label>Area</label>
+            <input type="text" th:field="*{area}">
         </div>
 
         <div>
-            <label>Date Of Birth</label>
-            <input type="date" th:field="*{dateOfBirth}">
+            <label>Cost</label>
+            <input type="text" th:field="*{cost}">
         </div>
 
         <div>
-            <label>Email</label>
-            <input type="email" th:field="*{email}">
+            <label>Max People</label>
+            <input type="text" th:field="*{maxPeople}">
         </div>
 
         <div>
-            <label>Gender</label>
-            <select th:field="*{gender}">
-                <option th:each="item : ${gender}" th:text="${item.gender}" th:value="${item.id}"></option>
+            <label>Rent Type</label>
+            <select th:field="*{rentType}">
+                <option th:each="item : ${rentTypeList}" th:text="${item.name}" th:value="${item.id}"></option>
             </select>
         </div>
 
         <div>
-            <label>Customer Type</label>
-            <select th:field="*{customerType}">
-                <option th:each="item : ${customerType}" th:text="${item.name}" th:value="${item.id}"></option>
+            <label>Standard Room</label>
+            <input type="text" th:field="*{standardRoom}">
+        </div>
+
+        <div>
+            <label>Description Other Convenience</label>
+            <input type="text" th:field="*{descriptionOtherConvenience}">
+        </div>
+
+        <div>
+            <label>Number Of Floors</label>
+            <input type="text" th:field="*{numberOfFloors}">
+        </div>
+
+        <div>
+            <label>Facility Type</label>
+            <select th:field="*{facilityType}">
+                <option value="2">House</option>
             </select>
         </div>
 
-        <div>
-            <label>Id Card</label>
-            <input type="text" th:field="*{idCard}">
-        </div>
-
-        <div>
-            <label>Phone Number</label>
-            <input type="text" th:field="*{phoneNumber}">
-        </div>
-
-        <input type="submit" value="Add">
+        <input type="submit" value="Add New House">
     </form>
 </div>
 <footer th:replace="/layout :: footer"></footer>

@@ -4,7 +4,8 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <title>Spring Boot</title>
 
     <style type="text/css">
@@ -66,6 +67,19 @@
             cursor: pointer;
             text-align: center;
         }
+        span a {
+            width: 300px;
+            line-height: 60px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 10px;
+            margin: 10px 5px 0px 0px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: right;
+            text-decoration: none;
+        }
 
         input[type=submit]:hover {
             background-color: #45a049;
@@ -88,11 +102,119 @@
         }
 
     </style>
+    <style>
+        #navbarSupportedContent ul li a {
+            color: white;
+        }
+        #navbarSupportedContent ul ul li:hover {
+            background: pink;
+        }
+        #navbarSupportedContent ul li a:hover {
+            background: pink;
+            color: black;
+        }
+    </style>
 </head>
 <body>
-
+<header th:fragment="header">
+    <div  style="margin-top: 10px">
+        <div class="bg">
+            <nav class="navbar navbar-light bg-black">
+                <div class="container-fluid" style="height: 120px; line-height: 120px;margin-top: -10px">
+                    <a class="navbar-brand" href="/home">
+                        <img src="/img/home_1.png" alt="" width="80" height="100"
+                             class="d-inline-block align-content-center">
+                    </a>
+                    <strong style="color: white; font-family: 'Lucida Sans'; font-size: 20px; margin-right: 0px;color: pink">Bùi Minh
+                        Tiến</strong>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div  style="margin-top: 10px; margin-bottom: 10px">
+        <div class="">
+            <nav class="navbar navbar-expand-lg bg-black">
+                <div class="container-fluid" >
+                    <a class="navbar-brand" href="/home" style="color: pink"><strong>FURUMA</strong></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="/home">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Employee
+                                </a>
+                                <ul class="dropdown-menu bg-black">
+                                    <li><a class="dropdown-item" href="/employee">Employee Management</a></li>
+                                    <li><hr class="dropdown-divider bg-light"></li>
+                                    <li><a class="dropdown-item" href="/employee?action=create">Add New Employee</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Customer
+                                </a>
+                                <ul class="dropdown-menu bg-black">
+                                    <li><a class="dropdown-item" href="/customer">Customer Management</a></li>
+                                    <li><hr class="dropdown-divider bg-light"></li>
+                                    <li><a class="dropdown-item" href="/customer/create">Create New Customer</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown bg-black">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Facility
+                                </a>
+                                <ul class="dropdown-menu bg-black">
+                                    <li><a class="dropdown-item" href="/facility">Facility Management</a></li>
+                                    <li><hr class="dropdown-divider bg-light"></li>
+                                    <li><a class="dropdown-item" href="/facility/villa/create">Create New Villa</a></li>
+                                    <li><hr class="dropdown-divider bg-light"></li>
+                                    <li><a class="dropdown-item" href="/facility/house/create">Create New House</a></li>
+                                    <li><hr class="dropdown-divider bg-light"></li>
+                                    <li><a class="dropdown-item" href="/facility/room/create">Create New Room</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Contract
+                                </a>
+                                <ul class="dropdown-menu bg-black">
+                                    <li><a class="dropdown-item" href="/contract">Contract Management</a></li>
+                                    <li><hr class="dropdown-divider bg-light"></li>
+                                    <li><a class="dropdown-item" href="/contract?action=create">Create New Contract</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
 <footer th:fragment="footer">
-    &copy; 2022 BMT
+    <div style="margin-top: 0px">
+        <div>
+            <div class="row" style="margin: 0px 0px">
+                <div class="col-lg-12 bg-black" style="height: 60px; color: white; line-height: 60px; font-size: 14px">
+                    <div>
+                        <span style="color: pink">* Some software, accessories, and devices sold separately.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous">
+
+</script>
 </body>
 </html>

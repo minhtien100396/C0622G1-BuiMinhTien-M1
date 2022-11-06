@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -19,83 +20,7 @@
     </style>
 </head>
 <body>
-<div class="container-fluid" style="margin-top: 10px">
-    <div class="container bg">
-        <nav class="navbar navbar-light bg-black">
-            <div class="container-fluid" style="height: 120px; line-height: 120px;margin-top: -10px">
-                <a class="navbar-brand" href="#">
-                    <img src="/img/home_1.png" alt="" width="80" height="100"
-                         class="d-inline-block align-content-center">
-                </a>
-                <strong style="color: white; font-family: 'Lucida Sans'; font-size: 20px; margin-right: 0px;color: pink">Bùi Minh
-                    Tiến</strong>
-            </div>
-        </nav>
-    </div>
-</div>
-<div class="container-fluid" style="margin-top: 10px">
-    <div class="container">
-        <nav class="navbar navbar-expand-lg bg-black">
-            <div class="container-fluid" >
-                <a class="navbar-brand" href="#" style="color: pink"><strong>FURUMA</strong></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Employee
-                            </a>
-                            <ul class="dropdown-menu bg-black">
-                                <li><a class="dropdown-item" href="/employee">Employee Management</a></li>
-                                <li><hr class="dropdown-divider bg-light"></li>
-                                <li><a class="dropdown-item" href="/employee?action=create">Add New Employee</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Customer
-                            </a>
-                            <ul class="dropdown-menu bg-black">
-                                <li><a class="dropdown-item" href="/customer">Customer Management</a></li>
-                                <li><hr class="dropdown-divider bg-light"></li>
-                                <li><a class="dropdown-item" href="/customer/create">Create New Customer</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown bg-black">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Service
-                            </a>
-                            <ul class="dropdown-menu bg-black">
-                                <li><a class="dropdown-item" href="/service">Service Management</a></li>
-                                <li><hr class="dropdown-divider bg-light"></li>
-                                <li><a class="dropdown-item" href="/service?action=create">Create New Service</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Contract
-                            </a>
-                            <ul class="dropdown-menu bg-black">
-                                <li><a class="dropdown-item" href="/contract">Contract Management</a></li>
-                                <li><hr class="dropdown-divider bg-light"></li>
-                                <li><a class="dropdown-item" href="/contract?action=create">Create New Contract</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="border-color: pink;border-width: 5px">
-                        <button class="btn btn-outline-success" type="submit" style="color: pink; border-color: pink">Search</button>
-                    </form>
-                </div>
-            </div>
-        </nav>
-    </div>
-</div>
+<header th:replace="/layout :: header"></header>
 <div class="container-fluid">
     <div class="container" style="height: 2320px">
         <div class="row" style="margin-top: 10px">
@@ -263,18 +188,9 @@
         </div>
     </div>
 </div>
-<div class="container-fluid" style="margin-top: 10px">
-    <div class="container-fluid">
-        <div class="row" style="margin: 0px 0px">
-            <div class="col-lg-12 bg-black" style="height: 60px; color: white; line-height: 60px; font-size: 14px">
-                <div>
-                    <span style="color: pink">* Some software, accessories, and devices sold separately.</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<footer th:replace="/layout :: footer"></footer>
 <script src="/bootstrap/js/bootstrap.js"></script>
 <script src="/bootstrap/js/bootstrap.min.js"></script>
-<script src="/bootstrap/js/bootstrap.bundle.min.js"></script></body>
+<script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>

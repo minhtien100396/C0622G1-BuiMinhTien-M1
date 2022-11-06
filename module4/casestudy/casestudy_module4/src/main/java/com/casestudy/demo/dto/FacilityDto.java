@@ -1,14 +1,14 @@
-package com.casestudy.demo.model;
+package com.casestudy.demo.dto;
+
+import com.casestudy.demo.model.Contract;
+import com.casestudy.demo.model.FacilityType;
+import com.casestudy.demo.model.RentType;
 
 import javax.persistence.*;
 import java.util.Set;
 
-@Entity
-public class Facility {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class FacilityDto {
     private Integer id;
-    @Column(name = "name")
     private String name;
     private Integer area;
     private Double cost;
@@ -17,24 +17,13 @@ public class Facility {
     private String descriptionOtherConvenience;
     private Double poolArea;
     private Integer numberOfFloors;
-    @Column(name = "status", columnDefinition = "int default 1")
-    private Integer status;
-
-    @Column(name = "facility_free", columnDefinition = "TEXT")
+    private Integer status = 1;
     private String facilityFree;
-
-    @ManyToOne
-    @JoinColumn(name = "facility_type_id", referencedColumnName = "id")
     private FacilityType facilityType;
-
-    @ManyToOne
-    @JoinColumn(name = "rent_type_id", referencedColumnName = "id")
     private RentType rentType;
-
-    @OneToMany(mappedBy = "facility")
     private Set<Contract> contracts;
 
-    public Facility() {
+    public FacilityDto() {
     }
 
     public Integer getId() {
@@ -109,6 +98,14 @@ public class Facility {
         this.numberOfFloors = numberOfFloors;
     }
 
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
     public String getFacilityFree() {
         return facilityFree;
     }
@@ -139,13 +136,5 @@ public class Facility {
 
     public void setContracts(Set<Contract> contracts) {
         this.contracts = contracts;
-    }
-
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
     }
 }
