@@ -60,7 +60,7 @@ public class FacilityController {
         model.addAttribute("facilityTypeList", facilityTypeService.getList());
         model.addAttribute("rentTypeList", rentTypeService.getList());
         model.addAttribute("facilityDto", new FacilityDto());
-        return "/facility/create_villa";
+        return "/facility/create_facility/create_villa";
     }
 
     @PostMapping("/villa/create")
@@ -78,7 +78,7 @@ public class FacilityController {
         model.addAttribute("facilityTypeList", facilityTypeService.getList());
         model.addAttribute("rentTypeList", rentTypeService.getList());
         model.addAttribute("facilityDto", new FacilityDto());
-        return "/facility/create_house";
+        return "/facility/create_facility/create_house";
     }
 
     @PostMapping("/house/create")
@@ -96,7 +96,7 @@ public class FacilityController {
         model.addAttribute("facilityTypeList", facilityTypeService.getList());
         model.addAttribute("rentTypeList", rentTypeService.getList());
         model.addAttribute("facilityDto", new FacilityDto());
-        return "/facility/create_room";
+        return "/facility/create_facility/create_room";
     }
 
     @PostMapping("/room/create")
