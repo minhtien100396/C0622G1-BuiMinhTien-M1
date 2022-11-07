@@ -26,24 +26,17 @@ public class FacilityController {
 
     @GetMapping
     public String getListFind(@RequestParam(value = "page", defaultValue = "0") Integer page,
-                              @RequestParam(value = "status", defaultValue = "1") String status,
                               @RequestParam(value = "name", defaultValue = "") String name,
-                              @RequestParam(value = "facilityTypeId", defaultValue = "") String facilityTypeId,
+                              @RequestParam(value = "facilityType", defaultValue = "") String facilityType,
                               Model model) {
         Sort sort = Sort.by("name").ascending();
         model.addAttribute("facilityTypeList", facilityTypeService.getList());
         model.addAttribute("rentTypeList", rentTypeService.getList());
         model.addAttribute("name", name);
-        model.addAttribute("facilityTypeId", facilityTypeId);
-        if (facilityTypeId.equals("") && name.equals("")) {
-            model.addAttribute("facilityPage", facilityService.findByStatus(status, PageRequest.of(page, 5, sort)));
-        } else if (name.equals("")) {
-            model.addAttribute("facilityPage", facilityService.findByFacilityTypeId(facilityTypeId, status, PageRequest.of(page, 5, sort)));
-        } else if (facilityTypeId.equals("")) {
-            model.addAttribute("facilityPage", facilityService.findByName(name, status, PageRequest.of(page, 5, sort)));
-        } else {
-            model.addAttribute("facilityPage", facilityService.findByNameAndFacilityTypeId(name, facilityTypeId, status, PageRequest.of(page, 5, sort)));
-        }
+        model.addAttribute("facilityType", facilityType);
+
+        model.addAttribute("facilityPage", facilityService.findByNameAndFacilityType(name, facilityType, PageRequest.of(page, 5,sort)));
+
         return "/facility/list";
     }
 
@@ -120,21 +113,21 @@ public class FacilityController {
 
     @PostMapping("/edit")
     public String edit(@ModelAttribute(value = "facilityDto") FacilityDto facilityDto,
-                       RedirectAttributes redirectAttributes){
+                       RedirectAttributes redirectAttributes) {
         Facility facility = new Facility();
-        BeanUtils.copyProperties(facilityDto,facility);
+        BeanUtils.copyProperties(facilityDto, facility);
         facilityService.save(facility);
-        redirectAttributes.addFlashAttribute("message","Edit " + facilityDto.getName() + " successfully!");
+        redirectAttributes.addFlashAttribute("message", "Edit " + facilityDto.getName() + " successfully!");
         return "redirect:/facility";
     }
 
     @GetMapping("/delete")
     public String delete(@RequestParam(value = "id") Integer id,
-                         RedirectAttributes redirectAttributes){
+                         RedirectAttributes redirectAttributes) {
         Facility facility = facilityService.findById(id);
         facility.setStatus(0);
         facilityService.save(facility);
-        redirectAttributes.addFlashAttribute("message","Delete " + facility.getName() + " successfully!");
+        redirectAttributes.addFlashAttribute("message", "Delete " + facility.getName() + " successfully!");
         return "redirect:/facility";
     }
 }
