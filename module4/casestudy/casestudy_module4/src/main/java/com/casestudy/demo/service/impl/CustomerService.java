@@ -17,19 +17,10 @@ public class CustomerService implements ICustomerService {
 
 
     @Override
-    public Page<Customer> findByNameAndEmailAndCustomerType(String name, String email, String customerTypeId, String status, Pageable pageable) {
-        return customerRepository.findByNameAndEmailAndCustomerTypeId(name, email, customerTypeId, status, pageable);
+    public Page<Customer> findByNameAndEmailAndCustomerType(String name, String email, String customerType, Pageable pageable) {
+        return customerRepository.findByNameAndEmailAndCustomerTypeId(name, email, customerType, pageable);
     }
 
-    @Override
-    public Page<Customer> getPage(Pageable pageable) {
-        return customerRepository.findAll(pageable);
-    }
-
-    @Override
-    public Page<Customer> findByNameAndEmail(String name, String email, String status, Pageable pageable) {
-        return customerRepository.findPageNameAndEmail(name, email, status, pageable);
-    }
 
     @Override
     public Customer findById(Integer id) {
@@ -41,8 +32,5 @@ public class CustomerService implements ICustomerService {
         customerRepository.save(customer);
     }
 
-    @Override
-    public Page<Customer> findByStatus(String status, Pageable pageable) {
-        return customerRepository.findPageStatus(status, pageable);
-    }
+
 }
