@@ -31,10 +31,4 @@ public class ContractDetailRestController {
         return new ResponseEntity<>(contractDetail, HttpStatus.OK);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<ContractDetail> getContractDetail(@PathVariable int id){
-        ContractDetail contractDetail = contractDetailService.findById(id);
-        return new ResponseEntity<>(contractDetail, HttpStatus.OK);
-    }
-
 }

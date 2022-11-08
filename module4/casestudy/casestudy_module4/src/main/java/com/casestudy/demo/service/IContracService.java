@@ -7,4 +7,5 @@ import org.springframework.data.domain.Pageable;
 public interface IContracService {
     Page<Contract> getPage(Pageable pageable);
     void save(Contract contract);
+    Page<Contract> getPageUsing(Pageable pageable);
 }

@@ -1,5 +1,7 @@
 package com.casestudy.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -15,17 +17,21 @@ public class Contract {
     @Column(name = "deposit")
     private Double deposit;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "customer_id",referencedColumnName = "id")
     private Customer customer;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "facility_id", referencedColumnName = "id")
     private Facility facility;
 
+    @JsonBackReference
     @OneToMany(mappedBy = "contract")
     private Set<ContractDetail> contractDetails;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "employee_id",referencedColumnName = "id")
     private Employee employee;

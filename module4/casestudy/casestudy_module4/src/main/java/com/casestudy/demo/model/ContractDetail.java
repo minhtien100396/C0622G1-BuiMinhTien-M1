@@ -13,7 +13,6 @@ public class ContractDetail {
     private Integer quantity;
 
     @ManyToOne
-    @JsonBackReference
     @JoinColumn(name = "contract_id", referencedColumnName = "id")
     private Contract contract;
 

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head"></head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<style>
+    th, td {
+        border: 1px solid black;
+    }
+</style>
+<body>
+<header th:replace="/layout :: header"></header>
+<h3 style="font-weight: 800">List Customers Are Using The Service</h3>
+
+<table id="customers" style="margin-top: 10px">
+    <thead>
+    <tr>
+        <th>STT</th>
+        <th>Customer</th>
+        <th>Facility</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Accompanying Services</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="contract,loop : ${contractUsingPage}">
+        <td th:text="${contractUsingPage.number*5+loop.count}"></td>
+        <td th:text="${contract.customer.name}"></td>
+        <td th:text="${contract.facility.name}"></td>
+        <td th:text="${contract.startDate}"></td>
+        <td th:text="${contract.endDate}"></td>
+        <td class="text-center">
+            <!--        Button Show Attach Detail    -->
+            <button class="btn btn-primary"
+                    th:attr="onclick=|showAttachDetail('${contract.id}')|" data-bs-toggle="modal"
+                    data-bs-target="#showAttachDetail">
+                <span class="text-light m-auto">Attach Facility List</span>
+            </button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+
+
+<!--Attach Facility List-->
+<div class="modal fade" id="showAttachDetail" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content modalCSS">
+            <div class="modal-header">
+                <h3 style="font-weight: 800; color: white; background-color: darkgreen" class="modal-title"
+                    id="exampleModalLabel2">Attach Facility List</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+
+                <table id="showSlow" style="width: 100%"></table>
+
+
+                <div class="h5 text-danger text-center" id="note">
+                    No service included in the contract!
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Page-->
+<div style="text-align: center">
+    <span>
+        <a th:if="${contractUsingPage.hasPrevious()}"
+           th:href="@{/contract/using(page=${contractUsingPage.number}-1)}">
+            Previous
+        </a>
+    </span>
+
+    <span th:text="${contractUsingPage.number+1}"></span>/
+    <span th:text="${contractUsingPage.totalPages}"></span>
+
+    <span>
+        <a th:if="${contractUsingPage.hasNext()}"
+           th:href="@{/contract/using(page=${contractUsingPage.number+1})}">
+            Next
+        </a>
+    </span>
+</div>
+<footer th:replace="/layout :: footer"></footer>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+
+<!--JQuery-->
+<script>
+    function showAttachDetail(id) {
+        $("#showSlow").empty();
+        $("#note").show();
+        // $("#showSlow").hide();
+        $.ajax({
+            url: "http://localhost:8080/api/contract-detail/v1/" + id,
+            type: "GET",
+            dataType: "json",
+            success: function (data) {
+                if (data.length > 0) {
+                    $("#note").hide();
+                    let tr = [];
+                    tr.push("<tr style='text-align: center'>");
+                    tr.push("<th class='text-bg-primary h5'>" + "STT" + "</th>");
+                    tr.push("<th class='text-bg-primary h5'>" + "Name" + "</th>");
+                    tr.push("<th class='text-bg-primary h5'>" + "Unit" + "</th>");
+                    tr.push("<th class='text-bg-primary h5'>" + "Quatity" + "</th>");
+                    tr.push("</tr>");
+                    for (let i = 0; i < data.length; i++) {
+                        tr.push("<tr style='text-align: center'>");
+                        tr.push("<td class='text-black h6'>" + (i + 1) + "</td>");
+                        tr.push("<td class='text-black h6'>" + data[i].attachFacility.name + "</td>");
+                        tr.push("<td class='text-black h6'>" + data[i].attachFacility.unit + "</td>");
+                        tr.push("<td class='text-black h6'>" + data[i].quantity + "</td>");
+                        tr.push("</tr>");
+                    }
+                    $("#showSlow").append(tr.join(""));
+                }
+            }
+        })
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+</body>
+</html>

@@ -88,4 +88,12 @@ public class ContractController {
         redirectAttributes.addFlashAttribute("message", "Add new contract of Customer " + contract.getCustomer().getName() + " successfully!");
         return "redirect:/contract";
     }
+
+    @GetMapping("/using")
+    public String getListUsing(@RequestParam(value = "page", defaultValue = "0") Integer page, Model model){
+//        Sort sort = Sort.by("start_date");
+        Page<Contract> contractUsingPage = contracService.getPageUsing(PageRequest.of(page,5));
+        model.addAttribute("contractUsingPage",contractUsingPage);
+        return "/contract/using";
+    }
 }

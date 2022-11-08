@@ -24,5 +24,10 @@ public class ContractService implements IContracService {
         contractRepository.save(contract);
     }
 
+    @Override
+    public Page<Contract> getPageUsing(Pageable pageable) {
+        return contractRepository.getPageUsing(pageable);
+    }
+
 
 }
