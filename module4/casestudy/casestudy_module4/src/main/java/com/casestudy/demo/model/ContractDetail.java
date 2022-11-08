@@ -1,5 +1,7 @@
 package com.casestudy.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 
 @Entity
@@ -11,14 +13,26 @@ public class ContractDetail {
     private Integer quantity;
 
     @ManyToOne
-    @JoinColumn(name = "contract_id",referencedColumnName = "id")
+    @JsonBackReference
+    @JoinColumn(name = "contract_id", referencedColumnName = "id")
     private Contract contract;
 
     @ManyToOne
-    @JoinColumn(name = "attach_facility_id",referencedColumnName = "id")
+    @JoinColumn(name = "attach_facility_id", referencedColumnName = "id")
     private AttachFacility attachFacility;
 
+    @Column(name = "status", columnDefinition = "int default 1")
+    private Integer status;
+
     public ContractDetail() {
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 
     public Integer getId() {

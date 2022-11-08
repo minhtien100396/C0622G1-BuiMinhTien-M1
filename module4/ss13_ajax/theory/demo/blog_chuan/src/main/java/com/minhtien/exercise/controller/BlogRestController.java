@@ -59,7 +59,7 @@ public class BlogRestController {
             blogList = blogService.findAll(pageable);
         } else {
             blogList = blogService.findByAuthor(authorSearch, pageable);
-            if (blogList.isEmpty()){
+            if (blogList.isEmpty()) {
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
             }
         }

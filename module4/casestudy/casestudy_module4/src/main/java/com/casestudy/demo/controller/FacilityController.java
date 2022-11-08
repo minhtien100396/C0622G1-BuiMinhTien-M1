@@ -2,6 +2,7 @@ package com.casestudy.demo.controller;
 
 import com.casestudy.demo.dto.FacilityDto;
 import com.casestudy.demo.model.Facility;
+import com.casestudy.demo.model.FacilityType;
 import com.casestudy.demo.service.IFacilityService;
 import com.casestudy.demo.service.IFacilityTypeService;
 import com.casestudy.demo.service.IRentTypeService;
@@ -14,6 +15,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/facility")
 public class FacilityController {
@@ -24,17 +27,20 @@ public class FacilityController {
     @Autowired
     private IRentTypeService rentTypeService;
 
+    @ModelAttribute("facilityTypeList")
+    public List<FacilityType> getList(){
+        return facilityTypeService.getList();
+    }
+
     @GetMapping
     public String getListFind(@RequestParam(value = "page", defaultValue = "0") Integer page,
                               @RequestParam(value = "name", defaultValue = "") String name,
                               @RequestParam(value = "facilityType", defaultValue = "") String facilityType,
                               Model model) {
         Sort sort = Sort.by("name").ascending();
-        model.addAttribute("facilityTypeList", facilityTypeService.getList());
         model.addAttribute("rentTypeList", rentTypeService.getList());
         model.addAttribute("name", name);
         model.addAttribute("facilityType", facilityType);
-
         model.addAttribute("facilityPage", facilityService.findByNameAndFacilityType(name, facilityType, PageRequest.of(page, 5,sort)));
 
         return "/facility/list";
@@ -50,7 +56,6 @@ public class FacilityController {
 
     @GetMapping("/villa/create")
     public String createVilla(Model model) {
-        model.addAttribute("facilityTypeList", facilityTypeService.getList());
         model.addAttribute("rentTypeList", rentTypeService.getList());
         model.addAttribute("facilityDto", new FacilityDto());
         return "/facility/create_facility/create_villa";
@@ -68,7 +73,6 @@ public class FacilityController {
 
     @GetMapping("/house/create")
     public String createHouse(Model model) {
-        model.addAttribute("facilityTypeList", facilityTypeService.getList());
         model.addAttribute("rentTypeList", rentTypeService.getList());
         model.addAttribute("facilityDto", new FacilityDto());
         return "/facility/create_facility/create_house";
@@ -86,7 +90,6 @@ public class FacilityController {
 
     @GetMapping("/room/create")
     public String createRoom(Model model) {
-        model.addAttribute("facilityTypeList", facilityTypeService.getList());
         model.addAttribute("rentTypeList", rentTypeService.getList());
         model.addAttribute("facilityDto", new FacilityDto());
         return "/facility/create_facility/create_room";

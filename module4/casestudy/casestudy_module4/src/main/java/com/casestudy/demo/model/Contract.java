@@ -30,7 +30,18 @@ public class Contract {
     @JoinColumn(name = "employee_id",referencedColumnName = "id")
     private Employee employee;
 
+    @Column(name = "status", columnDefinition = "int default 1")
+    private Integer status = 1;
+
     public Contract() {
+    }
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
     }
 
     public Integer getId() {
@@ -89,4 +100,11 @@ public class Contract {
         this.contractDetails = contractDetails;
     }
 
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
 }

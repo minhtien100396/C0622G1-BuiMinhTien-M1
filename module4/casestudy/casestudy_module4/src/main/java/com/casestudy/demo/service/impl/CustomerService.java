@@ -9,6 +9,8 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class CustomerService implements ICustomerService {
 
@@ -30,6 +32,11 @@ public class CustomerService implements ICustomerService {
     @Override
     public void save(Customer customer) {
         customerRepository.save(customer);
+    }
+
+    @Override
+    public List<Customer> getList() {
+        return customerRepository.findAll();
     }
 
 

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="layout/header.html :: boostrap5">
+    <meta charset="UTF-8">
+    <title>Facility</title>
+</head>
+<body>
+<div class="container">
+    <header th:insert="layout/header.html :: header">
+    </header>
+    <a href="/contract/create">Add new Contract</a>
+    <p th:text="${message}"></p>
+    <table class="table table-striped">
+        <tr class="table-active">
+            <th>STT</th>
+            <th>Service</th>
+            <th>Start day</th>
+            <th>End day</th>
+            <th>Employee</th>
+            <th>Customer</th>
+            <th>Deposit</th>
+            <th>Total Pay</th>
+            <th>AttachFacility</th>
+        </tr>
+        <tr th:each="contract, state : ${contractPage}" class="table-hover">
+            <td th:text="${state.count}"></td>
+            <td>
+                <span class="text-uppercase" th:text="${contract.facility.facilityType.name}"></span>
+                <span> | </span>
+                <span th:text="${contract.facility.name}"></span>
+            </td>
+            <td th:text="${contract.startDay}"></td>
+            <td th:text="${contract.endDay}"></td>
+            <td th:text="${contract.employee.name}"></td>
+            <td th:text="${contract.customer.name}"></td>
+            <td th:text="${'đ' + #numbers.formatDecimal(contract.deposit, 0, 'COMMA', 0, 'POINT')}"></td>
+            <td th:text="${'...'}"></td>
+            <td>
+
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                        data-bs-target="#moreModal">
+                    +
+                </button>
+
+                <button type="button" class="btn btn-primary btn-sm"
+                        th:attr="onclick=|infoAttachFacility('${contract.id}')|"
+                        data-bs-toggle="modal"
+                        data-bs-target="#listAttachFacilityModal">
+                    Attach Facility
+                </button>
+            </td>
+        </tr>
+    </table>
+    <div class="page">
+        <a th:if="${contractPage.hasPrevious()}" th:href="@{'/customers'(page= ${contractPage.number - 1})}">Back</a>
+        <span th:text="${contractPage.number + 1}"></span>
+        <span>/</span>
+        <span th:text="${contractPage.totalPages}"></span>
+        <a th:if="${contractPage.hasNext()}" th:href="@{'/customers'(page= ${contractPage.number + 1})}">Next</a>
+    </div>
+</div>
+
+
+<!-- Modal more attach Facility -->
+<div class="modal fade" id="moreModal" tabindex="-1" aria-labelledby="moreModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="moreModalLabel">Add new Attach facility</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <label for="attach-facility">Info Attach: </label>
+                <select id="attach-facility">
+                    <option th:each="attFacility : ${attachFacilityList}"
+                            th:text="${attFacility.name +
+                             ' | ' + attFacility.unitAttach +
+                             ' | ' + attFacility.costAttach}"
+                            th:value="${attFacility.id}">
+                    </option>
+                </select> <br>
+                <label for="quality">Quality: </label>
+                <input type="text" id="quality">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal list attach Facility-->
+<div class="modal fade" id="listAttachFacilityModal" tabindex="-1" aria-labelledby="listAttachFacilityModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="listAttachFacilityModalLabel">List Attach Facility</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-striped">
+                    <tr class="table-active">
+                        <th>STT</th>
+                        <th>Name</th>
+                        <th>Quality</th>
+                        <th>Unit</th>
+                    </tr>
+                    <tr id="attach-facility-ajax">
+
+                    </tr>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End Modal list attach Facility -->
+
+<!--jQuery-->
+<script src="/facility/js/jquery3_6_1.js"></script>
+<script>
+    function infoAttachFacility(idContract) {
+        $.ajax({
+            url:"http://localhost:8080/api/v1/",
+            type: "GET",
+            dataType: "json",
+            success: function (data) {
+                console.log(data);
+            }
+        })
+    }
+</script>
+</body>
+</html>

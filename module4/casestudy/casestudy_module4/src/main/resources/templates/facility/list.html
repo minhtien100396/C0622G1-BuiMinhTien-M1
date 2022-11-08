@@ -14,9 +14,10 @@
 </div>
 <div>
     <form action="/facility">
-        <input style="width: 20%" type="text" name="name" placeholder="Name">
+        <input style="width: 20%" type="text" name="name" placeholder="Name" th:value="${name}">
         <select style="width: 20%" th:name="facilityType">
-            <option value="" selected>Choose Something</option>
+            <option th:if="${facilityType != ''}" th:value="${facilityType}" th:text="${facilityType}"></option>
+            <option value="">--All--</option>
             <option th:each="item : ${facilityTypeList}" th:value="${item.name}" th:text="${item.name}"></option>
         </select>
 
@@ -83,6 +84,8 @@
     </tr>
     </tbody>
 </table>
+<p class="h4 text-warning mt-5 text-center" th:if="${facilityPage.isEmpty()}">
+    The Service You Are Looking For Does Not Exist</p>
 <div style="text-align: center">
     <span>
         <a th:if="${facilityPage.hasPrevious()}"
