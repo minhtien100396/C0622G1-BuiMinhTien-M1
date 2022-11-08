@@ -13,6 +13,12 @@
     </div>
 </div>
 
+<style>
+    th, td {
+        border: 1px solid black;
+    }
+</style>
+
 <!--Modal ADD NEW CONTRACT-->
 <nav class="navbar navbar-expand-lg pb-0 mb-0">
     <div class="container-fluid">
@@ -134,31 +140,93 @@
             <a class="btn btn-primary" th:href="@{/contract/list-facility/{idContract}(idContract = ${contract.id})}">Attach
                 Facility List</a>
         </td>
-        <td><button class="btn btn-primary btn-outline-secondary btn-sm ms-3 px-3"
+        <td class="text-center">
+<!--            Button Add Contract Detail-->
+<!--            <button class="btn btn-primary"-->
+<!--                    th:attr="onclick=|addContractDetail('${contract.id}')|"-->
+<!--                    data-bs-toggle="modal"-->
+<!--                    data-bs-target="#addContractDetail">-->
+<!--                <span class="fa-solid fa-plus text-light h6 m-auto">+</span>-->
+<!--            </button>-->
+<!--        Button Show Attach Detail    -->
+            <button class="btn btn-primary"
                     th:attr="onclick=|showAttachDetail('${contract.id}')|" data-bs-toggle="modal"
                     data-bs-target="#showAttachDetail">
-            <span class="text-light m-auto">Facility List</span>
-        </button>
+                <span class="text-light m-auto">Attach Facility List</span>
+            </button>
         </td>
     </tr>
     </tbody>
 </table>
 
 
+<!--Add Contract Detail-->
+<!--<div class="modal fade" id="addContractDetail" tabindex="-1" aria-labelledby="exampleModalLabel1"-->
+<!--     aria-hidden="true">-->
+<!--    <div class="modal-dialog">-->
+<!--        <div class="modal-content">-->
+<!--            <form class="border border-2 border-success p-3 rounded formCSS"-->
+<!--                  th:action="@{/contractDetail/create}"-->
+<!--                  th:object="${contractDetailDto}" method="POST">-->
+<!--                <div class="modal-header">-->
+<!--                    <h3 class="modal-title fw-bold text-primary" id="exampleModalLabel4">THÊM DỊCH VỤ ĐI KÈM</h3>-->
+<!--                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+<!--                </div>-->
+
+<!--                <div class="modal-body">-->
+<!--                    <div class="form-group">-->
+<!--                        <label>Contract ID:</label>-->
+<!--                        <input name="contractId" id="contractId" th:field="*{contract}" readonly/>-->
+
+<!--                        <div class="form-group">-->
+<!--                            <label class="h6" for="attachFacility">Attach Facility:</label>-->
+<!--                            <div class="input-group">-->
+<!--                                <select id="attachFacility" class="form-select"-->
+<!--                                        th:field="*{attachFacilityList}">-->
+<!--                                    <option th:each="item : ${attachFacilityList}"-->
+<!--                                            th:value="${item.id}"-->
+<!--                                            th:text="${item.name + ' (₫ ' + item.attachFacilityCost + ')'}"></option>-->
+<!--                                </select>-->
+<!--                                <span class="input-group-text"><i class="fa-solid fa-file-signature"></i></span>-->
+<!--                            </div>-->
+<!--                        </div>-->
+
+<!--                        <div class="mt-3 form-group">-->
+<!--                            <label for="quantity" class="h6">Quantity:</label>-->
+<!--                            <div class="input-group">-->
+<!--                                <input type="number" id="quantity" class="form-control"-->
+<!--                                       placeholder="Nhập số lượng..." th:field="*{contractDetailQuantity}" required/>-->
+<!--                                <span class="input-group-text"></span>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    <div class="modal-footer">-->
+<!--                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>-->
+<!--                        <button type="submit" class="btn btn-success" value="delete">Lưu</button>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </form>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
 <!--Attach Facility List-->
 <div class="modal fade" id="showAttachDetail" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content modalCSS">
             <div class="modal-header">
-                <h4 class="modal-title text-center" id="exampleModalLabel2">DANH SÁCH DỊCH VỤ ĐI KÈM</h4>
+                <h4 class="modal-title text-center text-bg-info" id="exampleModalLabel2">Attach Facility List</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
             <div class="modal-body">
-                <table id="showSlow"></table>
+
+                <table id="showSlow" style="width: 100%"></table>
+
 
                 <div class="h5 text-danger text-center" id="note">
-                    Chưa có dịch vụ đi kèm trong hợp đồng!
+                    No service included in the contract!
                 </div>
             </div>
 
@@ -190,40 +258,60 @@
 </div>
 <footer th:replace="/layout :: footer"></footer>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+
+<!--JQuery-->
 <script>
     function showAttachDetail(id) {
-
-    $("#showSlow").empty();
-    $("#note").show();
-    // $("#showSlow").hide();
-    $.ajax({
-        url: "http://localhost:8080/api/v1/contract-detail/" + id,
-        type: "GET",
-        dataType: "json",
-        success: function (data) {
-            if (data.length > 0) {
-                $("#note").hide();
-                let tr = [];
-                tr.push("<tr>");
-                tr.push("<th>" + "Tên dịch vụ đi kèm" + "</th>");
-                tr.push("<th class='px-5'>" + "Đơn vị" + "</th>");
-                tr.push("<th class='text-center'>" + "Số lượng" + "</th>");
-                tr.push("</tr>");
-
-                for (let i = 0; i < data.length; i++) {
-                    tr.push("<tr>");
-                    tr.push("<td class='text-primary h6'>" + data[i].attachFacility.name+ "</td>");
-                    tr.push("<td class='text-primary h6'>" + data[i].attachFacility.unit+ "</td>");
-                    tr.push("<td class='text-primary h6'>" + data[i].quantity+ "</td>");
+        $("#showSlow").empty();
+        $("#note").show();
+        // $("#showSlow").hide();
+        $.ajax({
+            url: "http://localhost:8080/api/v1/contract-detail/" + id,
+            type: "GET",
+            dataType: "json",
+            success: function (data) {
+                if (data.length > 0) {
+                    $("#note").hide();
+                    let tr = [];
+                    tr.push("<tr style='text-align: center'>");
+                    tr.push("<th class='text-bg-primary h5'>" + "STT" + "</th>");
+                    tr.push("<th class='text-bg-primary h5'>" + "Name" + "</th>");
+                    tr.push("<th class='text-bg-primary h5'>" + "Unit" + "</th>");
+                    tr.push("<th class='text-bg-primary h5'>" + "Quatity" + "</th>");
                     tr.push("</tr>");
+                    for (let i = 0; i < data.length; i++) {
+                        tr.push("<tr style='text-align: center'>");
+                        tr.push("<td class='text-black h6'>" + (i + 1) + "</td>");
+                        tr.push("<td class='text-black h6'>" + data[i].attachFacility.name + "</td>");
+                        tr.push("<td class='text-black h6'>" + data[i].attachFacility.unit + "</td>");
+                        tr.push("<td class='text-black h6'>" + data[i].quantity + "</td>");
+                        tr.push("</tr>");
+                    }
+                    $("#showSlow").append(tr.join(""));
                 }
-                $("#showSlow").append(tr.join(""));
             }
-        }
-    })
+        })
+        $('#createAttachFacility').click(function () {
+            $.ajax({
+                let contractID = $('#contracidInfo').val();
+                let AttachID = $('#contracidInfo').val();
+                contentType: 'application/json',
+                type: 'POST',
+                ulr: ""
+                data: JSON.stringify(),
+                success: {
+
+                }
+            })
+        })
     }
 </script>
 <script>
+    // function addContractDetail(id) {
+    //     document.getElementById("contractId").value = id;
+    // }
+
     function infoDelete(id, name) {
         document.getElementById("id").value = id;
         document.getElementById("nameDisplay").innerText = name;

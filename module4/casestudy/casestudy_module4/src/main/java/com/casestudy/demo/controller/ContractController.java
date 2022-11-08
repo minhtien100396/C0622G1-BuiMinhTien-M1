@@ -1,5 +1,6 @@
 package com.casestudy.demo.controller;
 
+import com.casestudy.demo.dto.ContractDetailDto;
 import com.casestudy.demo.dto.ContractDto;
 import com.casestudy.demo.model.*;
 import com.casestudy.demo.service.*;

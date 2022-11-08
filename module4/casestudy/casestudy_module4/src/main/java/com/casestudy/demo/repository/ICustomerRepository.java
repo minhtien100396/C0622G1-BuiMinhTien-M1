@@ -14,4 +14,6 @@ public interface ICustomerRepository extends JpaRepository<Customer,Integer> {
                                                        @Param("customerType") String customerType,
                                                        Pageable pageable);
 
+
+
 }

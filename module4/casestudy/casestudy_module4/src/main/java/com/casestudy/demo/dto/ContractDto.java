@@ -1,10 +1,8 @@
 package com.casestudy.demo.dto;
 
-import com.casestudy.demo.model.ContractDetail;
-import com.casestudy.demo.model.Customer;
-import com.casestudy.demo.model.Employee;
-import com.casestudy.demo.model.Facility;
+import com.casestudy.demo.model.*;
 
+import javax.validation.constraints.Null;
 import java.util.Set;
 
 public class ContractDto {
@@ -107,7 +105,11 @@ public class ContractDto {
         totalMoney = facility.getCost();
         if (contractDetails!=null){
             for (ContractDetail item : contractDetails) {
-                totalMoney += item.getQuantity()*item.getAttachFacility().getCost();
+                Integer q = item.getQuantity();
+                AttachFacility c = item.getAttachFacility();
+                if(item == null || c == null || q == null)
+                    continue;
+                totalMoney += q.intValue() * c.getCost();
             }
 
         }
