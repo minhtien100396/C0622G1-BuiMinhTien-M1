@@ -53,8 +53,7 @@
                     <div class="input-group">
                         <select id="facility" class="form-select" th:field="*{facility}">
                             <option th:each="item : ${facilityList}" th:value="${item.id}"
-                                    th:text="${item.name}"
-                                    th:if="${item.facilityType.id != 3}">
+                                    th:text="${item.name}">
                             </option>
                         </select>
                         <span class="input-group-text"><i class="fa-solid fa-file-signature"></i></span>
@@ -67,7 +66,7 @@
                     <div class="input-group">
                         <select id="employee" class="form-select" th:field="*{employee}">
                             <option th:each="item : ${employeeList}" th:value="${item.id}"
-                                    th:text="${item.name}" th:if="${item.division.id != 3}">
+                                    th:text="${item.name}">
                             </option>
                         </select>
                         <span class="input-group-text"><i class="fa-solid fa-person-circle-question"></i></span>

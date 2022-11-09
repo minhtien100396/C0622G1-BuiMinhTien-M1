@@ -21,8 +21,10 @@ dependencies {
     implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
     runtimeOnly 'mysql:mysql-connector-java'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-}
 
+}
+compileJava.options.encoding = 'UTF-8'
+tasks.withType(JavaCompile) {options.encoding = 'UTF-8'}
 tasks.named('test') {
     useJUnitPlatform()
 }

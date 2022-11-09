@@ -13,6 +13,8 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -31,12 +33,12 @@ public class CustomerController {
     private IGenderService genderService;
 
     @ModelAttribute("customerTypeList")
-    public List<CustomerType> getList(){
+    public List<CustomerType> getList() {
         return customerTypeService.getList();
     }
 
     @ModelAttribute("gender")
-    public List<Gender> getListGender(){
+    public List<Gender> getListGender() {
         return genderService.getList();
     }
 
@@ -78,13 +80,21 @@ public class CustomerController {
     }
 
     @PostMapping("/create")
-    public String create(@ModelAttribute(value = "customerDto") CustomerDto customerDto,
+    public String create(@Validated @ModelAttribute(value = "customerDto") CustomerDto customerDto,
+                         BindingResult bindingResult,
                          RedirectAttributes redirectAttributes) {
-        Customer customer = new Customer();
-        BeanUtils.copyProperties(customerDto, customer);
-        customerService.save(customer);
-        redirectAttributes.addFlashAttribute("message", "Add new customer " + customerDto.getName() + " successfully!");
-        return "redirect:/customer";
+
+        new CustomerDto().validate(customerDto, bindingResult);
+        if (bindingResult.hasFieldErrors()) {
+            return "/customer/create";
+        } else {
+            Customer customer = new Customer();
+            BeanUtils.copyProperties(customerDto, customer);
+            customerService.save(customer);
+            redirectAttributes.addFlashAttribute("message", "Add new customer " + customerDto.getName() + " successfully!");
+            return "redirect:/customer";
+        }
+
     }
 
     @GetMapping("/{id}/edit")
@@ -95,12 +105,18 @@ public class CustomerController {
     }
 
     @PostMapping("/edit")
-    public String edit(@ModelAttribute(value = "customerDto") CustomerDto customerDto,
+    public String edit(@Validated @ModelAttribute(value = "customerDto") CustomerDto customerDto,
+                       BindingResult bindingResult,
                        RedirectAttributes redirectAttributes) {
-        Customer customer = new Customer();
-        BeanUtils.copyProperties(customerDto, customer);
-        customerService.save(customer);
-        redirectAttributes.addFlashAttribute("message", "Edit new customer " + customerDto.getName() + " successfully!");
-        return "redirect:/customer";
+        new CustomerDto().validate(customerDto, bindingResult);
+        if (bindingResult.hasFieldErrors()) {
+            return "/customer/edit";
+        } else {
+            Customer customer = new Customer();
+            BeanUtils.copyProperties(customerDto, customer);
+            customerService.save(customer);
+            redirectAttributes.addFlashAttribute("message", "Edit new customer " + customerDto.getName() + " successfully!");
+            return "redirect:/customer";
+        }
     }
 }

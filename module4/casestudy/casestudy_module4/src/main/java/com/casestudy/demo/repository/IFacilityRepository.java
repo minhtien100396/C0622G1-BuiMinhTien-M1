@@ -8,11 +8,15 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface IFacilityRepository extends JpaRepository<Facility,Integer> {
     @Query(value = "select f.* from `facility` f join `facility_type` ft on f.facility_type_id = ft.id  where f.name like %:name% and ft.name like %:facilityType% and f.status =1",nativeQuery = true)
     Page<Facility> findPageNameAndFacilityType(@Param("name") String name,
-                                                 @Param("facilityType") String facilityType,
-                                                 Pageable pageable);
+                                               @Param("facilityType") String facilityType,
+                                               Pageable pageable);
 
+    @Query(value = "select * from facility where status = 1",nativeQuery=true)
+    List<Facility> getList();
 }

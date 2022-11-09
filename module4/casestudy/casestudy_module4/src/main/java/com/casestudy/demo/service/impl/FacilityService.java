@@ -36,6 +36,6 @@ public class FacilityService implements IFacilityService {
 
     @Override
     public List<Facility> getList() {
-        return facilityRepository.findAll();
+        return facilityRepository.getList();
     }
 }

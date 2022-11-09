@@ -37,7 +37,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .defaultSuccessUrl("/home").permitAll()
         .and()
                 .authorizeRequests()
-                .antMatchers("/home").permitAll()
+                .antMatchers("/home", "/bootstrap/**", "bootstrap520/**",
+                        "/img/**", "/jquery/**", "/datatables/**").permitAll()
                 .antMatchers("/customer","/facility").hasAnyAuthority("ROLE_USER")
                 .antMatchers("/customer/*","/facility/*","/customer/*/view","/facility/*/*","/contract/*","/contract").hasAnyRole("ADMIN")
                 .anyRequest().authenticated();

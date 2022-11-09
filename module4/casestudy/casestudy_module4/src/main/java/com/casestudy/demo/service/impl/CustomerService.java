@@ -5,7 +5,6 @@ import com.casestudy.demo.repository.ICustomerRepository;
 import com.casestudy.demo.service.ICustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
@@ -36,7 +35,7 @@ public class CustomerService implements ICustomerService {
 
     @Override
     public List<Customer> getList() {
-        return customerRepository.findAll();
+        return customerRepository.getList();
     }
 
 

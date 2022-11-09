@@ -3,8 +3,12 @@ package com.casestudy.demo.dto;
 import com.casestudy.demo.model.AttachFacility;
 import com.casestudy.demo.model.Contract;
 
+import javax.validation.constraints.NotBlank;
+
 public class ContractDetailDto {
     private Integer id;
+
+    @NotBlank(message = "Quantity cannot be left blank")
     private Integer quantity;
     private Contract contract;
     private AttachFacility attachFacility;
