@@ -5,5 +5,5 @@ public interface IContractDto {
     String getFacilityList();
     String getStartDate();
     String getEndDate();
-    String getCustomerId();
+    int getCustomerId();
 }

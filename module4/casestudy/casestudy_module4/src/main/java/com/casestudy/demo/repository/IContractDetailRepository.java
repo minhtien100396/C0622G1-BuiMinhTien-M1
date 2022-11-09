@@ -16,5 +16,6 @@ public interface IContractDetailRepository extends JpaRepository<ContractDetail,
     ContractDetail findContractDetailByContractIdAndAttachFacilityId(@Param("contractId") int contractId,
                                                                      @Param("attachFacilityId") int attachFacilityId);
 
-    List<ContractDetail> findByCustomerId(int customerId);
+    @Query(value = "select cd.* from customer c join contract ct on c.id = ct.customer_id join contract_detail cd on cd.contract_id = ct.id join attach_facility af on cd.attach_facility_id = af.id where c.id =:customerId ", nativeQuery = true)
+    List<ContractDetail> findByCustomerId(@Param("customerId") int customerId);
 }

@@ -34,7 +34,7 @@
         <td class="text-center">
             <!--        Button Show Attach Detail    -->
             <button class="btn btn-primary"
-                    th:attr="onclick=|showAttachDetail('${contract.getCustomerId}')|" data-bs-toggle="modal"
+                    th:attr="onclick=|showAttachDetail('${contract.getCustomerId()}')|" data-bs-toggle="modal"
                     data-bs-target="#showAttachDetail">
                 <span class="text-light m-auto">Attach Facility List</span>
             </button>
@@ -98,12 +98,12 @@
 <!--JQuery-->
 <script>
     function showAttachDetail(id) {
-        alert(id);
+        // alert(id);
         $("#showSlow").empty();
         $("#note").show();
         // $("#showSlow").hide();
         $.ajax({
-            url: "http://localhost:8080/api/contract-detail/v1/using" + id,
+            url: "http://localhost:8080/api/contract-detail/v1/using/" + id,
             type: "GET",
             dataType: "json",
             success: function (data) {
