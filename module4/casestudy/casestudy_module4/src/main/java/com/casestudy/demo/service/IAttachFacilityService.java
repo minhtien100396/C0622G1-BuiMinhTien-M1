@@ -8,6 +8,8 @@ import java.util.List;
 
 public interface IAttachFacilityService {
     List<AttachFacility> getList();
+
     Page<AttachFacility> getPage(Integer idContract, Pageable pageable);
 
+    AttachFacility findAttachFacilityById(int attachFacilityId);
 }

@@ -21,7 +21,7 @@ public class ContractDetail {
     private AttachFacility attachFacility;
 
     @Column(name = "status", columnDefinition = "int default 1")
-    private Integer status;
+    private Integer status=1;
 
     public ContractDetail() {
     }

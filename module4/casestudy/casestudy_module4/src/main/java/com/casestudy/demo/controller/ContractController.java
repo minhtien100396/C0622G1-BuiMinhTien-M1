@@ -2,6 +2,7 @@ package com.casestudy.demo.controller;
 
 import com.casestudy.demo.dto.ContractDetailDto;
 import com.casestudy.demo.dto.ContractDto;
+import com.casestudy.demo.dto.IContractDto;
 import com.casestudy.demo.model.*;
 import com.casestudy.demo.service.*;
 import org.springframework.beans.BeanUtils;
@@ -31,6 +32,8 @@ public class ContractController {
     @Autowired
     private IFacilityService facilityService;
 
+    @Autowired
+    private IContractDetailService contractDetailService;
 
     @ModelAttribute("customerList")
     public List<Customer> getCustomerList() {
@@ -56,12 +59,12 @@ public class ContractController {
     public String getPage(@RequestParam(value = "page", defaultValue = "0") Integer page,
                           Model model) {
         Sort sort = Sort.by("start_date").ascending();
-        Page<Contract> contractPage = contracService.getPage(PageRequest.of(page,5,sort));
+        Page<Contract> contractPage = contracService.getPage(PageRequest.of(page, 5, sort));
         Page<ContractDto> contractDtoPage = contractPage.map(new Function<Contract, ContractDto>() {
             @Override
             public ContractDto apply(Contract contract) {
                 ContractDto contractDto = new ContractDto();
-                BeanUtils.copyProperties(contract,contractDto);
+                BeanUtils.copyProperties(contract, contractDto);
                 contractDto.getTotal();
                 return contractDto;
             }
@@ -90,10 +93,30 @@ public class ContractController {
     }
 
     @GetMapping("/using")
-    public String getListUsing(@RequestParam(value = "page", defaultValue = "0") Integer page, Model model){
-//        Sort sort = Sort.by("start_date");
-        Page<Contract> contractUsingPage = contracService.getPageUsing(PageRequest.of(page,5));
-        model.addAttribute("contractUsingPage",contractUsingPage);
+    public String getListUsing(@RequestParam(value = "page", defaultValue = "0") Integer page, Model model) {
+        Page<IContractDto> contractUsingPage = contracService.getContractUsing(PageRequest.of(page, 5));
+        model.addAttribute("contractUsingPage", contractUsingPage);
         return "/contract/using";
+    }
+
+    @PostMapping("/add-attach-facility")
+    public String addAttachFacility(@RequestParam(value = "contractId") int contractId,
+                                    @RequestParam(value = "attachFacilityId") int attachFacilityId,
+                                    @RequestParam(value = "quantity") int quantity) {
+        Contract contract = contracService.findContractById(contractId);
+        AttachFacility attachFacility = attachFacilityService.findAttachFacilityById(attachFacilityId);
+
+        ContractDetail contractDetailFind = contractDetailService.findContractDetailByContractIdAndAttachFacilityId(contractId, attachFacilityId);
+        if (contractDetailFind != null) {
+            contractDetailFind.setQuantity(contractDetailFind.getQuantity() + quantity);
+            contractDetailService.save(contractDetailFind);
+        } else {
+            ContractDetail contractDetail = new ContractDetail();
+            contractDetail.setAttachFacility(attachFacility);
+            contractDetail.setContract(contract);
+            contractDetail.setQuantity(quantity);
+            contractDetailService.save(contractDetail);
+        }
+        return "redirect:/contract";
     }
 }

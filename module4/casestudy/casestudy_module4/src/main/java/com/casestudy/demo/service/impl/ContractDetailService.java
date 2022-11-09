@@ -30,4 +30,14 @@ public class ContractDetailService implements IContractDetailService {
         return contractDetailRepository.findById(id).get();
     }
 
+    @Override
+    public ContractDetail findContractDetailByContractIdAndAttachFacilityId(int contractId, int attachFacilityId) {
+        return contractDetailRepository.findContractDetailByContractIdAndAttachFacilityId(contractId,attachFacilityId);
+    }
+
+    @Override
+    public List<ContractDetail> findByCustomerId(int customerId) {
+        return contractDetailRepository.findByCustomerId(customerId);
+    }
+
 }

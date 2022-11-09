@@ -2,7 +2,6 @@ package com.casestudy.demo.dto;
 
 import com.casestudy.demo.model.*;
 
-import javax.validation.constraints.Null;
 import java.util.Set;
 
 public class ContractDto {

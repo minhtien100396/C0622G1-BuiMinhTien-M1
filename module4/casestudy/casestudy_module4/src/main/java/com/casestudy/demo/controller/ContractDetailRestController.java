@@ -31,4 +31,13 @@ public class ContractDetailRestController {
         return new ResponseEntity<>(contractDetail, HttpStatus.OK);
     }
 
+    @GetMapping("/using/{customerId}")
+    public ResponseEntity<List<ContractDetail>> getContractDetailList(@PathVariable(value = "customerId") int customerId) {
+        List<ContractDetail> contractDetailPage = contractDetailService.findByCustomerId(customerId);
+        if (contractDetailPage.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(contractDetailPage, HttpStatus.OK);
+    }
+
 }

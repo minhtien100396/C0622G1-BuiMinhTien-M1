@@ -24,4 +24,9 @@ public class AttachFacilityService implements IAttachFacilityService {
     public Page<AttachFacility> getPage(Integer idContract, Pageable pageable) {
         return facilityRepository.getPageAttachFacility(idContract,pageable);
     }
+
+    @Override
+    public AttachFacility findAttachFacilityById(int attachFacilityId) {
+        return facilityRepository.findById(attachFacilityId).orElse(null);
+    }
 }

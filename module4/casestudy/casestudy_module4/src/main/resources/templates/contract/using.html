@@ -27,14 +27,14 @@
     <tbody>
     <tr th:each="contract,loop : ${contractUsingPage}">
         <td th:text="${contractUsingPage.number*5+loop.count}"></td>
-        <td th:text="${contract.customer.name}"></td>
-        <td th:text="${contract.facility.name}"></td>
-        <td th:text="${contract.startDate}"></td>
-        <td th:text="${contract.endDate}"></td>
+        <td th:text="${contract.getCustomerName()}"></td>
+        <td th:text="${contract.getFacilityList()}"></td>
+        <td th:text="${contract.getStartDate()}"></td>
+        <td th:text="${contract.getEndDate()}"></td>
         <td class="text-center">
             <!--        Button Show Attach Detail    -->
             <button class="btn btn-primary"
-                    th:attr="onclick=|showAttachDetail('${contract.id}')|" data-bs-toggle="modal"
+                    th:attr="onclick=|showAttachDetail('${contract.getCustomerId}')|" data-bs-toggle="modal"
                     data-bs-target="#showAttachDetail">
                 <span class="text-light m-auto">Attach Facility List</span>
             </button>
@@ -98,11 +98,12 @@
 <!--JQuery-->
 <script>
     function showAttachDetail(id) {
+        alert(id);
         $("#showSlow").empty();
         $("#note").show();
         // $("#showSlow").hide();
         $.ajax({
-            url: "http://localhost:8080/api/contract-detail/v1/" + id,
+            url: "http://localhost:8080/api/contract-detail/v1/using" + id,
             type: "GET",
             dataType: "json",
             success: function (data) {
